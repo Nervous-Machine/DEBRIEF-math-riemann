@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+title: "DEBRIEF-math-riemann: DEBRIEF record of The claimed proof of the Riemann Hypothesis announced by Levent Alpöge on 20 November 2026, built with Claude and released as Lean 4 code"
+message: "Cite this record by version. Contributors of record are listed as authors; each is credited for the cycles they contributed."
+type: dataset
+version: 0.1.0
+date-released: 2026-11-20
+license: CC-BY-4.0
+repository-code: https://github.com/Nervous-Machine/DEBRIEF-math-riemann
+authors:
+  - family-names: Bennett
+    given-names: Heidi
+    affiliation: Nervous Machine
+    # opened the record at tier zero (2026-11-20), with Claude Code as the operating agent

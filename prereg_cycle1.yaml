@@ -1,0 +1,61 @@
+# Pre-registration, cycle 1: first independent build of the Lean development released by Levent Alpöge on 2026-11-20.
+# Written 2026-11-20 BEFORE any build ran. Changes after this point go in an amendment at the end of this file, not in
+# the body. Tooling installation (the VM, elan, the pinned toolchain) is not a check and preceded this file. Pinning the
+# archive (download, hash, tar listing, a text scan of the sources) also preceded this file and is recorded in cycle 0;
+# the scan's result is therefore an observation, not a prediction, and is marked as such below.
+
+mission: DEBRIEF-math-riemann
+cycle: 1
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+dated: "2026-11-20"
+question: >
+  Does the Lean development build from the pinned archive against the pinned Mathlib on a machine the claimant has
+  never touched, do its five entry statements use only Lean's three standard axioms, and is its main statement
+  literally Mathlib's definition RiemannHypothesis rather than a definition of the claimant's own?
+
+conflict: >
+  The operating agent is an Anthropic model. The claimant works at Anthropic and names Claude as co-worker on the
+  argument and the formalization. Heidi Bennett is independent of the claimant; the agent is not. Consequence below.
+
+environment:
+  host: "Heidi's Mac (Apple silicon, 128 GB RAM, 24 cores). Nothing from the archive runs on the host."
+  vm: "Linux VM (Lima, instance primegaps; Ubuntu, aarch64, 20 cores, 98 GB RAM, 290 GB disk); every file from the archive is handled only inside it"
+  source: "https://alpo.ge/lean.tar.gz.part01 … part14 fetched 2026-11-20 21:59 UTC; concatenated archive sha256 9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc (source/lean.tar.gz.sha256); per-part hashes in source/parts.sha256"
+  toolchain: "leanprover/lean4:v4.33.1 as pinned by lean-toolchain; Mathlib at 0df444a360eaa60ab8c11dca51a86af692955474 as pinned by lakefile.toml and lake-manifest.json; Mathlib oleans from the community cache (lake exe cache get)"
+  record: "exit codes, wall time, peak memory, tool versions and full logs for every check go in cycle1/"
+
+checks:
+  R1: "The archive on disk hashes to the pinned value; tar tzf lists 175,190 entries whose listing hashes to the value in source/listing.sha256."
+  R2: "lake exe cache get fetches the Mathlib oleans for the pinned commit and exits 0."
+  R3: "lake build (all eleven default targets, default parallelism) exits 0 with 0 error lines. Record wall time and peak memory from /usr/bin/time -v, and the count of warning lines."
+  R4: "Rescan every .lean file under lean/src for sorry, admit (as a tactic), native_decide, axiom declarations, implemented_by, extern, unsafe and opaque; list every hit by file and line."
+  R5: "#print axioms on each of the five declarations in Main.lean: riemannHypothesis, riemannZeta_eq_zero_re, LFunction_ne_zero_of_half_lt_re, LFunction_eq_zero_re, LFunction_eq_zero_re_of_isPrimitive."
+  R6: "In the built environment: #print RiemannHypothesis shows the definition from Mathlib.NumberTheory.LSeries.RiemannZeta (module of origin recorded); every constant in the environment whose name ends in RiemannHypothesis is listed with its module; the type of riemannHypothesis is reported."
+
+predictions:
+  R1: "pass (the hash was taken from this copy; this check guards the copy, not the claim)"
+  R2: "pass"
+  R3: "exit 0, 0 error lines. Wall time between 6 and 72 hours; peak memory under 90 GB. The time bracket is wide because nothing this size (175,187 files, about 17.4 million lines, heartbeat limit raised to 4,000,000) has been built here before. If memory runs out the build is restarted with lower parallelism, under an amendment, and the restart is not a miss."
+  R4: "zero hits in every category. Observed already at pinning on 2026-11-20 (1,593 files contain the letters 'admit' inside longer words, none as a tactic); the prediction is that the files that enter the build are the files that were scanned."
+  R5: "each of the five uses exactly propext, Classical.choice and Quot.sound, and nothing else"
+  R6: "RiemannHypothesis resolves to Mathlib's definition at the pinned commit, declared once, in module Mathlib.NumberTheory.LSeries.RiemannZeta; the archive defines no constant of that name; riemannHypothesis has type RiemannHypothesis"
+
+standing_consequences:
+  all_pass: >
+    A finding is recorded: the development builds from the pinned archive against the pinned Mathlib with Lean's three
+    standard axioms only, and its main statement is Mathlib's RiemannHypothesis. Its standing is ACCEPTED, not
+    certified, because the operating agent is an Anthropic model (see conflict). EG1 moves from proposed to in_cycle
+    and its ask becomes specific: the same build, by anyone, operated without an Anthropic model; that rerun, if it
+    passes, moves the finding to certified. The machine half of EG2 (statement identity with the third-party
+    formalization) is resolved by R6; the human half (does Mathlib's RiemannHypothesis say what Riemann asked) stays
+    open and is what the reading guide is for.
+  R3_fail: "The build failure is reported as a failure, with the first error and its file. EG1 stays proposed; a new gap names the failing file. Nothing moves."
+  R4_or_R5_fail: "Reported as found. If an axiom beyond the standard three appears, it is named, and the claim's own words 'without assumptions' are recorded against it. Nothing moves to accepted."
+  R6_fail: "If the archive shadows or redefines RiemannHypothesis, the difference is recorded, EG2 becomes the record's first gap, and the five statements are treated as the claimant's own definitions."
+
+not_settled_by_this_cycle: >
+  EG2's human half (whether Mathlib's RiemannHypothesis is the Riemann Hypothesis as posed, a short read that a number
+  theorist should sign or refuse), EG3 (no independent reading of the argument, no referee report), EG4 (the four
+  Dirichlet L-function definitions in Statements.lean against the Generalized Riemann Hypothesis). A build settles that
+  the formal statements follow from Lean's axioms. It settles nothing about what they mean. This cycle does not
+  kernel-check with an external checker (lean4export, Nanoda, Comparator); that is a later cycle if anyone asks for it.

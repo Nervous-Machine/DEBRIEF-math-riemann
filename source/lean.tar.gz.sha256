@@ -1,0 +1,2 @@
+# sha256 of the 14 parts concatenated in order (239,275,554 bytes); gzip of a tar whose listing hashes to the value in listing.sha256
+9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc  lean.tar.gz

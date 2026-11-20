@@ -1,0 +1,62 @@
+# Claim file for DEBRIEF/tools/new_mission.py. Plain words throughout; nothing here calls the claim proved, verified or a theorem.
+name: riemann
+label: "Riemann Hypothesis (Alpöge, with Claude)"
+title: "The claimed proof of the Riemann Hypothesis announced by Levent Alpöge on 20 November 2026, built with Claude and released as Lean 4 code"
+area: "Number theory: zeros of the Riemann zeta function and Dirichlet L-functions"
+rests_on: "a four-page note and a Lean 4 development released as a 14-part archive on the claimant's website"
+short_version: >-
+  On 20 November 2026 Levent Alpöge, a mathematician at Anthropic, posted a four-page note on his personal site saying
+  that he believes he has, working with Claude, found a proof of the Riemann Hypothesis, that the method also resolves
+  the Generalized Riemann Hypothesis for Dirichlet L-functions, and that the argument has been formalized in Lean 4
+  without extra assumptions. He released no paper, only the Lean code. Nervous Machine fetched the archive the same day
+  and pinned it by hash. It holds 175,187 Lean files, about 17.4 million lines, built against a pinned Mathlib. Its
+  entry file states Mathlib's own definition RiemannHypothesis as its main result. Nothing has been built or read by
+  anyone independent of the claimant. Everything here is open.
+problem:
+  name: "The Riemann Hypothesis"
+  url: https://www.claymath.org/millennium/riemann-hypothesis/
+  posed: "Bernhard Riemann (1859); one of the seven Clay Millennium Prize Problems (2000)"
+  plain: >-
+    Every zero of the Riemann zeta function that is not a negative even integer lies on the line where the real part
+    equals one half. The Generalized Riemann Hypothesis says the same of the zeros of every Dirichlet L-function in
+    the critical strip. Mathlib, the Lean mathematical library, states the Riemann Hypothesis as a definition named
+    RiemannHypothesis: for every complex s with zeta of s equal to zero, s not of the form minus two times a positive
+    integer, and s not equal to one, the real part of s is one half.
+  formal_statement: {repo: leanprover-community/mathlib4, path: Mathlib/NumberTheory/LSeries/RiemannZeta.lean, commit: 0df444a360eaa60ab8c11dca51a86af692955474, blob_sha: 3c92195fce20df7fda41cfd823b3266f83cf3070, size: 12247, symbol: RiemannHypothesis}
+claims:
+  - by: "Levent Alpöge"
+    ai: "Claude (Anthropic), as stated by the claimant; the note names Claude as a co-worker on the argument and the formalization"
+    submitted: "2026-11-20"
+    where: https://alpo.ge/remark.pdf
+    summary_plain: >-
+      The note says the author believes he has found, with Claude, a proof of the Riemann Hypothesis, that the method
+      extends to the Generalized Riemann Hypothesis, and that both have been formalized in Lean without assumptions. It
+      describes the argument as a descendant of Stepanov's method over function fields, with chains of theta lifts
+      between definite unitary groups standing in for multiplicity, and gives a twenty-step timeline from 6 October to
+      16 November 2026 that the author says Claude compiled.
+    notes_plain: >-
+      The note says the argument is very long, that the author has not mastered all of the mathematics it uses, that
+      parts of his description paraphrase an AI-written summary and may be wrong, and that he chose to release only the
+      Lean code rather than an informal write-up. The archive has no README, licence or build instructions. Its
+      lakefile names eleven build targets and raises the default heartbeat and stack limits. The entry file Main.lean
+      states five results: Mathlib's RiemannHypothesis, and four statements the claimant defines in Statements.lean
+      about zeros and non-vanishing of Dirichlet L-functions.
+    artifacts:
+      - {kind: url, url: "https://alpo.ge/remark.pdf", sha256: 3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d, bytes: 245114, fetched: "2026-11-20"}
+      - {kind: lean, url: "https://alpo.ge/lean.tar.gz.part01 … part14 (14 parts, reassembled by concatenation; per-part hashes in source/parts.sha256)", sha256: 9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc, bytes: 239275554, fetched: "2026-11-20", lean_files: 175187, lakefile: true, toolchain: "leanprover/lean4:v4.33.1", mathlib: 0df444a360eaa60ab8c11dca51a86af692955474}
+record:
+  - {dated: "2026-11-16", text: "The last entry of the note's timeline, dated 16 November 2026, reads GRH."}
+  - {dated: "2026-11-20", text: "The note and the 14-part Lean archive appeared on the claimant's website, and the claim was reported by the press. Nervous Machine fetched both the same day and pinned them by hash: the note is 245,114 bytes; the reassembled archive is 239,275,554 bytes and unpacks to 1.27 GB, 175,187 Lean files, about 17.4 million lines and about 751,000 theorem and lemma declarations, pinned to Lean 4.33.1 and Mathlib commit 0df444a3 of 21 August 2026. A text scan at pinning found no sorry, admit, axiom, native_decide, implemented_by, extern, unsafe or opaque declarations. The entry file states Mathlib's definition RiemannHypothesis by name."}
+site_status: "announced on the claimant's personal website; no paper, preprint, journal submission or independent report is on the public record"
+extra_gaps:
+  - title: "The Generalized Riemann Hypothesis statements are the claimant's own definitions, with no third-party formal statement to compare against"
+    spoken: >-
+      Four of the five results in Main.lean are stated with definitions the claimant wrote in Statements.lean, about
+      zeros and non-vanishing of Dirichlet L-functions. Mathlib has no definition of the Generalized Riemann Hypothesis
+      to compare them with, so whether these four definitions say what the Generalized Riemann Hypothesis says is
+      entirely a human read.
+    what: "two independent mathematicians read the four definitions in Statements.lean against the Generalized Riemann Hypothesis as usually stated and sign, or refuse"
+    who: "an analytic number theorist, about an hour with the file"
+    kind: read
+    ask: "A reading of the four Dirichlet L-function definitions against the Generalized Riemann Hypothesis, by someone who did not write them."
+    expected_signal: "two signed read cycles, or a refusal naming the difference"

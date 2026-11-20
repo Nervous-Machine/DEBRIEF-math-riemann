@@ -1,0 +1,2 @@
+# sha256 of `tar tzf lean.tar.gz` (175,190 entries: lake-manifest.json, lakefile.toml, lean-toolchain, 175,187 .lean files under lean/src/)
+ac98446c111d89d0b60ecef090b8cbfb753aa640532d39d81e6f30bde1b16aae  listing.txt
