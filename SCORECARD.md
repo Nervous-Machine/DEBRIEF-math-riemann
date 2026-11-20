@@ -18,12 +18,14 @@ Record quality: full ledger. Opened at tier zero: the claim and its artifacts ar
 | cycle | dated | by | kind | written first | verdict |
 |---|---|---|---|---|---|
 | 0 | 2026-11-16 to 2026-11-20 |  | replay | no | admitted |
+| external-2026-11-20 | 2026-11-20 | None | replay | no | admitted |
+| trace-2026-11-20 | 2026-11-20 | Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent) | trace | no | confirmed |
 
 ## Gaps, in the order that would settle things fastest
 
 | priority | gap | status | closes with | who could act | signal expected | resolution by |
 |---|---|---|---|---|---|---|
-| 1 | The Lean development has not been built or kernel-checked by anyone outside the claimant | proposed | a pre-registered rerun: fetch at the pinned commit, build, confirm no sorry or admit, print the axioms | anyone with a machine and a few hours | a rerun cycle reporting build exit status, the sorry/admit scan and the axiom list for the main theorem | none registered |
+| 1 | The Lean development has not been built or kernel-checked by anyone outside the claimant | in cycle | a pre-registered rerun: fetch at the pinned commit, build, confirm no sorry or admit, print the axioms | anyone with a machine and a few hours | a rerun cycle reporting build exit status, the sorry/admit scan and the axiom list for the main theorem | none registered |
 | 2 | Do the formal statements say what the problem asks? | proposed | a machine comparison of the claimant's main theorem with the third-party formal statement RiemannHypothesis in leanprover-community/mathlib4, then a human read of any difference; two independent mathematicians read the formal statement against the problem as posed and sign, or refuse | anyone who can read Lean; the two statements are public; a mathematician in the problem's area, about an hour with a reading guide | a trace cycle and two signed read cycles, or a refusal naming the difference | none registered |
 | 3 | No independent mathematician has reported reading the proof, and there is no referee report | proposed | a read cycle by a mathematician in the area who is not an author, signing or refusing each main step; a referee report or journal acceptance, recorded by date | a mathematician in the problem's area; a journal; the record notes the date when it happens | a signed or refused read cycle; a dated referee report | none registered |
 | 4 | The Generalized Riemann Hypothesis statements are the claimant's own definitions, with no third-party formal statement to compare against | proposed | two independent mathematicians read the four definitions in Statements.lean against the Generalized Riemann Hypothesis as usually stated and sign, or refuse | an analytic number theorist, about an hour with the file | two signed read cycles, or a refusal naming the difference | none registered |

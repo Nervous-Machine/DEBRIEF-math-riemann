@@ -6,7 +6,7 @@ Each open gap below is a place a contribution can land. A contribution is one cy
 
 The claimant reports a Lean development that compiles with standard axioms only. Nobody outside the claimant has reported building it.
 
-Status: proposed.
+Status: in cycle.
 
 - **a pre-registered rerun: fetch at the pinned commit, build, confirm no sorry or admit, print the axioms** — contribution kind: rerun; who could act: anyone with a machine and a few hours.
 

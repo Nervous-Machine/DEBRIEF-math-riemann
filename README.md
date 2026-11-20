@@ -2,7 +2,7 @@
 
 A DEBRIEF mission record (protocol https://github.com/Nervous-Machine/DEBRIEF) for **The claimed proof of the Riemann Hypothesis announced by Levent Alpöge on 20 November 2026, built with Claude and released as Lean 4 code**.
 
-**Standing.** Certified 0. Accepted 0. Refuted 0. Open gaps 4. This record is at tier zero: the claim and its public artifacts are pinned, the checks still owed are listed, and nothing has been run or read yet. The first contribution is open.
+**Standing, 20 November 2026.** Certified 0. Accepted 0. Refuted 0. Open gaps 4. The claim and its artifacts are pinned. Andrew Sutherland (MIT) has published an independent compile, axiom audit and kernel replay of the whole archive, recorded here as what the public record shows; Nervous Machine's own pre-registered build is running. A reading guide for the five statements exists. No mathematician has yet signed or refused it.
 
 This claim is on the public claims board, https://math-board.nervousmachine.com, which shows its stage, who has contributed, and what it needs next.
 
@@ -43,7 +43,7 @@ Each open gap is in `ASKS.md` with what closes it and who could act. In order:
 ## Contributing
 
 - **Rerun** (if there is a Lean development): copy `prereg_cycle1.yaml` as a model, fill in your own predictions, register it with `tools/prereg.py register` from the protocol repository and commit it *before* running anything. Run. Report with the **Rerun report** issue form; it becomes a `rerun` cycle under your name.
-- **Read**: a trace (reading guide) does not exist yet. Writing one is itself a `trace` cycle. Once it exists, the **Semantic read** form takes signatures and refusals.
+- **Read**: the reading guide is `trace/DEFINITIONAL-TRACE.md`, about half an hour. Sign or refuse its checklist with the **Semantic read** issue form; either becomes a `read` cycle under your name. Two independent signatures close the semantic gap; one refusal reopens it.
 - **Anything else**: open a plain issue.
 
 Rules and templates: https://github.com/Nervous-Machine/DEBRIEF/blob/main/CONTRIBUTING.md. Every contribution is one dated cycle under your own name and goes into `CITATION.cff` and the next release.
@@ -54,6 +54,7 @@ Rules and templates: https://github.com/Nervous-Machine/DEBRIEF/blob/main/CONTRI
 ledger/riemann.json   the ledger (protocol 0.1.0)
 claim.yaml            the pinned claim this record was opened from
 SCORECARD.md / ASKS.md  generated from the ledger
+trace/                the reading guide for the five statements (a `trace` cycle)
 prereg_cycle1.yaml    Nervous Machine's pre-registration for the first build, hashed before it ran (.sha256 sidecar)
 source/               hashes of the 14 archive parts, the reassembled archive and its tar listing; fetch times
 cycles/               contributed cycles, one file each

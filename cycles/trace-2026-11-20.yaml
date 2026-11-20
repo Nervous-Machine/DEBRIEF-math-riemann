@@ -1,0 +1,26 @@
+kind: trace
+cycle: "trace-2026-11-20"
+dated: "2026-11-20"
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+provenance:
+  source: "lean/src/Main.lean and lean/src/Statements.lean in the pinned archive (sha256 9631b4f0…); Mathlib/NumberTheory/LSeries/RiemannZeta.lean at 0df444a3"
+preregistered:
+  question: "Can the open semantic question, whether the five formal statements say what the note claims, be made cheap for a human reader?"
+  rule: "each statement quoted verbatim, its definitions named with source, a plain reading and the point to confirm; discrepancies recorded; standing unchanged by construction"
+  predictions: []
+  commit: null
+  before_data: false
+  results: ["trace/DEFINITIONAL-TRACE.md"]
+outcome:
+  verdict: confirmed
+  numbers: {statements_traced: 5, third_party_definitions: 1, claimant_definitions: 4, discrepancies_recorded: 2, human_review: false}
+spoken: >
+  On 20 November Nervous Machine wrote a reading guide for the one question a build cannot settle: whether the five
+  statements in Main.lean say what the note claims. The main statement is Mathlib's own definition of the Riemann
+  Hypothesis, written by the Mathlib community, not by the claimant, and is quoted in full. The other four are the
+  claimant's definitions about Dirichlet L-functions, also quoted in full. One discrepancy is recorded: the note says
+  Generalized Riemann Hypothesis without qualification, while the archive states it for Dirichlet characters only. The
+  readings are the agent's; nothing changed standing. The guide exists so that a number theorist's read takes half an
+  hour.
+finding_ids: []
+gap_ids: ["EG2", "EG4"]
