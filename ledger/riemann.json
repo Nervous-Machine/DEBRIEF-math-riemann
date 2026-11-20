@@ -26,7 +26,7 @@
    "record_note": "Opened at tier zero: the claim and its artifacts are pinned, the gaps are drawn, nothing has been run or read by Nervous Machine.",
    "record_limits": [
     "Nothing in this record has been checked by Nervous Machine or by anyone independent of the claimants; every item is an open gap.",
-    "The operating agent that pinned this record and will run its checks is Claude Fable 5.1, a model made by Anthropic, the claimant's employer, and the model family the claimant names as his co-worker on the argument and its formalization. Heidi Bennett (Nervous Machine) is independent of the claimant; the agent is not. Under this record's rule, a rerun operated with an Anthropic model can move the build result to accepted, never to certified; certified needs a rerun operated without one."
+    "The operating agent that pinned this record and runs its checks is Claude Fable 5.1, a model made by Anthropic, the claimant's employer, and the model family the claimant names as his co-worker. Heidi Bennett (Nervous Machine) is independent of the claimant; the agent is not. The trust anchor in a Lean check is the kernel, not the operator, so this record's rule is: certified when two parties independent of the claimant and of each other report matching hashes of the compiled output, each disclosing the agent that operated the build; one party alone gives accepted. Rule set 2026-11-20, amendment A1 of prereg_cycle1.yaml."
    ],
    "scope_limits": [
     "Nervous Machine keeps score of the checks; it does not check the mathematics line by line.",
