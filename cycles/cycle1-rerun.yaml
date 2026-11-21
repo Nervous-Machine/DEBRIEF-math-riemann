@@ -1,0 +1,56 @@
+kind: rerun
+cycle: 1
+dated: "2026-11-20 to 2026-11-21"
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+preregistered:
+  commit: "prereg_cycle1.yaml (registered sha256 0b64c4b9967531bf5f775d53cae415394e531c4864771d20594eb99bd4da47dc at 2026-11-20T22:07:53Z; amendment A1 added R7)"
+  results:
+    - cycle1/R3_summary.txt
+    - cycle1/env.txt
+    - cycle1/R1.txt
+    - cycle1/R2_cache.log
+    - cycle1/logs.sha256
+    - cycle1/oleans-partial.sha256
+    - cycle1/probe_run1.sha256
+    - cycle1/probe_run2.sha256
+    - cycle1/probe_run1.log
+    - cycle1/sutherland-files.sha256
+  question: >
+    Does the Lean development build from the pinned archive against the pinned Mathlib on a machine the claimant has
+    never touched, do its five entry statements use only Lean's three standard axioms, and is its main statement
+    literally Mathlib's definition RiemannHypothesis? (A1) Do our compiled-output hashes match Andrew Sutherland's?
+  rule: "R1 to R7 as registered; standing moves only on all of R3 to R7 passing"
+  predictions:
+    - "R1 pass; R2 pass"
+    - "R3 exit 0 with 0 error lines, wall time 6 to 72 hours, peak memory under 90 GB"
+    - "R4 zero hits; R5 exactly propext, Classical.choice, Quot.sound for each of the five; R6 RiemannHypothesis is Mathlib's"
+    - "R7 (A1) Main.olean and the manifest of all compiled files hash to Sutherland's values"
+  before_data: true
+environment:
+  hardware: "Lima VM primegaps on Heidi's Mac: Ubuntu, aarch64, 20 cores, 98 GB RAM, 290 GB disk; nothing from the archive ran on the host"
+  toolchain: "Lean v4.33.1 (Lake 5.0.0), Mathlib 0df444a360eaa60ab8c11dca51a86af692955474 from the community cache, elan 4.2.4"
+  wall_time: "3:19 (the build, until the disk filled)"
+outcome:
+  verdict: mixed
+  numbers:
+    R1: "pass: archive sha256 9631b4f0…, tar listing 175,190 entries hashing to ac98446c…"
+    R2: "pass: lake exe cache get exit 0"
+    R3: "not completed: 290 GB disk full at 2026-11-21 01:27 UTC after 3 h 19 m; 32,018 of 175,187 modules compiled; 35 compilations failed with 'no space left on device'; no other error in the log; 89,659 warning lines; disk at the halt: setup.json files 230.9 GB, .olean 22.1 GB, .c 0.3 GB"
+    R4_R5_R6: "not run; Main.olean was not built"
+    R7_partial: "of the 32,018 compiled files, 17,023 equal the hash Sutherland published for the same file and 14,995 differ; Main.olean not built, so neither registered hash could be computed"
+    diagnosis_after_the_halt: "not registered. Nine modules rebuilt twice in a second directory: the six that differed from Sutherland's differed again, from our first run and from his; the three that matched, matched again; the two rebuilds agree with each other on all nine. In CompactPartClosedOrbit the only difference between first run and rebuild is the absolute path of the source file, 106 bytes, inside a linter message that Lean v4.33.1 stores in the module output (Lean/Linter/PersistentLintLog.lean). 14,992 of the 14,995 differing files contain our absolute source directory as a byte string; none of the 17,023 equal files does; three differing files contain no such string and are under study in cycle 2 (R8): Formalism/FlagUnipotentLattices/MinkowskiFactorialBounds/IntegerGroupLocalParametrization, Formalism/GL3MeanSquares/GenusMeanAsymptotics/JacobiCharacterSums/PNTDHB, Formalism/SharpRestriction/GrowthBounds/StandardPolynomials/ColXCnt"
+  misses:
+    - "R3: predicted exit 0 in 6 to 72 hours under 90 GB of memory. The build halted after 3 h 19 m with the disk full. The disk use was not predicted at all: Lake's per-module setup.json files, which this cycle did not know about, took 231 GB. Peak memory is unknown because time's summary could not be written to the full disk. The halt is ours, not the archive's; no error other than disk exhaustion appears in the log."
+    - "R7 (A1): predicted that both hashes match Sutherland's. Neither could be computed, and the partial comparison shows the manifest cannot match: about 47% of the compiled modules embed the absolute path of their source file, which differs between any two parties who did not choose the same path. The rule's intent (two independent reports agreeing) is not met by this cycle and, as written, cannot be met without a shared path; recorded as gap EG5."
+spoken: >
+  Our first build of the archive ran for three hours and nineteen minutes and stopped when the machine's disk filled.
+  The disk was our mistake: the build tool writes a large bookkeeping file for every module, and we had not planned for
+  it. Thirty-two thousand of the hundred and seventy-five thousand modules compiled before the halt, with no error
+  other than the full disk. We compared those with the hashes Andrew Sutherland published: about half agree byte for
+  byte. The other half differ because the compiler writes the absolute path of each source file into the output of any
+  module that produced a warning, so two builds in different directories cannot match on those modules. The build is
+  resumed as cycle 2, written down first.
+finding_ids: []
+gap_ids:
+  - EG1
+  - EG5

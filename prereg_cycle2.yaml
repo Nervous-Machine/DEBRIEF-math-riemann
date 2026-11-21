@@ -1,0 +1,75 @@
+# Pre-registration, cycle 2: resumed build of the Lean development released by Levent Alpöge on 2026-11-20.
+# Written 2026-11-21 (UTC) BEFORE the resumed build started. Changes after this point go in an amendment at the end of
+# this file, not in the body.
+#
+# Why a second cycle. Cycle 1's build (prereg_cycle1.yaml) stopped after 3 h 19 m with the VM's disk full, at 32,018 of
+# 175,187 modules. The cause was ours, not the archive's: Lake writes one setup.json file per module (about 6 MB each,
+# 231 GB for the 39,413 modules it had started), and a module's file is not needed once the module is built. Cycle 1's
+# prediction of under 90 GB of disk was wrong. Its outcome is cycles/cycle1-rerun.yaml. The resumed build runs
+# differently from cycle 1 (a pruner deletes finished modules' setup.json files every two minutes), so it is a new
+# cycle, not an amendment. Times in this record are UTC.
+
+mission: DEBRIEF-math-riemann
+cycle: 2
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+dated: "2026-11-21"
+question: >
+  Cycle 1's question, unchanged: does the development build from the pinned archive against the pinned Mathlib on a
+  machine the claimant has never touched, do its five entry statements use only Lean's three standard axioms, and is its
+  main statement literally Mathlib's RiemannHypothesis? Added: how much of the compiled output can two independent
+  builds compare byte for byte, and what decides it?
+
+observations_before_this_registration:   # from cycle 1; facts already seen, not predictions
+  - "32,018 .olean files from cycle 1 remain in .lake/build and Lake's incremental build reuses them; their hashes are cycle1/oleans-partial.sha256."
+  - "Of those 32,018, 17,023 equal the hash Andrew Sutherland published for the same file (project-oleans.sha256 at math.mit.edu/~drew/grh/, itself hashing to 375cbee2…, fetched 2026-11-21 01:31 UTC) and 14,995 do not."
+  - "Nine of them, rebuilt in a second directory: the six that differed from Sutherland's differed again, from our first run and from his; the three that matched, matched again. Two rebuilds in the same directory agree byte for byte on all nine."
+  - "In one module the only difference between our first run and the rebuild was the absolute path of the source file, stored inside the .olean within a linter message (Lean v4.33.1 persists lint messages in the module output: Lean/Linter/PersistentLintLog.lean)."
+  - "Working hypothesis, tested as R8: a module's .olean embeds the absolute source path exactly when compiling it produced a linter warning; two builds agree on such a module only if they ran under the same absolute path."
+
+environment:
+  host: "Heidi's Mac (Apple silicon, 128 GB RAM, 24 cores). Nothing from the archive runs on the host."
+  vm: "Linux VM (Lima, instance primegaps; Ubuntu, aarch64, 20 cores, 98 GB RAM, 290 GB disk, 216 GB free after the setup.json files were deleted)"
+  source: "the same extracted tree as cycle 1, /home/heidibennett.guest/untrusted/alpoge-rh/src/lean; archive sha256 9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc"
+  toolchain: "leanprover/lean4:v4.33.1 (Lake 5.0.0); Mathlib 0df444a360eaa60ab8c11dca51a86af692955474 from the community cache, already fetched in cycle 1"
+  procedure: "cycle2/rh_cycle2.sh: the same lake build command as cycle 1 with the same options, plus a background loop that every 120 s deletes each module's setup.json once the module's .trace file is newer (the rule published in Deicyde/riemann-hypothesis verification/NOTES.md). Audit for R5 and R6 is cycle2/Audit.lean, run with lake env lean after the build."
+  record: "exit codes, wall time, peak memory, disk use, progress log and full logs go in cycle2/"
+
+checks:
+  R1: "The archive on disk still hashes to the pinned value. The number of .olean files present before the resume is recorded."
+  R3: "lake build (all eleven default targets, default parallelism), resumed, exits 0 with 0 error lines; the 32,018 modules from cycle 1 are reported up to date, not rebuilt. Record wall time and peak memory from /usr/bin/time -v, disk use of .lake/build at the end, and the count of warning lines."
+  R4: "Rescan every .lean file under lean/src for sorry, admit (as a tactic), native_decide, axiom declarations, implemented_by, extern, unsafe and opaque; list every hit by file and line."
+  R5: "#print axioms on each of the five declarations in Main.lean: riemannHypothesis, riemannZeta_eq_zero_re, LFunction_ne_zero_of_half_lt_re, LFunction_eq_zero_re, LFunction_eq_zero_re_of_isPrimitive."
+  R6: "In the built environment: #print RiemannHypothesis shows the definition from Mathlib.NumberTheory.LSeries.RiemannZeta; every constant whose name ends in RiemannHypothesis is listed with its module; the type of riemannHypothesis is reported."
+  R7: "sha256 of every .olean under .lake/build/lib/lean (175,187 expected) compared file by file with Sutherland's project-oleans.sha256. Report: files equal, files different, whether Main.olean equals 9146dfb4148e24d2252e04c50742f3e49dd126dfcc5006d10bf5f873ddf796ad, whether our manifest in his format hashes to 375cbee2fc3fc0f5088ef2e6dc9a5ac5530924310dc62422ec65aac9dc4c1d25."
+  R8: "For every .olean, whether it contains the byte string /home/heidibennett.guest/untrusted/alpoge-rh/src/lean/src/. Report the two-by-two table against R7 (equal or different to Sutherland's, contains the path or not)."
+
+predictions:
+  R1: "pass; 32,018"
+  R3: "exit 0, 0 error lines. Wall time for the resumed part between 8 and 30 hours (cycle 1 compiled 32,018 modules in 3 h 19 m; the rest at that rate is about 15 h, and later modules are larger). Peak memory under 90 GB. .lake/build under 200 GB at the end. If the disk fills or memory runs out, the build is resumed again under an amendment and that is not a miss."
+  R4: "zero hits in every category"
+  R5: "each of the five uses exactly propext, Classical.choice and Quot.sound, and nothing else"
+  R6: "RiemannHypothesis resolves to Mathlib's definition at the pinned commit, declared once, in module Mathlib.NumberTheory.LSeries.RiemannZeta; the archive defines no constant of that name; riemannHypothesis has type RiemannHypothesis"
+  R7: "Main.olean equals Sutherland's (Main.lean is five short theorems and we expect no linter warning from it; low confidence). The manifest as a whole does not equal his. Files equal: between 45% and 60% of 175,187."
+  R8: "Every file that differs from Sutherland's contains our source path, and no file equal to his contains it. Any exception is listed by name."
+
+standing_consequences:
+  R3_to_R6_pass: >
+    A finding is recorded: the development builds from the pinned archive against the pinned Mathlib with Lean's three
+    standard axioms only, and its main statement is Mathlib's RiemannHypothesis. Its standing is ACCEPTED. Under
+    amendment A1 of cycle 1, certified needs two independent parties reporting matching hashes of the compiled output.
+    If R8 holds, those hashes can match only when both parties built under the same absolute path, so the rule as
+    written cannot be met by anyone who does not know Sutherland's build path. As A1 says, the mismatch is reported and
+    becomes a gap (EG5); nothing is certified in this cycle. Revising the rule is Heidi Bennett's decision and is not
+    made here. Candidates for her: compare only the files that embed no path; compare the lean4export output, whose
+    determinism Sutherland's page and Deicyde's notes both leave open; or ask Sutherland for his build path and rebuild
+    under it. The machine half of EG2 is resolved by R6; its human half stays open.
+  R3_fail: "Reported as a failure with the first error and its file. EG1 stays in_cycle; a new gap names the failing file. Nothing moves."
+  R4_or_R5_fail: "Reported as found. If an axiom beyond the standard three appears, it is named, and the claim's own words 'without assumptions' are recorded against it. Nothing moves to accepted."
+  R6_fail: "If the archive shadows or redefines RiemannHypothesis, the difference is recorded, EG2 becomes the record's first gap, and the five statements are treated as the claimant's own definitions."
+  R7_or_R8_miss: "Reported as found; the two-by-two table is published either way. A miss on R8 means the path hypothesis is wrong or incomplete and EG5 says so."
+
+not_settled_by_this_cycle: >
+  EG2's human half (whether Mathlib's RiemannHypothesis is the Riemann Hypothesis as posed), EG3 (no independent
+  reading of the argument, no referee report), EG4 (the four Dirichlet L-function definitions against the Generalized
+  Riemann Hypothesis). A build settles that the formal statements follow from Lean's axioms; it settles nothing about
+  what they mean. This cycle does not kernel-check with an external checker (lean4export, nanoda, Comparator).

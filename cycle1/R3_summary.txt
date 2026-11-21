@@ -1,0 +1,22 @@
+Cycle 1, check R3: lake build of the pinned archive, started 2026-11-20 22:08:38 UTC, ended 2026-11-21 01:27:24 UTC
+(3 h 19 m). Full log: R3_build.log, 477,603 lines, 34,185,216 bytes, sha256 in logs.sha256 (kept in the VM, not in
+this repository because of its size).
+
+Result: the build did not complete. At 01:27 UTC the VM's 290 GB disk was full and 35 module compilations failed with
+"error: resource exhausted (error code: 28, no space left on device)" (first at log line 477,475). No other error
+appears in the log. Modules reported built before the disk filled: 32,018 .olean files on disk (Lake's progress counter
+read 40,881 of 40,981 jobs, counting jobs it had discovered, not the 175,187 modules). Warning lines: 89,659 lines
+beginning "warning" (linter output: unused simp arguments, "Try this", unused section variables and the like).
+/usr/bin/time could not write its summary because the disk was full; peak memory is unknown; the load average during
+the build was about 35 on 20 cores with about 14 GB used.
+
+Cause: Lake writes one setup.json file per module under .lake/build/ir, about 6 MB each in this project; the 39,413 it
+had written totalled 230.9 GB. The compiled .olean files totalled 22.1 GB and the C intermediate files 0.3 GB. A
+module's setup.json is not needed once the module is built (Deicyde/riemann-hypothesis, verification/NOTES.md, which
+publishes a pruning loop). Cycle 1's prediction of under 90 GB of disk was wrong.
+
+Partial comparison with Andrew Sutherland's published per-file hashes (project-oleans.sha256, 175,187 lines, which
+itself hashes to the manifest value on his page, 375cbee2…; fetched 2026-11-21 01:31 UTC): of our 32,018 files, 17,023
+equal his and 14,995 differ (oleans-partial.sha256 holds ours). Diagnosis in probe_run1.sha256, probe_run2.sha256 and
+cycles/cycle1-rerun.yaml: the differing files contain the absolute path of their source file, written into the
+module output inside a persisted linter message; the equal files do not.

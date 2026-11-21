@@ -43,3 +43,14 @@ Status: proposed.
 - **two independent mathematicians read the four definitions in Statements.lean against the Generalized Riemann Hypothesis as usually stated and sign, or refuse** — contribution kind: read; who could act: an analytic number theorist, about an hour with the file.
 
 Signal expected: two signed read cycles, or a refusal naming the difference. Resolution by: none registered.
+
+## 5. Compiled-output hashes agree byte for byte only between builds under the same absolute source path (ledger id EG5)
+
+The record's certification rule asks two independent builders to publish matching hashes of the compiled output. Cycle 1 found that Lean writes each source file's absolute path into the output of any module that produced a warning, which is about half of this archive, so two builders in different directories can never match on those files. The rule needs a comparison that does not depend on where the build ran.
+
+Status: proposed.
+
+- **a decision by the record keeper on what two independent builders compare: the files that embed no path, the lean4export output (whose determinism is an open question on Sutherland's page and in Deicyde's notes), or a shared build path; then that comparison, run** — contribution kind: decision by the named party; who could act: Heidi Bennett, who set the rule, with the kernel.
+- **the absolute path of the source tree in Andrew Sutherland's build, so that anyone can rebuild under it and compare every file** — contribution kind: data; who could act: Andrew Sutherland (MIT).
+
+Signal expected: a revised rule in this record, or a comparison on a path-independent artifact, or a rebuild under Sutherland's path that matches his manifest. Resolution by: none registered.

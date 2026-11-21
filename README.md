@@ -2,7 +2,7 @@
 
 A DEBRIEF mission record (protocol https://github.com/Nervous-Machine/DEBRIEF) for **The claimed proof of the Riemann Hypothesis announced by Levent Alpöge on 20 November 2026, built with Claude and released as Lean 4 code**.
 
-**Standing, 20 November 2026.** Certified 0. Accepted 0. Refuted 0. Open gaps 4. The claim and its artifacts are pinned. Andrew Sutherland (MIT) has published an independent compile, axiom audit and kernel replay of the whole archive, recorded here as what the public record shows; Nervous Machine's own pre-registered build is running. A reading guide for the five statements exists. No mathematician has yet signed or refused it.
+**Standing, 21 November 2026 (UTC).** Certified 0. Accepted 0. Refuted 0. Open gaps 5. The claim and its artifacts are pinned. Andrew Sutherland (MIT) has published an independent compile, axiom audit and kernel replay of the whole archive, recorded here as what the public record shows. Nervous Machine's first pre-registered build (cycle 1) compiled 32,018 of the 175,187 modules in 3 h 19 m and then stopped when the machine's disk filled, a fault of ours, not the archive's; the build is resumed as cycle 2 under `prereg_cycle2.yaml`. Of the 32,018 compiled files, 17,023 are byte-identical to Sutherland's; the rest differ because Lean writes each source file's absolute path into the output of any module that produced a warning (gap EG5). A reading guide for the five statements exists. No mathematician has yet signed or refused it.
 
 This claim is on the public claims board, https://math-board.nervousmachine.com, which shows its stage, who has contributed, and what it needs next.
 
@@ -11,6 +11,8 @@ This claim is on the public claims board, https://math-board.nervousmachine.com,
 The agent that pinned this record and runs its checks is Claude Fable 5.1, an Anthropic model. The claimant works at Anthropic and names Claude as his co-worker on the argument and its formalization. Heidi Bennett, who keeps this record, is independent of the claimant; the agent is not.
 
 The trust anchor in a Lean check is the kernel, not whoever drives the build, and a driver can at most misreport. So the rule here is about reports, not operators: a build result is **certified** when two parties independent of the claimant and of each other publish matching hashes of the compiled output (`Main.olean` and the manifest of every compiled file), each saying what agent operated the build. One party alone, whatever operated it, gives **accepted**. Rule set 20 November 2026, amendment A1 of `prereg_cycle1.yaml`.
+
+Cycle 1 found that the rule, as written, cannot be met by two parties who did not build under the same absolute path: about half of the compiled files embed the path of their source (EG5). The rule stands until the record keeper revises it; the candidates are in `prereg_cycle2.yaml` under `standing_consequences`.
 
 ## The problem
 
@@ -41,6 +43,7 @@ Each open gap is in `ASKS.md` with what closes it and who could act. In order:
 2. **Do the formal statements say what the problem asks?** (EG2): A reading of the formal statement against the problem as posed, by someone who did not write it.
 3. **No independent mathematician has reported reading the proof, and there is no referee report** (EG3): Someone in the field reads it and says, under their name, what holds and what does not.
 4. **The Generalized Riemann Hypothesis statements are the claimant's own definitions, with no third-party formal statement to compare against** (EG4): A reading of the four Dirichlet L-function definitions against the Generalized Riemann Hypothesis, by someone who did not write them.
+5. **Compiled-output hashes agree byte for byte only between builds under the same absolute source path** (EG5): A decision on what two independent builders compare, and, from Andrew Sutherland, the absolute path of the source tree in his build.
 
 ## Contributing
 
@@ -58,6 +61,8 @@ claim.yaml            the pinned claim this record was opened from
 SCORECARD.md / ASKS.md  generated from the ledger
 trace/                the reading guide for the five statements (a `trace` cycle)
 prereg_cycle1.yaml    Nervous Machine's pre-registration for the first build, hashed before it ran (.sha256 sidecar)
+prereg_cycle2.yaml    the same for the resumed build
+cycle1/, cycle2/      logs, hashes and summaries of those builds
 source/               hashes of the 14 archive parts, the reassembled archive and its tar listing; fetch times
 cycles/               contributed cycles, one file each
 ```

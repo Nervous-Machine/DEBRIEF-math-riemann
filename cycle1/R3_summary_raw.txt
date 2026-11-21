@@ -1,0 +1,39 @@
+9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc  lean.tar.gz
+ac98446c111d89d0b60ecef090b8cbfb753aa640532d39d81e6f30bde1b16aae  listing.txt
+175190 listing.txt
+-----ENV
+started 2026-11-20T22:08:38Z
+Linux lima-primegaps 7.0.0-42-generic #42-Ubuntu SMP PREEMPT_DYNAMIC Thu Oct 15 08:19:15 UTC 2026 aarch64 GNU/Linux
+20
+               total        used        free      shared  buff/cache   available
+Mem:              98           1          91           0           6          96
+Swap:              0           0           0
+/dev/vda1       290G   44G  246G  16% /
+error: no default toolchain configured. run `elan default stable` to install & configure the latest Lean 4 stable release.
+error: no default toolchain configured. run `elan default stable` to install & configure the latest Lean 4 stable release.
+elan 4.2.4 (227caca13 2026-08-25)
+finished 2026-11-21T01:27:24Z
+-----R2 tail
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+R2 exit 0
+-----R3 head
+✔ [60/363] Built BuildAid.D4 (357ms)
+✔ [61/363] Built BuildAid.D5 (371ms)
+✔ [62/363] Built BuildAid.D2 (370ms)
+✔ [63/363] Built BuildAid.D1 (368ms)
+✔ [64/363] Built BuildAid.D3 (370ms)
+-----R3 lines
+477603 R3_build.log
+-----R3 built/failed
+15854
+35
+35
+89659
+-----first failure line
+477475:error: resource exhausted (error code: 28, no space left on device)
+-----last ✔ before failure
+✔ [40881/40981] Built Formalism.SharpRestriction.GrowthBounds.StandardPolynomials.ColNumDef (6.4s)
