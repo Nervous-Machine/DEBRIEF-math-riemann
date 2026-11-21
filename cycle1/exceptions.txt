@@ -1,0 +1,6 @@
+The three files that differed from Sutherland's hashes without containing our source path (cycles/cycle1-rerun.yaml,
+diagnosis_after_the_halt) are explained, 2026-11-21 02:05 UTC. Their cycle 1 copies were damaged by the full disk: two
+were zero bytes (sha256 e3b0c442…, the empty file) and ColXCnt was partial. Rebuilt in the probe directory, all three hash
+to Sutherland's values (45b24dda…, 6822f202…, e264c0dd…) and contain no path string. So every one of the 14,995
+differences in cycle 1 is accounted for: 14,992 by the embedded source path, 3 by truncation at the halt. Cycle 2 rebuilt
+the three at its start (their .trace files are dated 01:42 UTC).

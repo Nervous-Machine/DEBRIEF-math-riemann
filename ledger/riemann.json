@@ -462,6 +462,12 @@
      "hypothesis": "two independent builds of the archive produce byte-identical compiled output (amendment A1's certification rule assumes it)",
      "before_data": true,
      "result": "17,023 of 32,018 compiled files equal Sutherland's published hashes; 14,992 of the 14,995 that differ contain our absolute source directory inside a linter message that Lean v4.33.1 stores in the module output; none of the equal files does; 3 differ for a reason not yet found (cycle 2, R8)"
+    },
+    {
+     "cycle": "1",
+     "hypothesis": "the 3 differing files without a path differ for some other reason",
+     "before_data": false,
+     "result": "their cycle 1 copies were truncated by the full disk (two empty, one partial); rebuilt, all three equal Sutherland's hashes and contain no path; all 14,995 differences accounted for (cycle1/exceptions.txt)"
     }
    ],
    "closes_with": [
