@@ -2,7 +2,7 @@
 
 A DEBRIEF mission record (protocol https://github.com/Nervous-Machine/DEBRIEF) for **The claimed proof of the Riemann Hypothesis announced by Levent Alpöge on 20 November 2026, built with Claude and released as Lean 4 code**.
 
-**Standing, 21 November 2026 (UTC).** Certified 0. Accepted 0. Refuted 0. Open gaps 5. The claim and its artifacts are pinned. Andrew Sutherland (MIT) has published an independent compile, axiom audit and kernel replay of the whole archive, recorded here as what the public record shows. Nervous Machine's first pre-registered build (cycle 1) compiled 32,018 of the 175,187 modules in 3 h 19 m and then stopped when the machine's disk filled, a fault of ours, not the archive's; the build is resumed as cycle 2 under `prereg_cycle2.yaml`. Of the 32,018 compiled files, 17,023 are byte-identical to Sutherland's; the rest differ because Lean writes each source file's absolute path into the output of any module that produced a warning (gap EG5). A reading guide for the five statements exists. No mathematician has yet signed or refused it.
+**Standing, 22 November 2026 (UTC).** Certified 0. Accepted 0. Refuted 0. Open gaps 5. The claim and its artifacts are pinned. Andrew Sutherland (MIT) has published an independent compile, axiom audit and kernel replay of the whole archive, recorded here as what the public record shows. On 21 November the Lean and Mathlib communities issued a joint statement, which the page says is endorsed by the Lean FRO and the Mathlib Initiative, saying they certify both the statement and the proof of the Riemann Hypothesis; it names no individual and does not mention the four Dirichlet L-function statements. It is recorded the same way: what the record saw, not a standing under this record's rule. Nervous Machine's first pre-registered build (cycle 1) compiled 32,018 of the 175,187 modules in 3 h 19 m and then stopped when the machine's disk filled, a fault of ours, not the archive's; the build is resumed as cycle 2 under `prereg_cycle2.yaml`. Of the 32,018 compiled files, 17,023 are byte-identical to Sutherland's; the rest differ because Lean writes each source file's absolute path into the output of any module that produced a warning (gap EG5); Sutherland has since published his build path and his own count of the files that embed it. A reading guide for the five statements exists. No mathematician has yet signed or refused it.
 
 This claim is on the public claims board, https://math-board.nervousmachine.com, which shows its stage, who has contributed, and what it needs next.
 
@@ -12,7 +12,7 @@ The agent that pinned this record and runs its checks is Claude Fable 5.1, an An
 
 The trust anchor in a Lean check is the kernel, not whoever drives the build, and a driver can at most misreport. So the rule here is about reports, not operators: a build result is **certified** when two parties independent of the claimant and of each other publish matching hashes of the compiled output (`Main.olean` and the manifest of every compiled file), each saying what agent operated the build. One party alone, whatever operated it, gives **accepted**. Rule set 20 November 2026, amendment A1 of `prereg_cycle1.yaml`.
 
-Cycle 1 found that the rule, as written, cannot be met by two parties who did not build under the same absolute path: about half of the compiled files embed the path of their source (EG5). The rule stands until the record keeper revises it; the candidates are in `prereg_cycle2.yaml` under `standing_consequences`.
+Cycle 1 found that the rule, as written, cannot be met by two parties who did not build under the same absolute path: about half of the compiled files embed the path of their source (EG5). The rule stands until the record keeper revises it; the candidates are in `prereg_cycle2.yaml` under `standing_consequences`. Since 21 November one more is concrete: Sutherland has published his build path, /home/ubuntu/grh/src/lean, so a rebuild under it could be compared file for file.
 
 ## The problem
 
@@ -43,7 +43,7 @@ Each open gap is in `ASKS.md` with what closes it and who could act. In order:
 2. **Do the formal statements say what the problem asks?** (EG2): A reading of the formal statement against the problem as posed, by someone who did not write it.
 3. **No independent mathematician has reported reading the proof, and there is no referee report** (EG3): Someone in the field reads it and says, under their name, what holds and what does not.
 4. **The Generalized Riemann Hypothesis statements are the claimant's own definitions, with no third-party formal statement to compare against** (EG4): A reading of the four Dirichlet L-function definitions against the Generalized Riemann Hypothesis, by someone who did not write them.
-5. **Compiled-output hashes agree byte for byte only between builds under the same absolute source path** (EG5): A decision on what two independent builders compare, and, from Andrew Sutherland, the absolute path of the source tree in his build.
+5. **Compiled-output hashes agree byte for byte only between builds under the same absolute source path** (EG5): A decision on what two independent builders compare. Andrew Sutherland's build path, asked for here, is now on his page.
 
 ## Contributing
 

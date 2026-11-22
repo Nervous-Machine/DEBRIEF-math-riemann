@@ -51,6 +51,6 @@ The record's certification rule asks two independent builders to publish matchin
 Status: proposed.
 
 - **a decision by the record keeper on what two independent builders compare: the files that embed no path, the lean4export output (whose determinism is an open question on Sutherland's page and in Deicyde's notes), or a shared build path; then that comparison, run** — contribution kind: decision by the named party; who could act: Heidi Bennett, who set the rule, with the kernel.
-- **the absolute path of the source tree in Andrew Sutherland's build, so that anyone can rebuild under it and compare every file** — contribution kind: data; who could act: Andrew Sutherland (MIT).
+- **a rebuild under /home/ubuntu/grh/src/lean, Sutherland's published path, or a comparison of the exported proof, whichever the decision names; either is a new pre-registered cycle** — contribution kind: rerun; who could act: Nervous Machine, once the rule is revised, about 15 hours of machine time.
 
 Signal expected: a revised rule in this record, or a comparison on a path-independent artifact, or a rebuild under Sutherland's path that matches his manifest. Resolution by: none registered.

@@ -288,6 +288,71 @@
     "EG1",
     "EG5"
    ]
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "mission_id": "riemann-2026-11",
+   "pod": "DEBRIEF-math-riemann",
+   "created_by": "contributed cycle (merge_cycles.py)",
+   "created_at": "2026-11-22T00:19:00Z",
+   "provenance": {
+    "source": "public pages read 2026-11-22 00:16 UTC: leanprover-community.github.io/blog/posts/riemann-hypothesis/ (sha256 f1bc87e6…, 8,501 bytes, page dated 2026-11-21 13:55), math.mit.edu/~drew/grh/ (sha256 e4648882…, 20,460 bytes, page states last updated 2026-11-21 12:55 UTC); hashes in source/external.sha256"
+   },
+   "audience": "briefing",
+   "kind": "replay",
+   "cycle": "external-2026-11-21",
+   "dated": "2026-11-21",
+   "by": null,
+   "preregistered": {
+    "question": "What did the public record add on 21 November about independent checks of this archive and its statements?",
+    "rule": "status read from each public page, pinned by hash; no new checking by Nervous Machine in this cycle",
+    "predictions": [],
+    "commit": null,
+    "before_data": false
+   },
+   "outcome": {
+    "verdict": "admitted",
+    "numbers": {
+     "external": {
+      "lean_mathlib_joint_statement": {
+       "who": "\"Lean and Mathlib communities\"; the page says the statement is endorsed by the Lean FRO and the Mathlib Initiative; no individual is named",
+       "dated": "2026-11-21 13:55",
+       "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+       "says": "quoted: \"We have full confidence that Alpöge's proof of the Riemann Hypothesis is correct\" and \"We hereby certify that both the statement and the proof of the Riemann Hypothesis are correct\"; the four criteria of Kevin Buzzard's post of 2026-11-12 (xenaproject.wordpress.com) are said to be satisfied",
+       "statement": "Mathlib's RiemannHypothesis, which the page says \"has been carefully vetted by experts in Lean and number theory\"",
+       "compilation": "\"dozens of people have reported correct compilation of the codebase, reproducing the same raw proof export file\"",
+       "statement_match": "a community file isolates the statement and imports only Mathlib; compared with the proved theorem by two tools, comparator and con-leche --compare, \"both confirming\" it is exactly Mathlib's statement",
+       "proof_validity": "the exported proof checked by Lean's kernel, con-leche, con-ron and several third-party checkers in different languages; con-leche and con-ron described as carrying a formal proof, relative to set theory, that they cannot accept a false proof; checks ran on an inert export",
+       "scope": "the statement concerns the Riemann Hypothesis only; it does not mention the four Dirichlet L-function statements",
+       "on_the_mathematics": "one sentence: \"We look forward to all the activity in the mathematical community that will help explain the new ideas in this proof.\"",
+       "words": "the page uses the word certify; in this record that word is a standing reached under the rule in prereg_cycle1.yaml A1, which this statement does not address, so it is recorded as what the page says and moves nothing by itself"
+      },
+      "sutherland_mit_update": {
+       "who": "Andrew Sutherland (MIT), 'checks run with Claude Code'",
+       "page_updated": "2026-11-21 12:55 UTC",
+       "new_since_2026-11-20": [
+        "con-leche master (cd2eceab) on the full export: accepts, 1,468,418 declarations in --verified mode, exit 0 at 21:19:04 UTC on 20 November",
+        "con-leche --compare (5dc36dc1), challenge against solution: all five theorems \"justified by the solution\", 51,692 challenge declarations, exit 0 at 21:19:12 UTC",
+        "lean4lean (67f63b0c, Lean v4.33.1) on every compiled module: 175,187 of 175,187 pass; five needed the step limit raised",
+        "con-leche and con-ron as bundled with Lean v4.36.0: exit 2, declined, not a rejection (one reflexive inductive type unsupported)",
+        "still running at 12:55 UTC: Lean default and paranoid kernels on the export; lake comparator end to end (its statement comparison and axiom check passed)",
+        "the five statements written out in words, exactly as in the challenge file, with a scope note: GRH here means Dirichlet L-functions, all moduli and characters; Dedekind, Hecke and automorphic L-functions are not among the statements checked",
+        "arithmetic consequences: combined with kimihiro64/Robin1984 (acab1a3), robin_inequality and lagarias_inequality compile with the three standard axioms; con-leche and nanoda accept the combined export",
+        "build directory disclosed: /home/ubuntu/grh/src/lean on every build machine; 98,219 of his 175,187 compiled files contain that path and 76,968, including Main.olean, do not; his own 240-module build at another path gave 168 files equal and 72 different, all 72 containing that build's path",
+        "his page now names the exported proof, not the compiled files, as the artifact to compare across builds, and says it has not been examined whether the export can carry a source path"
+       ]
+      }
+     }
+    }
+   },
+   "spoken": "What the public record added on 21 November. The Lean and Mathlib communities published a joint statement, which the page says is endorsed by the Lean FRO and the Mathlib Initiative, saying they certify both the statement and the proof of the Riemann Hypothesis: dozens of independent compilations reproducing the same exported proof, two tools confirming the proved theorem is Mathlib's statement, and several checkers accepting the export. It names no individual, does not mention the four Dirichlet L-function statements, and says the mathematical community's work of explaining the ideas lies ahead. Andrew Sutherland's page added a second independent kernel accepting the export, lean4lean passing every module, the five statements in words with their scope, two arithmetic consequences derived with an independent formalization, and the one thing this record had asked him for: his build path, with his own count of how many compiled files embed it. None of this is a cycle under its author's name here; it is what the record saw.\n",
+   "finding_ids": [],
+   "gap_ids": [
+    "EG1",
+    "EG2",
+    "EG4",
+    "EG5"
+   ]
   }
  ],
  "findings": [],
@@ -319,6 +384,12 @@
      "hypothesis": "the development builds from the pinned archive on an independent machine",
      "before_data": true,
      "result": "build halted after 3 h 19 m with our disk full at 32,018 of 175,187 modules; no error other than disk exhaustion; resumed as cycle 2 (prereg_cycle2.yaml); status stays in_cycle"
+    },
+    {
+     "cycle": "external-2026-11-21",
+     "hypothesis": "public record: who else has built it?",
+     "before_data": false,
+     "result": "joint statement of the Lean and Mathlib communities (21 Nov 13:55): dozens of people report correct compilation reproducing the same exported proof, which Lean's kernel, con-leche, con-ron and third-party checkers accept; Sutherland's page adds con-leche (1,468,418 declarations) and lean4lean (175,187 of 175,187). Not cycles under their names here; status stays in_cycle while Nervous Machine's cycle 2 is recorded"
     }
    ],
    "closes_with": [
@@ -351,7 +422,14 @@
    "status": "proposed",
    "opened_cycle": 0,
    "priority": 2,
-   "history": [],
+   "history": [
+    {
+     "cycle": "external-2026-11-21",
+     "hypothesis": "public record: has anyone compared the proved theorem with Mathlib's statement, or read it?",
+     "before_data": false,
+     "result": "machine half: the communities report that a challenge file importing only Mathlib was compared with the proved theorem by comparator and by con-leche --compare, both confirming it is exactly Mathlib's RiemannHypothesis; Sutherland's con-leche --compare run justifies all five theorems. Human half: the statement says Mathlib's definition 'has been carefully vetted by experts in Lean and number theory', naming no one; nobody has signed or refused trace/DEFINITIONAL-TRACE.md. Status stays proposed"
+    }
+   ],
    "closes_with": [
     {
      "what": "a machine comparison of the claimant's main theorem with the third-party formal statement RiemannHypothesis in leanprover-community/mathlib4, then a human read of any difference",
@@ -425,7 +503,14 @@
    "status": "proposed",
    "opened_cycle": 0,
    "priority": 4,
-   "history": [],
+   "history": [
+    {
+     "cycle": "external-2026-11-21",
+     "hypothesis": "public record: has anyone outside the claimant read the four Dirichlet L-function statements?",
+     "before_data": false,
+     "result": "Sutherland's page writes the four statements out in words, exactly as in the challenge file, with a scope note: 'GRH' means Dirichlet L-functions, all moduli and all characters; Dedekind, Hecke and automorphic L-functions were not among the statements checked. The joint statement concerns the Riemann Hypothesis only and does not mention these four. A reading under his name on his own page, not a signed read cycle here; status stays proposed"
+    }
+   ],
    "closes_with": [
     {
      "what": "two independent mathematicians read the four definitions in Statements.lean against the Generalized Riemann Hypothesis as usually stated and sign, or refuse",
@@ -468,6 +553,12 @@
      "hypothesis": "the 3 differing files without a path differ for some other reason",
      "before_data": false,
      "result": "their cycle 1 copies were truncated by the full disk (two empty, one partial); rebuilt, all three equal Sutherland's hashes and contain no path; all 14,995 differences accounted for (cycle1/exceptions.txt)"
+    },
+    {
+     "cycle": "external-2026-11-21",
+     "hypothesis": "public record: is Sutherland's build path known?",
+     "before_data": false,
+     "result": "answered on his page, updated 2026-11-21 12:55 UTC: /home/ubuntu/grh/src/lean on every build machine; by his own count 98,219 of his 175,187 compiled files contain that path and 76,968, including Main.olean, do not; his 240-module build at another path gave 168 equal and 72 different, all 72 with the path. He names the exported proof as the artifact to compare across builds. The external ask is closed; the decision on the rule remains the record keeper's"
     }
    ],
    "closes_with": [
@@ -478,10 +569,10 @@
      "who_could_act": "Heidi Bennett, who set the rule, with the kernel"
     },
     {
-     "what": "the absolute path of the source tree in Andrew Sutherland's build, so that anyone can rebuild under it and compare every file",
-     "kind": "data_release",
-     "external": true,
-     "who_could_act": "Andrew Sutherland (MIT)"
+     "what": "a rebuild under /home/ubuntu/grh/src/lean, Sutherland's published path, or a comparison of the exported proof, whichever the decision names; either is a new pre-registered cycle",
+     "kind": "rerun",
+     "external": false,
+     "who_could_act": "Nervous Machine, once the rule is revised, about 15 hours of machine time"
     }
    ],
    "spoken": "The record's certification rule asks two independent builders to publish matching hashes of the compiled output. Cycle 1 found that Lean writes each source file's absolute path into the output of any module that produced a warning, which is about half of this archive, so two builders in different directories can never match on those files. The rule needs a comparison that does not depend on where the build ran.",
