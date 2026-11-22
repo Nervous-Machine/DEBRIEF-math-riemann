@@ -544,6 +544,50 @@
    "gap_ids": [
     "EG5"
    ]
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "mission_id": "riemann-2026-11",
+   "pod": "DEBRIEF-math-riemann",
+   "created_by": "contributed cycle (merge_cycles.py)",
+   "created_at": "2026-11-22T21:15:59Z",
+   "provenance": {
+    "source": "x.com/ObhishekSaha/status/2123861825750290445, fetched 2026-11-22T21:15:59Z (HTTP 200); the post text, 2420 characters, hashes to sha256 f485e6519850a37ae4d381dfc7fafca7e6c332af22aafa22083cc3a651ab7cfb; posted 2026-11-20"
+   },
+   "audience": "briefing",
+   "kind": "replay",
+   "cycle": "external-2026-11-22-saha",
+   "dated": "2026-11-22",
+   "by": null,
+   "preregistered": {
+    "question": "What is the first public reaction from an independent mathematician in the field, and does it read the argument?",
+    "rule": "status read from the public post, pinned by hash of its text; no new checking by Nervous Machine",
+    "predictions": [],
+    "commit": null,
+    "before_data": false
+   },
+   "outcome": {
+    "verdict": "admitted",
+    "numbers": {
+     "external": {
+      "public_reactions": [
+       {
+        "who": "Abhishek Saha, number theorist (automorphic forms)",
+        "url": "https://x.com/ObhishekSaha/status/2123861825750290445",
+        "posted": "2026-11-20",
+        "what": "says he, like most mathematicians, had thought the Riemann Hypothesis out of reach without new theory-building in arithmetic geometry; describes the claimed proof as a route through existing results in higher-rank automorphic forms (theta functions on unitary groups, Gan–Gross–Prasad period formulas, relative trace formulas) rather than new theory, a chain he says neither a human alone nor a current AI alone could have produced; gives it a very good chance of being correct; credits Alpöge",
+        "is_a_reading": false,
+        "note": "an informed public opinion on the shape of the argument and on who would be able to read it; not a statement of having read it; carries no standing here"
+       }
+      ]
+     }
+    }
+   },
+   "spoken": "The first public reaction from an independent mathematician in the relevant field, on 22 November. Abhishek Saha, who works on automorphic forms, writes that he had assumed the Riemann Hypothesis would need new theory in arithmetic geometry, and that the claimed proof instead takes a long route through existing deep results in his own corner of number theory, of a kind he thinks neither a person alone nor a current model alone could have found. He gives the proof a very good chance of being correct and credits Alpöge. It is an opinion on the argument's shape, not a report of having read it, and it names the field whose specialists could. It moves nothing here.\n",
+   "finding_ids": [],
+   "gap_ids": [
+    "EG3"
+   ]
   }
  ],
  "findings": [
@@ -722,7 +766,14 @@
    "status": "proposed",
    "opened_cycle": 0,
    "priority": 3,
-   "history": [],
+   "history": [
+    {
+     "cycle": "external-2026-11-22-saha",
+     "hypothesis": "public record: has an independent mathematician in the field reported reading the argument?",
+     "before_data": false,
+     "result": "Abhishek Saha (automorphic forms) posted an informed reaction: the proof is a route through existing results in higher-rank automorphic forms rather than new theory, which he thinks neither a person alone nor a current model alone could have produced; a very good chance of being correct in his view. An opinion on the shape of the argument, not a reading; it names the field whose specialists could read it. Status stays proposed"
+    }
+   ],
    "closes_with": [
     {
      "what": "a read cycle by a mathematician in the area who is not an author, signing or refusing each main step",
