@@ -3,3 +3,7 @@
 # external pages read 2026-11-22 00:16 UTC
 f1bc87e6bf7aa9285fc0507377b850cfa166c9035c8fbc6394a182655f0a9a35  leanprover-community.github.io_blog_posts_riemann-hypothesis_index.html  (page dated 2026-11-21 13:55; joint statement of the Lean and Mathlib communities)
 e46488825acc7e4fbf3c0c744edcfaa5219f773571a9267b06df26b11f18a1a3  math.mit.edu_~drew_grh_index.html  (page states: last updated 2026-11-21 12:55 UTC)
+# watched pages read 2026-11-22T19:02:00Z (tools/watch_pages.py)
+28e1327a53d5d3663b4908073b4cc4f77bb3f462da957a202a1ca918e78d5c6b  https://www.claymath.org/millennium/riemann-hypothesis/  (Clay Mathematics Institute; status: Unsolved)
+479619210550ce7bc7c5fd7fb43764bbf63ef39e4ddfa672ccc7f63a484b2f9a  https://math.mit.edu/~drew/grh/  (Andrew Sutherland (MIT), verification page; status: last updated 2026-11-22 16:20 UTC)
+fb4214a4c01faaca81c858c73402210eca6d69b49c2596e3d95c3718b7524aaa  https://leanprover-community.github.io/blog/posts/riemann-hypothesis/  (Lean and Mathlib communities, joint statement; status: certify the statement and the proof of RH (not GRH))

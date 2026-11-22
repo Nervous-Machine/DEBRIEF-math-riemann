@@ -2,7 +2,22 @@
 
 A DEBRIEF mission record (protocol https://github.com/Nervous-Machine/DEBRIEF) for **The claimed proof of the Riemann Hypothesis announced by Levent Alpöge on 20 November 2026, built with Claude and released as Lean 4 code**.
 
-**Standing, 22 November 2026 (UTC).** Certified 0. Accepted 1. Refuted 0. Open gaps 4. The claim and its artifacts are pinned. Nervous Machine's pre-registered build (cycles 1 and 2, `prereg_cycle1.yaml` and `prereg_cycle2.yaml`) compiled all 175,187 modules from the pinned archive against the pinned Mathlib with no error, found no sorry, admit or axiom in the source, confirmed that each of the five entry theorems rests on exactly Lean's three standard axioms, and confirmed that the main statement is Mathlib's own definition RiemannHypothesis, declared once and nowhere redefined. That is finding F1, standing **accepted**. Andrew Sutherland (MIT) has published an independent compile, axiom audit and kernel replays, and on 21 November the Lean and Mathlib communities issued a joint statement, which the page says is endorsed by the Lean FRO and the Mathlib Initiative, saying they certify both the statement and the proof of the Riemann Hypothesis; it names no individual and does not mention the four Dirichlet L-function statements. Both are recorded as what the public record shows, not as standings under this record's rule. Our compiled output is byte-identical to Sutherland's on 76,968 files, including the entry file, and differs on 98,219, every one of which carries the absolute source path that Lean writes into the output of any module that produced a warning (gap EG5); his own count of his build is the same split, and his build path is now public. Nothing is **certified**: the rule needs two independent matching hash reports, which that path dependence prevents until the rule is revised. A reading guide for the five statements exists. No mathematician has yet signed or refused it.
+<!-- standing:begin -->
+**Standing, 22 Nov 2026.** Stage: Reading guide written. Needs next: Do the formal statements say what the problem asks? ([what would close it](ASKS.md)).
+
+| certified | accepted | refuted | open gaps | cycles filed | last cycle |
+|---|---|---|---|---|---|
+| 0 | 1 | 0 | 4 | 3 | 22 Nov 2026 |
+
+| | |
+|---|---|
+| checked by machine | Nervous Machine; reported elsewhere, not filed here: [Andrew Sutherland (MIT)](https://math.mit.edu/~drew/grh/) |
+| read by a person | nobody yet; [reading guide](trace/DEFINITIONAL-TRACE.md) |
+| elsewhere | [Clay Mathematics Institute](https://www.claymath.org/millennium/riemann-hypothesis/): Unsolved · [Andrew Sutherland (MIT), verification page](https://math.mit.edu/~drew/grh/): last updated 2026-11-22 16:20 UTC · [Lean and Mathlib communities, joint statement](https://leanprover-community.github.io/blog/posts/riemann-hypothesis/): certify the statement and the proof of RH (not GRH) |
+| related | [Generalized Riemann Hypothesis (Masullo)](https://github.com/Nervous-Machine/DEBRIEF-math-grh-masullo): a special case of; same problem page |
+
+Rendered from `ledger/` at regeneration; the full record is `SCORECARD.md`, what is owed is `ASKS.md`. Standing words: 1 accepted.
+<!-- standing:end -->
 
 This claim is on the public claims board, https://math-board.nervousmachine.com, which shows its stage, who has contributed, and what it needs next.
 

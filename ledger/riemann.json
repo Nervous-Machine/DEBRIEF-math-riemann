@@ -435,6 +435,115 @@
     "EG2",
     "EG5"
    ]
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "mission_id": "riemann-2026-11",
+   "pod": "DEBRIEF-math-riemann",
+   "audience": "briefing",
+   "created_by": "DEBRIEF/tools/watch_pages.py",
+   "created_at": "2026-11-22T19:02:00Z",
+   "provenance": {
+    "source": "public pages named in watch.yaml, fetched and hashed; status words read by the patterns there; hashes in source/external.sha256"
+   },
+   "cycle": "pages-2026-11-22",
+   "dated": "2026-11-22",
+   "kind": "replay",
+   "by": null,
+   "preregistered": {
+    "question": "What do the pages this record watches say today?",
+    "rule": "each page fetched, hashed and its status word read by a fixed pattern; no new checking",
+    "predictions": [],
+    "commit": null,
+    "before_data": false
+   },
+   "outcome": {
+    "verdict": "admitted",
+    "numbers": {
+     "external": {
+      "pages": [
+       {
+        "name": "Clay Mathematics Institute",
+        "url": "https://www.claymath.org/millennium/riemann-hypothesis/",
+        "read": "2026-11-22T19:02:00Z",
+        "role": "problem authority (Millennium Prize rules: publication, two years, general acceptance)",
+        "sha256": "28e1327a53d5d3663b4908073b4cc4f77bb3f462da957a202a1ca918e78d5c6b",
+        "bytes": 107201,
+        "hash_of": "text",
+        "status": "Unsolved",
+        "changed": true
+       },
+       {
+        "name": "Andrew Sutherland (MIT), verification page",
+        "url": "https://math.mit.edu/~drew/grh/",
+        "read": "2026-11-22T19:02:00Z",
+        "role": "independent checks, published elsewhere",
+        "sha256": "479619210550ce7bc7c5fd7fb43764bbf63ef39e4ddfa672ccc7f63a484b2f9a",
+        "bytes": 27863,
+        "hash_of": "text",
+        "status": "last updated 2026-11-22 16:20 UTC",
+        "changed": true
+       },
+       {
+        "name": "Lean and Mathlib communities, joint statement",
+        "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+        "read": "2026-11-22T19:02:00Z",
+        "role": "statement of the formal-methods community",
+        "sha256": "fb4214a4c01faaca81c858c73402210eca6d69b49c2596e3d95c3718b7524aaa",
+        "bytes": 8501,
+        "hash_of": "text",
+        "status": "certify the statement and the proof of RH (not GRH)",
+        "changed": true
+       }
+      ]
+     }
+    }
+   },
+   "spoken": "What the watched pages said on 2026-11-22. Clay Mathematics Institute: Unsolved; Andrew Sutherland (MIT), verification page: last updated 2026-11-22 16:20 UTC; Lean and Mathlib communities, joint statement: certify the statement and the proof of RH (not GRH). A page's status word is what its keeper says; it gives nothing here a standing.",
+   "finding_ids": [],
+   "gap_ids": []
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "mission_id": "riemann-2026-11",
+   "pod": "DEBRIEF-math-riemann",
+   "created_by": "contributed cycle (merge_cycles.py)",
+   "created_at": "2026-11-22T19:02:02Z",
+   "provenance": {
+    "source": "math.mit.edu/~drew/grh/ read 2026-11-22 (page states last updated 2026-11-22 16:20 UTC; text hash in source/external.sha256 under the watched-pages reading of the same day); sandbox-project-oleans.sha256 fetched 2026-11-22 (sha256 51319e37…, 175,187 lines)"
+   },
+   "audience": "briefing",
+   "kind": "replay",
+   "cycle": "external-2026-11-22",
+   "dated": "2026-11-22",
+   "by": null,
+   "preregistered": {
+    "question": "What did Andrew Sutherland's page add on 22 November that bears on how two independent builds should be compared (EG5)?",
+    "rule": "status read from the public page, pinned by hash; one comparison of his two manifests with ours, no new building",
+    "predictions": [],
+    "commit": null,
+    "before_data": false
+   },
+   "outcome": {
+    "verdict": "admitted",
+    "numbers": {
+     "external": {
+      "sutherland_mit_update_2": {
+       "page_updated": "2026-11-22 16:20 UTC",
+       "sandboxed_rebuild": "lake build Main on a separate machine inside a bubblewrap sandbox (no network, source read-only, archive downloaded afresh, Mathlib checked against the official cache): exit 0, zero errors, finished 2026-11-21 18:07:21 UTC; built at the same path /home/ubuntu/grh/src/lean",
+       "export_reproduced": "the export made inside the sandbox is byte-identical to the published one: 61,570,595,788 bytes, sha256 5ea74b91…244e",
+       "compiled_files_reproduced": "175,186 of 175,187 identical to his original manifest; the one exception, Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts/LocModel.olean, compiles non-deterministically: six recompilations with identical inputs gave one output four times and the other twice, differing in 38 bytes, the name of a bound variable in an equation lemma Lean generates on first use, taken from whichever of two parallel theorem elaborations gets there first; bound-variable names play no part in kernel checking",
+       "con_ron_compare": "con-ron --compare (master 3f22699b): all five theorems justified by the solution; exit 0 at 2026-11-21 23:02:33 UTC",
+       "our_comparison": "his two manifests differ from each other on exactly that one file; our cycle 2 manifest equals his sandbox manifest on the same 76,968 files as his original (the path-free ones); our LocModel.olean carries our source path, so which of his two variants our build produced cannot be read from the hash"
+      }
+     }
+    }
+   },
+   "spoken": "Andrew Sutherland rebuilt the archive a second time, on another machine, inside a sandbox, with lake, at the same directory as before. The exported proof came out byte for byte the same as the one every kernel had checked. The compiled files matched his first build on all but one, and that one is not the path problem: it is a module Lean compiles two different ways at random, differing in a variable's name that the kernel never looks at. So even a shared path does not give a full manifest match, and the export does. Recorded as what the page says; it bears on the decision open in EG5 and moves nothing by itself.\n",
+   "finding_ids": [],
+   "gap_ids": [
+    "EG5"
+   ]
   }
  ],
  "findings": [
@@ -712,6 +821,12 @@
      "hypothesis": "R7, R8: a module's output embeds our source path exactly when compiling it produced a linter warning, and that alone decides whether it equals Sutherland's",
      "before_data": true,
      "result": "all 175,187 files compared: 76,968 equal his, 98,219 differ; 98,219 contain our path and 76,968 do not; different-without-path 0, equal-with-path 0; Main.olean equals his (9146dfb4…); our manifest a9a97091… differs from his 375cbee2…; Sutherland reports the identical 98,219 / 76,968 split for his build. The mechanism is settled; the decision on what two builders compare is still open"
+    },
+    {
+     "cycle": "external-2026-11-22",
+     "hypothesis": "public record: does a second build at Sutherland's own path reproduce his manifest in full?",
+     "before_data": false,
+     "result": "his sandboxed lake rebuild on another machine at /home/ubuntu/grh/src/lean matched his first manifest on 175,186 of 175,187 files; the exception (LocModel.olean) compiles non-deterministically, 38 bytes in a bound-variable name the kernel ignores; the exported proof matched byte for byte (sha256 5ea74b91…). So a shared path cannot give a full .olean manifest match, and the export is the artifact that reproduces across machines. The decision on the rule is still the record keeper's"
     }
    ],
    "closes_with": [

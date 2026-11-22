@@ -1,0 +1,33 @@
+kind: replay
+cycle: external-2026-11-22
+dated: '2026-11-22'
+by: null
+provenance:
+  source: 'math.mit.edu/~drew/grh/ read 2026-11-22 (page states last updated 2026-11-22 16:20 UTC; text hash in source/external.sha256 under the watched-pages reading of the same day); sandbox-project-oleans.sha256 fetched 2026-11-22 (sha256 51319e37…, 175,187 lines)'
+preregistered:
+  question: What did Andrew Sutherland's page add on 22 November that bears on how two independent builds should be compared (EG5)?
+  rule: status read from the public page, pinned by hash; one comparison of his two manifests with ours, no new building
+  predictions: []
+  commit: null
+  before_data: false
+outcome:
+  verdict: admitted
+  numbers:
+    external:
+      sutherland_mit_update_2:
+        page_updated: '2026-11-22 16:20 UTC'
+        sandboxed_rebuild: 'lake build Main on a separate machine inside a bubblewrap sandbox (no network, source read-only, archive downloaded afresh, Mathlib checked against the official cache): exit 0, zero errors, finished 2026-11-21 18:07:21 UTC; built at the same path /home/ubuntu/grh/src/lean'
+        export_reproduced: 'the export made inside the sandbox is byte-identical to the published one: 61,570,595,788 bytes, sha256 5ea74b91…244e'
+        compiled_files_reproduced: '175,186 of 175,187 identical to his original manifest; the one exception, Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts/LocModel.olean, compiles non-deterministically: six recompilations with identical inputs gave one output four times and the other twice, differing in 38 bytes, the name of a bound variable in an equation lemma Lean generates on first use, taken from whichever of two parallel theorem elaborations gets there first; bound-variable names play no part in kernel checking'
+        con_ron_compare: 'con-ron --compare (master 3f22699b): all five theorems justified by the solution; exit 0 at 2026-11-21 23:02:33 UTC'
+        our_comparison: 'his two manifests differ from each other on exactly that one file; our cycle 2 manifest equals his sandbox manifest on the same 76,968 files as his original (the path-free ones); our LocModel.olean carries our source path, so which of his two variants our build produced cannot be read from the hash'
+spoken: >
+  Andrew Sutherland rebuilt the archive a second time, on another machine, inside a sandbox, with lake, at the same
+  directory as before. The exported proof came out byte for byte the same as the one every kernel had checked. The
+  compiled files matched his first build on all but one, and that one is not the path problem: it is a module Lean
+  compiles two different ways at random, differing in a variable's name that the kernel never looks at. So even a
+  shared path does not give a full manifest match, and the export does. Recorded as what the page says; it bears on the
+  decision open in EG5 and moves nothing by itself.
+finding_ids: []
+gap_ids:
+- EG5
