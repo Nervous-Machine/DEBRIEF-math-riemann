@@ -1,0 +1,68 @@
+kind: rerun
+cycle: 2
+dated: "2026-11-21 to 2026-11-22"
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+preregistered:
+  commit: "prereg_cycle2.yaml (registered sha256 455b4e62c8fc21145dc6d70e8398a283b7284ae7c3afa24928987ec6ef7ae8bf at 2026-11-21T01:42:23Z, before the resumed build started at 01:42:24Z)"
+  results:
+    - cycle2/env.txt
+    - cycle2/R1.txt
+    - cycle2/progress.log
+    - cycle2/cycle2-logs.sha256
+    - cycle2/disk.txt
+    - cycle2/R4.txt
+    - cycle2/R5R6.txt
+    - cycle2/R5R6.err
+    - cycle2/R6_rerun.txt
+    - cycle2/oleans.sha256
+    - cycle2/with_path.txt
+    - cycle2/rh_cycle2.sh
+    - cycle2/rh_cycle2_post.sh
+    - cycle2/Audit.lean
+    - cycle2/Audit_R6fix.lean
+  question: >
+    Cycle 1's question, unchanged: does the development build from the pinned archive against the pinned Mathlib on a
+    machine the claimant has never touched, do its five entry statements use only Lean's three standard axioms, and is
+    its main statement literally Mathlib's RiemannHypothesis? Added: how much of the compiled output can two
+    independent builds compare byte for byte, and what decides it?
+  rule: "R1, R3 to R8 as registered; a finding with standing ACCEPTED on R3 to R6 passing; nothing certified in this cycle (amendment A1 of cycle 1 needs two independent matching hash reports)"
+  predictions:
+    - "R1 pass; 32,018 .olean files before the resume"
+    - "R3 exit 0, 0 error lines, 8 to 30 hours for the resumed part, peak memory under 90 GB, .lake/build under 200 GB"
+    - "R4 zero hits; R5 exactly propext, Classical.choice, Quot.sound for each of the five; R6 RiemannHypothesis is Mathlib's, declared once, in Mathlib.NumberTheory.LSeries.RiemannZeta"
+    - "R7 Main.olean equals Sutherland's (low confidence); the manifest does not; files equal between 45% and 60% of 175,187"
+    - "R8 every file that differs from Sutherland's contains our source path and no equal file does"
+  before_data: true
+environment:
+  hardware: "Lima VM primegaps on Heidi's Mac: Ubuntu, aarch64, 20 cores, 98 GB RAM, 290 GB disk, 216 GB free at the start; nothing from the archive ran on the host"
+  toolchain: "Lean v4.33.1 (Lake 5.0.0), Mathlib 0df444a360eaa60ab8c11dca51a86af692955474 from the community cache, fetched in cycle 1"
+  wall_time: "14:48:01 for the resumed build (2026-11-21 01:42:24 to 16:30:26 UTC); the post-build checks 2 minutes; the axiom audit 2 min 01 s"
+outcome:
+  verdict: confirmed
+  numbers:
+    R1: "pass: archive sha256 9631b4f0…; 32,018 .olean files before the resume"
+    R3: "pass: exit 0; 0 error lines in 2,385,844 log lines (sha256 67a34842…, 175.5 MB, kept in the VM); 489,062 warning lines; 143,175 modules built (Lake log) and 143,175 .olean files with a modification time after the start; 32,012 .olean files untouched since cycle 1; of cycle 1's 32,018 hashes, 32,015 are unchanged and 3 (the files truncated by the full disk) are rebuilt; wall time 14 h 48 m 01 s; peak resident memory 61,216,752 kB (61.2 GB); .lake/build 101,323,869,380 bytes at the end (.olean 100.3 GB, ir 1.0 GB, setup.json 0 after the pruner); 175,187 .olean and 175,187 .c files"
+    R4: "pass: zero hits for sorry, admit, native_decide, axiom declarations, implemented_by, extern, unsafe and opaque across every .lean file under lean/src"
+    R5: "pass: each of riemannHypothesis, riemannZeta_eq_zero_re, LFunction_ne_zero_of_half_lt_re, LFunction_eq_zero_re, LFunction_eq_zero_re_of_isPrimitive depends on exactly [propext, Classical.choice, Quot.sound]"
+    R6: "pass: #print RiemannHypothesis gives Mathlib's definition (∀ s : ℂ, riemannZeta s = 0 → (¬∃ n, s = -2 * (↑n + 1)) → s ≠ 1 → s.re = 1 / 2); the constant RiemannHypothesis is declared once, in module Mathlib.NumberTheory.LSeries.RiemannZeta; five other constants end in that string, all with longer names (…GivesRiemannHypothesis, …AndRiemannHypothesis) in the archive's own modules, none of them a redefinition; riemannHypothesis : RiemannHypothesis. The built environment has 186,200 modules and 2,701,132 constants. The other four theorems have the claimant's own types RiemannZetaZerosOnLine, DirichletLNonvanishingRightOfHalf, DirichletLZerosOnLine, PrimitiveDirichletLZerosOnLine (EG4)"
+    R7: "Main.olean sha256 9146dfb4… equals Sutherland's (pass). Manifest of all 175,187 files in his format hashes to a9a97091…, not his 375cbee2… (predicted). Files equal 76,968 (43.93%), files different 98,219; no file present on one side only. The 45% to 60% prediction missed; see misses"
+    R8: "pass: 98,219 files contain the byte string /home/heidibennett.guest/untrusted/alpoge-rh/src/lean/src/ and 76,968 do not. Two-by-two table: different and contains path 98,219; equal and no path 76,968; different without path 0; equal with path 0. No exceptions. Sutherland's page, updated 2026-11-21 12:55 UTC, reports the same split for his own build under /home/ubuntu/grh/src/lean: 98,219 with his path, 76,968 without"
+    audit_procedure_note: "not registered. The first run of cycle2/Audit.lean exited 1: its #eval block, which lists constants ending in RiemannHypothesis with their modules, did not compile (an invalid field, env.constants.size, in our script), so that run (cycle2/R5R6.txt) gave R5 and the #print and #check lines but not the constant listing. The block was corrected in cycle2/Audit_R6fix.lean (count by toList.length) and rerun at 02:38 UTC on 22 November, exit 0, output cycle2/R6_rerun.txt, 2 min 01 s, 55.0 GB peak memory. The archive was not touched between the runs"
+  misses:
+    - "R7: predicted 45% to 60% of files equal to Sutherland's; 43.93% are. The direction was right and the mechanism exact (R8), the share of modules producing a linter warning was underestimated."
+spoken: >
+  The resumed build finished: all hundred and seventy-five thousand modules compile from the pinned archive on our
+  machine, with no error, in fourteen hours and forty-eight minutes and sixty-one gigabytes of memory. The source has no
+  sorry, admit, axiom or escape hatch. Each of the five entry theorems rests on exactly Lean's three standard axioms.
+  The main theorem's statement is Mathlib's own definition of the Riemann Hypothesis, declared once, in Mathlib, and
+  nowhere redefined. Compared with Andrew Sutherland's build at MIT, our output is byte-identical on 76,968 files,
+  including the entry file, and differs on 98,219, every one of which carries our source path inside a stored warning
+  and none of which is among the equal files; his own count of his build is the same split. So the build is reproduced,
+  the standing is accepted, and the certification rule still waits on a comparison that does not depend on where the
+  build ran.
+finding_ids:
+  - F1
+gap_ids:
+  - EG1
+  - EG2
+  - EG5

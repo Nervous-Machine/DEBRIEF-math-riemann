@@ -1,0 +1,16 @@
+== pattern: \bsorry\b
+-- files with hits: 0
+== pattern: \badmit\b
+-- files with hits: 0
+== pattern: native_decide
+-- files with hits: 0
+== pattern: ^\s*(noncomputable\s+|private\s+|protected\s+)*axiom\b
+-- files with hits: 0
+== pattern: implemented_by
+-- files with hits: 0
+== pattern: \bextern\b
+-- files with hits: 0
+== pattern: \bunsafe\b
+-- files with hits: 0
+== pattern: \bopaque\b
+-- files with hits: 0

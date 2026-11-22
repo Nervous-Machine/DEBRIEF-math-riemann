@@ -2,16 +2,6 @@
 
 Each open gap below is a place a contribution can land. A contribution is one cycle in this repository's ledger, under your name. How to contribute, and the templates: https://github.com/Nervous-Machine/DEBRIEF/blob/main/CONTRIBUTING.md
 
-## 1. The Lean development has not been built or kernel-checked by anyone outside the claimant (ledger id EG1)
-
-The claimant reports a Lean development that compiles with standard axioms only. Nobody outside the claimant has reported building it.
-
-Status: in cycle.
-
-- **a pre-registered rerun: fetch at the pinned commit, build, confirm no sorry or admit, print the axioms** — contribution kind: rerun; who could act: anyone with a machine and a few hours.
-
-Signal expected: a rerun cycle reporting build exit status, the sorry/admit scan and the axiom list for the main theorem. Resolution by: none registered.
-
 ## 2. Do the formal statements say what the problem asks? (ledger id EG2)
 
 A Lean check establishes that the formal statement follows from its hypotheses. Whether that formal statement is the problem as posed is a separate question that a person has to answer. A third-party formalization of the problem statement exists, so part of this can be compared by machine.

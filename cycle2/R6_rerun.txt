@@ -1,0 +1,21 @@
+constants ending in RiemannHypothesis: 6
+  Formalism.LFunctionChainParameters.ConditionalMainTheorem.PowerBoundGivesRiemannHypothesis : module (some Formalism.SizeWindowBrackets.PowerBoundGivesRiemannHypothesis)
+  Formalism.LFunctionChainParameters.LChain.ChainEventualGivesRiemannHypothesis : module (some Formalism.SizeWindowBrackets.SChain)
+  Formalism.LFunctionChainParameters.LChain.ChainGivesRiemannHypothesis : module (some Formalism.SizeWindowBrackets.SChain)
+  Formalism.LFunctionChainParameters.LTop7.GrowthBoundAndRiemannHypothesis : module (some Formalism.SizeWindowBrackets.FixedEpsilonConcreteGrowthBound)
+  Formalism.LFunctionChainParameters.ThickSetMeanBounds.GrowthBoundGivesRiemannHypothesis : module (some Formalism.SizeWindowBrackets.GrowthBoundGivesRiemannHypothesis)
+  RiemannHypothesis : module (some Mathlib.NumberTheory.LSeries.RiemannZeta)
+modules imported: 186200; constants: 2701132
+def RiemannHypothesis : Prop :=
+∀ (s : ℂ), riemannZeta s = 0 → (¬∃ n, s = -2 * (↑n + 1)) → s ≠ 1 → s.re = 1 / 2
+riemannHypothesis : RiemannHypothesis
+riemannZeta_eq_zero_re : RiemannZetaZerosOnLine
+LFunction_ne_zero_of_half_lt_re : DirichletLNonvanishingRightOfHalf
+LFunction_eq_zero_re : DirichletLZerosOnLine
+LFunction_eq_zero_re_of_isPrimitive : PrimitiveDirichletLZerosOnLine
+'riemannHypothesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'riemannZeta_eq_zero_re' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LFunction_ne_zero_of_half_lt_re' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LFunction_eq_zero_re' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LFunction_eq_zero_re_of_isPrimitive' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit 0
