@@ -14,7 +14,7 @@ A DEBRIEF mission record (protocol https://github.com/Nervous-Machine/DEBRIEF) f
 | checked by machine | Nervous Machine; reported elsewhere, not filed here: [Andrew Sutherland (MIT)](https://math.mit.edu/~drew/grh/) |
 | read by a person | nobody yet; [reading guide](trace/DEFINITIONAL-TRACE.md) |
 | elsewhere | [Clay Mathematics Institute](https://www.claymath.org/millennium/riemann-hypothesis/): Unsolved · [Andrew Sutherland (MIT), verification page](https://math.mit.edu/~drew/grh/): last updated 2026-11-22 16:20 UTC · [Lean and Mathlib communities, joint statement](https://leanprover-community.github.io/blog/posts/riemann-hypothesis/): certify the statement and the proof of RH (not GRH) |
-| related | [Generalized Riemann Hypothesis (Masullo)](https://github.com/Nervous-Machine/DEBRIEF-math-grh-masullo): a special case of; same problem page |
+| related | [Generalized Riemann Hypothesis (Masullo)](https://github.com/Nervous-Machine/DEBRIEF-math-grh-masullo): a special case of; same problem page · [Navier–Stokes blow-up, unforced (Alpöge and Buckmaster)](https://github.com/Nervous-Machine/DEBRIEF-math-navierstokes): same claimant (Alpöge), released the same morning |
 
 Rendered from `ledger/` at regeneration; the full record is `SCORECARD.md`, what is owed is `ASKS.md`. Standing words: 1 accepted.
 <!-- standing:end -->
