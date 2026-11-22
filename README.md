@@ -25,10 +25,6 @@ This claim is on the public claims board, https://math-board.nervousmachine.com,
 
 The agent that pinned this record and runs its checks is Claude Fable 5.1, an Anthropic model. The claimant works at Anthropic and names Claude as his co-worker on the argument and its formalization. Heidi Bennett, who keeps this record, is independent of the claimant; the agent is not.
 
-The trust anchor in a Lean check is the kernel, not whoever drives the build, and a driver can at most misreport. So the rule here is about reports, not operators: a build result is **certified** when two parties independent of the claimant and of each other publish matching hashes of the compiled output (`Main.olean` and the manifest of every compiled file), each saying what agent operated the build. One party alone, whatever operated it, gives **accepted**. Rule set 20 November 2026, amendment A1 of `prereg_cycle1.yaml`.
-
-Cycle 1 found that the rule, as written, cannot be met by two parties who did not build under the same absolute path: about half of the compiled files embed the path of their source (EG5). The rule stands until the record keeper revises it; the candidates are in `prereg_cycle2.yaml` under `standing_consequences`. Since 21 November one more is concrete: Sutherland has published his build path, /home/ubuntu/grh/src/lean, so a rebuild under it could be compared file for file.
-
 ## The problem
 
 Every zero of the Riemann zeta function that is not a negative even integer lies on the line where the real part equals one half. The Generalized Riemann Hypothesis says the same of the zeros of every Dirichlet L-function in the critical strip. Mathlib, the Lean mathematical library, states the Riemann Hypothesis as a definition named RiemannHypothesis: for every complex s with zeta of s equal to zero, s not of the form minus two times a positive integer, and s not equal to one, the real part of s is one half.
