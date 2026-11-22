@@ -80,6 +80,29 @@
      "kind": "formal statement (third party)",
      "ref": "github.com/leanprover-community/mathlib4 Mathlib/NumberTheory/LSeries/RiemannZeta.lean at 0df444a360eaa60ab8c11dca51a86af692955474"
     }
+   ],
+   "tooling": [
+    {
+     "by": "Levent Alpöge",
+     "tier": "internal",
+     "basis": "inferred: the claimant is an Anthropic employee and names Claude as a co-worker without a version; the companion Navier–Stokes repository's commits of 20 November name Claude Fable 5.2, public from 9 November, after most of the note's timeline",
+     "models": [
+      {
+       "model": "Claude (version not stated)",
+       "id": "claude-unversioned",
+       "vendor": "Anthropic",
+       "public_release": null,
+       "tiers_at_release": [],
+       "public_at_the_time": "unknown"
+      }
+     ],
+     "work": {
+      "from": "2026-10-06",
+      "to": "2026-11-16"
+     },
+     "duration": "six weeks, by the note's twenty-step timeline",
+     "compute": "not stated"
+    }
    ]
   }
  ],

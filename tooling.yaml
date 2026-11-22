@@ -1,0 +1,15 @@
+# Tooling disclosure for this record's claim(s): which models, at what access tier, over what time, as stated by the
+# claimant or inferred from the public record (the basis says which). Read by DEBRIEF/tools/tooling.py into the ledger.
+# Tier words and model release dates: DEBRIEF/tools/models.yaml. Nothing here is a standing.
+claims:
+- by: Levent Alpöge
+  models:
+  - claude-unversioned
+  tier: internal
+  basis: 'inferred: the claimant is an Anthropic employee and names Claude as a co-worker without a version; the
+    companion Navier–Stokes repository''s commits of 20 November name Claude Fable 5.2, public from 9 November,
+    after most of the note''s timeline'
+  work:
+    from: '2026-10-06'
+    to: '2026-11-16'
+  duration: six weeks, by the note's twenty-step timeline

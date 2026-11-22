@@ -15,6 +15,7 @@ A DEBRIEF mission record (protocol https://github.com/Nervous-Machine/DEBRIEF) f
 | read by a person | nobody yet; [reading guide](trace/DEFINITIONAL-TRACE.md) |
 | elsewhere | [Clay Mathematics Institute](https://www.claymath.org/millennium/riemann-hypothesis/): Unsolved · [Andrew Sutherland (MIT), verification page](https://math.mit.edu/~drew/grh/): last updated 2026-11-22 16:20 UTC · [Lean and Mathlib communities, joint statement](https://leanprover-community.github.io/blog/posts/riemann-hypothesis/): certify the statement and the proof of RH (not GRH) |
 | related | [Generalized Riemann Hypothesis (Masullo)](https://github.com/Nervous-Machine/DEBRIEF-math-grh-masullo): a special case of; same problem page · [Navier–Stokes blow-up, unforced (Alpöge and Buckmaster)](https://github.com/Nervous-Machine/DEBRIEF-math-navierstokes): same claimant (Alpöge), released the same morning |
+| tooling | Claude (version not stated) · tier: internal · six weeks, by the note's twenty-step timeline (inferred: the claimant is an Anthropic employee and names Claude as a co-worker without a version; the companion Navier–Stokes repository's commits of 20 November name Claude Fable 5.2, public from 9 November, after most of the note's timeline) |
 
 Rendered from `ledger/` at regeneration; the full record is `SCORECARD.md`, what is owed is `ASKS.md`. Standing words: 1 accepted.
 <!-- standing:end -->
