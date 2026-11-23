@@ -1,0 +1,548 @@
+[      2s] nodes 1333260
+[     75s] edges 109535588
+[     86s] cone 1265256
+[     89s] dominator pass 1
+[     93s] dominator pass 2
+[     97s] dominator pass 3
+[     99s] dominators done, root 10660526
+# Closet trace below `riemannHypothesis`
+
+Dominator iteration converged in 3 passes; root dominates 10,660,526 declaration lines over 1,265,256 constants. Archive source: 17,374,215 lines.
+
+## K1. Hinges: every constant dominating at least 1% of the root's lines
+
+81 constants.
+
+| # | constant | directory | kind | own lines | dominates | share | constants | direct children | depth |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | `riemannHypothesis` | (root) | thm | 1 | 10,660,526 | 100.00% | 1,265,256 | 1 | 0 |
+| 2 | `rhOfAll` | Supplements/Kernels | thm | 1 | 10,660,525 | 100.00% | 1,265,255 | 3 | 1 |
+| 3 | `allChi` | Supplements/Kernels | thm | 1 | 10,660,460 | 100.00% | 1,265,248 | 1 | 2 |
+| 4 | `UpperTheory.FinalTheorems.everyCharacter` | Development/AutomorphicArithmetic/CharacterBoxes | thm | 2 | 10,660,459 | 100.00% | 1,265,247 | 58064 | 3 |
+| 5 | `UpperTheory.FinalTheorems.everyCharacter_of_row` | Development/AutomorphicArithmetic/CharacterBoxes | thm | 2 | 8,254,048 | 77.43% | 961,960 | 7843 | 4 |
+| 6 | `UpperTheory.LiteratureTheorems.every_character_of_literature_of_vWin` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 4 | 7,123,054 | 66.82% | 840,854 | 50468 | 5 |
+| 7 | `UpperTheory.Lit.every_character_of_theta_integrals_local_matching` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 5 | 4,219,749 | 39.58% | 540,408 | 19001 | 6 |
+| 8 | `UpperTheory.Lit.nonempty_hyps_definite_side_of_closed_bound` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 25 | 3,549,738 | 33.30% | 449,095 | 48115 | 7 |
+| 9 | `GlobalTheory.Fc.S0.StageU.hypotheses_nonempty_of_unramified_exponents_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 21 | 1,208,790 | 11.34% | 152,670 | 5590 | 8 |
+| 10 | `UpperTheory.One.vwin_of_row` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases | thm | 2 | 913,198 | 8.57% | 90,527 | 4 | 5 |
+| 11 | `UpperTheory.One.Join.automorphic_window_of_inputs` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases | thm | 4 | 913,192 | 8.57% | 90,523 | 32 | 6 |
+| 12 | `UpperTheory.One.Join.v_window_of_depth_zero_residual_bc_cm` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases | thm | 4 | 902,969 | 8.47% | 89,542 | 10 | 7 |
+| 13 | `UpperTheory.V.v_window_of_literal_automorphy_n` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases | thm | 2 | 902,765 | 8.47% | 89,479 | 1 | 8 |
+| 14 | `UpperTheory.V.HV.DescentVanishingReductions.v_window_of_automorphy_csd_ss_mono_odd` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases | thm | 2 | 902,763 | 8.47% | 89,478 | 1186 | 9 |
+| 15 | `SelfIntersectionVolumeEstimates.topCovolSlim2_use_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 7 | 817,784 | 7.67% | 79,803 | 3428 | 6 |
+| 16 | `UpperTheory.V.HV.DescentVanishingReductions.vwin_of_hypotheses_H_E_alt` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases | thm | 5 | 813,989 | 7.64% | 79,012 | 5839 | 10 |
+| 17 | `UpperTheory.Gal.Int.galoisLocalGlobalStrong_recParameter` | Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures | thm | 1 | 686,149 | 6.44% | 90,309 | 26 | 4 |
+| 18 | `UpperTheory.Gal.Int.galoisRepresentations_of_thetaLift` | Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures | thm | 1 | 645,062 | 6.05% | 86,158 | 97 | 5 |
+| 19 | `UpperTheory.Gal.Int.Geo.geoOne_holds` | Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures/GeometricFlagBases | thm | 1 | 565,567 | 5.31% | 77,841 | 145 | 6 |
+| 20 | `UpperTheory.Gal.Int.Geo.geometric_realization_of_weight_one` | Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures/GeometricFlagBases | thm | 1 | 535,908 | 5.03% | 74,676 | 927 | 7 |
+| 21 | `PositivityTheory.HtPt.Ah.deep_slim_use` | Development/WeilBound/CoreStatements/AutomorphicKernels/MoriwakiBigness/HilbertSamuelApplications | thm | 6 | 485,108 | 4.55% | 45,650 | 32 | 7 |
+| 22 | `GlobalTheory.CompanionTheory.Ar.Plug.deepStR_of_use` | Development/WeilBound/CoreStatements/AutomorphicKernels/MoriwakiBigness/HilbertSamuelApplications | thm | 12 | 479,834 | 4.50% | 45,051 | 2636 | 8 |
+| 23 | `GlobalTheory.Fc.AllAtMemberStage0.allRows_of_open0_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 37 | 451,391 | 4.23% | 54,017 | 1118 | 9 |
+| 24 | `GlobalTheory.CompanionTheory.Ar.Link.good_tower_volume_theorem_bis` | Development/WeilBound/CoreStatements/AutomorphicKernels/MoriwakiBigness/HilbertSamuelApplications | thm | 11 | 350,519 | 3.29% | 31,599 | 3 | 9 |
+| 25 | `GlobalTheory.T.final_theorem_of_inputs_right` | Development/AutomorphicSpectrum/Proofs/GeometryProofs | thm | 2 | 350,497 | 3.29% | 31,595 | 1 | 10 |
+| 26 | `GlobalTheory.CompanionTheory.Ar.Top.goodTower_volume_of_reduced` | Development/AutomorphicSpectrum/Proofs/GeometryProofs | thm | 12 | 350,495 | 3.29% | 31,594 | 638 | 11 |
+| 27 | `UpperTheory.Gal.Int.Geo.steps_holds` | Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures/GeometricFlagBases | thm | 1 | 304,600 | 2.86% | 50,246 | 4733 | 8 |
+| 28 | `GlobalTheory.Fc.S0.ontoX_and_lamLow_of_unitaryGroupHypotheses'` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 14 | 301,620 | 2.83% | 34,786 | 40 | 8 |
+| 29 | `GlobalTheory.BigOn.ontoX_of_hypotheses_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 18 | 296,704 | 2.78% | 34,185 | 2004 | 9 |
+| 30 | `GlobalTheory.T.good_tower_volume_theorem` | Development/AutomorphicSpectrum/Proofs/DivisibilityProofs | thm | 2 | 295,570 | 2.77% | 26,912 | 1 | 12 |
+| 31 | `GlobalTheory.CompanionTheory.Ar.Top.goodTower_and_volume` | Development/AutomorphicSpectrum/Proofs/DivisibilityProofs | thm | 15 | 295,568 | 2.77% | 26,911 | 1717 | 13 |
+| 32 | `GlobalTheory.T.large_unramified_exponent_bundles_exist_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 2 | 282,229 | 2.65% | 37,056 | 1 | 9 |
+| 33 | `GlobalTheory.Fc.StageOneU.member_bundles_large_unramified_exponents_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 30 | 282,227 | 2.65% | 37,055 | 805 | 10 |
+| 34 | `UpperTheory.GalC.final_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 4 | 222,391 | 2.09% | 28,188 | 161 | 9 |
+| 35 | `UpperTheory.GalC.final_of_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 12 | 212,916 | 2.00% | 26,608 | 16 | 10 |
+| 36 | `UpperTheory.GalC.linkedAt_linkN_of_boundAtTwoThree` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 10 | 205,164 | 1.92% | 25,740 | 1 | 11 |
+| 37 | `UpperTheory.GalC.linkN_of_boundAtTwoThree_slot` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 10 | 205,154 | 1.92% | 25,739 | 1 | 12 |
+| 38 | `UpperTheory.GalC.linkN_of_twGood_galoisPreconditions` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 17 | 205,144 | 1.92% | 25,738 | 353 | 13 |
+| 39 | `SelfIntersectionVolumeEstimates.topCovolG_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 20 | 195,850 | 1.84% | 19,967 | 2255 | 7 |
+| 40 | `UpperTheory.Top.every_character_of_green_v_win` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 3 | 195,726 | 1.84% | 23,454 | 9 | 7 |
+| 41 | `UpperTheory.Top.zero_free_all_of_green_v_win` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 4 | 195,686 | 1.84% | 23,445 | 433 | 8 |
+| 42 | `GlobalTheory.LocalRows.lg1_sLp_sO_hTF` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 2 | 192,468 | 1.81% | 23,066 | 1 | 10 |
+| 43 | `GlobalTheory.LocalRows.sLp_sO_hTF_of_siegelWeil` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 3 | 192,466 | 1.81% | 23,065 | 1 | 11 |
+| 44 | `GlobalTheory.LocalRows.at_choice_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 8 | 192,463 | 1.81% | 23,064 | 32 | 12 |
+| 45 | `GlobalTheory.T.member_exists_baseLattice_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 2 | 189,540 | 1.78% | 25,993 | 1 | 11 |
+| 46 | `GlobalTheory.Mem.Top.Bl.exists_baseLattice_of_prime_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 16 | 189,538 | 1.78% | 25,992 | 745 | 12 |
+| 47 | `UpperTheory.Gal.Int.Geo.kodaira_spencer_of_weight_one` | Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures/GeometricFlagBases | thm | 2 | 188,922 | 1.77% | 18,713 | 1396 | 8 |
+| 48 | `GlobalTheory.CarrierGap.offDiag` | Development/AbelianVarietyTheory/Proofs/FlagMeasures | thm | 11 | 183,662 | 1.72% | 22,077 | 924 | 13 |
+| 49 | `GlobalTheory.T.open0_of_unitary_group_hypotheses` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 2 | 171,044 | 1.60% | 22,887 | 1 | 8 |
+| 50 | `GlobalTheory.Fc.S0.Open0ProofU.open_orbit_of_unramified_exponents_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 31 | 171,042 | 1.60% | 22,886 | 40 | 9 |
+| 51 | `GlobalTheory.T.conclF_of_family_facts_and_bound_at_two_three` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 2 | 150,710 | 1.41% | 18,310 | 1 | 14 |
+| 52 | `GlobalTheory.NLinkClose.main_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 88 | 150,708 | 1.41% | 18,309 | 641 | 15 |
+| 53 | `GlobalTheory.T.main_theorem_published_inputs_third_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 2 | 149,518 | 1.40% | 20,262 | 1 | 10 |
+| 54 | `GlobalTheory.miStarRow_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 7 | 149,516 | 1.40% | 20,261 | 48 | 11 |
+| 55 | `UpperTheory.Top.shape_closed_link_n_of_green` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 23 | 147,263 | 1.38% | 19,278 | 614 | 9 |
+| 56 | `GlobalTheory.T.main_theorem_published_inputs_variant_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 2 | 146,031 | 1.37% | 19,876 | 1 | 12 |
+| 57 | `GlobalTheory.miStarRowClosing_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 4 | 146,029 | 1.37% | 19,875 | 53 | 13 |
+| 58 | `UpperTheory.V.Z.Kato.WeilSphericalRecords.katoTwoW_of_printsH` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases | thm | 2 | 142,805 | 1.34% | 14,678 | 1 | 11 |
+| 59 | `UpperTheory.V.Z.Kato.WeilSphericalRecords.katoTwoW_of_printsH_of_rT_of_quadBC2` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases | thm | 10 | 142,803 | 1.34% | 14,677 | 65 | 12 |
+| 60 | `GlobalTheory.T.main_theorem_published_results_final_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 2 | 142,064 | 1.33% | 19,374 | 1 | 14 |
+| 61 | `GlobalTheory.Fam.miStar_row_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 13 | 142,062 | 1.33% | 19,373 | 89 | 15 |
+| 62 | `GlobalTheory.T.volume_theorem_of_inputs` | Development/AutomorphicSpectrum/Proofs/DivisibilityProofs | thm | 2 | 140,357 | 1.32% | 13,440 | 1 | 14 |
+| 63 | `GlobalTheory.CompanionTheory.Ar.Cusp.volumeTheoremX_of_inputs` | Development/AutomorphicSpectrum/Proofs/DivisibilityProofs | thm | 50 | 140,355 | 1.32% | 13,439 | 596 | 15 |
+| 64 | `GlobalTheory.T.main_theorem_from_published_results_alt_alt_alt_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 2 | 138,681 | 1.30% | 18,904 | 2 | 16 |
+| 65 | `GlobalTheory.Fam.miAt_of_truePack_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 5 | 138,676 | 1.30% | 18,902 | 1 | 17 |
+| 66 | `GlobalTheory.T.main_theorem_from_published_results_alt_alt_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 2 | 138,671 | 1.30% | 18,901 | 1 | 18 |
+| 67 | `GlobalTheory.Fam.miStar2_of_allTrue_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 6 | 138,669 | 1.30% | 18,900 | 331 | 19 |
+| 68 | `UpperTheory.V.Z.Kato.WeilSphericalRecords.twoS` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/KatoQuadraticCharacters/SphericalDecomposition | thm | 19 | 136,490 | 1.28% | 14,083 | 57 | 13 |
+| 69 | `GlobalTheory.T.true_geometry_family_row_data_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 2 | 131,711 | 1.24% | 17,959 | 1 | 20 |
+| 70 | `GlobalTheory.MiTop.famAllQ_of_allTrue_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 17 | 131,709 | 1.24% | 17,958 | 1673 | 21 |
+| 71 | `GlobalTheory.T.hServ_of_linkR` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 2 | 131,173 | 1.23% | 16,313 | 1 | 10 |
+| 72 | `GlobalTheory.row_hServ_of_link_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 7 | 131,171 | 1.23% | 16,312 | 10 | 11 |
+| 73 | `GlobalTheory.T.reciprocity_kernel_of_artin` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 2 | 131,118 | 1.23% | 16,301 | 1 | 12 |
+| 74 | `GlobalTheory.Svd.servH_row_linkR_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 7 | 131,116 | 1.23% | 16,300 | 5 | 13 |
+| 75 | `GlobalTheory.T.bundle_bothParts_of_standardKernel_of_globalArtinReciprocity` | Development/AbelianVarietyTheory/Proofs/SatakeParameters | thm | 2 | 131,088 | 1.23% | 16,292 | 1 | 14 |
+| 76 | `GlobalTheory.Svd.servH_row_of_artin` | Development/AbelianVarietyTheory/Proofs/SatakeParameters | thm | 10 | 131,086 | 1.23% | 16,291 | 1213 | 15 |
+| 77 | `UpperTheory.V.Z.Kato.Final.zetaUr` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/KatoQuadraticCharacters/UnramifiedZeta | thm | 4 | 123,572 | 1.16% | 12,525 | 716 | 14 |
+| 78 | `UpperTheory.V.HV.DescentVanishingReductions.sp4In0_alt` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases | thm | 2 | 112,451 | 1.05% | 11,191 | 61 | 11 |
+| 79 | `UpperTheory.LiteratureTheorems.theta_integrals_agree_and_local_matching_of_literature` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 2 | 112,093 | 1.05% | 14,217 | 28 | 6 |
+| 80 | `GlobalTheory.FinalJoin.runHolds_of_parOK` | Development/AbelianVarietyTheory/Proofs/HeightProofs | thm | 14 | 111,488 | 1.05% | 10,096 | 226 | 10 |
+| 81 | `GlobalTheory.Mem.Top.Bl.exists_baseLattice_of_pair_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | thm | 21 | 110,200 | 1.03% | 13,611 | 38 | 13 |
+
+Hinges per second-level directory: Development/AutomorphicArithmetic 65; Development/AutomorphicSpectrum 6; Development/AbelianVarietyTheory 4; Development/WeilBound 3; Supplements/Kernels 2; (root) 1
+
+[    100s] K1 done
+## K2. Second-level directories: size against the largest share any of their constants dominates
+
+A 'big theory' here is a second-level directory holding at least 2% of the archive's lines. A closet by location is a constant dominating at least 1% of the root's lines whose module lies in a directory below that size.
+
+| directory | lines | share of archive | dominated lines of its constants (own) | largest dominator in it | dominates | big theory? |
+|---|---|---|---|---|---|---|
+| Development/AbelianVarietyTheory | 8,142,960 | 46.87% | 4,675,299 | `GlobalTheory.CarrierGap.offDiag` | 1.72% | yes |
+| Development/AutomorphicArithmetic | 1,776,375 | 10.22% | 1,306,270 | `UpperTheory.FinalTheorems.everyCharacter` | 100.00% | yes |
+| Development/AutomorphicSpectrum | 1,195,844 | 6.88% | 780,385 | `GlobalTheory.T.final_theorem_of_inputs_right` | 3.29% | yes |
+| Formalism/LocalToGlobal | 955,843 | 5.50% | 562,843 | `Formalism.L2.G.linkG_concrete5` | 0.72% | yes |
+| Development/WeilBound | 848,547 | 4.88% | 622,061 | `PositivityTheory.HtPt.Ah.deep_slim_use` | 4.55% | yes |
+| Formalism/SharpRestriction | 709,436 | 4.08% | 429,851 | `Formalism.MainNotions.G.GramWindowAlt.theorem_A_closed_form_holds` | 0.36% | yes |
+| GroundTheory/HeightsAndTheta | 641,322 | 3.69% | 327,338 | `GroundTheory.Heights₂.Heights.HilbertSamuel.TheoremHSMBlock.of_open` | 0.16% | yes |
+| Formalism/HermitianCurvature | 460,802 | 2.65% | 316,520 | `Formalism.FourierDecayAlt.P.CutMP.SmoothTransferRegularity.model_place_built_holds` | 0.20% | yes |
+| Formalism/PeriodIntegrals | 451,856 | 2.60% | 275,701 | `Formalism.L2.SG.Pf.NcVal.OmVSt.OmVZ.omV_holdsX` | 0.13% | yes |
+| ReciprocityTheory/ReductiveGroups | 409,976 | 2.36% | 300,109 | `ReciprocityTheory.ChartRestriction.DS.Lap.TopClosed.besselNVG` | 0.20% | yes |
+| GroundTheory/AutomorphicForms | 150,005 | 0.86% | 92,959 | `GroundTheory.Automorphic.GJGlobal.globalZeta_entire_functionalEquation` | 0.04% |  |
+| Development/ResolutionOfSingularities | 140,709 | 0.81% | 118,133 | `FunctorialResolution.EmbeddedResolution.canonicalAlgorithmRules_isCorrect` | 0.66% |  |
+| CompanionTheory/SpectralGeometry | 105,437 | 0.61% | 82,855 | `GlobalTheory.T.theta_measure_nonzero_vectors_bound` | 0.05% |  |
+| Development/EtaleCohomology | 104,525 | 0.60% | 74,665 | `LateralTheory.Fix.EtaleChapterDTwo.s57` | 0.08% |  |
+| GroundTheory/ProfiniteCohomology | 84,902 | 0.49% | 55,580 | `GroundTheory.ProfCoh.bijective_gsRealRes` | 0.09% |  |
+| Formalism/GL3MeanSquares | 78,320 | 0.45% | 44,446 | `Formalism.HermitianLattices.Ext.PrimesInProgressions.pnt_progressions_relative_weak_holds` | 0.10% |  |
+| GroundTheory/GlobalFields | 72,305 | 0.42% | 46,915 | `GroundTheory.Global.Elliptic.main_theorem_complexMultiplication` | 0.02% |  |
+| GroundTheory/PAdicHodge | 64,317 | 0.37% | 15,334 | `GroundTheory.PAdicHodge.ACris.senTateCharacters` | 0.02% |  |
+| PositivityTheory/AutomorphicForms | 54,970 | 0.32% | 32,008 | `UpperTheory.Esk.holWC` | 0.13% |  |
+| Formalism/ThetaLogCoordinates | 54,555 | 0.31% | 35,006 | `Formalism.InvariantFactorPaths.MC.Top.theoremMV7` | 0.22% |  |
+| CompanionTheory/AutomorphicTheory | 47,957 | 0.28% | 32,867 | `CompanionTheory.WaveGrid.weighted_bound_rotated_uniform` | 0.19% |  |
+| GroundTheory/ArithmeticGeometry | 45,046 | 0.26% | 20,896 | `GroundTheory.Arith.SchemeCoh.finite_H_of_isProper` | 0.06% |  |
+| GroundTheory/LocalFields | 40,767 | 0.23% | 22,984 | `GroundTheory.LocalField.reciprocity_lubinTate` | 0.02% |  |
+| Formalism/WachLatticeTwists | 38,367 | 0.22% | 9,203 | `Formalism.RepresentationBoundsCohomology.ringDataObjects.displayFree` | 0.04% |  |
+| ReciprocityTheory/AnalyticForms | 36,680 | 0.21% | 20,229 | `ReciprocityTheory.AnForm.A.log_norm_integral_at_coordinate` | 0.01% |  |
+| Formalism/LocalRingCardinality | 35,348 | 0.20% | 15,696 | `Formalism.BasicNotions.Examples₂.LB.continuous_rHom` | 0.06% |  |
+| ReciprocityTheory/L2DbarEstimates | 33,734 | 0.19% | 18,558 | `ReciprocityTheory.L2DbarEstimates.hormander` | 0.07% |  |
+| Formalism/FlagUnipotentLattices | 31,383 | 0.18% | 12,360 | `Formalism.HermitianLatticeCounting.Final.S6.normalForm` | 0.01% |  |
+| Formalism/PieriBlockIdeals | 29,254 | 0.17% | 18,574 | `Formalism.CohomologicalDescent.Top.inclusion_w_seven_real_holds` | 0.09% |  |
+| Formalism/SizeWindowBrackets | 28,345 | 0.16% | 6,503 | `Formalism.LFunctionChainParameters.SmallOrderPrimeLosses.joint_discriminant_eventually` | 0.02% |  |
+| ReciprocityTheory/DualLattices | 24,554 | 0.14% | 18,995 | `ReciprocityTheory.PGsh.Up.u7` | 0.04% |  |
+| Development/DiscreteGroups | 23,703 | 0.14% | 8,994 | `DiscreteGroups.sglob.LConv.localConverseGL` | 0.06% |  |
+| CompanionTheory/HarishChandraModules | 20,874 | 0.12% | 14,668 | `CompanionTheory.D.DSIC.hAlgCore` | 0.02% |  |
+| Formalism/AdmissibleDesigns | 20,476 | 0.12% | 12,829 | `Formalism.MainNotions.N.K.Closed.theorem_n5_from_inputs` | 0.21% |  |
+| Formalism/MahlerMeasure | 16,821 | 0.10% | 12,650 | `Formalism.GM.gamma_leading_term` | 0.02% |  |
+| CompanionTheory/RealGroups | 15,797 | 0.09% | 10,149 | `CompanionTheory.RgExh.dsExhaust` | 0.19% |  |
+| Formalism/PadicSubsetSums | 15,796 | 0.09% | 7,152 | `Formalism.IrreducibleCountingLemmas.GaloisIrreducibility.property_W_of_estimates` | 0.04% |  |
+| Formalism/PolynomialDimension | 15,760 | 0.09% | 9,004 | `Formalism.CountingSumsFrames.TO.tie_core` | 0.02% |  |
+| Formalism/QuotientMetricDivisors | 15,247 | 0.09% | 8,805 | `Formalism.DivisionValues.reduction_lemma_first` | 0.03% |  |
+| Formalism/SatakeDualWeyl | 14,777 | 0.09% | 10,454 | `Formalism.UG.P.fIwasawa_upper` | 0.01% |  |
+| ReciprocityTheory/SemistableReduction | 14,578 | 0.08% | 11,598 | `ReciprocityTheory.MultiplicativeHeights.Closed.semiPoint` | 0.02% |  |
+| Formalism/DistinguishedUnitIdeals | 14,285 | 0.08% | 10,847 | `Formalism.ExponentWindows.E.theorem_E_final_form` | 0.09% |  |
+| Formalism/GaussJetBounds | 13,581 | 0.08% | 7,109 | `Formalism.DworkPowerSeriesWeights.thmAGauss` | 0.03% |  |
+| ReciprocityTheory/ClassFieldTheory | 11,830 | 0.07% | 8,729 | `ReciprocityTheory.DiscreteGroups.LocalClassField.artin_reciprocity_char_zero` | 0.09% |  |
+| Formalism/RealPlaceAnalysis | 10,653 | 0.06% | 7,729 | `Formalism.REAL.square_integrable_of_lipschitz` | 0.01% |  |
+| Formalism/HarderNarasimhan | 10,412 | 0.06% | 7,946 | `Formalism.HN.frame_theorem_sharp` | 0.01% |  |
+| Formalism/EllipticTorsion | 8,816 | 0.05% | 4,544 | `Formalism.ELL.formal_group_points_hom` | 0.01% |  |
+| GroundTheory/TateCohomology | 8,755 | 0.05% | 5,364 | `GroundTheory.GroupCoh.tateTheoremIso_hom_apply` | 0.01% |  |
+| ReciprocityTheory/GroupCohomology | 8,227 | 0.05% | 4,965 | `ReciprocityTheory.Coh.fiveTerm_holds` | 0.01% |  |
+| Formalism/GradedWeylDivisibility | 8,125 | 0.05% | 6,228 | `Formalism.GradedWeylDivisibility.leadInterlaced` | 0.01% |  |
+| Formalism/BranchSandwichDivisors | 7,889 | 0.05% | 5,018 | `Formalism.BranchingDeterminantCap.xi_norm_bound` | 0.01% |  |
+| Formalism/FrobeniusOrbits | 7,736 | 0.04% | 5,298 | `Formalism.FrobeniusOrbits.hostDiscr_of` | 0.01% |  |
+| Formalism/CharacterColumnKernels | 7,550 | 0.04% | 4,283 | `Formalism.NG.QuotientPowerLengths.congMod_le` | 0.00% |  |
+| Formalism/HermitianLattices | 7,418 | 0.04% | 4,565 | `Formalism.HermitianLatticesTheory.shortVectors` | 0.01% |  |
+| Formalism/SubspaceCounting | 7,069 | 0.04% | 1,674 | `Formalism.G0.Top.walkSharp` | 0.01% |  |
+| Formalism/LandauZeroFreeBounds | 6,579 | 0.04% | 5,562 | `Formalism.ZeroFreeDirichlet.psiChiBound` | 0.02% |  |
+| Formalism/FormalDegreeBessel | 5,655 | 0.03% | 3,511 | `Formalism.QuantumDeterminants.gNonneg` | 0.00% |  |
+| ReciprocityTheory/GeometryOfNumbers | 5,256 | 0.03% | 2,826 | `ReciprocityTheory.GeometryOfNumbersTheory.integral_form_sq` | 0.00% |  |
+| GroundTheory/Brauer | 4,723 | 0.03% | 397 | `GroundTheory.Brauer.exists_one_tmul_mem_of_ne_bot` | 0.00% |  |
+| ReciprocityTheory/NeutralLocalFields | 4,711 | 0.03% | 2,361 | `ReciprocityTheory.Neutral.Cmp.exists_res_eq` | 0.00% |  |
+| Formalism/MirabolicMackeyTheory | 4,636 | 0.03% | 2,486 | `Formalism.EigenvalueLevelCeiling.local_conditions_weighted_at_place` | 0.01% |  |
+| Formalism/UnipotentAdelicQuotients | 4,570 | 0.03% | 3,338 | `ZetaZeros.D.EllReg.elliptic_regularity_of_parts` | 0.03% |  |
+| ReciprocityTheory/Chebotarev | 4,382 | 0.03% | 202 | `ReciprocityTheory.Cheb.cyclotomic_irreducible_of_forall_isUnramifiedAt` | 0.00% |  |
+| CompanionTheory/ThickeningEstimates | 4,144 | 0.02% | 1,814 | `CompanionTheory.ThKR.Mp.secDer` | 0.00% |  |
+| Formalism/FilteredPoleLength | 4,117 | 0.02% | 1,717 | `Formalism.LatticeBaseChangeAlt.localStepDescent` | 0.01% |  |
+| Formalism/LogVandermondeBounds | 3,995 | 0.02% | 1,663 | `Formalism.LogVandermondeBounds.StandardLattice.UpperPlace_holds` | 0.00% |  |
+| GroundTheory/FunctionField | 3,849 | 0.02% | 1,965 | `GroundTheory.FunctionField.Place.sum_ord_mul_deg_le` | 0.00% |  |
+| Formalism/IncomingBounds | 3,742 | 0.02% | 982 | `Formalism.IncomingBounds.index_last_reduction_holds` | 0.00% |  |
+| Formalism/TruncatedSeriesCounting | 3,676 | 0.02% | 2,561 | `Formalism.TruncatedSeriesCounting.TruncatedSeriesCountingIdentities.det_poly_statement` | 0.00% |  |
+| Formalism/CyclotomicNorms | 3,643 | 0.02% | 1,191 | `Formalism.CyclotomicNorms.irreducibility_of_good_tuple` | 0.02% |  |
+| Formalism/DoubleCosetMeasures | 3,487 | 0.02% | 2,088 | `Formalism.DoubleCosetMeasures.P.phaseWellDef` | 0.00% |  |
+| Formalism/ThetaSupremumBounds | 3,287 | 0.02% | 839 | `Formalism.DimensionVariation.gaussianCoeffIntegral` | 0.00% |  |
+| Formalism/ZeroFreeRegion | 3,189 | 0.02% | 2,674 | `Formalism.ZF.gzPNT` | 0.01% |  |
+| Formalism/TameInertiaTowers | 3,127 | 0.02% | 1,127 | `Formalism.TwoAdicCyclotomicDecomposition.stab_fix` | 0.00% |  |
+| ReciprocityTheory/CommutativeAlgebra | 3,014 | 0.02% | 2,367 | `ReciprocityTheory.CA.isCM_of_isRegularLocalRing` | 0.00% |  |
+| Formalism/MeanHeightDescent | 3,013 | 0.02% | 1,407 | `Formalism.ExtensionFiltration.goodBadCut` | 0.00% |  |
+| Formalism/FormalGroupWitt | 3,000 | 0.02% | 1,276 | `Formalism.FG.funEqHomV` | 0.00% |  |
+| Formalism/TorsionNormIteration | 2,644 | 0.02% | 834 | `Formalism.LT.funEqSubst` | 0.00% |  |
+| Formalism/WeaklyAdmissibleFiltrations | 2,416 | 0.01% | 965 | `Formalism.WeaklyAdmissibleFiltrations.pht_galois` | 0.00% |  |
+| Formalism/ZetaNonvanishing | 2,338 | 0.01% | 500 | `Formalism.mellinSgen` | 0.00% |  |
+| Formalism/NormUnitaryBounds | 2,086 | 0.01% | 198 | `Formalism.NormUnitaryCountingLemmas.exists_starProjection_ne_zero_norm_le_of_dualMinimum` | 0.00% |  |
+| Formalism/CoboundaryTransfers | 2,074 | 0.01% | 667 | `Formalism.CoboundaryTransfers.wachLatticeUnramified_statement` | 0.01% |  |
+| Formalism/LatticeSlopes | 1,977 | 0.01% | 1,643 | `Formalism.F.orthSum` | 0.00% |  |
+| Formalism/RankGapBounds | 1,967 | 0.01% | 739 | `Formalism.RankGapBounds.LocalQuadraticParts.ordersSumY_of` | 0.00% |  |
+| Formalism/FrobeniusBaseCase | 1,962 | 0.01% | 111 | `Formalism.BaseCaseIdentities.Data` | 0.00% |  |
+| Formalism/TranslateCocycles | 1,952 | 0.01% | 0 |  |  |  |
+| Formalism/GaussValuationBounds | 1,914 | 0.01% | 603 | `Formalism.NOK.gaussValMul` | 0.00% |  |
+| Formalism/HyperbolicPlaceProducts | 1,895 | 0.01% | 813 | `Formalism.SLP.Final.submoduleIndexCountO` | 0.00% |  |
+| GroundTheory/IdeleRoots | 1,870 | 0.01% | 637 | `GroundTheory.BlockD.siegelSetsSL2Adelic_holds` | 0.00% |  |
+| ReciprocityTheory/GaloisValuations | 1,866 | 0.01% | 1,137 | `ReciprocityTheory.Gal.exists_frob_over` | 0.00% |  |
+| Formalism/LogSumExpBounds | 1,744 | 0.01% | 0 |  |  |  |
+| Formalism/CMTypeGalois | 1,724 | 0.01% | 277 | `Formalism.Q3.mqKummer` | 0.00% |  |
+| Formalism/JumpKernelCokernel | 1,694 | 0.01% | 1,377 | `Formalism.KernelCokernelLengths.length_theorems_all_hold` | 0.01% |  |
+| Formalism/SuccessiveMinima | 1,693 | 0.01% | 1,024 | `Formalism.FN.minkowskiIIUpper` | 0.01% |  |
+| Formalism/GaloisIrreducibility | 1,661 | 0.01% | 961 | `Formalism.GaloisIrreducibility.irred` | 0.00% |  |
+| Formalism/TowerValuationBounds | 1,547 | 0.01% | 309 | `Formalism.ValuationGridEstimates.grid_index_bound` | 0.00% |  |
+| Formalism/FrobeniusContraction | 1,539 | 0.01% | 229 | `subIdBijectiveOfContracting_holds` | 0.00% |  |
+| Formalism/LagrangeIdealLifts | 1,437 | 0.01% | 889 | `Formalism.LIFT.lift_LemmaU` | 0.00% |  |
+| Formalism/DivisorInequality | 1,411 | 0.01% | 420 | `Formalism.DivisorInequality.boundsMu` | 0.01% |  |
+| Formalism/LogFactorialIndices | 1,403 | 0.01% | 549 | `Formalism.LatticeIndexTer.LatticeIndexDeterminant.idxDet_core` | 0.00% |  |
+| GroundTheory/PowerSubgroups | 1,277 | 0.01% | 730 | `GroundTheory.Variant₂.N1.exists_cover` | 0.00% |  |
+| Formalism/WachModuleLifts | 1,239 | 0.01% | 0 |  |  |  |
+| ReciprocityTheory/ReducedBases | 1,217 | 0.01% | 1,025 | `ReciprocityTheory.ReducedBases.T2.exists_red_of` | 0.00% |  |
+| Formalism/EisensteinCokernelLengths | 1,201 | 0.01% | 844 | `Formalism.ZetaNonvanishing.EisensteinGaussValuationBounds.lemmaCValRam_proof` | 0.00% |  |
+| Formalism/MonomialMeanResidues | 1,175 | 0.01% | 614 | `Formalism.HermiteSiegelSlopes.baseChange` | 0.01% |  |
+| Formalism/YangianSpanCharacter | 1,132 | 0.01% | 395 | `Formalism.YangianSpanCharacter.P.minus_frame_identity` | 0.00% |  |
+| Formalism/LatticeRigidity | 1,130 | 0.01% | 569 | `Formalism.SA.P.smoothedSumBound` | 0.00% |  |
+| Formalism/LatticeTheta | 1,106 | 0.01% | 657 | `Formalism.H.lattice_fourier_series` | 0.00% |  |
+| Formalism/ThickAverageLoss | 1,079 | 0.01% | 132 | `Formalism.D5.Bal.card_S` | 0.00% |  |
+| Formalism/BehrendSets | 1,074 | 0.01% | 0 |  |  |  |
+| Formalism/DirichletDensity | 1,012 | 0.01% | 411 | `Formalism.HF.Final.mqDiscr` | 0.00% |  |
+| Formalism/WindowSums | 1,002 | 0.01% | 555 | `Formalism.WindowSums.valuation_zpow_sub_one` | 0.00% |  |
+| Formalism/LFunctionBounds | 988 | 0.01% | 611 | `Formalism.FX.rectangle_residue` | 0.00% |  |
+| Formalism/FormalGroupLog | 935 | 0.01% | 292 | `Formalism.G.substInjective` | 0.00% |  |
+| Formalism/DegreeFormula | 902 | 0.01% | 411 | `Formalism.DegreeFormula.flagDegFormula_statement` | 0.00% |  |
+| Formalism/GrowthSums | 847 | 0.00% | 478 | `Formalism.GrowthSums.Top.segmentBound` | 0.00% |  |
+| Formalism/ResultantValuation | 842 | 0.00% | 331 | `Formalism.ResultantValuation.laplaceExpansionRows` | 0.00% |  |
+| Formalism/SelfDualUnimodular | 822 | 0.00% | 661 | `Formalism.L2.SG.Pf.LatDictZ.Z0.SGC.semi_genus_local` | 0.00% |  |
+| Formalism/ThetaLiftIndependence | 802 | 0.00% | 190 | `Formalism.ThetaLiftIndependence.classRepsDefinite` | 0.00% |  |
+| Formalism/GelfandTransference | 793 | 0.00% | 27 | `Formalism.HadamardInequality.P.hadamard_inequality_holds` | 0.00% |  |
+| Formalism/FockGram | 773 | 0.00% | 262 | `Formalism.E.hermDual` | 0.00% |  |
+| ReciprocityTheory/ThetaQuasiPeriods | 771 | 0.00% | 553 | `ReciprocityTheory.PTheta.thetaSummable_holds` | 0.00% |  |
+| Formalism/PairingDivisors | 700 | 0.00% | 243 | `Formalism.PairingDivisionLocalBalance.height_bound_essential` | 0.00% |  |
+| Formalism/SobolevGaussianKernels | 578 | 0.00% | 0 |  |  |  |
+| Formalism/CorankShare | 563 | 0.00% | 219 | `Formalism.CorankShareLayerCake.FR.layer_cake_formula` | 0.00% |  |
+| Formalism/ArtinHasse | 513 | 0.00% | 83 | `Formalism.FT.SymmetricSeries.coeff_prod_geom` | 0.00% |  |
+| ReciprocityTheory/Hypotheses | 476 | 0.00% | 199 | `ReciprocityTheory.Gal.UnramifiedOrthogonality` | 0.00% |  |
+| ReciprocityTheory/Automorphisms | 461 | 0.00% | 337 | `ReciprocityTheory.Aut.adic_exists_approx` | 0.00% |  |
+| Formalism | 449 | 0.00% | 13 | `Formalism.MellinSgen` | 0.00% |  |
+| Formalism/SmithDeterminants | 403 | 0.00% | 109 | `Formalism.A.smithExists` | 0.00% |  |
+| Formalism/GaloisCohomology | 400 | 0.00% | 181 | `Formalism.GaloisCohomology.above_finite` | 0.00% |  |
+| Formalism/MoebiusJetDuality | 384 | 0.00% | 6 | `Formalism.MJ.moeb` | 0.00% |  |
+| Formalism/LogFactorialBounds | 371 | 0.00% | 104 | `Formalism.LogFactorialBounds.sum_primesLE_log_div_le` | 0.00% |  |
+| Formalism/DropLevelBounds | 366 | 0.00% | 73 | `Formalism.UnitaryBoundIntegral.ubint_mvExp_sum` | 0.00% |  |
+| Lemmata/DualWeylPullback | 364 | 0.00% | 150 | `Bl.DualWeylPullback.goal1` | 0.00% |  |
+| ReciprocityTheory/ThetaSummability | 359 | 0.00% | 188 | `ReciprocityTheory.ThetaSummability.Est.integrableOn_exp_logCone` | 0.00% |  |
+| Lemmata/GeneralBFactRightTerForm | 287 | 0.00% | 281 | `Bl.general_b_fact_right_ter_form.goal1` | 0.00% |  |
+| Formalism/GaussIdealIdentity | 275 | 0.00% | 46 | `Formalism.DV.GaussP.isDVR` | 0.00% |  |
+| Lemmata/ClearingDenominators | 259 | 0.00% | 194 | `Bl.ClearingDenominators.goal1` | 0.00% |  |
+| Formalism/WeightedDeltaMeans | 241 | 0.00% | 5 | `Formalism.ShimuraLimitIdentity.Kills` | 0.00% |  |
+| Lemmata/GeneralBFactLeftAltForm | 236 | 0.00% | 175 | `Bl.general_b_fact_left_alt_form.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactLeftVersion | 236 | 0.00% | 175 | `Bl.general_b_fact_left_version.goal1` | 0.00% |  |
+| Formalism/AlgebraicWeights | 228 | 0.00% | 51 | `Formalism.AUTREP.InertDatum` | 0.00% |  |
+| Formalism/LatticeLocalGlobal | 216 | 0.00% | 0 |  |  |  |
+| Formalism/JacobiWeightFamilies | 209 | 0.00% | 0 |  |  |  |
+| Formalism/AdicCompletionExports | 202 | 0.00% | 19 | `Formalism.AdicCompletionExports.isCycG_cycZ` | 0.00% |  |
+| Formalism/HalfLinks | 186 | 0.00% | 0 |  |  |  |
+| ReciprocityTheory/AdeleApproximation | 178 | 0.00% | 152 | `ReciprocityTheory.UG.AdeleIntA.exists_approx_adele` | 0.00% |  |
+| ReciprocityTheory/BurnsideSurjectivity | 178 | 0.00% | 168 | `ReciprocityTheory.GC.burnside_surj_of_irred` | 0.00% |  |
+| Lemmata/RankOneOrbitForms | 172 | 0.00% | 158 | `Bl.RankOneOrbitForms.goal1` | 0.00% |  |
+| Lemmata/TwistedIdempotents | 170 | 0.00% | 148 | `Bl.CyclicComponents.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactUpperBis | 166 | 0.00% | 160 | `Bl.general_b_fact_upper_bis.goal1` | 0.00% |  |
+| Formalism/ProductFormula | 162 | 0.00% | 0 |  |  |  |
+| Lemmata/MiscLemmasA | 160 | 0.00% | 154 | `Bl.SecondBlockLemmaB.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThirdVersion | 154 | 0.00% | 148 | `Bl.general_b_fact_third_version.goal1` | 0.00% |  |
+| ReciprocityTheory/ResidueCardinality | 151 | 0.00% | 136 | `ReciprocityTheory.Bridge.ResidueFieldCardinality.card_residue` | 0.00% |  |
+| Lemmata/GeneralBFactSecondAltForm | 149 | 0.00% | 141 | `Bl.general_b_fact_second_alt_form.goal1` | 0.00% |  |
+| Formalism/JacquetSubsetSums | 149 | 0.00% | 28 | `Formalism.PacketSums.IwahoriNewton` | 0.00% |  |
+| Formalism/ConjugateSelfDual | 146 | 0.00% | 17 | `Formalism.ConjugateSelfDual.cyc` | 0.00% |  |
+| ReciprocityTheory/EigenFrames | 136 | 0.00% | 106 | `ReciprocityTheory.EigenFramesTheory.eigenFrameDual` | 0.00% |  |
+| ReciprocityTheory/BasicDefinitions | 136 | 0.00% | 30 | `ReciprocityTheory.Def.C2` | 0.00% |  |
+| Lemmata/GeneralBFactLeftBisForm | 125 | 0.00% | 30 | `Bl.general_b_fact_left_bis_form.goal1` | 0.00% |  |
+| Lemmata/PaddedFamilies | 122 | 0.00% | 111 | `Bl.PaddedFamilies.goal1` | 0.00% |  |
+| Lemmata/CharacterDirections | 118 | 0.00% | 105 | `Bl.CoprimeDirections.goal1` | 0.00% |  |
+| ReciprocityTheory/AdicCompleteness | 111 | 0.00% | 88 | `ReciprocityTheory.P1.isAdicComplete_comap_constantCoeff` | 0.00% |  |
+| Lemmata/Cancellation | 107 | 0.00% | 98 | `Bl.VolumeRatioCancellation.goal1` | 0.00% |  |
+| PositivityTheory/PublishedTheorems | 105 | 0.00% | 94 | `KrullIntersectionUnits.KrullIntersectionLemmas.GlobalTheory.CompanionTheory.Formal.IsoThick.exists_unit_kills` | 0.00% |  |
+| Lemmata/GeneralBFactRightLast | 97 | 0.00% | 0 |  |  |  |
+| Formalism/AlphaUniqueness | 97 | 0.00% | 0 |  |  |  |
+| Formalism/GammaFactorNonvanishing | 94 | 0.00% | 62 | `Formalism.VW.rh_of_every` | 0.00% |  |
+| Lemmata/MultivariateIntegrals | 92 | 0.00% | 80 | `Bl.ProductIntegralBounds.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactLeftFurther | 89 | 0.00% | 28 | `Bl.general_b_fact_left_further.goal1` | 0.00% |  |
+| Lemmata/SimultaneousEigenvectors | 89 | 0.00% | 76 | `Bl.SimultaneousEigenvectors.goal1` | 0.00% |  |
+| Formalism/TwistFamilyExistence | 87 | 0.00% | 0 |  |  |  |
+| Formalism/WideWeightTheorem | 85 | 0.00% | 0 |  |  |  |
+| Lemmata/PosDefOfRealQuadratic | 83 | 0.00% | 70 | `Bl.PosDefOfRealQuadratic.goal1` | 0.00% |  |
+| Lemmata/HermitianVanishing | 81 | 0.00% | 0 |  |  |  |
+| Lemmata/DetMonotoneStarMulSelf | 79 | 0.00% | 62 | `Bl.DetMonotoneStarMulSelf.goal1` | 0.00% |  |
+| Lemmata/DiscreteValuationQuotients | 79 | 0.00% | 68 | `Bl.DiscreteValuationQuotients.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThirdFurther | 79 | 0.00% | 72 | `Bl.general_b_fact_third_further.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactLeftSide | 79 | 0.00% | 72 | `Bl.general_b_fact_left'''''.goal1` | 0.00% |  |
+| Lemmata/PlaneOverMembership | 78 | 0.00% | 22 | `Bl.PlaneOverMembership.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactRest | 78 | 0.00% | 70 | `Bl.general_b_fact_rest.goal1` | 0.00% |  |
+| Lemmata/MiscLemmasB | 76 | 0.00% | 68 | `Bl.SecondBlockLemmaC.goal1` | 0.00% |  |
+| Lemmata/IdempotentTraceVanishing | 76 | 0.00% | 66 | `Bl.IdempotentTraceVanishing.goal1` | 0.00% |  |
+| Lemmata/ComplementLifts | 76 | 0.00% | 67 | `Bl.ComplementLifts.goal1` | 0.00% |  |
+| Formalism/PrimeAboveExistence | 76 | 0.00% | 60 | `Formalism.VB.Cmp.exists_over_above_iff` | 0.00% |  |
+| Lemmata/GeneralBFactForm | 74 | 0.00% | 68 | `Bl.general_b_fact_form.goal1` | 0.00% |  |
+| Lemmata/CofiniteContinuousBounds | 73 | 0.00% | 0 |  |  |  |
+| Lemmata/GeneralBFactRightBisForm | 69 | 0.00% | 60 | `Bl.general_b_fact_right_bis_form.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThirdBis | 68 | 0.00% | 60 | `Bl.general_b_fact_third_bis.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactLeftVariant | 65 | 0.00% | 59 | `Bl.general_b_fact_left_variant.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactSecondBisForm | 65 | 0.00% | 57 | `Bl.general_b_fact_second_bis_form.goal1` | 0.00% |  |
+| Lemmata/IterateZero | 63 | 0.00% | 56 | `Bl.IterateZero.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactSecondTerForm | 62 | 0.00% | 53 | `Bl.general_b_fact_second_ter_form.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThirdRest | 61 | 0.00% | 32 | `Bl.general_b_fact_third''''.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactSecondExtra | 61 | 0.00% | 52 | `Bl.general_b_fact_second'''.goal1` | 0.00% |  |
+| Lemmata/NearbyExistence | 60 | 0.00% | 53 | `Bl.NearbyExistence.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactLeft | 60 | 0.00% | 54 | `Bl.general_b_fact_left.goal1` | 0.00% |  |
+| Lemmata/MiscLemmasF | 60 | 0.00% | 53 | `Bl.SecondBlockLemmaG.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactTer | 60 | 0.00% | 54 | `Bl.general_b_fact_ter.goal1` | 0.00% |  |
+| Lemmata/AddValuationProducts | 59 | 0.00% | 50 | `Bl.AddValuationProducts.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactBisForm | 59 | 0.00% | 51 | `Bl.general_b_fact_bis_form.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactVariant | 58 | 0.00% | 52 | `Bl.general_b_fact_variant.goal1` | 0.00% |  |
+| Lemmata/MovedPointExistence | 57 | 0.00% | 45 | `Bl.MovedPointExistence.goal1` | 0.00% |  |
+| Lemmata/Denominators | 56 | 0.00% | 44 | `Bl.DenominatorsAlt.goal1` | 0.00% |  |
+| Lemmata/B110 | 56 | 0.00% | 49 | `Bl.b110.goal1` | 0.00% |  |
+| Lemmata/CurryModusPonens | 56 | 0.00% | 46 | `Bl.CurryModusPonens.goal1` | 0.00% |  |
+| PositivityTheory/Representations | 55 | 0.00% | 40 | `PositivityTheory.KcHalf2₂.isOpen_cone_of_hbFacts` | 0.00% |  |
+| Lemmata/ScalarExtension | 54 | 0.00% | 45 | `Bl.ScalarIdentities.goal1` | 0.00% |  |
+| Lemmata/FunctionAtZero | 52 | 0.00% | 45 | `Bl.FunctionAtZero.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactSecondVersion | 52 | 0.00% | 46 | `Bl.general_b_fact_second_version.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactRightForm | 52 | 0.00% | 46 | `Bl.general_b_fact_right_form.goal1` | 0.00% |  |
+| Lemmata/ProductIdentities | 51 | 0.00% | 28 | `Bl.ProductIdentities.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactSecondBis | 49 | 0.00% | 41 | `Bl.general_b_fact_second_bis.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactSecondRest | 49 | 0.00% | 40 | `Bl.general_b_fact_second_rest.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThirdTerForm | 49 | 0.00% | 42 | `Bl.general_b_fact_third_ter_form.goal1` | 0.00% |  |
+| Lemmata/PadicNatCastNorm | 48 | 0.00% | 39 | `Bl.PadicNatCastNorm.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThirdVariant | 47 | 0.00% | 41 | `Bl.general_b_fact_third_variant.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThirdMore | 47 | 0.00% | 40 | `Bl.general_b_fact_third'.goal1` | 0.00% |  |
+| Lemmata/SmulListSum | 47 | 0.00% | 38 | `Bl.SmulListSum.goal1` | 0.00% |  |
+| Lemmata/FirstBlockLemmaH | 47 | 0.00% | 41 | `Bl.FirstBlockLemmaH.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactMore | 47 | 0.00% | 37 | `Bl.general_b_fact_more.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactLeftAlt | 47 | 0.00% | 18 | `Bl.general_b_fact_left_alt.goal1` | 0.00% |  |
+| Lemmata/NatMulIsIntegral | 45 | 0.00% | 38 | `Bl.NatMulIsIntegral.goal1` | 0.00% |  |
+| Lemmata/HermitianSesquilinear | 44 | 0.00% | 36 | `Bl.HermitianSesquilinear.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactSecondVariant | 44 | 0.00% | 0 |  |  |  |
+| Lemmata/B1962s | 44 | 0.00% | 36 | `Bl.FreeLattices.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThirdExtra | 43 | 0.00% | 36 | `Bl.general_b_fact_third_extra.goal1` | 0.00% |  |
+| Lemmata/FiberEquations | 43 | 0.00% | 33 | `Bl.FiberEquations.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactSecondSide | 43 | 0.00% | 37 | `Bl.general_b_fact_second'''''.goal1` | 0.00% |  |
+| Lemmata/PartialDerivativeDegree | 42 | 0.00% | 33 | `Bl.PartialDerivativeDegree.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactSecondTail | 42 | 0.00% | 34 | `Bl.general_b_fact_second''''''.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactSecondBisAlt | 42 | 0.00% | 36 | `Bl.general_b_fact_second''''''''.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactExtra | 41 | 0.00% | 0 |  |  |  |
+| Lemmata/IntegerMulIntegral | 41 | 0.00% | 34 | `Bl.IntegerMulIntegral.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactLeftBis | 40 | 0.00% | 34 | `Bl.general_b_fact_left_bis.goal1` | 0.00% |  |
+| Lemmata/FirstBlockLemmaJ | 40 | 0.00% | 32 | `Bl.FirstBlockLemmaJ.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactBisAlt | 40 | 0.00% | 34 | `Bl.general_b_fact_bis_other.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThirdTer | 40 | 0.00% | 34 | `Bl.general_b_fact_third_ter.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactSecondForm | 40 | 0.00% | 34 | `Bl.general_b_fact_second_form.goal1` | 0.00% |  |
+| Lemmata/DetNormLeProdRows | 40 | 0.00% | 32 | `Bl.DetNormLeProdRows.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactLeftBisAlt | 40 | 0.00% | 34 | `Bl.general_b_fact_left''''''''.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThirdForm | 40 | 0.00% | 34 | `Bl.general_b_fact_third_form.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactRightAltForm | 40 | 0.00% | 34 | `Bl.general_b_fact_right_alt_form.goal1` | 0.00% |  |
+| Lemmata/B1959r | 39 | 0.00% | 32 | `Bl.general_b_fact_upper_bis_form.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactLeftLast | 39 | 0.00% | 28 | `Bl.general_b_fact_left_last.goal1` | 0.00% |  |
+| Lemmata/MiscLemmasJ | 39 | 0.00% | 33 | `Bl.SecondBlockLemmaK.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactTail | 39 | 0.00% | 31 | `Bl.general_b_fact_tail.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThirdSide | 38 | 0.00% | 32 | `Bl.general_b_fact_third'''''.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactSecondMore | 38 | 0.00% | 32 | `Bl.general_b_fact_second'.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactSecond | 38 | 0.00% | 32 | `Bl.general_b_fact_second.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactSide | 38 | 0.00% | 30 | `Bl.general_b_fact_side.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThirdTail | 38 | 0.00% | 32 | `Bl.general_b_fact_third''''''.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThirdBisForm | 38 | 0.00% | 32 | `Bl.general_b_fact_third_bis_form.goal1` | 0.00% |  |
+| Lemmata/MiscLemmasL | 38 | 0.00% | 28 | `Bl.SecondBlockLemmaM.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactAltForm | 38 | 0.00% | 30 | `Bl.general_b_fact_alt_form.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactRightMore | 37 | 0.00% | 31 | `Bl.general_b_fact_right_more.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactSecondAlt | 37 | 0.00% | 31 | `Bl.general_b_fact_second_alt.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThirdAlt | 37 | 0.00% | 31 | `Bl.general_b_fact_third_alt.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactLeftTerForm | 37 | 0.00% | 31 | `Bl.general_b_fact_left_ter_form.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThirdAltForm | 37 | 0.00% | 31 | `Bl.general_b_fact_third_alt_form.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactRightVariant | 37 | 0.00% | 29 | `Bl.general_b_fact_right_variant.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactSecondFurther | 36 | 0.00% | 30 | `Bl.general_b_fact_second''.goal1` | 0.00% |  |
+| Lemmata/MiscLemmasM | 36 | 0.00% | 30 | `Bl.SecondBlockLemmaN.goal1` | 0.00% |  |
+| Lemmata/MiscLemmasO | 36 | 0.00% | 30 | `Bl.SecondBlockLemmaP.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThirdBisAlt | 35 | 0.00% | 29 | `Bl.general_b_fact_third_bis_other.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThird | 34 | 0.00% | 26 | `Bl.general_b_fact_third.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactSecondLast | 34 | 0.00% | 28 | `Bl.general_b_fact_second_last.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactLeftForm | 34 | 0.00% | 25 | `Bl.general_b_fact_left_form.goal1` | 0.00% |  |
+| ReciprocityTheory/GeneralLinearIntegers | 34 | 0.00% | 16 | `ReciprocityTheory.GeneralLinearIntegers.GeneralLinearIntegersOpenCompact.isOpen_integers` | 0.00% |  |
+| Lemmata/MiscLemmasE | 33 | 0.00% | 25 | `Bl.SecondBlockLemmaF.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactRightRest | 32 | 0.00% | 23 | `Bl.general_b_fact_right_rest.goal1` | 0.00% |  |
+| Lemmata/MiscLemmasH | 32 | 0.00% | 22 | `Bl.SecondBlockLemmaI.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactLeftTer | 32 | 0.00% | 24 | `Bl.general_b_fact_left_ter.goal1` | 0.00% |  |
+| Lemmata/PowMulVecEigenvalue | 32 | 0.00% | 0 |  |  |  |
+| Lemmata/GeneralBFactSecondTer | 32 | 0.00% | 26 | `Bl.general_b_fact_second_ter.goal1` | 0.00% |  |
+| Lemmata/MiscLemmasD | 32 | 0.00% | 22 | `Bl.SecondBlockLemmaE.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactTerForm | 31 | 0.00% | 25 | `Bl.general_b_fact_ter_form.goal1` | 0.00% |  |
+| Lemmata/PowerMembership | 31 | 0.00% | 22 | `Bl.PowerMembership.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactRightExtra | 31 | 0.00% | 25 | `Bl.general_b_fact_right'''.goal1` | 0.00% |  |
+| Lemmata/MiscLemmasN | 31 | 0.00% | 25 | `Bl.SecondBlockLemmaO.goal1` | 0.00% |  |
+| Lemmata/MiscLemmasC | 31 | 0.00% | 23 | `Bl.SecondBlockLemmaD.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactUpperVariant | 30 | 0.00% | 22 | `Bl.general_b_fact_upper_variant.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactFurther | 30 | 0.00% | 24 | `Bl.general_b_fact_further.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactUpperForm | 29 | 0.00% | 21 | `Bl.general_b_fact_upper_form.goal1` | 0.00% |  |
+| Lemmata/MiscLemmasK | 29 | 0.00% | 0 |  |  |  |
+| Lemmata/FirstBlockLemmaK | 28 | 0.00% | 22 | `Bl.FirstBlockLemmaK.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactRightSide | 28 | 0.00% | 22 | `Bl.general_b_fact_right_side.goal1` | 0.00% |  |
+| (root) | 28 | 0.00% | 1 | `riemannHypothesis` | 100.00% |  |
+| Lemmata/GeneralBFactVersion | 28 | 0.00% | 20 | `Bl.general_b_fact_version.goal1` | 0.00% |  |
+| Lemmata/PowMulVecEigen | 27 | 0.00% | 16 | `Bl.PowMulVecEigen.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactLeftTail | 27 | 0.00% | 17 | `Bl.general_b_fact_left_tail.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactRightFurther | 26 | 0.00% | 20 | `Bl.general_b_fact_right_further.goal1` | 0.00% |  |
+| Lemmata/PeriodicFunctions | 26 | 0.00% | 15 | `Bl.PeriodicFunctions.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactLeftMore | 26 | 0.00% | 16 | `Bl.general_b_fact_left_more.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactBis | 25 | 0.00% | 19 | `Bl.general_b_fact_bis.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactRightVersion | 25 | 0.00% | 19 | `Bl.general_b_fact_right_version.goal1` | 0.00% |  |
+| Lemmata/FirstBlockLemmaA | 25 | 0.00% | 17 | `Bl.FirstBlockLemmaA.goal1` | 0.00% |  |
+| Lemmata/GeneralBFact | 25 | 0.00% | 16 | `Bl.general_b_fact.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactUpperTerForm | 24 | 0.00% | 17 | `Bl.general_b_fact_upper_ter_form.goal1` | 0.00% |  |
+| Lemmata/FirstBlockLemmaB | 24 | 0.00% | 16 | `Bl.FirstBlockLemmaB.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactUpper | 24 | 0.00% | 18 | `Bl.general_b_fact_upper.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactThirdLast | 23 | 0.00% | 0 |  |  |  |
+| Lemmata/GeneralBFactUpperAltForm | 23 | 0.00% | 17 | `Bl.general_b_fact_upper_alt_form.goal1` | 0.00% |  |
+| Lemmata/MiscLemmasR | 23 | 0.00% | 17 | `Bl.ThirdBlockLemmaC.goal1` | 0.00% |  |
+| Lemmata/PowerApplication | 23 | 0.00% | 12 | `Bl.PowerApplication.goal1` | 0.00% |  |
+| Supplements/Kernels | 22 | 0.00% | 2 | `rhOfAll` | 100.00% |  |
+| Lemmata/SecondBlockLemmaA | 22 | 0.00% | 14 | `Bl.SecondBlockLemmaA.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactRightBisAlt | 22 | 0.00% | 14 | `Bl.general_b_fact_right_bis_other.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactUpperVersion | 22 | 0.00% | 16 | `Bl.general_b_fact_upper_version.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactLast | 22 | 0.00% | 0 |  |  |  |
+| Lemmata/FirstBlockLemmaE | 21 | 0.00% | 15 | `Bl.FirstBlockLemmaE.goal1` | 0.00% |  |
+| Lemmata/FirstBlockLemmaL | 21 | 0.00% | 0 |  |  |  |
+| Lemmata/GeneralBFactLeftRest | 21 | 0.00% | 13 | `Bl.general_b_fact_left_rest.goal1` | 0.00% |  |
+| BuildAid | 20 | 0.00% | 0 |  |  |  |
+| Lemmata/GeneralBFactLeftExtra | 20 | 0.00% | 10 | `Bl.general_b_fact_left_extra.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactRightAlt | 20 | 0.00% | 12 | `Bl.general_b_fact_right_alt.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactRightBis | 18 | 0.00% | 10 | `Bl.general_b_fact_right_bis.goal1` | 0.00% |  |
+| Lemmata/MiscLemmasQ | 17 | 0.00% | 11 | `Bl.ThirdBlockLemmaB.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactRight | 17 | 0.00% | 9 | `Bl.general_b_fact_right.goal1` | 0.00% |  |
+| Lemmata/GeneralBFactRightTer | 17 | 0.00% | 9 | `Bl.general_b_fact_right_ter.goal1` | 0.00% |  |
+| Lemmata/FirstBlockLemmaG | 17 | 0.00% | 11 | `Bl.FirstBlockLemmaG.goal1` | 0.00% |  |
+| Lemmata/FirstBlockLemmaI | 16 | 0.00% | 10 | `Bl.FirstBlockLemmaI.goal1` | 0.00% |  |
+| Lemmata/MiscLemmasI | 15 | 0.00% | 6 | `Bl.SecondBlockLemmaJ.goal1` | 0.00% |  |
+| Lemmata/FirstBlockLemmaF | 14 | 0.00% | 8 | `Bl.FirstBlockLemmaF.goal1` | 0.00% |  |
+| Lemmata/FirstBlockLemmaD | 13 | 0.00% | 7 | `Bl.FirstBlockLemmaD.goal1` | 0.00% |  |
+| Lemmata/FirstBlockLemmaC | 12 | 0.00% | 6 | `Bl.FirstBlockLemmaC.goal1` | 0.00% |  |
+| Lemmata/MiscLemmasP | 10 | 0.00% | 2 | `Bl.ThirdBlockLemmaA.goal1` | 0.00% |  |
+| CompanionTheory/EightfoldTheory | 9 | 0.00% | 0 |  |  |  |
+
+Big theories: 10 directories. Closets by location: 0.
+
+[    101s] K2 done
+## K3. Joints: where dominated mass meets (constants dominating at least 0.5%, ranked by lines that meet at them and nowhere below)
+
+joined lines = own lines + dominated lines of every dominated child except the largest. A pure wrapper joins almost nothing; a constant that combines several large inputs joins a lot. A short joint has at most 50 own lines.
+
+| # | constant | directory | own lines | joined lines | share | dominates | direct children | largest child |
+|---|---|---|---|---|---|---|---|---|
+| 1 | `UpperTheory.LiteratureTheorems.every_character_of_literature_of_vWin` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 4 | 2,903,305 | 27.23% | 66.82% | 50468 | `UpperTheory.Lit.every_character_of_theta_integrals_local_matching` 39.58% |
+| 2 | `UpperTheory.FinalTheorems.everyCharacter` | Development/AutomorphicArithmetic/CharacterBoxes | 2 | 2,406,411 | 22.57% | 100.00% | 58064 | `UpperTheory.FinalTheorems.everyCharacter_of_row` 77.43% |
+| 3 | `UpperTheory.Lit.nonempty_hyps_definite_side_of_closed_bound` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 25 | 2,340,948 | 21.96% | 33.30% | 48115 | `GlobalTheory.Fc.S0.StageU.hypotheses_nonempty_of_unramified_exponents_alt` 11.34% |
+| 4 | `UpperTheory.FinalTheorems.everyCharacter_of_row` | Development/AutomorphicArithmetic/CharacterBoxes | 2 | 1,130,994 | 10.61% | 77.43% | 7843 | `UpperTheory.LiteratureTheorems.every_character_of_literature_of_vWin` 66.82% |
+| 5 | `GlobalTheory.Fc.S0.StageU.hypotheses_nonempty_of_unramified_exponents_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 21 | 757,399 | 7.10% | 11.34% | 5590 | `GlobalTheory.Fc.AllAtMemberStage0.allRows_of_open0_alt` 4.23% |
+| 6 | `UpperTheory.V.HV.DescentVanishingReductions.vwin_of_hypotheses_H_E_alt` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases | 5 | 671,184 | 6.30% | 7.64% | 5839 | `UpperTheory.V.Z.Kato.WeilSphericalRecords.katoTwoW_of_printsH` 1.34% |
+| 7 | `UpperTheory.Lit.every_character_of_theta_integrals_local_matching` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 5 | 670,011 | 6.28% | 39.58% | 19001 | `UpperTheory.Lit.nonempty_hyps_definite_side_of_closed_bound` 33.30% |
+| 8 | `SelfIntersectionVolumeEstimates.topCovolSlim2_use_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 7 | 332,676 | 3.12% | 7.67% | 3428 | `PositivityTheory.HtPt.Ah.deep_slim_use` 4.55% |
+| 9 | `UpperTheory.Gal.Int.Geo.steps_holds` | Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures/GeometricFlagBases | 1 | 271,696 | 2.55% | 2.86% | 4733 | `UpperTheory.Gal.Int.Geo.jumpStep_holds` 0.31% |
+| 10 | `GlobalTheory.Fc.AllAtMemberStage0.allRows_of_open0_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 37 | 258,923 | 2.43% | 4.23% | 1118 | `GlobalTheory.LocalRows.lg1_sLp_sO_hTF` 1.81% |
+| 11 | `UpperTheory.Gal.Int.Geo.geometric_realization_of_weight_one` | Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures/GeometricFlagBases | 1 | 231,308 | 2.17% | 5.03% | 927 | `UpperTheory.Gal.Int.Geo.steps_holds` 2.86% |
+| 12 | `GlobalTheory.BigOn.ontoX_of_hypotheses_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 18 | 185,216 | 1.74% | 2.78% | 2004 | `GlobalTheory.FinalJoin.runHolds_of_parOK` 1.05% |
+| 13 | `SelfIntersectionVolumeEstimates.topCovolG_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 20 | 167,451 | 1.57% | 1.84% | 2255 | `SelfIntersectionVolumeEstimates.height_lower_bound_general_alt` 0.27% |
+| 14 | `GlobalTheory.CompanionTheory.Ar.Top.goodTower_and_volume` | Development/AutomorphicSpectrum/Proofs/DivisibilityProofs | 15 | 155,211 | 1.46% | 2.77% | 1717 | `GlobalTheory.T.volume_theorem_of_inputs` 1.32% |
+| 15 | `UpperTheory.Gal.Int.Geo.kodaira_spencer_of_weight_one` | Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures/GeometricFlagBases | 2 | 150,226 | 1.41% | 1.77% | 1396 | `GlobalTheory.UPel.HT.model_nonempty` 0.36% |
+| 16 | `GlobalTheory.CompanionTheory.Ar.Plug.deepStR_of_use` | Development/WeilBound/CoreStatements/AutomorphicKernels/MoriwakiBigness/HilbertSamuelApplications | 12 | 129,315 | 1.21% | 4.50% | 2636 | `GlobalTheory.CompanionTheory.Ar.Link.good_tower_volume_theorem_bis` 3.29% |
+| 17 | `GlobalTheory.CompanionTheory.Ar.Cusp.volumeTheoremX_of_inputs` | Development/AutomorphicSpectrum/Proofs/DivisibilityProofs | 50 | 115,842 | 1.09% | 1.32% | 596 | `GlobalTheory.T.full_intersection_tower_I8_identity` 0.23% |
+| 18 | `GlobalTheory.CarrierGap.offDiag` | Development/AbelianVarietyTheory/Proofs/FlagMeasures | 11 | 106,594 | 1.00% | 1.72% | 924 | `GlobalTheory.CarrierGap.theoremS_leaves_of_carrierG` 0.72% |
+| 19 | `GlobalTheory.Fc.StageOneU.member_bundles_large_unramified_exponents_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 30 | 92,687 | 0.87% | 2.65% | 805 | `GlobalTheory.T.member_exists_baseLattice_alt` 1.78% |
+| 20 | `UpperTheory.V.HV.DescentVanishingReductions.v_window_of_automorphy_csd_ss_mono_odd` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases | 2 | 88,774 | 0.83% | 8.47% | 1186 | `UpperTheory.V.HV.DescentVanishingReductions.vwin_of_hypotheses_H_E_alt` 7.64% |
+
+Short joints (own lines at most 50), top ten by joined lines:
+
+| # | constant | directory | own lines | joined lines | share | direct children |
+|---|---|---|---|---|---|---|
+| 1 | `UpperTheory.LiteratureTheorems.every_character_of_literature_of_vWin` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 4 | 2,903,305 | 27.23% | 50468 |
+| 2 | `UpperTheory.FinalTheorems.everyCharacter` | Development/AutomorphicArithmetic/CharacterBoxes | 2 | 2,406,411 | 22.57% | 58064 |
+| 3 | `UpperTheory.Lit.nonempty_hyps_definite_side_of_closed_bound` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 25 | 2,340,948 | 21.96% | 48115 |
+| 4 | `UpperTheory.FinalTheorems.everyCharacter_of_row` | Development/AutomorphicArithmetic/CharacterBoxes | 2 | 1,130,994 | 10.61% | 7843 |
+| 5 | `GlobalTheory.Fc.S0.StageU.hypotheses_nonempty_of_unramified_exponents_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 21 | 757,399 | 7.10% | 5590 |
+| 6 | `UpperTheory.V.HV.DescentVanishingReductions.vwin_of_hypotheses_H_E_alt` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases | 5 | 671,184 | 6.30% | 5839 |
+| 7 | `UpperTheory.Lit.every_character_of_theta_integrals_local_matching` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 5 | 670,011 | 6.28% | 19001 |
+| 8 | `SelfIntersectionVolumeEstimates.topCovolSlim2_use_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 7 | 332,676 | 3.12% | 3428 |
+| 9 | `UpperTheory.Gal.Int.Geo.steps_holds` | Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures/GeometricFlagBases | 1 | 271,696 | 2.55% | 4733 |
+| 10 | `GlobalTheory.Fc.AllAtMemberStage0.allRows_of_open0_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 37 | 258,923 | 2.43% | 1118 |
+
+[    101s] K3 done
+## K4. The spine to its end: from the root, always the child dominating the most lines, until a constant with no dominated child
+
+| step | constant | directory | own lines | dominates | share | direct children |
+|---|---|---|---|---|---|---|
+| 0 | `riemannHypothesis` | (root) | 1 | 10,660,526 | 100.00% | 1 |
+| 1 | `rhOfAll` | Supplements/Kernels | 1 | 10,660,525 | 100.00% | 3 |
+| 2 | `allChi` | Supplements/Kernels | 1 | 10,660,460 | 100.00% | 1 |
+| 3 | `UpperTheory.FinalTheorems.everyCharacter` | Development/AutomorphicArithmetic/CharacterBoxes | 2 | 10,660,459 | 100.00% | 58064 |
+| 4 | `UpperTheory.FinalTheorems.everyCharacter_of_row` | Development/AutomorphicArithmetic/CharacterBoxes | 2 | 8,254,048 | 77.43% | 7843 |
+| 5 | `UpperTheory.LiteratureTheorems.every_character_of_literature_of_vWin` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 4 | 7,123,054 | 66.82% | 50468 |
+| 6 | `UpperTheory.Lit.every_character_of_theta_integrals_local_matching` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 5 | 4,219,749 | 39.58% | 19001 |
+| 7 | `UpperTheory.Lit.nonempty_hyps_definite_side_of_closed_bound` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 25 | 3,549,738 | 33.30% | 48115 |
+| 8 | `GlobalTheory.Fc.S0.StageU.hypotheses_nonempty_of_unramified_exponents_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 21 | 1,208,790 | 11.34% | 5590 |
+| 9 | `GlobalTheory.Fc.AllAtMemberStage0.allRows_of_open0_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 37 | 451,391 | 4.23% | 1118 |
+| 10 | `GlobalTheory.LocalRows.lg1_sLp_sO_hTF` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 2 | 192,468 | 1.81% | 1 |
+| 11 | `GlobalTheory.LocalRows.sLp_sO_hTF_of_siegelWeil` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 3 | 192,466 | 1.81% | 1 |
+| 12 | `GlobalTheory.LocalRows.at_choice_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 8 | 192,463 | 1.81% | 32 |
+| 13 | `GlobalTheory.CarrierGap.offDiag` | Development/AbelianVarietyTheory/Proofs/FlagMeasures | 11 | 183,662 | 1.72% | 924 |
+| 14 | `GlobalTheory.CarrierGap.theoremS_leaves_of_carrierG` | Development/AbelianVarietyTheory/Proofs/FlagMeasures | 24 | 77,068 | 0.72% | 749 |
+| 15 | `Formalism.L2.SG.Pf.Coef.rowsDatumP_of_deep` | Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts | 7 | 33,490 | 0.31% | 48 |
+| 16 | `Formalism.L2.SG.Pf.Coef.cutAt_of_deep` | Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts | 25 | 32,797 | 0.31% | 194 |
+| 17 | `Formalism.L2.SG.Pf.PCount.partnerCount_holds_all` | Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts | 2 | 17,259 | 0.16% | 14 |
+| 18 | `Formalism.L2.SG.LsDatumA.integralClosureRank_and_residueTrdegLe` | Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts | 1 | 15,906 | 0.15% | 268 |
+| 19 | `Formalism.L2.SG.LsDatumA.globalCount_of_split_mode` | Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts | 3 | 7,999 | 0.08% | 125 |
+| 20 | `Formalism.L2.SG.LsDatumA.globalCount_of_module` | Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts | 5 | 4,125 | 0.04% | 1 |
+| 21 | `Formalism.L2.SG.LsDatumA.localCount_of_module` | Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts | 4 | 4,120 | 0.04% | 62 |
+| 22 | `Formalism.L2.SG.LsDatumA.claimR_at` | Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts | 2 | 1,347 | 0.01% | 14 |
+| 23 | `Formalism.L2.SG.LsDatumA.claimRG_at` | Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts | 29 | 959 | 0.01% | 35 |
+| 24 | `Formalism.L2.SG.LsDatumA.rg_fwd_sub` | Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts | 86 | 172 | 0.00% | 8 |
+| 25 | `Formalism.L2.SG.LsDatumA.RGHyp.trF` | Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts | 38 | 38 | 0.00% | 2 |
+| 26 | `Formalism.L2.SG.LsDatumA.RGHyp.trF._abel_1_1` | Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts | 0 | 0 | 0.00% | 0 |
+
+Spine length 27 steps. Second-level directory changes along it: step 1: (root) → Supplements/Kernels at 100.00%; step 3: Supplements/Kernels → Development/AutomorphicArithmetic at 100.00%; step 13: Development/AutomorphicArithmetic → Development/AbelianVarietyTheory at 1.72%; step 15: Development/AbelianVarietyTheory → Formalism/LocalToGlobal at 0.31%
+
+[    101s] K4 done
+## K5. Leverage: constants dominating at least 0.5% with the fewest own lines per dominated line, wrappers excluded (at least 2 direct children)
+
+| # | constant | directory | own lines | dominates | share | direct children | joined share |
+|---|---|---|---|---|---|---|---|
+| 1 | `rhOfAll` | Supplements/Kernels | 1 | 10,660,525 | 100.00% | 3 | 0.00% |
+| 2 | `UpperTheory.FinalTheorems.everyCharacter` | Development/AutomorphicArithmetic/CharacterBoxes | 2 | 10,660,459 | 100.00% | 58064 | 22.57% |
+| 3 | `UpperTheory.FinalTheorems.everyCharacter_of_row` | Development/AutomorphicArithmetic/CharacterBoxes | 2 | 8,254,048 | 77.43% | 7843 | 10.61% |
+| 4 | `UpperTheory.LiteratureTheorems.every_character_of_literature_of_vWin` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 4 | 7,123,054 | 66.82% | 50468 | 27.23% |
+| 5 | `UpperTheory.Lit.every_character_of_theta_integrals_local_matching` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 5 | 4,219,749 | 39.58% | 19001 | 6.28% |
+| 6 | `UpperTheory.Gal.Int.galoisLocalGlobalStrong_recParameter` | Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures | 1 | 686,149 | 6.44% | 26 | 0.39% |
+| 7 | `UpperTheory.Gal.Int.galoisRepresentations_of_thetaLift` | Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures | 1 | 645,062 | 6.05% | 97 | 0.75% |
+| 8 | `UpperTheory.Gal.Int.Geo.geoOne_holds` | Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures/GeometricFlagBases | 1 | 565,567 | 5.31% | 145 | 0.28% |
+| 9 | `UpperTheory.Gal.Int.Geo.geometric_realization_of_weight_one` | Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures/GeometricFlagBases | 1 | 535,908 | 5.03% | 927 | 2.17% |
+| 10 | `UpperTheory.One.vwin_of_row` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases | 2 | 913,198 | 8.57% | 4 | 0.00% |
+| 11 | `UpperTheory.V.HV.DescentVanishingReductions.v_window_of_automorphy_csd_ss_mono_odd` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases | 2 | 902,763 | 8.47% | 1186 | 0.83% |
+| 12 | `UpperTheory.Gal.Int.Geo.steps_holds` | Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures/GeometricFlagBases | 1 | 304,600 | 2.86% | 4733 | 2.55% |
+| 13 | `UpperTheory.One.Join.automorphic_window_of_inputs` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases | 4 | 913,192 | 8.57% | 32 | 0.10% |
+| 14 | `UpperTheory.One.Join.v_window_of_depth_zero_residual_bc_cm` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases | 4 | 902,969 | 8.47% | 10 | 0.00% |
+| 15 | `UpperTheory.V.HV.DescentVanishingReductions.vwin_of_hypotheses_H_E_alt` | Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases | 5 | 813,989 | 7.64% | 5839 | 6.30% |
+| 16 | `UpperTheory.Lit.nonempty_hyps_definite_side_of_closed_bound` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 25 | 3,549,738 | 33.30% | 48115 | 21.96% |
+| 17 | `SelfIntersectionVolumeEstimates.topCovolSlim2_use_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 7 | 817,784 | 7.67% | 3428 | 3.12% |
+| 18 | `UpperTheory.Gal.Int.Geo.kodaira_spencer_of_weight_one` | Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/IntegralStructures/GeometricFlagBases | 2 | 188,922 | 1.77% | 1396 | 1.41% |
+| 19 | `PositivityTheory.HtPt.Ah.deep_slim_use` | Development/WeilBound/CoreStatements/AutomorphicKernels/MoriwakiBigness/HilbertSamuelApplications | 6 | 485,108 | 4.55% | 32 | 0.05% |
+| 20 | `GlobalTheory.T.main_theorem_from_published_results_alt_alt_alt_alt_alt` | Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries | 2 | 138,681 | 1.30% | 2 | 0.00% |
+
+[    101s] K5 done
+## K6. 6 statements to print (K6_statements.lean): `UpperTheory.Gal.Int.Geo.steps_holds`, `Formalism.L2.SG.LsDatumA.claimR_at`, `Formalism.L2.SG.LsDatumA.claimRG_at`, `Formalism.L2.SG.LsDatumA.rg_fwd_sub`, `Formalism.L2.SG.LsDatumA.RGHyp.trF`, `Formalism.L2.SG.LsDatumA.RGHyp.trF._abel_1_1`
+[    101s] written /home/heidibennett.guest/untrusted/alpoge-rh/trace-structure/closet

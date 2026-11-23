@@ -1,0 +1,46 @@
+kind: trace
+cycle: "trace-2026-11-23-closet"
+dated: "2026-11-23"
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+provenance:
+  source: "the dependency tables written by trace-2026-11-23-structure from the cycle 2 build of the pinned archive (sha256 9631b4f0…); nodes.tsv and edges.tsv hash-checked before the run; Lean v4.33.1, Mathlib 0df444a3 for the statement run"
+  occasion: "Heidi Bennett's reading of the structure trace: if the heavy branches are all known theories, an unexpected step would have to be a small lemma in a small place that the proof hangs on; a claim about the dominator tree below 2% and about the text size at each hinge, measured here"
+preregistered:
+  question: "In the dominator tree below riemannHypothesis, is there a constant with little text of its own, in a directory small by lines, that dominates a large share of the proof? Where does dominated mass meet, how much text do those joints have, and where does the spine go below 2%, to its last constant?"
+  rule: "same dominator tree as the structure trace, recomputed from the same tables; hinges at 1% of the root's lines with own lines and children; second-level directories by lines against their largest dominator, closet = hinge in a directory under 2% of the archive excluding the two wrapper files; joints = own lines plus all dominated children but the largest, at 0.5%; the spine to a leaf; leverage; statements of the named constants not already printed; no interpretation beyond what is labelled as the agent's reading; standing unchanged by construction"
+  predictions:
+    - "P1: 25 to 120 constants dominate at least 1% of the root's lines"
+    - "P2: zero closets by location"
+    - "P3: the five largest joints are under Development/AutomorphicArithmetic with at most 200 own lines each"
+    - "P4: the spine leaves Development/AutomorphicArithmetic only below 1% and ends in Formalism/ or GroundTheory/"
+    - "P5: analysis under 15 minutes and 60 GB; statement run under 3 minutes"
+    - "P6: some constant with at most 50 own lines joins at least 5% of the root's lines, the largest on the structure trace's spine"
+  commit: "prereg_trace_closet.yaml"
+  registered: "sha256 d4cd1501… in prereg_trace_closet.yaml.sha256, committed 8d1586d at 21:38 UTC before the analysis started at 21:38:58 UTC"
+  before_data: true
+  results: ["trace/CLOSET-TRACE.md", "trace-closet/report.md"]
+outcome:
+  verdict: confirmed
+  numbers:
+    K1: "81 constants dominate at least 1% of the root's 10,660,526 lines, all theorems: 65 in Development/AutomorphicArithmetic, 6 AutomorphicSpectrum, 4 AbelianVarietyTheory, 3 WeilBound, 2 Supplements/Kernels, 1 Main; own lines median 4, 72 at or under 20, one over 50 (main_alt_alt, 88 lines, 1.41%); dominator iteration converged in 3 passes as before"
+    K2: "ten second-level directories hold at least 2% of the archive's 17,374,215 lines; closets by location: 0; largest dominator in any smaller directory 0.66% (canonicalAlgorithmRules_isCorrect, ResolutionOfSingularities, 140,709 lines); Development/AbelianVarietyTheory holds 46.9% of the archive and 4,675,299 of its own lines are used, yet its largest dominator (GlobalTheory.CarrierGap.offDiag) holds 1.72%: reached from many directions, dominated by nothing in itself"
+    K3: "120 constants at or above 0.5%; largest joints every_character_of_literature_of_vWin 27.23% (4 own lines, 50,468 children), everyCharacter 22.57% (2, 58,064), nonempty_hyps_definite_side_of_closed_bound 21.96% (25, 48,115), everyCharacter_of_row 10.61% (2), hypotheses_nonempty_of_unramified_exponents_alt 7.10% (21), vwin_of_hypotheses_H_E_alt 6.30% (5), every_character_of_theta_integrals_local_matching 6.28% (5), topCovolSlim2_use_alt_alt 3.12% (7), steps_holds 2.55% (1), allRows_of_open0_alt 2.43% (37); the ten largest short joints (at most 50 own lines) are the same ten; of the 120, three have more than 50 own lines (longest 186)"
+    K4: "spine of 27 steps: AutomorphicArithmetic from step 3 (everyCharacter) to step 12 (LocalRows.at_choice_alt, 1.81%), AbelianVarietyTheory/Proofs/FlagMeasures at steps 13–14 (CarrierGap.offDiag 1.72%, theoremS_leaves_of_carrierG 0.72%), Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts from step 15 (0.31%) to the leaf RGHyp.trF._abel_1_1 under the 38-line RGHyp.trF"
+    K5: "the twenty highest-leverage non-wrapper constants have 1 to 25 own lines: the spine constants, the Galois-representation chain, the threshold chain under vwin_of_row, topCovolSlim2_use_alt_alt, deep_slim_use, main_theorem_from_published_results_alt_alt_alt_alt_alt (2 lines, 1.30%)"
+    K6: "6 statements printed verbatim (trace-closet/K6_statements.txt): steps_holds (statement is the named proposition Steps) and the last five spine constants; all other named constants were among the twenty printed by the structure trace"
+    run: "analysis 1 m 43 s, 2.7 GB peak, in the VM on the hash-checked tables; statement run 53 s, 54.9 GB"
+  misses:
+    - "P4: the spine leaves Development/AutomorphicArithmetic at step 13 at 1.72%, not below 1%; its end in Formalism/LocalToGlobal was as predicted"
+spoken: >
+  On 23 November Nervous Machine looked below the two-percent line of the morning's structure trace for a closet: a
+  small lemma in a small place that the proof hangs on. There is none. Eighty-one constants each carry at least one
+  percent of the proof, every one of them in one of the ten large subject directories, and every one of them short,
+  four lines in the middle, eighty-eight at most. The hinges are glue, and the mass sits below them. Three short
+  theorems each join more than a fifth of the proof: a four-line theorem with fifty thousand direct dependants, a
+  two-line one with fifty-eight thousand, a twenty-five-line one with forty-eight thousand. Those are the places where
+  the wings meet, and their statements were printed in the morning. The spine runs through the automorphic directory
+  to under two percent, crosses into abelian-variety theory, and ends in lattice point counts. The abelian-variety
+  theory, nearly half the archive, is reached from many directions and dominated by nothing in itself. Five of six
+  predictions held; the spine left the automorphic directory a little earlier than predicted. Nothing changed standing.
+finding_ids: []
+gap_ids: ["EG3"]

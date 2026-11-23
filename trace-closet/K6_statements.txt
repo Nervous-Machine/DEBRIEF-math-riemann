@@ -1,0 +1,45 @@
+UpperTheory.Gal.Int.Geo.steps_holds : UpperTheory.Gal.Int.Geo.Steps
+@Formalism.L2.SG.LsDatumA.claimR_at : ∀ {F : Type} [inst : Field F] [inst_1 : ValuativeRel F]
+  [inst_2 : TopologicalSpace F] {E : Type} [inst_3 : CommRing E] [inst_4 : Algebra F E] [inst_5 : TopologicalSpace E]
+  [inst_6 : MeasurableSpace E] (M : Formalism.MainNotions.S.Loc.Model F E) (r n : ℕ),
+  M.OK → Formalism.L2.SG.LsDatumA.ClaimR M r n
+@Formalism.L2.SG.LsDatumA.claimRG_at : ∀ {F : Type} [inst : Field F] [inst_1 : ValuativeRel F]
+  [inst_2 : TopologicalSpace F] {E : Type} [inst_3 : CommRing E] [inst_4 : Algebra F E] [inst_5 : TopologicalSpace E]
+  [inst_6 : MeasurableSpace E] (M : Formalism.MainNotions.S.Loc.Model F E) (r n : ℕ),
+  M.OK → Formalism.L2.SG.LsDatumA.ClaimRG M r n
+@Formalism.L2.SG.LsDatumA.rg_fwd_sub : ∀ {F : Type} [inst : Field F] [inst_1 : ValuativeRel F]
+  [inst_2 : TopologicalSpace F] {E : Type} [inst_3 : CommRing E] [inst_4 : Algebra F E] [inst_5 : TopologicalSpace E]
+  [inst_6 : MeasurableSpace E] {M : Formalism.MainNotions.S.Loc.Model F E} {V : Type} [inst_7 : AddCommGroup V]
+  [inst_8 : Module E V] (H : Formalism.MainNotions.S.Loc.HermSp M V) {r : ℕ}
+  (g : Formalism.MainNotions.S.Loc.SplitG M.L) {t₁ t₂ : Formalism.MainNotions.S.Loc.Term V M r}
+  {Λ₂ : Submodule (↥M.L.O) V} {ψ : ↥(H.W0 t₁.f t₁.f') ≃ₗ[E] ↥(H.W0 t₂.f t₂.f')}
+  {θ : Formalism.L2.SG.LsDatumA.DDt H t₁ ≃ₗ[↥M.L.O] Formalism.L2.SG.LsDatumA.DDt H t₂} {φ : H.Wb t₁.f ≃ₗ[E] H.Wb t₂.f}
+  {φ' : H.Wb t₁.f' ≃ₗ[E] H.Wb t₂.f'},
+  Formalism.L2.SG.LsDatumA.RGHyp H t₁ t₂ Λ₂ ψ θ φ φ' →
+    Prod.map ⇑φ' ⇑φ '' H.iotaGraph g t₁ =
+        H.iotaGraph g { abelian₂ := Λ₂, f := t₂.f, f' := t₂.f', T := t₂.T, T' := t₂.T' } →
+      (fun p => (θ p.1, θ p.2.1, φ p.2.2.1, φ' p.2.2.2)) '' Formalism.L2.SG.LsDatumA.GamR H t₁ ((algebraMap F E) ↑g.q) ⊆
+        Formalism.L2.SG.LsDatumA.GamR H t₂ ((algebraMap F E) ↑g.q)
+@Formalism.L2.SG.LsDatumA.RGHyp.trF : ∀ {F : Type} [inst : Field F] [inst_1 : ValuativeRel F]
+  [inst_2 : TopologicalSpace F] {E : Type} [inst_3 : CommRing E] [inst_4 : Algebra F E] [inst_5 : TopologicalSpace E]
+  [inst_6 : MeasurableSpace E] {M : Formalism.MainNotions.S.Loc.Model F E} {V : Type} [inst_7 : AddCommGroup V]
+  [inst_8 : Module E V] (H : Formalism.MainNotions.S.Loc.HermSp M V) {r : ℕ}
+  {t₁ t₂ : Formalism.MainNotions.S.Loc.Term V M r} {Λ₂ : Submodule (↥M.L.O) V}
+  {ψ : ↥(H.W0 t₁.f t₁.f') ≃ₗ[E] ↥(H.W0 t₂.f t₂.f')}
+  {θ : Formalism.L2.SG.LsDatumA.DDt H t₁ ≃ₗ[↥M.L.O] Formalism.L2.SG.LsDatumA.DDt H t₂} {φ : H.Wb t₁.f ≃ₗ[E] H.Wb t₂.f}
+  {φ' : H.Wb t₁.f' ≃ₗ[E] H.Wb t₂.f'},
+  Formalism.L2.SG.LsDatumA.RGHyp H t₁ t₂ Λ₂ ψ θ φ φ' →
+    ∀ {u₁ : V},
+      u₁ ∈ Submodule.span E (Set.range (Sum.elim t₁.f t₁.f')) →
+        ∀ (hu₁p : u₁ ∈ H.perp (H.X t₁.f)) (n : ↥(H.W0 t₁.f t₁.f')) (hx₁ : u₁ + ↑n ∈ H.perp (H.X t₁.f)) {a b : V},
+          a ∈ Submodule.span E (Set.range (Sum.elim t₂.f t₂.f')) →
+            b ∈ H.W0 t₂.f t₂.f' →
+              ∀ (hap : a ∈ H.perp (H.X t₂.f)) (hx₂ : a + b ∈ H.perp (H.X t₂.f)),
+                φ ((H.mkW t₁.f) ⟨u₁ + ↑n, hx₁⟩) = (H.mkW t₂.f) ⟨a + b, hx₂⟩ →
+                  b = ↑(ψ n) ∧ φ ((H.mkW t₁.f) ⟨u₁, hu₁p⟩) = (H.mkW t₂.f) ⟨a, hap⟩
+@Formalism.L2.SG.LsDatumA.RGHyp.trF._abel_1_1 : ∀ {F : Type} [inst : Field F] [inst_1 : ValuativeRel F]
+  [inst_2 : TopologicalSpace F] {E : Type} [inst_3 : CommRing E] [inst_4 : Algebra F E] [inst_5 : TopologicalSpace E]
+  [inst_6 : MeasurableSpace E] {M : Formalism.MainNotions.S.Loc.Model F E} {V : Type} [inst_7 : AddCommGroup V]
+  [inst_8 : Module E V] (H : Formalism.MainNotions.S.Loc.HermSp M V) {r : ℕ}
+  {t₁ t₂ : Formalism.MainNotions.S.Loc.Term V M r} {ψ : ↥(H.W0 t₁.f t₁.f') ≃ₗ[E] ↥(H.W0 t₂.f t₂.f')}
+  (n : ↥(H.W0 t₁.f t₁.f')) {a b : V} (u' : V), ↑(ψ n) - b = u' + ↑(ψ n) - (a + b) - (u' - a)

@@ -1,0 +1,23 @@
+	Command being timed: "python3 -I /home/heidibennett.guest/nm-scripts/closet.py /home/heidibennett.guest/untrusted/alpoge-rh/trace-structure /home/heidibennett.guest/untrusted/alpoge-rh/trace-structure/closet /home/heidibennett.guest/nm-scripts/R5_names.txt"
+	User time (seconds): 100.61
+	System time (seconds): 2.24
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:42.88
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2732136
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 284942
+	Voluntary context switches: 134
+	Involuntary context switches: 556
+	Swaps: 0
+	File system inputs: 22285544
+	File system outputs: 800
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
