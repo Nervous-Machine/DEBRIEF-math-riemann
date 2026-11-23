@@ -1,0 +1,47 @@
+kind: trace
+cycle: "trace-2026-11-23-suffix"
+dated: "2026-11-23"
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+provenance:
+  source: "every constant in the built environment of the cycle 2 build (Names2.lean, 1 m 10 s), with the walk tables of trace-2026-11-23-structure (hash-checked); Lean v4.33.1, Mathlib 0df444a3"
+  occasion: "Heidi Bennett's question after the closet trace: directed brute force or a chosen route? The archive keeps no attempts, but names like main_theorem_from_published_results_alt_alt_alt_alt_alt are fossils of rewriting; counted here against Mathlib's own naming"
+preregistered:
+  question: "How many archive constants carry a retry suffix (_alt stacked, trailing primes, _bis/_ter, a fixed fix-word list), how deep, how often are earlier versions still used, how does it compare with the library, how many hinges carry one; and what share of the archive's constants does the proof use?"
+  rule: "registered regexes on the last name component; machine-generated names excluded; families = same namespace, same base after stripping; rates per 1,000 named constants for archive, cone and library; hinges at 1% and the spine from the same dominator tree as the closet trace; no interpretation beyond what is labelled; standing unchanged by construction"
+  predictions:
+    - "P1: at least 30 per 1,000 named cone constants carry _alt; deepest stack at least 5"
+    - "P2: library _alt under 1 per 1,000; archive prime rate within a factor of 3 of the library's"
+    - "P3: in at least half of the families with two or more members, two or more are in the cone"
+    - "P4: 12 to 35 of the 81 hinges carry a retry suffix"
+    - "P5: 1.4 to 2.5 million archive constants; 50% to 90% of the named ones used by the proof"
+    - "P6: dump under 10 minutes and analysis under 10 minutes, each under 70 GB"
+  commit: "prereg_trace_suffix.yaml"
+  registered: "sha256 e680835f… in prereg_trace_suffix.yaml.sha256, committed 1164c57 at 22:13 UTC before the dump started at 22:13:16 UTC; amendment A1 (dump script replaced) committed c3a9606 before the replacement ran at 23:50 UTC"
+  before_data: true
+  results: ["trace/SUFFIX-TRACE.md", "trace-suffix/report.md"]
+outcome:
+  verdict: confirmed
+  numbers:
+    S0: "environment 2,701,132 constants: archive 1,905,922 (747,620 machine-named), library 795,211; the cone holds 1,265,256 = 66.4% of the archive's constants, 68.9% of the named ones (798,000 of 1,158,302); per top-level directory named usage 57% (PositivityTheory) to 86% (CompanionTheory), Development 72%, Formalism 62%, GroundTheory 60%; lowest second-level directories with at least 1,000 named constants: Formalism/WachLatticeTwists 23%, SizeWindowBrackets 26%, GroundTheory/PAdicHodge 30%"
+    S1: "per 1,000 named constants, archive / cone / library: _alt 2.6 / 3.4 / 0.005 (3,009 against 4); prime 10.6 / 12.3 / 23.1; bis_ter 0.1 / 0.1 / 0; fix-words 1.4 / 1.7 / 0.3 (fix 712, fixed 671, rev 207, old 25, new 24, final 14); any retry class 14.7 / 17.5 / 23.5; numbered (noisy) 11.4 / 10.6 / 2.9"
+    S2: "_alt depth in the archive: 1: 2,789; 2: 206; 3: 12; 4: 1; 5: 1; all but 301 in the cone; deepest 5 (main_theorem_from_published_results_alt_alt_alt_alt_alt, 1.30% of the proof, in the cone with its four-_alt sibling)"
+    S3: "5,046 families with two or more members (4,966 pairs, 74 triples, 6 of four) covering 10,178 constants; no member in the cone 822 (16.3%); one member 1,908 (the latest variant in 1,815); two or more members 2,316 (45.9%); base used alongside a variant 2,289"
+    S4: "33 of the 81 hinges carry a retry suffix (40.7%), 31 of them _alt; 4 of 27 spine constants (3 on the closet trace's spine; the last step differs by a tie); lines under the top-most retry-named constants 6,120,389 of 10,660,526 (57.4%); retry share of named cone constants per top-level directory 0.7% (GroundTheory) to 1.9% (Development); the hinges are 23 times denser in retry marks than the body"
+    run: "registered dump stopped after 1 h 35 m at 499,418 names (about 90 a second); replacement dump 1 m 10 s, 57.3 GB, 186,200 modules, 2,741,727 module-constant rows; analysis 2 m 33 s, 4.1 GB"
+  misses:
+    - "P1: 3.4 per 1,000 named cone constants carry _alt, not 30; the depth of 5 held"
+    - "P3: 45.9% of families have two or more members in the cone, not half"
+    - "P6: the registered dump did not finish in 10 minutes and was replaced (amendment A1); the replacement and the analysis were both inside the limits"
+  procedure_note: "the environment lists a constant under every module that re-exports it, so the dump's 2,741,727 rows are 2,701,132 distinct names; counts use distinct names"
+spoken: >
+  On 23 November Nervous Machine counted the fossils of rewriting in the names of the proof. They are rare in the
+  body, fifteen in a thousand named constants, fewer than Mathlib's own habit of primed names, and three thousand
+  constants end in _alt against four in all of Mathlib. They are dense at the joins: thirty-three of the eighty-one
+  constants that each carry at least one percent of the proof have a retry mark, and fifty-seven percent of the
+  proof's lines sit under one. The theorem that assembles the published inputs was written at least six times, and
+  two versions are still in use. When a lemma was rewritten and both versions kept, both are still used a little
+  under half the time. The proof uses two thirds of the archive's constants; a third was written and never used. The
+  operating agent expected the body to be far more retry-marked than it is: three of six predictions missed, one of
+  them because the registered name dump ran at ninety constants a second and had to be replaced. Nothing changed standing.
+finding_ids: []
+gap_ids: ["EG3"]
