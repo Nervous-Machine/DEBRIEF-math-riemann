@@ -3,11 +3,11 @@
 A DEBRIEF mission record (protocol https://github.com/Nervous-Machine/DEBRIEF) for **The claimed proof of the Riemann Hypothesis announced by Levent Alpöge on 20 November 2026, built with Claude and released as Lean 4 code**.
 
 <!-- standing:begin -->
-**Standing, 22 Nov 2026.** Stage: Reading guide written. Needs next: Do the formal statements say what the problem asks? ([what would close it](ASKS.md)).
+**Standing, 23 Nov 2026.** Stage: Reading guide written. Needs next: Do the formal statements say what the problem asks? ([what would close it](ASKS.md)).
 
 | certified | accepted | refuted | open gaps | cycles filed | last cycle |
 |---|---|---|---|---|---|
-| 0 | 1 | 0 | 4 | 3 | 22 Nov 2026 |
+| 0 | 1 | 0 | 4 | 4 | 23 Nov 2026 |
 
 | | |
 |---|---|
