@@ -60,3 +60,14 @@ not_settled_by_this_cycle: >
   Why any variant was written: a retry can be a corrected typo, a strengthened hypothesis, a changed route or a
   tactic timeout. Whether the retries were the model's or a person's. Whether a shorter proof exists. The attempt
   record, which would answer the first two, is not published.
+amendments:
+  - id: A1
+    dated: "2026-11-23"
+    when: "after the registered dump had run 1 h 35 m and before any analysis"
+    what: >
+      The registered dump (trace-suffix/Names.lean) wrote about 90 constants a second, 499,418 names in 95 minutes,
+      which put the finish seven hours out. It was stopped and its partial output set aside (not used). It is replaced
+      by trace-suffix/Names2.lean (sha256 80476289588d565080642eddd268ad60ed9d68516dc46cbaffa13da2160126e6), which walks the environment's module table
+      (ModuleData.constants) and writes each module's constants in one block, so no per-constant module lookup is
+      needed. Same columns, same archive rule, same output path. The analysis script, the measures, the thresholds and
+      the predictions are unchanged; P6 is already a miss on the registered dump's time and is recorded as such.
