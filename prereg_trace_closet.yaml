@@ -1,0 +1,82 @@
+# Pre-registration, trace cycle "trace-2026-11-23-closet": is there a small lemma in a small place that the proof
+# hangs on? Written 2026-11-23 (UTC) BEFORE the analysis ran on the walk's tables. Changes after this point go in an
+# amendment at the end of this file, not in the body.
+#
+# Occasion. The structure trace of the same day (trace-2026-11-23-structure) found one hinge at the top of the proof
+# and no second bottleneck below it: the spine stays in Development/AutomorphicArithmetic down to 4.2% of the root's
+# lines and the heaviest lemmas carry the names of large, long-studied theories. Heidi Bennett's reading of that map:
+# if the heavy rooms are all known theories, the directions explored were the suspected ones, and an unexpected step,
+# if there was one, would have to be a closet, a small lemma outside the big theories that the rest of the proof
+# depends on. That is a claim about the dominator tree below 2%, which the structure trace did not look at, and about
+# the size of the text at each hinge, which it reported only for the top forty. Both are measurable on the tables
+# already written. Nothing here is a reading of the mathematics; a short lemma can be a deep idea or a renaming.
+
+mission: DEBRIEF-math-riemann
+cycle: "trace-2026-11-23-closet"
+kind: trace
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+dated: "2026-11-23"
+question: >
+  In the dominator tree of the archive below riemannHypothesis, is there a constant with little text of its own, in a
+  directory that is small by lines, which nevertheless dominates a large share of the proof (a closet)? Where does
+  dominated mass meet (joints), how much text do the joints have, and where does the spine go below the 2% cutoff of
+  the structure trace, down to its last constant?
+
+observations_before_this_registration:   # facts from trace-2026-11-23-structure, not predictions
+  - "The dominator tree of the cone (1,265,256 constants, 10,660,526 dominated lines) was computed on 2026-11-23 and the top 5,000 constants by dominated lines are in trace-structure/dominators.tsv; the full tree was not written out and is recomputed here from the same nodes.tsv and edges.tsv (hashes in trace-structure/trace-structure.sha256)."
+  - "The registered spine stops at step 9, GlobalTheory.Fc.AllAtMemberStage0.allRows_of_open0_alt (4.2%), whose largest child holds 1.8%; every spine module from step 3 on is under Development/AutomorphicArithmetic (CharacterBoxes, then ThetaCorrespondence/…/ThirdPlaceSeries)."
+  - "Main.lean (12 lines) and Supplements/Kernels/MainTheorems.lean (16 lines) hold the root and its two renamings (rhOfAll, allChi); they sit in directories of 12 and 22 lines and dominate 100% by construction. They are excluded from the closet count by name of directory, and reported."
+  - "Second-level directories by lines (from files_wc.txt): the seven Development/ ones, Formalism/*, GroundTheory/*, ReciprocityTheory/*, CompanionTheory/*, PositivityTheory/*, Lemmata/*; the 2% threshold below is 347,484 lines."
+  - "The script (trace-structure/closet.py, sha256 de5fad010ebee2a926d72996d7846014f4f2649dc7d7bec7524fd9bf85bc30da) reuses analyze2.py's loading and dominator code unchanged and was run on the Mathlib-only test graph of the structure trace before this registration: same 3 passes, same root total 130,795 lines, 53 hinges at 1%, spine of 33 steps to a leaf in Mathlib/Order; the K2 closet rule flags Mathlib constants there only because Mathlib has no line counts in files_wc.txt, which is expected and does not arise on the archive."
+
+environment:
+  vm: "Linux VM (Lima, instance primegaps; Ubuntu, aarch64, 20 cores, 98 GB RAM)"
+  inputs: "~/untrusted/alpoge-rh/trace-structure/{nodes.tsv, edges.tsv, files_wc.txt, lines_per_dir.txt} as written by the walk of 2026-11-23 14:26–18:44 UTC; unchanged since (hashes checked before the run against trace-structure.sha256)"
+  procedure: "python3 -I ~/nm-scripts/closet.py DATA OUT ~/nm-scripts/R5_names.txt under /usr/bin/time -v, in the VM (the edge table is 11.4 GB; this follows amendment A1 of the structure trace); then lake env lean OUT/K6_statements.lean in the cycle 2 build directory, as R5 was run"
+  thresholds: "HINGE 1% of the root's dominated lines (106,605); SMALLDIR 2% of the archive's lines (347,484); JOINT 0.5% (53,303); SHORT 50 own lines; all set before the run and not changed"
+
+checks:
+  K1_hinges: >
+    Every constant dominating at least 1% of the root's lines, with its directory, kind, own lines (its declaration
+    range; a theorem and its generated parts share one range credited once), dominated lines and share, dominated
+    constants, number of immediate dominated children, depth in the dominator tree. Count, and count per second-level
+    directory. Full table down to 0.1% in hinges.tsv.
+  K2_directories: >
+    For every second-level directory of the archive: its lines, its share of the archive, the lines of its constants
+    the proof uses, and the constant in it that dominates the most lines. A 'big theory' is a directory at or above
+    2% of the archive's lines. A closet by location is a constant at or above the 1% hinge level whose module lies in
+    a directory below 2%, excluding the two wrapper directories named above. Count and list.
+  K3_joints: >
+    For every constant at or above 0.5%: joined lines = own lines + dominated lines of all its dominated children
+    except the largest (the mass that meets at this constant and nowhere below it). Top twenty by joined lines, with
+    own lines, number of children and the largest child. Then the top ten 'short joints', those with at most 50 own
+    lines.
+  K4_spine_full: >
+    The spine continued past the structure trace's 2% cutoff: from the root, always the child dominating the most
+    lines, to a constant with no dominated child. Each step with directory, own lines, share, number of children; the
+    steps at which the second-level directory changes and the share at which it does.
+  K5_leverage: >
+    Among constants at or above 0.5% with at least two dominated children (so not pure wrappers), the twenty with the
+    fewest own lines per dominated line.
+  K6_statements: >
+    A Lean run prints, with #check and pp.proofs false, the statement of every closet found by K2, the ten largest
+    joints, the short joints, the last five spine constants and the five highest-leverage constants, excluding the
+    twenty statements already printed in the structure trace. Verbatim, no paraphrase in the cycle record.
+
+predictions:                       # mine, before the data; each is a miss if wrong and is recorded either way
+  P1_hinge_count: "Between 25 and 120 constants dominate at least 1% of the root's lines."
+  P2_no_closet: "K2 finds zero closets by location: every constant at or above 1% lives in a second-level directory holding at least 2% of the archive's lines, apart from the excluded wrappers."
+  P3_joints_location: "The five largest joints by joined lines all have modules under Development/AutomorphicArithmetic and each has at most 200 own lines."
+  P4_spine_end: "The full spine leaves Development/AutomorphicArithmetic only after the dominated share falls below 1%, and its last constant is in Formalism/ or GroundTheory/."
+  P5_run: "The analysis finishes in under 15 minutes and under 60 GB; the statement run in under 3 minutes."
+  P6_short_joint: "At least one constant with at most 50 own lines joins at least 5% of the root's lines, and the largest such is one of the structure trace's spine constants (steps 3 to 9)."
+
+standing_consequences:
+  all: "None. A trace changes no standing by construction. Verdict confirmed when K1 to K6 complete and every number is reported; misses listed. Gaps touched: EG3 (a map for a reader, not a reading). If K2 finds a closet, that is a place for a human read, not a finding about correctness or about content."
+  fail: "If the analysis does not complete, the error is reported and nothing is computed from partial output; a corrected script is an amendment here."
+
+not_settled_by_this_cycle: >
+  Whether any hinge or joint is an idea or a renaming; whether a short statement is deep; whether the route was known
+  before (that is a reading by someone who works in automorphic forms, which this cycle only equips); anything about
+  how the proof was found, since the archive holds the finished text and none of the attempts. Lines measure where
+  the text is, not where the thought was.
