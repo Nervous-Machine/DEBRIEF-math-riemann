@@ -1,0 +1,110 @@
+riemannHypothesis : RiemannHypothesis
+rhOfAll : RiemannHypothesis
+allChi : UpperTheory.EveryCharacter
+UpperTheory.FinalTheorems.everyCharacter : UpperTheory.EveryCharacter
+UpperTheory.FinalTheorems.everyCharacter_of_row : (UpperTheory.GalStar.Row0b
+    fun {E Ω} [Field E] [NumberField E] [Field Ω] [Algebra E Ω] [IsAlgClosure E Ω] {A} {w} h rc =>
+    UpperTheory.Zero.LLC.IsRecT h rc) →
+  UpperTheory.EveryCharacter
+UpperTheory.LiteratureTheorems.every_character_of_literature_of_vWin : UpperTheory.LiteratureTheorems.OpenLiteratureStatements →
+  UpperTheory.Top.VWin → UpperTheory.EveryCharacter
+UpperTheory.Lit.every_character_of_theta_integrals_local_matching : GlobalTheory.Fc.S0.UnitaryGroupThirdPlaceHypotheses →
+  GlobalTheory.FunPr.ThetaLocalInputs →
+    GlobalTheory.IndefiniteRowSideFullHecke.WeilTensorModels.ThetaIntegralsAgree →
+      GlobalTheory.IndefiniteRowSideFullHecke.WeilTensorModels.LocalMatching →
+        GlobalTheory.CovTop.CovolumeBoundOfX →
+          UpperTheory.Zero.LLC.RecTExists → UpperTheory.Top.VWin → UpperTheory.EveryCharacter
+UpperTheory.Lit.nonempty_hyps_definite_side_of_closed_bound : GlobalTheory.Fc.S0.UnitaryGroupThirdPlaceHypotheses →
+  GlobalTheory.FunPr.ThetaLocalInputs →
+    GlobalTheory.IndefiniteRowSideFullHecke.WeilTensorModels.ThetaIntegralsAgree →
+      GlobalTheory.IndefiniteRowSideFullHecke.WeilTensorModels.LocalMatching →
+        GlobalTheory.CovTop.CovolumeBoundOfX →
+          ∀ (hL : UpperTheory.Zero.LLC.RecTExists),
+            (∀ (cDep : ℝ),
+                GlobalTheory.Fc.RL.LinkedAt (GlobalTheory.Mem.Top.Bl.parametersOfDependence hL cDep) fun Q L =>
+                  GlobalTheory.Fc.R1.SlotNormCondition Q L fun 𝒞 =>
+                    Formalism.MainNotions.Closed (fun {eps} => 𝒞) fun {eps} Fm x =>
+                      GlobalTheory.NLink.BoundAtTwoThreeFamilyFonAlt Fm) →
+              Nonempty (GlobalTheory.Fc.HypsAlt GlobalTheory.Fc.S0.NL GlobalTheory.Fc.DefiniteSideCondition)
+GlobalTheory.Fc.S0.StageU.hypotheses_nonempty_of_unramified_exponents_alt : GlobalTheory.Fc.S0.UnitaryGroupThirdPlaceHypotheses →
+  GlobalTheory.Fc.S0.RowRat →
+    ∀ (hL : UpperTheory.Zero.LLC.RecTExists) (cDep : ℝ) (A : GlobalTheory.Mem.Top.GroupRetwisting.AtP),
+      GlobalTheory.Mem.Top.EvLgG A →
+        (GlobalTheory.Fc.RL.LinkedAt (GlobalTheory.Mem.Top.Bl.parametersOfDependence hL cDep) fun Q L =>
+            GlobalTheory.Fc.R1.SlotNormCondition Q L fun 𝒞 =>
+              Formalism.MainNotions.Closed (fun {eps} => 𝒞) fun {eps} Fm x =>
+                GlobalTheory.NLink.BoundAtTwoThreeFamilyFonAlt Fm) →
+          GlobalTheory.Fc.RL.LinkedAt
+              (GlobalTheory.Mem.Top.Bl.parametersOfExtension
+                (GlobalTheory.Mem.LiteralAutomorphy.extensionWithAtProperty hL
+                  (GlobalTheory.HeightCounting.Up.extensionWithOrigin hL cDep) A)
+                GlobalTheory.Mem.Top.Bl.SExt.none (GlobalTheory.Mem.Top.Bl.geoCl GlobalTheory.Mem.Top.Bl.anyGeometry))
+              GlobalTheory.Fc.S0.FunctionalCondition →
+            GlobalTheory.Fc.RL.LinkedAt
+                (GlobalTheory.Mem.Top.Bl.parametersOfExtension
+                  (GlobalTheory.Mem.LiteralAutomorphy.extensionWithAtProperty hL
+                    (GlobalTheory.HeightCounting.Up.extensionWithOrigin hL cDep) A)
+                  GlobalTheory.Mem.Top.Bl.SExt.none (GlobalTheory.Mem.Top.Bl.geoCl GlobalTheory.Mem.Top.Bl.anyGeometry))
+                GlobalTheory.Fc.S0.CovolumeBoundThirdPlaceSeries →
+              Nonempty (GlobalTheory.Fc.HypsAlt GlobalTheory.Fc.S0.NL GlobalTheory.Fc.DefiniteSideCondition)
+GlobalTheory.Fc.AllAtMemberStage0.allRows_of_open0_alt : GlobalTheory.Published.GlobalArtinReciprocity →
+  HeckeCharacterZeroLocus.SiegelWeilU.SiegelWeilUnitaryConvergent →
+    GlobalTheory.Published.DiscreteSeriesCover →
+      GlobalTheory.Published.HarishChandraModules →
+        GlobalTheory.Published.CuspRapidDecay →
+          GlobalTheory.Published.CasselmanWallach →
+            GlobalTheory.Published.DiscreteSeriesClassification →
+              GlobalTheory.BigOn.SurjectiveOntoX →
+                GlobalTheory.BigTop.LambdaLowerBound₂ →
+                  ∀ (hL : UpperTheory.Zero.LLC.RecTExists) (N : GlobalTheory.Mem.Top.Bl.NormChoiceExtension hL)
+                    (S : GlobalTheory.Mem.Top.Bl.SExt) (Γ : GlobalTheory.Mem.Top.Bl.GeoP)
+                    (NN : Formalism.MainNotions.FamClass → Prop),
+                    GlobalTheory.Fc.S0.OpenParameterStatements (GlobalTheory.Mem.Top.Bl.parametersOfExtension N S Γ) →
+                      GlobalTheory.Fc.RL.LinkedAt (GlobalTheory.Mem.Top.Bl.parametersOfExtension N S Γ)
+                          GlobalTheory.Fc.S0.CovolumeBoundThirdPlaceSeries →
+                        GlobalTheory.Fc.RL.LinkedAt (GlobalTheory.Mem.Top.Bl.parametersOfExtension N S Γ)
+                            GlobalTheory.Fc.S0.FunctionalCondition →
+                          (GlobalTheory.Fc.RL.LinkedAt (GlobalTheory.Mem.Top.Bl.parametersOfExtension N S Γ) fun Q L =>
+                              GlobalTheory.Fc.R1.SlotNormCondition Q L NN) →
+                            GlobalTheory.Fc.AllRowsAlt GlobalTheory.Mem.Top.Bl.KPx
+                              (GlobalTheory.Mem.Top.Bl.IsBuiltE (GlobalTheory.Mem.Top.Bl.parametersOfExtension N S Γ).s)
+                              (GlobalTheory.Mem.Top.Bl.IsGoodE (GlobalTheory.Mem.Top.Bl.parametersOfExtension N S Γ).s)
+                              (GlobalTheory.Mem.Top.Bl.BundleLinkage
+                                (GlobalTheory.Mem.Top.Bl.parametersOfExtension N S Γ))
+                              NN GlobalTheory.Fc.DefiniteSideCondition
+UpperTheory.One.vwin_of_row : (UpperTheory.GalStar.Row0b
+    fun {E Ω} [Field E] [NumberField E] [Field Ω] [Algebra E Ω] [IsAlgClosure E Ω] {A} {w} h rc =>
+    UpperTheory.Zero.LLC.IsRecT h rc) →
+  UpperTheory.Top.VWin
+UpperTheory.One.Join.automorphic_window_of_inputs : UpperTheory.LiteratureTheorems.OpenImageCondition →
+  PositivityTheory.Rg.BcN.BaseChangeIsobaricN → UpperTheory.V.Z.Win.RowT → UpperTheory.Top.VWin
+UpperTheory.One.Join.v_window_of_depth_zero_residual_bc_cm : UpperTheory.LiteratureTheorems.OpenImageCondition →
+  PositivityTheory.Rg.BcN.BaseChangeIsobaricN →
+    UpperTheory.V.Z.Win.RowT → GlobalTheory.Mem.LiteralAutomorphy.LiteratureCMHypothesis → UpperTheory.Top.VWin
+UpperTheory.V.v_window_of_literal_automorphy_n : GlobalTheory.Mem.LiteralAutomorphy.LiteratureRankNHypothesis →
+  UpperTheory.Top.VWin
+UpperTheory.V.HV.DescentVanishingReductions.v_window_of_automorphy_csd_ss_mono_odd : GlobalTheory.Mem.LiteralAutomorphy.LiteratureRankNHypothesis →
+  UpperTheory.Top.VWin
+SelfIntersectionVolumeEstimates.topCovolSlim2_use_alt_alt : GlobalTheory.CompanionTheory.Hypotheses₂.ResolutionCharZero →
+  GlobalTheory.CompanionTheory.Hypotheses₂.PrincipalisationCharZero →
+    GlobalTheory.CompanionTheory.Hypotheses₂.PoincareLelongInv →
+      PositivityTheory.MbHsUse.HSUse →
+        ReciprocityTheory.ChartRestriction.G.ArakelovGeometry.MoriwakiBigStatement →
+          GlobalTheory.CompanionTheory.Ar.HT.FarguesExact →
+            GlobalTheory.CompanionTheory.Ar.GR.ZarhinStatement →
+              GlobalTheory.CompanionTheory.Ar.Pub.NefRR →
+                GlobalTheory.Published.SiegelToroidalIntegral →
+                  GlobalTheory.Published.ToroidalForFanKS →
+                    GlobalTheory.Published.SemiAbelianLieSeminegative →
+                      GlobalTheory.Published.PointSeparationPair →
+                        GlobalTheory.Published.ArDegree →
+                          GlobalTheory.CovTop.PublishedHodgeBundleTheorems →
+                            GlobalTheory.Published.GrothendieckDeformation → GlobalTheory.CovTop.CovolumeBoundOfX
+UpperTheory.V.HV.DescentVanishingReductions.vwin_of_hypotheses_H_E_alt : UpperTheory.V.Af.HypothesesH' →
+  UpperTheory.Top.VWin
+UpperTheory.Gal.Int.galoisLocalGlobalStrong_recParameter : UpperTheory.GalStar.Row0b
+  fun {E Ω} [Field E] [NumberField E] [Field Ω] [Algebra E Ω] [IsAlgClosure E Ω] {A} {w} => UpperTheory.Gal.Int.recT
+UpperTheory.Gal.Int.galoisRepresentations_of_thetaLift : UpperTheory.TP.TLiftK →
+  UpperTheory.GalStar.Row0b fun {E Ω} [Field E] [NumberField E] [Field Ω] [Algebra E Ω] [IsAlgClosure E Ω] {A} {w} =>
+    UpperTheory.Gal.Int.recT
+UpperTheory.Gal.Int.Geo.geoOne_holds : UpperTheory.Gal.Int.Geo.GeoOne

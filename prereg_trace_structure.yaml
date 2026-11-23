@@ -87,3 +87,16 @@ not_settled_by_this_cycle: >
   primes, whether any named hypothesis is vacuous (a constant can be reached and still carry a True slot), and
   everything about correctness beyond finding F1. Dominated-line counts measure where the text is, not where the
   ideas are; a short lemma can carry the idea and a long one the bookkeeping.
+
+amendments:
+  - id: A1
+    dated: "2026-11-23"
+    when: "after the walk finished (18:44 UTC) and before the analysis ran"
+    what: >
+      The analysis was registered to run on the host (environment.host). The walk wrote an 11.4 GB edge table, so the
+      analysis ran in the VM instead, on the same files, with trace-structure/analyze2.py: an integer-indexed rewrite
+      of the registered trace-structure/analyze.py with the same measures, rules and outputs (it stores names once
+      and edges as integers). Both scripts were run on the Mathlib-only test graph from before the registration and
+      produced the same tables. No measure, threshold or prediction changed. Also noted: the walk's progress lines to
+      stderr were buffered by the Lean process until exit, so the run was silent while it worked; this affects
+      nothing in the outputs.

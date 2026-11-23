@@ -1,1028 +1,1098 @@
 {
- "missions": [
-  {
-   "schema_version": "nm-debrief-v1",
-   "created_by": "DEBRIEF/tools/new_mission.py",
-   "created_at": "2026-11-20T22:06:47Z",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "provenance": {
-    "source": "public record to 2026-11-20: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
-   },
-   "audience": "briefing",
-   "title": "The claimed proof of the Riemann Hypothesis announced by Levent Alpöge on 20 November 2026, built with Claude and released as Lean 4 code",
-   "kind": "audit",
-   "protocol_version": "0.1.0",
-   "claim_rule_met": false,
-   "label": "Riemann Hypothesis (Alpöge, with Claude)",
-   "area": "Number theory: zeros of the Riemann zeta function and Dirichlet L-functions",
-   "rests_on": "a four-page note and a Lean 4 development released as a 14-part archive on the claimant's website",
-   "pods": [
-    "DEBRIEF-math-riemann"
-   ],
-   "began": "2026-11-20",
-   "status": "active",
-   "record_quality": "full_ledger",
-   "record_note": "Opened at tier zero on 2026-11-20. Cycle 1's build halted on our own disk, not on the archive; cycle 2 finished it on 2026-11-21. One finding, accepted, on 2026-11-22. Nothing certified: the certification rule waits on a path-independent comparison (EG5).",
-   "record_limits": [
-    "The build, source scan, axiom audit and statement identity have been checked by Nervous Machine under a pre-registration (F1, accepted). The mathematics has not been read by anyone independent, and no one independent has signed what the statements mean.",
-    "The operating agent that pinned this record and runs its checks is Claude Fable 5.1, a model made by Anthropic, the claimant's employer, and the model family the claimant names as his co-worker. Heidi Bennett (Nervous Machine) is independent of the claimant; the agent is not. The trust anchor in a Lean check is the kernel, not the operator, so this record's rule is: certified when two parties independent of the claimant and of each other report matching hashes of the compiled output, each disclosing the agent that operated the build; one party alone gives accepted. Rule set 2026-11-20, amendment A1 of prereg_cycle1.yaml."
-   ],
-   "scope_limits": [
-    "Nervous Machine keeps score of the checks; it does not check the mathematics line by line.",
-    "Public record through 2026-11-21.",
-    "The register scores builds, axioms and statement identity. It does not read 17 million lines of Lean, and no one has."
-   ],
-   "opening": {
-    "spoken": "This record covers the claimed solution of The Riemann Hypothesis: what has been claimed, what it rests on, and what would have to be checked by whom."
-   },
-   "short_version": {
-    "spoken": "On 20 November 2026 Levent Alpöge, a mathematician at Anthropic, posted a four-page note on his personal site saying that he believes he has, working with Claude, found a proof of the Riemann Hypothesis, that the method also resolves the Generalized Riemann Hypothesis for Dirichlet L-functions, and that the argument has been formalized in Lean 4 without extra assumptions. He released no paper, only the Lean code. Nervous Machine fetched the archive the same day and pinned it by hash. It holds 175,187 Lean files, about 17.4 million lines, built against a pinned Mathlib. Its entry file states Mathlib's own definition RiemannHypothesis as its main result. Andrew Sutherland at MIT reports an independent compile, axiom audit and kernel replays, and on 21 November the Lean and Mathlib communities issued a joint statement saying they certify the statement and the proof of the Riemann Hypothesis. Nervous Machine's own pre-registered build, halted once by a full disk and resumed, compiled every module, found no sorry or axiom in the source, confirmed the three standard axioms for each of the five theorems, and confirmed that the main statement is Mathlib's; that finding is accepted. Nothing is certified, because two independent builds match byte for byte only on the files that carry no source path. No independent mathematician has reported reading the argument, and nobody has signed or refused what the statements mean."
-   },
-   "what_happened": {
-    "spoken": "The claim was pinned from the public record by commit or hash. A reading guide for the five statements was written. The first pre-registered build ran three hours and stopped on a full disk, our fault; the resumed build finished the next day: every module compiles, the source has no sorry or axiom, the five theorems rest on the standard axioms, and the main statement is Mathlib's. Our output matches Andrew Sutherland's byte for byte on 76,968 files including the entry file, and differs on 98,219 only by the source path the compiler writes into warned modules. The Lean and Mathlib communities issued a joint statement the same day. Nobody has yet signed or refused the reading guide."
-   },
-   "implications": {
-    "rely_on": [
-     {
-      "spoken": "that the released Lean code compiles against Mathlib and its five theorems follow from Lean's three standard axioms, with the main statement being Mathlib's RiemannHypothesis",
+  "missions": [
+    {
+      "schema_version": "nm-debrief-v1",
+      "created_by": "DEBRIEF/tools/new_mission.py",
+      "created_at": "2026-11-20T22:06:47Z",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "provenance": {
+        "source": "public record to 2026-11-20: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
+      },
+      "audience": "briefing",
+      "title": "The claimed proof of the Riemann Hypothesis announced by Levent Alpöge on 20 November 2026, built with Claude and released as Lean 4 code",
+      "kind": "audit",
+      "protocol_version": "0.1.0",
+      "claim_rule_met": false,
+      "label": "Riemann Hypothesis (Alpöge, with Claude)",
+      "area": "Number theory: zeros of the Riemann zeta function and Dirichlet L-functions",
+      "rests_on": "a four-page note and a Lean 4 development released as a 14-part archive on the claimant's website",
+      "pods": [
+        "DEBRIEF-math-riemann"
+      ],
+      "began": "2026-11-20",
+      "status": "active",
+      "record_quality": "full_ledger",
+      "record_note": "Opened at tier zero on 2026-11-20. Cycle 1's build halted on our own disk, not on the archive; cycle 2 finished it on 2026-11-21. One finding, accepted, on 2026-11-22. Nothing certified: the certification rule waits on a path-independent comparison (EG5).",
+      "record_limits": [
+        "The build, source scan, axiom audit and statement identity have been checked by Nervous Machine under a pre-registration (F1, accepted). The mathematics has not been read by anyone independent, and no one independent has signed what the statements mean.",
+        "The operating agent that pinned this record and runs its checks is Claude Fable 5.1, a model made by Anthropic, the claimant's employer, and the model family the claimant names as his co-worker. Heidi Bennett (Nervous Machine) is independent of the claimant; the agent is not. The trust anchor in a Lean check is the kernel, not the operator, so this record's rule is: certified when two parties independent of the claimant and of each other report matching hashes of the compiled output, each disclosing the agent that operated the build; one party alone gives accepted. Rule set 2026-11-20, amendment A1 of prereg_cycle1.yaml."
+      ],
+      "scope_limits": [
+        "Nervous Machine keeps score of the checks; it does not check the mathematics line by line.",
+        "Public record through 2026-11-21.",
+        "The register scores builds, axioms and statement identity. It does not read 17 million lines of Lean, and no one has."
+      ],
+      "opening": {
+        "spoken": "This record covers the claimed solution of The Riemann Hypothesis: what has been claimed, what it rests on, and what would have to be checked by whom."
+      },
+      "short_version": {
+        "spoken": "On 20 November 2026 Levent Alpöge, a mathematician at Anthropic, posted a four-page note on his personal site saying that he believes he has, working with Claude, found a proof of the Riemann Hypothesis, that the method also resolves the Generalized Riemann Hypothesis for Dirichlet L-functions, and that the argument has been formalized in Lean 4 without extra assumptions. He released no paper, only the Lean code. Nervous Machine fetched the archive the same day and pinned it by hash. It holds 175,187 Lean files, about 17.4 million lines, built against a pinned Mathlib. Its entry file states Mathlib's own definition RiemannHypothesis as its main result. Andrew Sutherland at MIT reports an independent compile, axiom audit and kernel replays, and on 21 November the Lean and Mathlib communities issued a joint statement saying they certify the statement and the proof of the Riemann Hypothesis. Nervous Machine's own pre-registered build, halted once by a full disk and resumed, compiled every module, found no sorry or axiom in the source, confirmed the three standard axioms for each of the five theorems, and confirmed that the main statement is Mathlib's; that finding is accepted. Nothing is certified, because two independent builds match byte for byte only on the files that carry no source path. No independent mathematician has reported reading the argument, and nobody has signed or refused what the statements mean."
+      },
+      "what_happened": {
+        "spoken": "The claim was pinned from the public record by commit or hash. A reading guide for the five statements was written. The first pre-registered build ran three hours and stopped on a full disk, our fault; the resumed build finished the next day: every module compiles, the source has no sorry or axiom, the five theorems rest on the standard axioms, and the main statement is Mathlib's. Our output matches Andrew Sutherland's byte for byte on 76,968 files including the entry file, and differs on 98,219 only by the source path the compiler writes into warned modules. The Lean and Mathlib communities issued a joint statement the same day. Nobody has yet signed or refused the reading guide."
+      },
+      "implications": {
+        "rely_on": [
+          {
+            "spoken": "that the released Lean code compiles against Mathlib and its five theorems follow from Lean's three standard axioms, with the main statement being Mathlib's RiemannHypothesis",
+            "finding_ids": [
+              "F1"
+            ]
+          }
+        ],
+        "do_not_rely_on": [
+          {
+            "spoken": "the claim as a settled theorem of mathematics: no independent mathematician has read the argument (EG3), nobody has signed or refused what the formal statements mean (EG2, EG4), and the record's certification rule has not been met (EG5)",
+            "finding_ids": []
+          }
+        ],
+        "stop": [],
+        "new": []
+      },
+      "certainty_statement": {
+        "spoken": "One finding is accepted: the archive builds, its source has no escape hatch, its five theorems rest on the three standard axioms, and its main statement is Mathlib's Riemann Hypothesis. Nothing is certified. Whether the statements mean what the problem asks, and whether anyone understands the argument, is open."
+      },
+      "sources": [
+        {
+          "kind": "problem",
+          "ref": "https://www.claymath.org/millennium/riemann-hypothesis/"
+        },
+        {
+          "kind": "url",
+          "ref": "https://alpo.ge/remark.pdf (sha256 3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d, 245114 bytes, fetched 2026-11-20)"
+        },
+        {
+          "kind": "lean",
+          "ref": "https://alpo.ge/lean.tar.gz.part01 … part14 (14 parts, reassembled by concatenation; per-part hashes in source/parts.sha256) (sha256 9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc, 239275554 bytes, fetched 2026-11-20)"
+        },
+        {
+          "kind": "formal statement (third party)",
+          "ref": "github.com/leanprover-community/mathlib4 Mathlib/NumberTheory/LSeries/RiemannZeta.lean at 0df444a360eaa60ab8c11dca51a86af692955474"
+        }
+      ],
+      "tooling": [
+        {
+          "by": "Levent Alpöge",
+          "tier": "internal",
+          "basis": "inferred: the claimant is an Anthropic employee and names Claude as a co-worker without a version; the companion Navier–Stokes repository's commits of 20 November name Claude Fable 5.2, public from 9 November, after most of the note's timeline",
+          "models": [
+            {
+              "model": "Claude (version not stated)",
+              "id": "claude-unversioned",
+              "vendor": "Anthropic",
+              "public_release": null,
+              "tiers_at_release": [],
+              "public_at_the_time": "unknown"
+            }
+          ],
+          "work": {
+            "from": "2026-10-06",
+            "to": "2026-11-16"
+          },
+          "duration": "six weeks, by the note's twenty-step timeline",
+          "compute": "not stated"
+        }
+      ]
+    }
+  ],
+  "cycles": [
+    {
+      "schema_version": "nm-debrief-v1",
+      "created_by": "DEBRIEF/tools/new_mission.py",
+      "created_at": "2026-11-20T22:06:47Z",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "provenance": {
+        "source": "public record to 2026-11-20: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
+      },
+      "audience": "briefing",
+      "cycle": 0,
+      "dated": "2026-11-16 to 2026-11-20",
+      "kind": "replay",
+      "preregistered": {
+        "question": "What is on the public record about this claim?",
+        "rule": "no look-ahead; each event dated by its first public posting; artifacts pinned by commit or hash",
+        "predictions": [],
+        "commit": null,
+        "before_data": false
+      },
+      "outcome": {
+        "verdict": "admitted",
+        "numbers": {
+          "claims": 1,
+          "artifacts": 2
+        }
+      },
+      "spoken": "The last entry of the note's timeline, dated 16 November 2026, reads GRH. The note and the 14-part Lean archive appeared on the claimant's website, and the claim was reported by the press. Nervous Machine fetched both the same day and pinned them by hash: the note is 245,114 bytes; the reassembled archive is 239,275,554 bytes and unpacks to 1.27 GB, 175,187 Lean files, about 17.4 million lines and about 751,000 theorem and lemma declarations, pinned to Lean 4.33.1 and Mathlib commit 0df444a3 of 21 August 2026. A text scan at pinning found no sorry, admit, axiom, native_decide, implemented_by, extern, unsafe or opaque declarations. The entry file states Mathlib's definition RiemannHypothesis by name.",
+      "finding_ids": [],
+      "gap_ids": [
+        "EG1",
+        "EG2",
+        "EG3",
+        "EG4"
+      ]
+    },
+    {
+      "schema_version": "nm-debrief-v1",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "created_by": "contributed cycle (merge_cycles.py)",
+      "created_at": "2026-11-20T22:28:44Z",
+      "provenance": {
+        "source": "public pages read 2026-11-20 22:25 UTC: math.mit.edu/~drew/grh/ (sha256 73f96192…, page states last updated 19:45 UTC), github.com/Deicyde/riemann-hypothesis, github.com/CocoSgt/riemann-hypothesis-lean, github.com/jsmorph/rh"
+      },
+      "audience": "briefing",
+      "kind": "replay",
+      "cycle": "external-2026-11-20",
+      "dated": "2026-11-20",
+      "by": null,
+      "preregistered": {
+        "question": "What does the public record show about independent checks of this archive today?",
+        "rule": "status read from each public page, pinned by hash or repository; no new checking by Nervous Machine",
+        "predictions": [],
+        "commit": null,
+        "before_data": false
+      },
+      "outcome": {
+        "verdict": "admitted",
+        "numbers": {
+          "external": {
+            "sutherland_mit": {
+              "who": "Andrew Sutherland (MIT), 'checks run with Claude Code'",
+              "archive_sha256_matches_ours": true,
+              "compile": "all 175,187 modules, Lean v4.33.1, Mathlib v4.33.1, zero errors, finished 16:43 UTC",
+              "axioms_five_statements": "propext, Classical.choice, Quot.sound only",
+              "kernel_replay": "leanchecker on every module, 175,187 of 175,187, zero rejections, about 18:17 UTC",
+              "independent_kernel": "nanoda accepts the full export, exit 0 at 19:05 UTC, 27 min 42 s on 80 threads",
+              "in_progress": "lake comparator end to end; Lean default and paranoid kernels on the export",
+              "caveats_stated": "build ran on cloud machines without a sandbox, compiled by calling lean directly rather than lake build; a 77-module sample matched a real lake build; a first attempt with a wrong module root was discarded",
+              "statement_note": "GRH here means Dirichlet L-functions only"
+            },
+            "mirrors": [
+              {
+                "repo": "Deicyde/riemann-hypothesis",
+                "note": "byte-identical to the archive plus Comparator files, per Sutherland's page; CI export sha256 bd484ac9…b2b9"
+              },
+              {
+                "repo": "CocoSgt/riemann-hypothesis-lean",
+                "created": "2026-11-20T14:59Z",
+                "note": "mirror; states no independent build or review published as of mirroring"
+              },
+              {
+                "repo": "jsmorph/rh",
+                "created": "2026-11-20T14:49Z",
+                "note": "copy; archive sha256 9631b4f0… matches ours; states the project was not built there"
+              }
+            ],
+            "reports": [
+              {
+                "who": "Andrew Sutherland (MIT)",
+                "url": "https://math.mit.edu/~drew/grh/",
+                "dated": "2026-11-20",
+                "operated_with": "Claude Code, as stated on the page",
+                "what": "full compile, standard axioms only, kernel replay of every module, independent kernel accepts the export; comparator and Lean kernels on the export in progress at 19:45 UTC"
+              }
+            ]
+          }
+        }
+      },
+      "spoken": "What the public record showed on the evening of 20 November. Andrew Sutherland at MIT posted a verification page: the archive, same hash as ours, compiles in full with zero errors, the five statements rest on the three standard axioms only, every module was replayed through Lean's kernel, and an independent kernel written in Rust accepts the whole exported proof. Two checks were still running. He states that his checks were run with Claude Code and that his build ran unsandboxed. Three public mirrors of the archive exist; two say plainly they built nothing. None of this is a cycle under its author's name in this record; it is what the record saw.\n",
+      "finding_ids": [],
+      "gap_ids": [
+        "EG1"
+      ]
+    },
+    {
+      "schema_version": "nm-debrief-v1",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "created_by": "contributed cycle (merge_cycles.py)",
+      "created_at": "2026-11-20T22:28:44Z",
+      "provenance": {
+        "source": "lean/src/Main.lean and lean/src/Statements.lean in the pinned archive (sha256 9631b4f0…); Mathlib/NumberTheory/LSeries/RiemannZeta.lean at 0df444a3"
+      },
+      "audience": "briefing",
+      "kind": "trace",
+      "cycle": "trace-2026-11-20",
+      "dated": "2026-11-20",
+      "by": "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)",
+      "preregistered": {
+        "question": "Can the open semantic question, whether the five formal statements say what the note claims, be made cheap for a human reader?",
+        "rule": "each statement quoted verbatim, its definitions named with source, a plain reading and the point to confirm; discrepancies recorded; standing unchanged by construction",
+        "predictions": [],
+        "commit": null,
+        "before_data": false,
+        "results": [
+          "trace/DEFINITIONAL-TRACE.md"
+        ]
+      },
+      "outcome": {
+        "verdict": "confirmed",
+        "numbers": {
+          "statements_traced": 5,
+          "third_party_definitions": 1,
+          "claimant_definitions": 4,
+          "discrepancies_recorded": 2,
+          "human_review": false
+        }
+      },
+      "spoken": "On 20 November Nervous Machine wrote a reading guide for the one question a build cannot settle: whether the five statements in Main.lean say what the note claims. The main statement is Mathlib's own definition of the Riemann Hypothesis, written by the Mathlib community, not by the claimant, and is quoted in full. The other four are the claimant's definitions about Dirichlet L-functions, also quoted in full. One discrepancy is recorded: the note says Generalized Riemann Hypothesis without qualification, while the archive states it for Dirichlet characters only. The readings are the agent's; nothing changed standing. The guide exists so that a number theorist's read takes half an hour.\n",
+      "finding_ids": [],
+      "gap_ids": [
+        "EG2",
+        "EG4"
+      ]
+    },
+    {
+      "schema_version": "nm-debrief-v1",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "created_by": "contributed cycle (merge_cycles.py)",
+      "created_at": "2026-11-21T01:57:18Z",
+      "provenance": {
+        "source": "contributed cycle file cycle1-rerun.yaml"
+      },
+      "audience": "briefing",
+      "kind": "rerun",
+      "cycle": 1,
+      "dated": "2026-11-20 to 2026-11-21",
+      "by": "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)",
+      "preregistered": {
+        "commit": "prereg_cycle1.yaml (registered sha256 0b64c4b9967531bf5f775d53cae415394e531c4864771d20594eb99bd4da47dc at 2026-11-20T22:07:53Z; amendment A1 added R7)",
+        "results": [
+          "cycle1/R3_summary.txt",
+          "cycle1/env.txt",
+          "cycle1/R1.txt",
+          "cycle1/R2_cache.log",
+          "cycle1/logs.sha256",
+          "cycle1/oleans-partial.sha256",
+          "cycle1/probe_run1.sha256",
+          "cycle1/probe_run2.sha256",
+          "cycle1/probe_run1.log",
+          "cycle1/sutherland-files.sha256"
+        ],
+        "question": "Does the Lean development build from the pinned archive against the pinned Mathlib on a machine the claimant has never touched, do its five entry statements use only Lean's three standard axioms, and is its main statement literally Mathlib's definition RiemannHypothesis? (A1) Do our compiled-output hashes match Andrew Sutherland's?\n",
+        "rule": "R1 to R7 as registered; standing moves only on all of R3 to R7 passing",
+        "predictions": [
+          "R1 pass; R2 pass",
+          "R3 exit 0 with 0 error lines, wall time 6 to 72 hours, peak memory under 90 GB",
+          "R4 zero hits; R5 exactly propext, Classical.choice, Quot.sound for each of the five; R6 RiemannHypothesis is Mathlib's",
+          "R7 (A1) Main.olean and the manifest of all compiled files hash to Sutherland's values"
+        ],
+        "before_data": true
+      },
+      "environment": {
+        "hardware": "Lima VM primegaps on Heidi's Mac: Ubuntu, aarch64, 20 cores, 98 GB RAM, 290 GB disk; nothing from the archive ran on the host",
+        "toolchain": "Lean v4.33.1 (Lake 5.0.0), Mathlib 0df444a360eaa60ab8c11dca51a86af692955474 from the community cache, elan 4.2.4",
+        "wall_time": "3:19 (the build, until the disk filled)"
+      },
+      "outcome": {
+        "verdict": "mixed",
+        "numbers": {
+          "R1": "pass: archive sha256 9631b4f0…, tar listing 175,190 entries hashing to ac98446c…",
+          "R2": "pass: lake exe cache get exit 0",
+          "R3": "not completed: 290 GB disk full at 2026-11-21 01:27 UTC after 3 h 19 m; 32,018 of 175,187 modules compiled; 35 compilations failed with 'no space left on device'; no other error in the log; 89,659 warning lines; disk at the halt: setup.json files 230.9 GB, .olean 22.1 GB, .c 0.3 GB",
+          "R4_R5_R6": "not run; Main.olean was not built",
+          "R7_partial": "of the 32,018 compiled files, 17,023 equal the hash Sutherland published for the same file and 14,995 differ; Main.olean not built, so neither registered hash could be computed",
+          "diagnosis_after_the_halt": "not registered. Nine modules rebuilt twice in a second directory: the six that differed from Sutherland's differed again, from our first run and from his; the three that matched, matched again; the two rebuilds agree with each other on all nine. In CompactPartClosedOrbit the only difference between first run and rebuild is the absolute path of the source file, 106 bytes, inside a linter message that Lean v4.33.1 stores in the module output (Lean/Linter/PersistentLintLog.lean). 14,992 of the 14,995 differing files contain our absolute source directory as a byte string; none of the 17,023 equal files does; three differing files contain no such string and are under study in cycle 2 (R8): Formalism/FlagUnipotentLattices/MinkowskiFactorialBounds/IntegerGroupLocalParametrization, Formalism/GL3MeanSquares/GenusMeanAsymptotics/JacobiCharacterSums/PNTDHB, Formalism/SharpRestriction/GrowthBounds/StandardPolynomials/ColXCnt"
+        },
+        "misses": [
+          "R3: predicted exit 0 in 6 to 72 hours under 90 GB of memory. The build halted after 3 h 19 m with the disk full. The disk use was not predicted at all: Lake's per-module setup.json files, which this cycle did not know about, took 231 GB. Peak memory is unknown because time's summary could not be written to the full disk. The halt is ours, not the archive's; no error other than disk exhaustion appears in the log.",
+          "R7 (A1): predicted that both hashes match Sutherland's. Neither could be computed, and the partial comparison shows the manifest cannot match: about 47% of the compiled modules embed the absolute path of their source file, which differs between any two parties who did not choose the same path. The rule's intent (two independent reports agreeing) is not met by this cycle and, as written, cannot be met without a shared path; recorded as gap EG5."
+        ]
+      },
+      "spoken": "Our first build of the archive ran for three hours and nineteen minutes and stopped when the machine's disk filled. The disk was our mistake: the build tool writes a large bookkeeping file for every module, and we had not planned for it. Thirty-two thousand of the hundred and seventy-five thousand modules compiled before the halt, with no error other than the full disk. We compared those with the hashes Andrew Sutherland published: about half agree byte for byte. The other half differ because the compiler writes the absolute path of each source file into the output of any module that produced a warning, so two builds in different directories cannot match on those modules. The build is resumed as cycle 2, written down first.\n",
+      "finding_ids": [],
+      "gap_ids": [
+        "EG1",
+        "EG5"
+      ]
+    },
+    {
+      "schema_version": "nm-debrief-v1",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "created_by": "contributed cycle (merge_cycles.py)",
+      "created_at": "2026-11-22T00:19:00Z",
+      "provenance": {
+        "source": "public pages read 2026-11-22 00:16 UTC: leanprover-community.github.io/blog/posts/riemann-hypothesis/ (sha256 f1bc87e6…, 8,501 bytes, page dated 2026-11-21 13:55), math.mit.edu/~drew/grh/ (sha256 e4648882…, 20,460 bytes, page states last updated 2026-11-21 12:55 UTC); hashes in source/external.sha256"
+      },
+      "audience": "briefing",
+      "kind": "replay",
+      "cycle": "external-2026-11-21",
+      "dated": "2026-11-21",
+      "by": null,
+      "preregistered": {
+        "question": "What did the public record add on 21 November about independent checks of this archive and its statements?",
+        "rule": "status read from each public page, pinned by hash; no new checking by Nervous Machine in this cycle",
+        "predictions": [],
+        "commit": null,
+        "before_data": false
+      },
+      "outcome": {
+        "verdict": "admitted",
+        "numbers": {
+          "external": {
+            "lean_mathlib_joint_statement": {
+              "who": "\"Lean and Mathlib communities\"; the page says the statement is endorsed by the Lean FRO and the Mathlib Initiative; no individual is named",
+              "dated": "2026-11-21 13:55",
+              "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+              "says": "quoted: \"We have full confidence that Alpöge's proof of the Riemann Hypothesis is correct\" and \"We hereby certify that both the statement and the proof of the Riemann Hypothesis are correct\"; the four criteria of Kevin Buzzard's post of 2026-11-12 (xenaproject.wordpress.com) are said to be satisfied",
+              "statement": "Mathlib's RiemannHypothesis, which the page says \"has been carefully vetted by experts in Lean and number theory\"",
+              "compilation": "\"dozens of people have reported correct compilation of the codebase, reproducing the same raw proof export file\"",
+              "statement_match": "a community file isolates the statement and imports only Mathlib; compared with the proved theorem by two tools, comparator and con-leche --compare, \"both confirming\" it is exactly Mathlib's statement",
+              "proof_validity": "the exported proof checked by Lean's kernel, con-leche, con-ron and several third-party checkers in different languages; con-leche and con-ron described as carrying a formal proof, relative to set theory, that they cannot accept a false proof; checks ran on an inert export",
+              "scope": "the statement concerns the Riemann Hypothesis only; it does not mention the four Dirichlet L-function statements",
+              "on_the_mathematics": "one sentence: \"We look forward to all the activity in the mathematical community that will help explain the new ideas in this proof.\"",
+              "words": "the page uses the word certify; in this record that word is a standing reached under the rule in prereg_cycle1.yaml A1, which this statement does not address, so it is recorded as what the page says and moves nothing by itself"
+            },
+            "sutherland_mit_update": {
+              "who": "Andrew Sutherland (MIT), 'checks run with Claude Code'",
+              "page_updated": "2026-11-21 12:55 UTC",
+              "new_since_2026-11-20": [
+                "con-leche master (cd2eceab) on the full export: accepts, 1,468,418 declarations in --verified mode, exit 0 at 21:19:04 UTC on 20 November",
+                "con-leche --compare (5dc36dc1), challenge against solution: all five theorems \"justified by the solution\", 51,692 challenge declarations, exit 0 at 21:19:12 UTC",
+                "lean4lean (67f63b0c, Lean v4.33.1) on every compiled module: 175,187 of 175,187 pass; five needed the step limit raised",
+                "con-leche and con-ron as bundled with Lean v4.36.0: exit 2, declined, not a rejection (one reflexive inductive type unsupported)",
+                "still running at 12:55 UTC: Lean default and paranoid kernels on the export; lake comparator end to end (its statement comparison and axiom check passed)",
+                "the five statements written out in words, exactly as in the challenge file, with a scope note: GRH here means Dirichlet L-functions, all moduli and characters; Dedekind, Hecke and automorphic L-functions are not among the statements checked",
+                "arithmetic consequences: combined with kimihiro64/Robin1984 (acab1a3), robin_inequality and lagarias_inequality compile with the three standard axioms; con-leche and nanoda accept the combined export",
+                "build directory disclosed: /home/ubuntu/grh/src/lean on every build machine; 98,219 of his 175,187 compiled files contain that path and 76,968, including Main.olean, do not; his own 240-module build at another path gave 168 files equal and 72 different, all 72 containing that build's path",
+                "his page now names the exported proof, not the compiled files, as the artifact to compare across builds, and says it has not been examined whether the export can carry a source path"
+              ]
+            }
+          }
+        }
+      },
+      "spoken": "What the public record added on 21 November. The Lean and Mathlib communities published a joint statement, which the page says is endorsed by the Lean FRO and the Mathlib Initiative, saying they certify both the statement and the proof of the Riemann Hypothesis: dozens of independent compilations reproducing the same exported proof, two tools confirming the proved theorem is Mathlib's statement, and several checkers accepting the export. It names no individual, does not mention the four Dirichlet L-function statements, and says the mathematical community's work of explaining the ideas lies ahead. Andrew Sutherland's page added a second independent kernel accepting the export, lean4lean passing every module, the five statements in words with their scope, two arithmetic consequences derived with an independent formalization, and the one thing this record had asked him for: his build path, with his own count of how many compiled files embed it. None of this is a cycle under its author's name here; it is what the record saw.\n",
+      "finding_ids": [],
+      "gap_ids": [
+        "EG1",
+        "EG2",
+        "EG4",
+        "EG5"
+      ]
+    },
+    {
+      "schema_version": "nm-debrief-v1",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "created_by": "contributed cycle (merge_cycles.py)",
+      "created_at": "2026-11-22T02:42:47Z",
+      "provenance": {
+        "source": "contributed cycle file cycle2-rerun.yaml"
+      },
+      "audience": "briefing",
+      "kind": "rerun",
+      "cycle": 2,
+      "dated": "2026-11-21 to 2026-11-22",
+      "by": "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)",
+      "preregistered": {
+        "commit": "prereg_cycle2.yaml (registered sha256 455b4e62c8fc21145dc6d70e8398a283b7284ae7c3afa24928987ec6ef7ae8bf at 2026-11-21T01:42:23Z, before the resumed build started at 01:42:24Z)",
+        "results": [
+          "cycle2/env.txt",
+          "cycle2/R1.txt",
+          "cycle2/progress.log",
+          "cycle2/cycle2-logs.sha256",
+          "cycle2/disk.txt",
+          "cycle2/R4.txt",
+          "cycle2/R5R6.txt",
+          "cycle2/R5R6.err",
+          "cycle2/R6_rerun.txt",
+          "cycle2/oleans.sha256",
+          "cycle2/with_path.txt",
+          "cycle2/rh_cycle2.sh",
+          "cycle2/rh_cycle2_post.sh",
+          "cycle2/Audit.lean",
+          "cycle2/Audit_R6fix.lean"
+        ],
+        "question": "Cycle 1's question, unchanged: does the development build from the pinned archive against the pinned Mathlib on a machine the claimant has never touched, do its five entry statements use only Lean's three standard axioms, and is its main statement literally Mathlib's RiemannHypothesis? Added: how much of the compiled output can two independent builds compare byte for byte, and what decides it?\n",
+        "rule": "R1, R3 to R8 as registered; a finding with standing ACCEPTED on R3 to R6 passing; nothing certified in this cycle (amendment A1 of cycle 1 needs two independent matching hash reports)",
+        "predictions": [
+          "R1 pass; 32,018 .olean files before the resume",
+          "R3 exit 0, 0 error lines, 8 to 30 hours for the resumed part, peak memory under 90 GB, .lake/build under 200 GB",
+          "R4 zero hits; R5 exactly propext, Classical.choice, Quot.sound for each of the five; R6 RiemannHypothesis is Mathlib's, declared once, in Mathlib.NumberTheory.LSeries.RiemannZeta",
+          "R7 Main.olean equals Sutherland's (low confidence); the manifest does not; files equal between 45% and 60% of 175,187",
+          "R8 every file that differs from Sutherland's contains our source path and no equal file does"
+        ],
+        "before_data": true
+      },
+      "environment": {
+        "hardware": "Lima VM primegaps on Heidi's Mac: Ubuntu, aarch64, 20 cores, 98 GB RAM, 290 GB disk, 216 GB free at the start; nothing from the archive ran on the host",
+        "toolchain": "Lean v4.33.1 (Lake 5.0.0), Mathlib 0df444a360eaa60ab8c11dca51a86af692955474 from the community cache, fetched in cycle 1",
+        "wall_time": "14:48:01 for the resumed build (2026-11-21 01:42:24 to 16:30:26 UTC); the post-build checks 2 minutes; the axiom audit 2 min 01 s"
+      },
+      "outcome": {
+        "verdict": "confirmed",
+        "numbers": {
+          "R1": "pass: archive sha256 9631b4f0…; 32,018 .olean files before the resume",
+          "R3": "pass: exit 0; 0 error lines in 2,385,844 log lines (sha256 67a34842…, 175.5 MB, kept in the VM); 489,062 warning lines; 143,175 modules built (Lake log) and 143,175 .olean files with a modification time after the start; 32,012 .olean files untouched since cycle 1; of cycle 1's 32,018 hashes, 32,015 are unchanged and 3 (the files truncated by the full disk) are rebuilt; wall time 14 h 48 m 01 s; peak resident memory 61,216,752 kB (61.2 GB); .lake/build 101,323,869,380 bytes at the end (.olean 100.3 GB, ir 1.0 GB, setup.json 0 after the pruner); 175,187 .olean and 175,187 .c files",
+          "R4": "pass: zero hits for sorry, admit, native_decide, axiom declarations, implemented_by, extern, unsafe and opaque across every .lean file under lean/src",
+          "R5": "pass: each of riemannHypothesis, riemannZeta_eq_zero_re, LFunction_ne_zero_of_half_lt_re, LFunction_eq_zero_re, LFunction_eq_zero_re_of_isPrimitive depends on exactly [propext, Classical.choice, Quot.sound]",
+          "R6": "pass: #print RiemannHypothesis gives Mathlib's definition (∀ s : ℂ, riemannZeta s = 0 → (¬∃ n, s = -2 * (↑n + 1)) → s ≠ 1 → s.re = 1 / 2); the constant RiemannHypothesis is declared once, in module Mathlib.NumberTheory.LSeries.RiemannZeta; five other constants end in that string, all with longer names (…GivesRiemannHypothesis, …AndRiemannHypothesis) in the archive's own modules, none of them a redefinition; riemannHypothesis : RiemannHypothesis. The built environment has 186,200 modules and 2,701,132 constants. The other four theorems have the claimant's own types RiemannZetaZerosOnLine, DirichletLNonvanishingRightOfHalf, DirichletLZerosOnLine, PrimitiveDirichletLZerosOnLine (EG4)",
+          "R7": "Main.olean sha256 9146dfb4… equals Sutherland's (pass). Manifest of all 175,187 files in his format hashes to a9a97091…, not his 375cbee2… (predicted). Files equal 76,968 (43.93%), files different 98,219; no file present on one side only. The 45% to 60% prediction missed; see misses",
+          "R8": "pass: 98,219 files contain the byte string /home/heidibennett.guest/untrusted/alpoge-rh/src/lean/src/ and 76,968 do not. Two-by-two table: different and contains path 98,219; equal and no path 76,968; different without path 0; equal with path 0. No exceptions. Sutherland's page, updated 2026-11-21 12:55 UTC, reports the same split for his own build under /home/ubuntu/grh/src/lean: 98,219 with his path, 76,968 without",
+          "audit_procedure_note": "not registered. The first run of cycle2/Audit.lean exited 1: its #eval block, which lists constants ending in RiemannHypothesis with their modules, did not compile (an invalid field, env.constants.size, in our script), so that run (cycle2/R5R6.txt) gave R5 and the #print and #check lines but not the constant listing. The block was corrected in cycle2/Audit_R6fix.lean (count by toList.length) and rerun at 02:38 UTC on 22 November, exit 0, output cycle2/R6_rerun.txt, 2 min 01 s, 55.0 GB peak memory. The archive was not touched between the runs"
+        },
+        "misses": [
+          "R7: predicted 45% to 60% of files equal to Sutherland's; 43.93% are. The direction was right and the mechanism exact (R8), the share of modules producing a linter warning was underestimated."
+        ]
+      },
+      "spoken": "The resumed build finished: all hundred and seventy-five thousand modules compile from the pinned archive on our machine, with no error, in fourteen hours and forty-eight minutes and sixty-one gigabytes of memory. The source has no sorry, admit, axiom or escape hatch. Each of the five entry theorems rests on exactly Lean's three standard axioms. The main theorem's statement is Mathlib's own definition of the Riemann Hypothesis, declared once, in Mathlib, and nowhere redefined. Compared with Andrew Sutherland's build at MIT, our output is byte-identical on 76,968 files, including the entry file, and differs on 98,219, every one of which carries our source path inside a stored warning and none of which is among the equal files; his own count of his build is the same split. So the build is reproduced, the standing is accepted, and the certification rule still waits on a comparison that does not depend on where the build ran.\n",
       "finding_ids": [
-       "F1"
+        "F1"
+      ],
+      "gap_ids": [
+        "EG1",
+        "EG2",
+        "EG5"
       ]
-     }
-    ],
-    "do_not_rely_on": [
-     {
-      "spoken": "the claim as a settled theorem of mathematics: no independent mathematician has read the argument (EG3), nobody has signed or refused what the formal statements mean (EG2, EG4), and the record's certification rule has not been met (EG5)",
-      "finding_ids": []
-     }
-    ],
-    "stop": [],
-    "new": []
-   },
-   "certainty_statement": {
-    "spoken": "One finding is accepted: the archive builds, its source has no escape hatch, its five theorems rest on the three standard axioms, and its main statement is Mathlib's Riemann Hypothesis. Nothing is certified. Whether the statements mean what the problem asks, and whether anyone understands the argument, is open."
-   },
-   "sources": [
-    {
-     "kind": "problem",
-     "ref": "https://www.claymath.org/millennium/riemann-hypothesis/"
     },
     {
-     "kind": "url",
-     "ref": "https://alpo.ge/remark.pdf (sha256 3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d, 245114 bytes, fetched 2026-11-20)"
-    },
-    {
-     "kind": "lean",
-     "ref": "https://alpo.ge/lean.tar.gz.part01 … part14 (14 parts, reassembled by concatenation; per-part hashes in source/parts.sha256) (sha256 9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc, 239275554 bytes, fetched 2026-11-20)"
-    },
-    {
-     "kind": "formal statement (third party)",
-     "ref": "github.com/leanprover-community/mathlib4 Mathlib/NumberTheory/LSeries/RiemannZeta.lean at 0df444a360eaa60ab8c11dca51a86af692955474"
-    }
-   ],
-   "tooling": [
-    {
-     "by": "Levent Alpöge",
-     "tier": "internal",
-     "basis": "inferred: the claimant is an Anthropic employee and names Claude as a co-worker without a version; the companion Navier–Stokes repository's commits of 20 November name Claude Fable 5.2, public from 9 November, after most of the note's timeline",
-     "models": [
-      {
-       "model": "Claude (version not stated)",
-       "id": "claude-unversioned",
-       "vendor": "Anthropic",
-       "public_release": null,
-       "tiers_at_release": [],
-       "public_at_the_time": "unknown"
-      }
-     ],
-     "work": {
-      "from": "2026-10-06",
-      "to": "2026-11-16"
-     },
-     "duration": "six weeks, by the note's twenty-step timeline",
-     "compute": "not stated"
-    }
-   ]
-  }
- ],
- "cycles": [
-  {
-   "schema_version": "nm-debrief-v1",
-   "created_by": "DEBRIEF/tools/new_mission.py",
-   "created_at": "2026-11-20T22:06:47Z",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "provenance": {
-    "source": "public record to 2026-11-20: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
-   },
-   "audience": "briefing",
-   "cycle": 0,
-   "dated": "2026-11-16 to 2026-11-20",
-   "kind": "replay",
-   "preregistered": {
-    "question": "What is on the public record about this claim?",
-    "rule": "no look-ahead; each event dated by its first public posting; artifacts pinned by commit or hash",
-    "predictions": [],
-    "commit": null,
-    "before_data": false
-   },
-   "outcome": {
-    "verdict": "admitted",
-    "numbers": {
-     "claims": 1,
-     "artifacts": 2
-    }
-   },
-   "spoken": "The last entry of the note's timeline, dated 16 November 2026, reads GRH. The note and the 14-part Lean archive appeared on the claimant's website, and the claim was reported by the press. Nervous Machine fetched both the same day and pinned them by hash: the note is 245,114 bytes; the reassembled archive is 239,275,554 bytes and unpacks to 1.27 GB, 175,187 Lean files, about 17.4 million lines and about 751,000 theorem and lemma declarations, pinned to Lean 4.33.1 and Mathlib commit 0df444a3 of 21 August 2026. A text scan at pinning found no sorry, admit, axiom, native_decide, implemented_by, extern, unsafe or opaque declarations. The entry file states Mathlib's definition RiemannHypothesis by name.",
-   "finding_ids": [],
-   "gap_ids": [
-    "EG1",
-    "EG2",
-    "EG3",
-    "EG4"
-   ]
-  },
-  {
-   "schema_version": "nm-debrief-v1",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "created_by": "contributed cycle (merge_cycles.py)",
-   "created_at": "2026-11-20T22:28:44Z",
-   "provenance": {
-    "source": "public pages read 2026-11-20 22:25 UTC: math.mit.edu/~drew/grh/ (sha256 73f96192…, page states last updated 19:45 UTC), github.com/Deicyde/riemann-hypothesis, github.com/CocoSgt/riemann-hypothesis-lean, github.com/jsmorph/rh"
-   },
-   "audience": "briefing",
-   "kind": "replay",
-   "cycle": "external-2026-11-20",
-   "dated": "2026-11-20",
-   "by": null,
-   "preregistered": {
-    "question": "What does the public record show about independent checks of this archive today?",
-    "rule": "status read from each public page, pinned by hash or repository; no new checking by Nervous Machine",
-    "predictions": [],
-    "commit": null,
-    "before_data": false
-   },
-   "outcome": {
-    "verdict": "admitted",
-    "numbers": {
-     "external": {
-      "sutherland_mit": {
-       "who": "Andrew Sutherland (MIT), 'checks run with Claude Code'",
-       "archive_sha256_matches_ours": true,
-       "compile": "all 175,187 modules, Lean v4.33.1, Mathlib v4.33.1, zero errors, finished 16:43 UTC",
-       "axioms_five_statements": "propext, Classical.choice, Quot.sound only",
-       "kernel_replay": "leanchecker on every module, 175,187 of 175,187, zero rejections, about 18:17 UTC",
-       "independent_kernel": "nanoda accepts the full export, exit 0 at 19:05 UTC, 27 min 42 s on 80 threads",
-       "in_progress": "lake comparator end to end; Lean default and paranoid kernels on the export",
-       "caveats_stated": "build ran on cloud machines without a sandbox, compiled by calling lean directly rather than lake build; a 77-module sample matched a real lake build; a first attempt with a wrong module root was discarded",
-       "statement_note": "GRH here means Dirichlet L-functions only"
+      "schema_version": "nm-debrief-v1",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "audience": "briefing",
+      "created_by": "DEBRIEF/tools/watch_pages.py",
+      "created_at": "2026-11-22T19:02:00Z",
+      "provenance": {
+        "source": "public pages named in watch.yaml, fetched and hashed; status words read by the patterns there; hashes in source/external.sha256"
       },
-      "mirrors": [
-       {
-        "repo": "Deicyde/riemann-hypothesis",
-        "note": "byte-identical to the archive plus Comparator files, per Sutherland's page; CI export sha256 bd484ac9…b2b9"
-       },
-       {
-        "repo": "CocoSgt/riemann-hypothesis-lean",
-        "created": "2026-11-20T14:59Z",
-        "note": "mirror; states no independent build or review published as of mirroring"
-       },
-       {
-        "repo": "jsmorph/rh",
-        "created": "2026-11-20T14:49Z",
-        "note": "copy; archive sha256 9631b4f0… matches ours; states the project was not built there"
-       }
-      ],
-      "reports": [
-       {
-        "who": "Andrew Sutherland (MIT)",
-        "url": "https://math.mit.edu/~drew/grh/",
-        "dated": "2026-11-20",
-        "operated_with": "Claude Code, as stated on the page",
-        "what": "full compile, standard axioms only, kernel replay of every module, independent kernel accepts the export; comparator and Lean kernels on the export in progress at 19:45 UTC"
-       }
-      ]
-     }
-    }
-   },
-   "spoken": "What the public record showed on the evening of 20 November. Andrew Sutherland at MIT posted a verification page: the archive, same hash as ours, compiles in full with zero errors, the five statements rest on the three standard axioms only, every module was replayed through Lean's kernel, and an independent kernel written in Rust accepts the whole exported proof. Two checks were still running. He states that his checks were run with Claude Code and that his build ran unsandboxed. Three public mirrors of the archive exist; two say plainly they built nothing. None of this is a cycle under its author's name in this record; it is what the record saw.\n",
-   "finding_ids": [],
-   "gap_ids": [
-    "EG1"
-   ]
-  },
-  {
-   "schema_version": "nm-debrief-v1",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "created_by": "contributed cycle (merge_cycles.py)",
-   "created_at": "2026-11-20T22:28:44Z",
-   "provenance": {
-    "source": "lean/src/Main.lean and lean/src/Statements.lean in the pinned archive (sha256 9631b4f0…); Mathlib/NumberTheory/LSeries/RiemannZeta.lean at 0df444a3"
-   },
-   "audience": "briefing",
-   "kind": "trace",
-   "cycle": "trace-2026-11-20",
-   "dated": "2026-11-20",
-   "by": "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)",
-   "preregistered": {
-    "question": "Can the open semantic question, whether the five formal statements say what the note claims, be made cheap for a human reader?",
-    "rule": "each statement quoted verbatim, its definitions named with source, a plain reading and the point to confirm; discrepancies recorded; standing unchanged by construction",
-    "predictions": [],
-    "commit": null,
-    "before_data": false,
-    "results": [
-     "trace/DEFINITIONAL-TRACE.md"
-    ]
-   },
-   "outcome": {
-    "verdict": "confirmed",
-    "numbers": {
-     "statements_traced": 5,
-     "third_party_definitions": 1,
-     "claimant_definitions": 4,
-     "discrepancies_recorded": 2,
-     "human_review": false
-    }
-   },
-   "spoken": "On 20 November Nervous Machine wrote a reading guide for the one question a build cannot settle: whether the five statements in Main.lean say what the note claims. The main statement is Mathlib's own definition of the Riemann Hypothesis, written by the Mathlib community, not by the claimant, and is quoted in full. The other four are the claimant's definitions about Dirichlet L-functions, also quoted in full. One discrepancy is recorded: the note says Generalized Riemann Hypothesis without qualification, while the archive states it for Dirichlet characters only. The readings are the agent's; nothing changed standing. The guide exists so that a number theorist's read takes half an hour.\n",
-   "finding_ids": [],
-   "gap_ids": [
-    "EG2",
-    "EG4"
-   ]
-  },
-  {
-   "schema_version": "nm-debrief-v1",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "created_by": "contributed cycle (merge_cycles.py)",
-   "created_at": "2026-11-21T01:57:18Z",
-   "provenance": {
-    "source": "contributed cycle file cycle1-rerun.yaml"
-   },
-   "audience": "briefing",
-   "kind": "rerun",
-   "cycle": 1,
-   "dated": "2026-11-20 to 2026-11-21",
-   "by": "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)",
-   "preregistered": {
-    "commit": "prereg_cycle1.yaml (registered sha256 0b64c4b9967531bf5f775d53cae415394e531c4864771d20594eb99bd4da47dc at 2026-11-20T22:07:53Z; amendment A1 added R7)",
-    "results": [
-     "cycle1/R3_summary.txt",
-     "cycle1/env.txt",
-     "cycle1/R1.txt",
-     "cycle1/R2_cache.log",
-     "cycle1/logs.sha256",
-     "cycle1/oleans-partial.sha256",
-     "cycle1/probe_run1.sha256",
-     "cycle1/probe_run2.sha256",
-     "cycle1/probe_run1.log",
-     "cycle1/sutherland-files.sha256"
-    ],
-    "question": "Does the Lean development build from the pinned archive against the pinned Mathlib on a machine the claimant has never touched, do its five entry statements use only Lean's three standard axioms, and is its main statement literally Mathlib's definition RiemannHypothesis? (A1) Do our compiled-output hashes match Andrew Sutherland's?\n",
-    "rule": "R1 to R7 as registered; standing moves only on all of R3 to R7 passing",
-    "predictions": [
-     "R1 pass; R2 pass",
-     "R3 exit 0 with 0 error lines, wall time 6 to 72 hours, peak memory under 90 GB",
-     "R4 zero hits; R5 exactly propext, Classical.choice, Quot.sound for each of the five; R6 RiemannHypothesis is Mathlib's",
-     "R7 (A1) Main.olean and the manifest of all compiled files hash to Sutherland's values"
-    ],
-    "before_data": true
-   },
-   "environment": {
-    "hardware": "Lima VM primegaps on Heidi's Mac: Ubuntu, aarch64, 20 cores, 98 GB RAM, 290 GB disk; nothing from the archive ran on the host",
-    "toolchain": "Lean v4.33.1 (Lake 5.0.0), Mathlib 0df444a360eaa60ab8c11dca51a86af692955474 from the community cache, elan 4.2.4",
-    "wall_time": "3:19 (the build, until the disk filled)"
-   },
-   "outcome": {
-    "verdict": "mixed",
-    "numbers": {
-     "R1": "pass: archive sha256 9631b4f0…, tar listing 175,190 entries hashing to ac98446c…",
-     "R2": "pass: lake exe cache get exit 0",
-     "R3": "not completed: 290 GB disk full at 2026-11-21 01:27 UTC after 3 h 19 m; 32,018 of 175,187 modules compiled; 35 compilations failed with 'no space left on device'; no other error in the log; 89,659 warning lines; disk at the halt: setup.json files 230.9 GB, .olean 22.1 GB, .c 0.3 GB",
-     "R4_R5_R6": "not run; Main.olean was not built",
-     "R7_partial": "of the 32,018 compiled files, 17,023 equal the hash Sutherland published for the same file and 14,995 differ; Main.olean not built, so neither registered hash could be computed",
-     "diagnosis_after_the_halt": "not registered. Nine modules rebuilt twice in a second directory: the six that differed from Sutherland's differed again, from our first run and from his; the three that matched, matched again; the two rebuilds agree with each other on all nine. In CompactPartClosedOrbit the only difference between first run and rebuild is the absolute path of the source file, 106 bytes, inside a linter message that Lean v4.33.1 stores in the module output (Lean/Linter/PersistentLintLog.lean). 14,992 of the 14,995 differing files contain our absolute source directory as a byte string; none of the 17,023 equal files does; three differing files contain no such string and are under study in cycle 2 (R8): Formalism/FlagUnipotentLattices/MinkowskiFactorialBounds/IntegerGroupLocalParametrization, Formalism/GL3MeanSquares/GenusMeanAsymptotics/JacobiCharacterSums/PNTDHB, Formalism/SharpRestriction/GrowthBounds/StandardPolynomials/ColXCnt"
-    },
-    "misses": [
-     "R3: predicted exit 0 in 6 to 72 hours under 90 GB of memory. The build halted after 3 h 19 m with the disk full. The disk use was not predicted at all: Lake's per-module setup.json files, which this cycle did not know about, took 231 GB. Peak memory is unknown because time's summary could not be written to the full disk. The halt is ours, not the archive's; no error other than disk exhaustion appears in the log.",
-     "R7 (A1): predicted that both hashes match Sutherland's. Neither could be computed, and the partial comparison shows the manifest cannot match: about 47% of the compiled modules embed the absolute path of their source file, which differs between any two parties who did not choose the same path. The rule's intent (two independent reports agreeing) is not met by this cycle and, as written, cannot be met without a shared path; recorded as gap EG5."
-    ]
-   },
-   "spoken": "Our first build of the archive ran for three hours and nineteen minutes and stopped when the machine's disk filled. The disk was our mistake: the build tool writes a large bookkeeping file for every module, and we had not planned for it. Thirty-two thousand of the hundred and seventy-five thousand modules compiled before the halt, with no error other than the full disk. We compared those with the hashes Andrew Sutherland published: about half agree byte for byte. The other half differ because the compiler writes the absolute path of each source file into the output of any module that produced a warning, so two builds in different directories cannot match on those modules. The build is resumed as cycle 2, written down first.\n",
-   "finding_ids": [],
-   "gap_ids": [
-    "EG1",
-    "EG5"
-   ]
-  },
-  {
-   "schema_version": "nm-debrief-v1",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "created_by": "contributed cycle (merge_cycles.py)",
-   "created_at": "2026-11-22T00:19:00Z",
-   "provenance": {
-    "source": "public pages read 2026-11-22 00:16 UTC: leanprover-community.github.io/blog/posts/riemann-hypothesis/ (sha256 f1bc87e6…, 8,501 bytes, page dated 2026-11-21 13:55), math.mit.edu/~drew/grh/ (sha256 e4648882…, 20,460 bytes, page states last updated 2026-11-21 12:55 UTC); hashes in source/external.sha256"
-   },
-   "audience": "briefing",
-   "kind": "replay",
-   "cycle": "external-2026-11-21",
-   "dated": "2026-11-21",
-   "by": null,
-   "preregistered": {
-    "question": "What did the public record add on 21 November about independent checks of this archive and its statements?",
-    "rule": "status read from each public page, pinned by hash; no new checking by Nervous Machine in this cycle",
-    "predictions": [],
-    "commit": null,
-    "before_data": false
-   },
-   "outcome": {
-    "verdict": "admitted",
-    "numbers": {
-     "external": {
-      "lean_mathlib_joint_statement": {
-       "who": "\"Lean and Mathlib communities\"; the page says the statement is endorsed by the Lean FRO and the Mathlib Initiative; no individual is named",
-       "dated": "2026-11-21 13:55",
-       "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
-       "says": "quoted: \"We have full confidence that Alpöge's proof of the Riemann Hypothesis is correct\" and \"We hereby certify that both the statement and the proof of the Riemann Hypothesis are correct\"; the four criteria of Kevin Buzzard's post of 2026-11-12 (xenaproject.wordpress.com) are said to be satisfied",
-       "statement": "Mathlib's RiemannHypothesis, which the page says \"has been carefully vetted by experts in Lean and number theory\"",
-       "compilation": "\"dozens of people have reported correct compilation of the codebase, reproducing the same raw proof export file\"",
-       "statement_match": "a community file isolates the statement and imports only Mathlib; compared with the proved theorem by two tools, comparator and con-leche --compare, \"both confirming\" it is exactly Mathlib's statement",
-       "proof_validity": "the exported proof checked by Lean's kernel, con-leche, con-ron and several third-party checkers in different languages; con-leche and con-ron described as carrying a formal proof, relative to set theory, that they cannot accept a false proof; checks ran on an inert export",
-       "scope": "the statement concerns the Riemann Hypothesis only; it does not mention the four Dirichlet L-function statements",
-       "on_the_mathematics": "one sentence: \"We look forward to all the activity in the mathematical community that will help explain the new ideas in this proof.\"",
-       "words": "the page uses the word certify; in this record that word is a standing reached under the rule in prereg_cycle1.yaml A1, which this statement does not address, so it is recorded as what the page says and moves nothing by itself"
+      "cycle": "pages-2026-11-22",
+      "dated": "2026-11-22",
+      "kind": "replay",
+      "by": null,
+      "preregistered": {
+        "question": "What do the pages this record watches say today?",
+        "rule": "each page fetched, hashed and its status word read by a fixed pattern; no new checking",
+        "predictions": [],
+        "commit": null,
+        "before_data": false
       },
-      "sutherland_mit_update": {
-       "who": "Andrew Sutherland (MIT), 'checks run with Claude Code'",
-       "page_updated": "2026-11-21 12:55 UTC",
-       "new_since_2026-11-20": [
-        "con-leche master (cd2eceab) on the full export: accepts, 1,468,418 declarations in --verified mode, exit 0 at 21:19:04 UTC on 20 November",
-        "con-leche --compare (5dc36dc1), challenge against solution: all five theorems \"justified by the solution\", 51,692 challenge declarations, exit 0 at 21:19:12 UTC",
-        "lean4lean (67f63b0c, Lean v4.33.1) on every compiled module: 175,187 of 175,187 pass; five needed the step limit raised",
-        "con-leche and con-ron as bundled with Lean v4.36.0: exit 2, declined, not a rejection (one reflexive inductive type unsupported)",
-        "still running at 12:55 UTC: Lean default and paranoid kernels on the export; lake comparator end to end (its statement comparison and axiom check passed)",
-        "the five statements written out in words, exactly as in the challenge file, with a scope note: GRH here means Dirichlet L-functions, all moduli and characters; Dedekind, Hecke and automorphic L-functions are not among the statements checked",
-        "arithmetic consequences: combined with kimihiro64/Robin1984 (acab1a3), robin_inequality and lagarias_inequality compile with the three standard axioms; con-leche and nanoda accept the combined export",
-        "build directory disclosed: /home/ubuntu/grh/src/lean on every build machine; 98,219 of his 175,187 compiled files contain that path and 76,968, including Main.olean, do not; his own 240-module build at another path gave 168 files equal and 72 different, all 72 containing that build's path",
-        "his page now names the exported proof, not the compiled files, as the artifact to compare across builds, and says it has not been examined whether the export can carry a source path"
-       ]
-      }
-     }
-    }
-   },
-   "spoken": "What the public record added on 21 November. The Lean and Mathlib communities published a joint statement, which the page says is endorsed by the Lean FRO and the Mathlib Initiative, saying they certify both the statement and the proof of the Riemann Hypothesis: dozens of independent compilations reproducing the same exported proof, two tools confirming the proved theorem is Mathlib's statement, and several checkers accepting the export. It names no individual, does not mention the four Dirichlet L-function statements, and says the mathematical community's work of explaining the ideas lies ahead. Andrew Sutherland's page added a second independent kernel accepting the export, lean4lean passing every module, the five statements in words with their scope, two arithmetic consequences derived with an independent formalization, and the one thing this record had asked him for: his build path, with his own count of how many compiled files embed it. None of this is a cycle under its author's name here; it is what the record saw.\n",
-   "finding_ids": [],
-   "gap_ids": [
-    "EG1",
-    "EG2",
-    "EG4",
-    "EG5"
-   ]
-  },
-  {
-   "schema_version": "nm-debrief-v1",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "created_by": "contributed cycle (merge_cycles.py)",
-   "created_at": "2026-11-22T02:42:47Z",
-   "provenance": {
-    "source": "contributed cycle file cycle2-rerun.yaml"
-   },
-   "audience": "briefing",
-   "kind": "rerun",
-   "cycle": 2,
-   "dated": "2026-11-21 to 2026-11-22",
-   "by": "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)",
-   "preregistered": {
-    "commit": "prereg_cycle2.yaml (registered sha256 455b4e62c8fc21145dc6d70e8398a283b7284ae7c3afa24928987ec6ef7ae8bf at 2026-11-21T01:42:23Z, before the resumed build started at 01:42:24Z)",
-    "results": [
-     "cycle2/env.txt",
-     "cycle2/R1.txt",
-     "cycle2/progress.log",
-     "cycle2/cycle2-logs.sha256",
-     "cycle2/disk.txt",
-     "cycle2/R4.txt",
-     "cycle2/R5R6.txt",
-     "cycle2/R5R6.err",
-     "cycle2/R6_rerun.txt",
-     "cycle2/oleans.sha256",
-     "cycle2/with_path.txt",
-     "cycle2/rh_cycle2.sh",
-     "cycle2/rh_cycle2_post.sh",
-     "cycle2/Audit.lean",
-     "cycle2/Audit_R6fix.lean"
-    ],
-    "question": "Cycle 1's question, unchanged: does the development build from the pinned archive against the pinned Mathlib on a machine the claimant has never touched, do its five entry statements use only Lean's three standard axioms, and is its main statement literally Mathlib's RiemannHypothesis? Added: how much of the compiled output can two independent builds compare byte for byte, and what decides it?\n",
-    "rule": "R1, R3 to R8 as registered; a finding with standing ACCEPTED on R3 to R6 passing; nothing certified in this cycle (amendment A1 of cycle 1 needs two independent matching hash reports)",
-    "predictions": [
-     "R1 pass; 32,018 .olean files before the resume",
-     "R3 exit 0, 0 error lines, 8 to 30 hours for the resumed part, peak memory under 90 GB, .lake/build under 200 GB",
-     "R4 zero hits; R5 exactly propext, Classical.choice, Quot.sound for each of the five; R6 RiemannHypothesis is Mathlib's, declared once, in Mathlib.NumberTheory.LSeries.RiemannZeta",
-     "R7 Main.olean equals Sutherland's (low confidence); the manifest does not; files equal between 45% and 60% of 175,187",
-     "R8 every file that differs from Sutherland's contains our source path and no equal file does"
-    ],
-    "before_data": true
-   },
-   "environment": {
-    "hardware": "Lima VM primegaps on Heidi's Mac: Ubuntu, aarch64, 20 cores, 98 GB RAM, 290 GB disk, 216 GB free at the start; nothing from the archive ran on the host",
-    "toolchain": "Lean v4.33.1 (Lake 5.0.0), Mathlib 0df444a360eaa60ab8c11dca51a86af692955474 from the community cache, fetched in cycle 1",
-    "wall_time": "14:48:01 for the resumed build (2026-11-21 01:42:24 to 16:30:26 UTC); the post-build checks 2 minutes; the axiom audit 2 min 01 s"
-   },
-   "outcome": {
-    "verdict": "confirmed",
-    "numbers": {
-     "R1": "pass: archive sha256 9631b4f0…; 32,018 .olean files before the resume",
-     "R3": "pass: exit 0; 0 error lines in 2,385,844 log lines (sha256 67a34842…, 175.5 MB, kept in the VM); 489,062 warning lines; 143,175 modules built (Lake log) and 143,175 .olean files with a modification time after the start; 32,012 .olean files untouched since cycle 1; of cycle 1's 32,018 hashes, 32,015 are unchanged and 3 (the files truncated by the full disk) are rebuilt; wall time 14 h 48 m 01 s; peak resident memory 61,216,752 kB (61.2 GB); .lake/build 101,323,869,380 bytes at the end (.olean 100.3 GB, ir 1.0 GB, setup.json 0 after the pruner); 175,187 .olean and 175,187 .c files",
-     "R4": "pass: zero hits for sorry, admit, native_decide, axiom declarations, implemented_by, extern, unsafe and opaque across every .lean file under lean/src",
-     "R5": "pass: each of riemannHypothesis, riemannZeta_eq_zero_re, LFunction_ne_zero_of_half_lt_re, LFunction_eq_zero_re, LFunction_eq_zero_re_of_isPrimitive depends on exactly [propext, Classical.choice, Quot.sound]",
-     "R6": "pass: #print RiemannHypothesis gives Mathlib's definition (∀ s : ℂ, riemannZeta s = 0 → (¬∃ n, s = -2 * (↑n + 1)) → s ≠ 1 → s.re = 1 / 2); the constant RiemannHypothesis is declared once, in module Mathlib.NumberTheory.LSeries.RiemannZeta; five other constants end in that string, all with longer names (…GivesRiemannHypothesis, …AndRiemannHypothesis) in the archive's own modules, none of them a redefinition; riemannHypothesis : RiemannHypothesis. The built environment has 186,200 modules and 2,701,132 constants. The other four theorems have the claimant's own types RiemannZetaZerosOnLine, DirichletLNonvanishingRightOfHalf, DirichletLZerosOnLine, PrimitiveDirichletLZerosOnLine (EG4)",
-     "R7": "Main.olean sha256 9146dfb4… equals Sutherland's (pass). Manifest of all 175,187 files in his format hashes to a9a97091…, not his 375cbee2… (predicted). Files equal 76,968 (43.93%), files different 98,219; no file present on one side only. The 45% to 60% prediction missed; see misses",
-     "R8": "pass: 98,219 files contain the byte string /home/heidibennett.guest/untrusted/alpoge-rh/src/lean/src/ and 76,968 do not. Two-by-two table: different and contains path 98,219; equal and no path 76,968; different without path 0; equal with path 0. No exceptions. Sutherland's page, updated 2026-11-21 12:55 UTC, reports the same split for his own build under /home/ubuntu/grh/src/lean: 98,219 with his path, 76,968 without",
-     "audit_procedure_note": "not registered. The first run of cycle2/Audit.lean exited 1: its #eval block, which lists constants ending in RiemannHypothesis with their modules, did not compile (an invalid field, env.constants.size, in our script), so that run (cycle2/R5R6.txt) gave R5 and the #print and #check lines but not the constant listing. The block was corrected in cycle2/Audit_R6fix.lean (count by toList.length) and rerun at 02:38 UTC on 22 November, exit 0, output cycle2/R6_rerun.txt, 2 min 01 s, 55.0 GB peak memory. The archive was not touched between the runs"
+      "outcome": {
+        "verdict": "admitted",
+        "numbers": {
+          "external": {
+            "pages": [
+              {
+                "name": "Clay Mathematics Institute",
+                "url": "https://www.claymath.org/millennium/riemann-hypothesis/",
+                "read": "2026-11-22T19:02:00Z",
+                "role": "problem authority (Millennium Prize rules: publication, two years, general acceptance)",
+                "sha256": "28e1327a53d5d3663b4908073b4cc4f77bb3f462da957a202a1ca918e78d5c6b",
+                "bytes": 107201,
+                "hash_of": "text",
+                "status": "Unsolved",
+                "changed": true
+              },
+              {
+                "name": "Andrew Sutherland (MIT), verification page",
+                "url": "https://math.mit.edu/~drew/grh/",
+                "read": "2026-11-22T19:02:00Z",
+                "role": "independent checks, published elsewhere",
+                "sha256": "479619210550ce7bc7c5fd7fb43764bbf63ef39e4ddfa672ccc7f63a484b2f9a",
+                "bytes": 27863,
+                "hash_of": "text",
+                "status": "last updated 2026-11-22 16:20 UTC",
+                "changed": true
+              },
+              {
+                "name": "Lean and Mathlib communities, joint statement",
+                "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+                "read": "2026-11-22T19:02:00Z",
+                "role": "statement of the formal-methods community",
+                "sha256": "fb4214a4c01faaca81c858c73402210eca6d69b49c2596e3d95c3718b7524aaa",
+                "bytes": 8501,
+                "hash_of": "text",
+                "status": "certify the statement and the proof of RH (not GRH)",
+                "changed": true
+              }
+            ]
+          }
+        }
+      },
+      "spoken": "What the watched pages said on 2026-11-22. Clay Mathematics Institute: Unsolved; Andrew Sutherland (MIT), verification page: last updated 2026-11-22 16:20 UTC; Lean and Mathlib communities, joint statement: certify the statement and the proof of RH (not GRH). A page's status word is what its keeper says; it gives nothing here a standing.",
+      "finding_ids": [],
+      "gap_ids": []
     },
-    "misses": [
-     "R7: predicted 45% to 60% of files equal to Sutherland's; 43.93% are. The direction was right and the mechanism exact (R8), the share of modules producing a linter warning was underestimated."
-    ]
-   },
-   "spoken": "The resumed build finished: all hundred and seventy-five thousand modules compile from the pinned archive on our machine, with no error, in fourteen hours and forty-eight minutes and sixty-one gigabytes of memory. The source has no sorry, admit, axiom or escape hatch. Each of the five entry theorems rests on exactly Lean's three standard axioms. The main theorem's statement is Mathlib's own definition of the Riemann Hypothesis, declared once, in Mathlib, and nowhere redefined. Compared with Andrew Sutherland's build at MIT, our output is byte-identical on 76,968 files, including the entry file, and differs on 98,219, every one of which carries our source path inside a stored warning and none of which is among the equal files; his own count of his build is the same split. So the build is reproduced, the standing is accepted, and the certification rule still waits on a comparison that does not depend on where the build ran.\n",
-   "finding_ids": [
-    "F1"
-   ],
-   "gap_ids": [
-    "EG1",
-    "EG2",
-    "EG5"
-   ]
-  },
-  {
-   "schema_version": "nm-debrief-v1",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "audience": "briefing",
-   "created_by": "DEBRIEF/tools/watch_pages.py",
-   "created_at": "2026-11-22T19:02:00Z",
-   "provenance": {
-    "source": "public pages named in watch.yaml, fetched and hashed; status words read by the patterns there; hashes in source/external.sha256"
-   },
-   "cycle": "pages-2026-11-22",
-   "dated": "2026-11-22",
-   "kind": "replay",
-   "by": null,
-   "preregistered": {
-    "question": "What do the pages this record watches say today?",
-    "rule": "each page fetched, hashed and its status word read by a fixed pattern; no new checking",
-    "predictions": [],
-    "commit": null,
-    "before_data": false
-   },
-   "outcome": {
-    "verdict": "admitted",
-    "numbers": {
-     "external": {
-      "pages": [
-       {
-        "name": "Clay Mathematics Institute",
-        "url": "https://www.claymath.org/millennium/riemann-hypothesis/",
-        "read": "2026-11-22T19:02:00Z",
-        "role": "problem authority (Millennium Prize rules: publication, two years, general acceptance)",
-        "sha256": "28e1327a53d5d3663b4908073b4cc4f77bb3f462da957a202a1ca918e78d5c6b",
-        "bytes": 107201,
-        "hash_of": "text",
-        "status": "Unsolved",
-        "changed": true
-       },
-       {
-        "name": "Andrew Sutherland (MIT), verification page",
-        "url": "https://math.mit.edu/~drew/grh/",
-        "read": "2026-11-22T19:02:00Z",
-        "role": "independent checks, published elsewhere",
-        "sha256": "479619210550ce7bc7c5fd7fb43764bbf63ef39e4ddfa672ccc7f63a484b2f9a",
-        "bytes": 27863,
-        "hash_of": "text",
-        "status": "last updated 2026-11-22 16:20 UTC",
-        "changed": true
-       },
-       {
-        "name": "Lean and Mathlib communities, joint statement",
-        "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
-        "read": "2026-11-22T19:02:00Z",
-        "role": "statement of the formal-methods community",
-        "sha256": "fb4214a4c01faaca81c858c73402210eca6d69b49c2596e3d95c3718b7524aaa",
-        "bytes": 8501,
-        "hash_of": "text",
-        "status": "certify the statement and the proof of RH (not GRH)",
-        "changed": true
-       }
+    {
+      "schema_version": "nm-debrief-v1",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "created_by": "contributed cycle (merge_cycles.py)",
+      "created_at": "2026-11-22T19:02:02Z",
+      "provenance": {
+        "source": "math.mit.edu/~drew/grh/ read 2026-11-22 (page states last updated 2026-11-22 16:20 UTC; text hash in source/external.sha256 under the watched-pages reading of the same day); sandbox-project-oleans.sha256 fetched 2026-11-22 (sha256 51319e37…, 175,187 lines)"
+      },
+      "audience": "briefing",
+      "kind": "replay",
+      "cycle": "external-2026-11-22",
+      "dated": "2026-11-22",
+      "by": null,
+      "preregistered": {
+        "question": "What did Andrew Sutherland's page add on 22 November that bears on how two independent builds should be compared (EG5)?",
+        "rule": "status read from the public page, pinned by hash; one comparison of his two manifests with ours, no new building",
+        "predictions": [],
+        "commit": null,
+        "before_data": false
+      },
+      "outcome": {
+        "verdict": "admitted",
+        "numbers": {
+          "external": {
+            "sutherland_mit_update_2": {
+              "page_updated": "2026-11-22 16:20 UTC",
+              "sandboxed_rebuild": "lake build Main on a separate machine inside a bubblewrap sandbox (no network, source read-only, archive downloaded afresh, Mathlib checked against the official cache): exit 0, zero errors, finished 2026-11-21 18:07:21 UTC; built at the same path /home/ubuntu/grh/src/lean",
+              "export_reproduced": "the export made inside the sandbox is byte-identical to the published one: 61,570,595,788 bytes, sha256 5ea74b91…244e",
+              "compiled_files_reproduced": "175,186 of 175,187 identical to his original manifest; the one exception, Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts/LocModel.olean, compiles non-deterministically: six recompilations with identical inputs gave one output four times and the other twice, differing in 38 bytes, the name of a bound variable in an equation lemma Lean generates on first use, taken from whichever of two parallel theorem elaborations gets there first; bound-variable names play no part in kernel checking",
+              "con_ron_compare": "con-ron --compare (master 3f22699b): all five theorems justified by the solution; exit 0 at 2026-11-21 23:02:33 UTC",
+              "our_comparison": "his two manifests differ from each other on exactly that one file; our cycle 2 manifest equals his sandbox manifest on the same 76,968 files as his original (the path-free ones); our LocModel.olean carries our source path, so which of his two variants our build produced cannot be read from the hash"
+            }
+          }
+        }
+      },
+      "spoken": "Andrew Sutherland rebuilt the archive a second time, on another machine, inside a sandbox, with lake, at the same directory as before. The exported proof came out byte for byte the same as the one every kernel had checked. The compiled files matched his first build on all but one, and that one is not the path problem: it is a module Lean compiles two different ways at random, differing in a variable's name that the kernel never looks at. So even a shared path does not give a full manifest match, and the export does. Recorded as what the page says; it bears on the decision open in EG5 and moves nothing by itself.\n",
+      "finding_ids": [],
+      "gap_ids": [
+        "EG5"
       ]
-     }
-    }
-   },
-   "spoken": "What the watched pages said on 2026-11-22. Clay Mathematics Institute: Unsolved; Andrew Sutherland (MIT), verification page: last updated 2026-11-22 16:20 UTC; Lean and Mathlib communities, joint statement: certify the statement and the proof of RH (not GRH). A page's status word is what its keeper says; it gives nothing here a standing.",
-   "finding_ids": [],
-   "gap_ids": []
-  },
-  {
-   "schema_version": "nm-debrief-v1",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "created_by": "contributed cycle (merge_cycles.py)",
-   "created_at": "2026-11-22T19:02:02Z",
-   "provenance": {
-    "source": "math.mit.edu/~drew/grh/ read 2026-11-22 (page states last updated 2026-11-22 16:20 UTC; text hash in source/external.sha256 under the watched-pages reading of the same day); sandbox-project-oleans.sha256 fetched 2026-11-22 (sha256 51319e37…, 175,187 lines)"
-   },
-   "audience": "briefing",
-   "kind": "replay",
-   "cycle": "external-2026-11-22",
-   "dated": "2026-11-22",
-   "by": null,
-   "preregistered": {
-    "question": "What did Andrew Sutherland's page add on 22 November that bears on how two independent builds should be compared (EG5)?",
-    "rule": "status read from the public page, pinned by hash; one comparison of his two manifests with ours, no new building",
-    "predictions": [],
-    "commit": null,
-    "before_data": false
-   },
-   "outcome": {
-    "verdict": "admitted",
-    "numbers": {
-     "external": {
-      "sutherland_mit_update_2": {
-       "page_updated": "2026-11-22 16:20 UTC",
-       "sandboxed_rebuild": "lake build Main on a separate machine inside a bubblewrap sandbox (no network, source read-only, archive downloaded afresh, Mathlib checked against the official cache): exit 0, zero errors, finished 2026-11-21 18:07:21 UTC; built at the same path /home/ubuntu/grh/src/lean",
-       "export_reproduced": "the export made inside the sandbox is byte-identical to the published one: 61,570,595,788 bytes, sha256 5ea74b91…244e",
-       "compiled_files_reproduced": "175,186 of 175,187 identical to his original manifest; the one exception, Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts/LocModel.olean, compiles non-deterministically: six recompilations with identical inputs gave one output four times and the other twice, differing in 38 bytes, the name of a bound variable in an equation lemma Lean generates on first use, taken from whichever of two parallel theorem elaborations gets there first; bound-variable names play no part in kernel checking",
-       "con_ron_compare": "con-ron --compare (master 3f22699b): all five theorems justified by the solution; exit 0 at 2026-11-21 23:02:33 UTC",
-       "our_comparison": "his two manifests differ from each other on exactly that one file; our cycle 2 manifest equals his sandbox manifest on the same 76,968 files as his original (the path-free ones); our LocModel.olean carries our source path, so which of his two variants our build produced cannot be read from the hash"
-      }
-     }
-    }
-   },
-   "spoken": "Andrew Sutherland rebuilt the archive a second time, on another machine, inside a sandbox, with lake, at the same directory as before. The exported proof came out byte for byte the same as the one every kernel had checked. The compiled files matched his first build on all but one, and that one is not the path problem: it is a module Lean compiles two different ways at random, differing in a variable's name that the kernel never looks at. So even a shared path does not give a full manifest match, and the export does. Recorded as what the page says; it bears on the decision open in EG5 and moves nothing by itself.\n",
-   "finding_ids": [],
-   "gap_ids": [
-    "EG5"
-   ]
-  },
-  {
-   "schema_version": "nm-debrief-v1",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "created_by": "contributed cycle (merge_cycles.py)",
-   "created_at": "2026-11-22T21:15:59Z",
-   "provenance": {
-    "source": "x.com/ObhishekSaha/status/2123861825750290445, fetched 2026-11-22T21:15:59Z (HTTP 200); the post text, 2420 characters, hashes to sha256 f485e6519850a37ae4d381dfc7fafca7e6c332af22aafa22083cc3a651ab7cfb; posted 2026-11-20"
-   },
-   "audience": "briefing",
-   "kind": "replay",
-   "cycle": "external-2026-11-22-saha",
-   "dated": "2026-11-22",
-   "by": null,
-   "preregistered": {
-    "question": "What is the first public reaction from an independent mathematician in the field, and does it read the argument?",
-    "rule": "status read from the public post, pinned by hash of its text; no new checking by Nervous Machine",
-    "predictions": [],
-    "commit": null,
-    "before_data": false
-   },
-   "outcome": {
-    "verdict": "admitted",
-    "numbers": {
-     "external": {
-      "public_reactions": [
-       {
-        "who": "Abhishek Saha, number theorist (automorphic forms)",
-        "url": "https://x.com/ObhishekSaha/status/2123861825750290445",
-        "posted": "2026-11-20",
-        "what": "says he, like most mathematicians, had thought the Riemann Hypothesis out of reach without new theory-building in arithmetic geometry; describes the claimed proof as a route through existing results in higher-rank automorphic forms (theta functions on unitary groups, Gan–Gross–Prasad period formulas, relative trace formulas) rather than new theory, a chain he says neither a human alone nor a current AI alone could have produced; gives it a very good chance of being correct; credits Alpöge",
-        "is_a_reading": false,
-        "note": "an informed public opinion on the shape of the argument and on who would be able to read it; not a statement of having read it; carries no standing here"
-       }
+    },
+    {
+      "schema_version": "nm-debrief-v1",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "created_by": "contributed cycle (merge_cycles.py)",
+      "created_at": "2026-11-22T21:15:59Z",
+      "provenance": {
+        "source": "x.com/ObhishekSaha/status/2123861825750290445, fetched 2026-11-22T21:15:59Z (HTTP 200); the post text, 2420 characters, hashes to sha256 f485e6519850a37ae4d381dfc7fafca7e6c332af22aafa22083cc3a651ab7cfb; posted 2026-11-20"
+      },
+      "audience": "briefing",
+      "kind": "replay",
+      "cycle": "external-2026-11-22-saha",
+      "dated": "2026-11-22",
+      "by": null,
+      "preregistered": {
+        "question": "What is the first public reaction from an independent mathematician in the field, and does it read the argument?",
+        "rule": "status read from the public post, pinned by hash of its text; no new checking by Nervous Machine",
+        "predictions": [],
+        "commit": null,
+        "before_data": false
+      },
+      "outcome": {
+        "verdict": "admitted",
+        "numbers": {
+          "external": {
+            "public_reactions": [
+              {
+                "who": "Abhishek Saha, number theorist (automorphic forms)",
+                "url": "https://x.com/ObhishekSaha/status/2123861825750290445",
+                "posted": "2026-11-20",
+                "what": "says he, like most mathematicians, had thought the Riemann Hypothesis out of reach without new theory-building in arithmetic geometry; describes the claimed proof as a route through existing results in higher-rank automorphic forms (theta functions on unitary groups, Gan–Gross–Prasad period formulas, relative trace formulas) rather than new theory, a chain he says neither a human alone nor a current AI alone could have produced; gives it a very good chance of being correct; credits Alpöge",
+                "is_a_reading": false,
+                "note": "an informed public opinion on the shape of the argument and on who would be able to read it; not a statement of having read it; carries no standing here"
+              }
+            ]
+          }
+        }
+      },
+      "spoken": "The first public reaction from an independent mathematician in the relevant field, posted on 20 November and read here on the 22nd. Abhishek Saha, who works on automorphic forms, writes that he had assumed the Riemann Hypothesis would need new theory in arithmetic geometry, and that the claimed proof instead takes a long route through existing deep results in his own corner of number theory, of a kind he thinks neither a person alone nor a current model alone could have found. He gives the proof a very good chance of being correct and credits Alpöge. It is an opinion on the argument's shape, not a report of having read it, and it names the field whose specialists could. It moves nothing here.\n",
+      "finding_ids": [],
+      "gap_ids": [
+        "EG3"
       ]
-     }
+    },
+    {
+      "schema_version": "nm-debrief-v1",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "created_by": "contributed cycle (merge_cycles.py)",
+      "created_at": "2026-11-23T04:37:48Z",
+      "provenance": {
+        "source": "philpapers.org/rec/NIEIOT-2 (manuscript record) and philarchive.org/archive/NIEIOT-2 (the PDF); both sites refuse automated fetches, so the PDF was saved from a browser by Nervous Machine on 2026-11-22 at 20:32 PST; 162,485 bytes, 17 pages, sha256 15ac01d0bc60a4e98f4d50c7ef1eaa675108c84738974bda0ab5225f6601b5a6; its title page is dated 20 November 2026 and its PDF creation stamp is 2026-11-22T12:08:06-06:00. Alongside it, the reader's guide the paper cites for its proof-term route: hexagonmath.org/pdf/2611.00799v1, fetched 2026-11-22, sha256 ed3219310e356ef99dad8acb6a2a63ed92df18bd8a73f0dfef63ba5a4e8e57a7, 54 pages."
+      },
+      "audience": "briefing",
+      "kind": "replay",
+      "cycle": "external-2026-11-22-nielsen",
+      "dated": "2026-11-22",
+      "by": null,
+      "preregistered": {
+        "question": "What does the first published document that disputes the claim say, and does its conclusion follow from what it reports?",
+        "rule": "the document read in full, pinned by hash; its factual claims about the archive compared with what the record and the other public readings already hold; no new building or checking by Nervous Machine",
+        "predictions": [],
+        "commit": null,
+        "before_data": false
+      },
+      "outcome": {
+        "verdict": "admitted",
+        "numbers": {
+          "external": {
+            "public_reactions": [
+              {
+                "who": "J. L. Nielsen, Center for Topological Physics, Lawrence, Kansas (a physicist and philosopher of science by her public profiles)",
+                "url": "https://philpapers.org/rec/NIEIOT-2",
+                "pdf": "https://philarchive.org/archive/NIEIOT-2",
+                "posted": "2026-11-20",
+                "title": "The Invalidity of Alpöge's Proof of the Riemann Hypothesis: vacuously true geometric and lattice witnesses in the Lean formalization",
+                "versions": "the record's version history could not be read; a search index reported sixteen uploads between 20 and 22 November, the title moving between \"Proof\" and \"Proposed Proof\"",
+                "what": "concludes that the release does not contain a proof. Concedes that the top-level theorem has Mathlib's type RiemannHypothesis and that the source has no axiom, sorry or native_decide. Reports, from about 70 of the 175,187 files read in the community mirror at commit 712a6aef (archive sha256 9631b4f0…, matching this record's pin), that the proof's live route passes a hypothesis bundle whose geometric predicate is defined as True (anyGeometry, closed under GeoCl), that the lattice-side equalities hold by rfl because the witness is a copy of the row-side data, that the divisor height is set by definition to an explicit formula and its defining equation proved by rfl, that the map from lattices to sections is the zero map, and that the lemmas written to extract geometric content are never called. From this she argues that the inequality meant to trap an independent geometric height compares a quantity with itself, so that the term certifies only \"RiemannHypothesis = RiemannHypothesis\". An appendix states the kernel objection and answers that no independent algebraic route remains once the vacuous package is removed. Offers one check, a transitivelyUsedConstants walk from riemannHypothesis, which would list the constants the term uses.",
+                "is_a_reading": true,
+                "note": "A reading of the formal term by a named person, the first on the public record to dispute the claim. Its factual reports about the source are not checked here. Its conclusion does not follow from them as stated. A closed term of Mathlib's RiemannHypothesis, accepted by the kernel with only propext, Classical.choice and Quot.sound, is a proof of that proposition whatever the names of the intermediate hypotheses say: a hypothesis slot defined as True removes an assumption and weakens nothing downstream; an equation proved by rfl is an equation; and RiemannHypothesis is a statement about the zeros of zeta, not a proposition that is definitionally True, so no term of that type is the identity \"RH = RH\". The paper names no error in the statement, the pins or the kernels, and gives no mechanism by which the type could be inhabited without the proposition holding. What it does report, if its citations are right, is that the formal route does not use the geometric content the archive's names advertise. Jaswal's guide, read the same day, notes the same True-valued slots (hypotheses of TopShapeAlt set to True; a bundle field of type UnusedSlot72, which is True) and treats them as unused inputs. That is a finding about what the proof actually does and how it can be read, which bears on the reading gap and not on the machine check. The offered dependency walk would confirm which constants the term uses, not whether the proof holds, and is not run here. Standing unchanged."
+              }
+            ],
+            "expositions": [
+              {
+                "who": "Manvir Jaswal, Toronto (ORCID 0009-0001-2880-9528)",
+                "url": "https://hexagonmath.org/abs/2611.00799",
+                "posted": "2026-11-21",
+                "title": "The Riemann hypothesis for Dirichlet L-functions [after Levent Alpöge]",
+                "what": "a 54-page reader's guide, CC BY 4.0, stating the five theorems of Main.lean in ordinary notation and following the chain of declarations behind them, with files and lines; sections 2.3 and 2.4 give the proof-term route from everyCharacter through zero_free_all_of_green_v_win to zeroFreeAll_of_topG that Nielsen's paper relies on. Gives no verdict of its own; reports Sutherland's kernel and independent-kernel results as his.",
+                "provenance": "the venue labels it \"Primarily AI-generated text; Human understanding: no parts\"; the author's statement says it was researched and written with Claude Opus 5.5 in Claude Code and GPT-6.2 Astra in Codex, and that he takes full responsibility for its contents",
+                "is_a_reading": false,
+                "note": "the first human-readable account of the argument on the public record, and by its own label not a human reading of it"
+              },
+              {
+                "who": "Alexis Plascencia, \"Riemann, line by line\", a field guide",
+                "url": "https://alexisdpc.github.io/riemann/sources.html",
+                "posted": "2026-11-21",
+                "what": "source-linked excerpts of 44 Lean files with hashes and a provenance manifest; states that no build, axiom audit or verification was performed there",
+                "is_a_reading": false
+              }
+            ],
+            "mirror_moved": "the community mirror this record names as Deicyde/riemann-hypothesis now lives at github.com/leanprover-community/riemann-hypothesis (same repository, 658 stars, 160 forks, 260 pull requests opened as of this reading); its verification notes at commit c592e91e (blob 418f3e37) report the archive hash matching this record's pin"
+          }
+        }
+      },
+      "spoken": "The first document to dispute the claim, with a name on it. J. L. Nielsen, a physicist and philosopher of science in Kansas, posted a seventeen-page paper to PhilPapers on 20 November and revised it through the 22nd. She accepts that the top-level theorem is Mathlib's statement of the Riemann Hypothesis and that the source has no axioms or holes, and she reports, from reading about seventy files along the proof's route, that the geometric layer the archive's names advertise is empty: a predicate defined as True, equalities that hold by definition because one side is a copy of the other, a height set to its own formula. From this she concludes the archive proves only that the Riemann Hypothesis equals itself. That conclusion does not follow. A term the kernel accepts, of a type that is Mathlib's statement about the zeros of zeta, proves that statement no matter what the intermediate names say; an assumption set to True is an assumption removed, not a flaw introduced. What her reading may show, if her citations hold, is that the proof does not do what its names say it does. That matters for anyone trying to read it, and it is the kind of thing the reading gap is for. It moves nothing in the machine check. Read beside it, the same day: a 54-page reader's guide by Manvir Jaswal that lays out the route in ordinary notation, labelled by its venue as primarily AI-written with no part understood by a person.\n",
+      "finding_ids": [],
+      "gap_ids": [
+        "EG2",
+        "EG3"
+      ]
+    },
+    {
+      "schema_version": "nm-debrief-v1",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "created_by": "contributed cycle (merge_cycles.py)",
+      "created_at": "2026-11-23T18:52:35Z",
+      "provenance": {
+        "source": "the cycle 2 build of the pinned archive (sha256 9631b4f0…) in the VM, untouched since 2026-11-22; Lean v4.33.1, Mathlib 0df444a3",
+        "occasion": "Yochay Jerby's public post of 2026-11-23 that the proof is correct but that almost all of it proves an inequality over primes after which a short analytic argument finishes; a claim about shape, measured here"
+      },
+      "audience": "briefing",
+      "kind": "trace",
+      "cycle": "trace-2026-11-23-structure",
+      "dated": "2026-11-23",
+      "by": "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)",
+      "preregistered": {
+        "question": "Of the archive's constants and lines that the kernel uses for riemannHypothesis, how much lies under the Dirichlet nonvanishing theorem everyCharacter and how much under the derivation rh_of_every; which directories the proof term reaches; which constants dominate the rest.",
+        "rule": "dependency walk over every constant named in the type or proof term of every archive constant reachable from Main.lean's five theorems; set sizes, declaration lines and dominator relations on that graph; statements of the spine and the ten largest dominators printed verbatim; no interpretation beyond what is labelled as the agent's reading; standing unchanged by construction",
+        "predictions": [
+          "P1: cone(everyCharacter) holds at least 95% of the cone's declaration lines and cone(rh_of_every) minus it under 1%",
+          "P2: the modules the proof touches hold 25% to 75% of the archive's lines, and some top-level directory is touched below 10%",
+          "P3: at least one Development/ and at least three Formalism/ second-level directories contribute no constant",
+          "P4: the deepest spine constant still dominating at least 50% of the root's lines is in Development/",
+          "P5: the walk finishes under 3 hours and 90 GB; the cone holds 200,000 to 3,000,000 constants",
+          "P6: 5,000 to 60,000 library constants are named directly by archive constants"
+        ],
+        "commit": "prereg_trace_structure.yaml",
+        "registered": "sha256 f927adcd… in prereg_trace_structure.yaml.sha256, committed 7ff4d0b and 89c22bc before the walk started at 14:26 UTC",
+        "before_data": true,
+        "results": [
+          "trace/STRUCTURE-TRACE.md",
+          "trace-structure/report.md"
+        ]
+      },
+      "outcome": {
+        "verdict": "confirmed",
+        "numbers": {
+          "R1": "pass: exit 0 after 4 h 18 m 37 s, 83.7 GB peak; 1,265,279 archive constants reachable from the five entry theorems, 67,981 library boundary constants, 148,685,863 edges written (109,535,588 distinct), 0 missing; environment of 186,200 modules",
+          "R2": "cone(riemannHypothesis): 1,265,256 archive constants (1,075,015 theorems, 178,298 definitions, 11,943 inductive types, constructors and recursors; 325,390 machine-named); 10,611,120 declaration lines of 17,374,215 (61.1%); 146,437 of 175,187 modules touched (83.6%), holding 15,027,754 lines (86.5%); per top-level directory the share of lines in touched files runs from 77.6% (PositivityTheory) to 95.5% (CompanionTheory), Development 86.4%; all seven Development/ second-level directories used (AbelianVarietyTheory 83.5% of 8,142,960 lines, 524,931 constants); 23 of 331 second-level directories unused, 8,101 lines in all (0.05%); Mathlib 64,874, Init 3,040, Batteries 66, Aesop 1 constants at the boundary",
+          "R3": "cone(everyCharacter) 1,265,249 constants, 10,611,055 lines (100.00% of the cone's lines); cone(rh_of_every) 6 constants, 64 lines (0.00%): rh_of_every, rh_of_right and its two proof parts, plus the definition EveryCharacter and one shared part; outside both: allChi, rhOfAll, riemannHypothesis",
+          "R4": "dominator iteration converged in 3 passes; root dominates 10,660,526 lines over 1,265,256 constants; spine: everyCharacter 100% → everyCharacter_of_row 77.4% → every_character_of_literature_of_vWin 66.8% → every_character_of_theta_integrals_local_matching 39.6% → nonempty_hyps_definite_side_of_closed_bound 33.3% → hypotheses_nonempty_of_unramified_exponents_alt 11.3% → allRows_of_open0_alt 4.2%, all in Development/AutomorphicArithmetic; 2,406,411 lines leave the spine at everyCharacter into 58,064 dominated children; largest dominators off the spine vwin_of_row 8.6%, topCovolSlim2_use_alt_alt 7.7%, galoisLocalGlobalStrong_recParameter 6.4%, galoisRepresentations_of_thetaLift 6.1%, geoOne_holds 5.3%, deep_slim_use 4.6%; no constant below the four top wrappers dominates more than 77.4%",
+          "R5": "pass: 20 statements printed verbatim (trace-structure/R5_statements.txt), 55 s, 54.9 GB",
+          "procedure_note": "the analysis was registered to run on the host; the edge table is 11.4 GB, so it ran in the VM with analyze2.py, an integer-indexed rewrite of the registered analyze.py with the same measures, both checked against the same Mathlib-only test graph (amendment A1 in the pre-registration); the walk's progress lines were buffered until exit"
+        },
+        "misses": [
+          "P2: 86.5% of the archive's lines are in touched modules, not 25% to 75%; the only top-level directory under 10% is BuildAid, 20 lines",
+          "P3: every Development/ second-level directory contributes constants; twelve Formalism/ ones contribute none",
+          "P5: the walk took 4 h 18 m, not under 3 h (memory 83.7 GB and 1,265,256 constants were inside the predicted ranges)",
+          "P6: 67,981 library constants at the boundary, above the predicted 60,000"
+        ]
+      },
+      "spoken": "On 23 November Nervous Machine walked the dependency graph of the proof from its main theorem down, to measure what Yochay Jerby had described in words that morning. The top of the proof is exactly as he said: everything in the archive, one million two hundred sixty-five thousand constants and ten and a half million lines, goes into one theorem, that no Dirichlet L-function vanishes to the right of the critical line, and sixty-four lines of functional-equation argument then put the zeros on the line. Below that theorem there is no second bottleneck: the mass divides at every step, and the heaviest lemmas carry the names of the theta correspondence, Galois representations, and Arakelov-style volume bounds, not of sums over primes. The proof term reaches eighty-six percent of the archive's lines and all seven of its largest subject directories; twenty-three small directories, eight thousand lines in all, are never used. The statements of the twenty heaviest lemmas are printed verbatim for anyone who wants to read them. Four of six predictions registered before the walk missed, each because the proof uses more of the archive, and more of Mathlib, than the operating agent expected. Nothing changed standing.\n",
+      "finding_ids": [],
+      "gap_ids": [
+        "EG2",
+        "EG3"
+      ]
     }
-   },
-   "spoken": "The first public reaction from an independent mathematician in the relevant field, posted on 20 November and read here on the 22nd. Abhishek Saha, who works on automorphic forms, writes that he had assumed the Riemann Hypothesis would need new theory in arithmetic geometry, and that the claimed proof instead takes a long route through existing deep results in his own corner of number theory, of a kind he thinks neither a person alone nor a current model alone could have found. He gives the proof a very good chance of being correct and credits Alpöge. It is an opinion on the argument's shape, not a report of having read it, and it names the field whose specialists could. It moves nothing here.\n",
-   "finding_ids": [],
-   "gap_ids": [
-    "EG3"
-   ]
-  },
-  {
-   "schema_version": "nm-debrief-v1",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "created_by": "contributed cycle (merge_cycles.py)",
-   "created_at": "2026-11-23T04:37:48Z",
-   "provenance": {
-    "source": "philpapers.org/rec/NIEIOT-2 (manuscript record) and philarchive.org/archive/NIEIOT-2 (the PDF); both sites refuse automated fetches, so the PDF was saved from a browser by Nervous Machine on 2026-11-22 at 20:32 PST; 162,485 bytes, 17 pages, sha256 15ac01d0bc60a4e98f4d50c7ef1eaa675108c84738974bda0ab5225f6601b5a6; its title page is dated 20 November 2026 and its PDF creation stamp is 2026-11-22T12:08:06-06:00. Alongside it, the reader's guide the paper cites for its proof-term route: hexagonmath.org/pdf/2611.00799v1, fetched 2026-11-22, sha256 ed3219310e356ef99dad8acb6a2a63ed92df18bd8a73f0dfef63ba5a4e8e57a7, 54 pages."
-   },
-   "audience": "briefing",
-   "kind": "replay",
-   "cycle": "external-2026-11-22-nielsen",
-   "dated": "2026-11-22",
-   "by": null,
-   "preregistered": {
-    "question": "What does the first published document that disputes the claim say, and does its conclusion follow from what it reports?",
-    "rule": "the document read in full, pinned by hash; its factual claims about the archive compared with what the record and the other public readings already hold; no new building or checking by Nervous Machine",
-    "predictions": [],
-    "commit": null,
-    "before_data": false
-   },
-   "outcome": {
-    "verdict": "admitted",
-    "numbers": {
-     "external": {
-      "public_reactions": [
-       {
-        "who": "J. L. Nielsen, Center for Topological Physics, Lawrence, Kansas (a physicist and philosopher of science by her public profiles)",
-        "url": "https://philpapers.org/rec/NIEIOT-2",
-        "pdf": "https://philarchive.org/archive/NIEIOT-2",
-        "posted": "2026-11-20",
-        "title": "The Invalidity of Alpöge's Proof of the Riemann Hypothesis: vacuously true geometric and lattice witnesses in the Lean formalization",
-        "versions": "the record's version history could not be read; a search index reported sixteen uploads between 20 and 22 November, the title moving between \"Proof\" and \"Proposed Proof\"",
-        "what": "concludes that the release does not contain a proof. Concedes that the top-level theorem has Mathlib's type RiemannHypothesis and that the source has no axiom, sorry or native_decide. Reports, from about 70 of the 175,187 files read in the community mirror at commit 712a6aef (archive sha256 9631b4f0…, matching this record's pin), that the proof's live route passes a hypothesis bundle whose geometric predicate is defined as True (anyGeometry, closed under GeoCl), that the lattice-side equalities hold by rfl because the witness is a copy of the row-side data, that the divisor height is set by definition to an explicit formula and its defining equation proved by rfl, that the map from lattices to sections is the zero map, and that the lemmas written to extract geometric content are never called. From this she argues that the inequality meant to trap an independent geometric height compares a quantity with itself, so that the term certifies only \"RiemannHypothesis = RiemannHypothesis\". An appendix states the kernel objection and answers that no independent algebraic route remains once the vacuous package is removed. Offers one check, a transitivelyUsedConstants walk from riemannHypothesis, which would list the constants the term uses.",
-        "is_a_reading": true,
-        "note": "A reading of the formal term by a named person, the first on the public record to dispute the claim. Its factual reports about the source are not checked here. Its conclusion does not follow from them as stated. A closed term of Mathlib's RiemannHypothesis, accepted by the kernel with only propext, Classical.choice and Quot.sound, is a proof of that proposition whatever the names of the intermediate hypotheses say: a hypothesis slot defined as True removes an assumption and weakens nothing downstream; an equation proved by rfl is an equation; and RiemannHypothesis is a statement about the zeros of zeta, not a proposition that is definitionally True, so no term of that type is the identity \"RH = RH\". The paper names no error in the statement, the pins or the kernels, and gives no mechanism by which the type could be inhabited without the proposition holding. What it does report, if its citations are right, is that the formal route does not use the geometric content the archive's names advertise. Jaswal's guide, read the same day, notes the same True-valued slots (hypotheses of TopShapeAlt set to True; a bundle field of type UnusedSlot72, which is True) and treats them as unused inputs. That is a finding about what the proof actually does and how it can be read, which bears on the reading gap and not on the machine check. The offered dependency walk would confirm which constants the term uses, not whether the proof holds, and is not run here. Standing unchanged."
-       }
+  ],
+  "findings": [
+    {
+      "schema_version": "nm-debrief-v1",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "audience": "briefing",
+      "created_by": "Nervous Machine, cycle 2 outcome",
+      "created_at": "2026-11-22T02:40:00Z",
+      "provenance": {
+        "source": "cycle 2 (cycles/cycle2-rerun.yaml), registered in prereg_cycle2.yaml before the build; evidence in cycle2/"
+      },
+      "finding_id": "F1",
+      "kind": "learned",
+      "spoken": "The Lean development released by Levent Alpöge on 20 November 2026 builds in full from the pinned archive against the pinned Mathlib on a machine the claimant never touched, with no sorry, admit or axiom in its source. Each of its five entry theorems rests on exactly Lean's three standard axioms. Its main theorem's statement is Mathlib's own definition of the Riemann Hypothesis, declared once, in Mathlib, and nowhere redefined.",
+      "evidence": {
+        "numbers": {
+          "modules_compiled": 175187,
+          "build_exit": 0,
+          "error_lines": 0,
+          "wall_time": "14:48:01 resumed, after 3:19 in cycle 1",
+          "peak_memory_kb": 61216752,
+          "axioms_each_of_five": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "source_scan_hits": 0,
+          "RiemannHypothesis_declared_in": "Mathlib.NumberTheory.LSeries.RiemannZeta",
+          "RiemannHypothesis_declarations": 1,
+          "main_olean_sha256_equals_sutherland": true,
+          "files_equal_to_sutherland": 76968,
+          "files_different": 98219,
+          "files_different_without_our_path": 0
+        },
+        "cycles": [
+          1,
+          2
+        ],
+        "confirmed_by": [
+          "pre-registered build by Nervous Machine, cycles 1 and 2, Claude Fable 5.1 operating (conflict disclosed in the record)",
+          "on the public record, not as a cycle here: Andrew Sutherland's build (same Main.olean hash) and the Lean and Mathlib communities' joint statement"
+        ]
+      },
+      "standing": {
+        "status": "accepted",
+        "basis": "one pre-registered build by a party independent of the claimant, under amendment A1 of prereg_cycle1.yaml: one party's report gives accepted; certified needs a second independent party's matching hash of the compiled output, which the path dependence recorded in EG5 prevents until the rule is revised or a shared comparison is run",
+        "note": "The operating agent is a model made by the claimant's employer; the kernel, not the operator, is the trust anchor, and the operator is disclosed. This finding says the formal statements follow from Lean's axioms. It says nothing about what they mean (EG2, EG4) or whether anyone understands the argument (EG3)."
+      },
+      "certainty": {
+        "earned": true,
+        "note": "deterministic, reproducible check (audit regime, see SCHEMA.md): a Lean build and axiom audit under a pre-registration; reproduced byte for byte against Sutherland's output on every path-free file"
+      }
+    }
+  ],
+  "gaps": [
+    {
+      "schema_version": "nm-debrief-v1",
+      "created_by": "DEBRIEF/tools/new_mission.py",
+      "created_at": "2026-11-20T22:06:47Z",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "provenance": {
+        "source": "public record to 2026-11-20: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
+      },
+      "audience": "briefing",
+      "gap_id": "EG1",
+      "title": "The Lean development has not been built or kernel-checked by anyone outside the claimant",
+      "status": "resolved_learned",
+      "opened_cycle": 0,
+      "priority": 1,
+      "history": [
+        {
+          "cycle": "external-2026-11-20",
+          "hypothesis": "public record: has anyone outside the claimant built it?",
+          "before_data": false,
+          "result": "Andrew Sutherland (MIT) reports a full compile, standard axioms only, kernel replay of every module and an independent kernel accepting the export, checks run with Claude Code; not filed as a cycle under his name here; Nervous Machine's own pre-registered build is running; status proposed -> in_cycle"
+        },
+        {
+          "cycle": "1",
+          "hypothesis": "the development builds from the pinned archive on an independent machine",
+          "before_data": true,
+          "result": "build halted after 3 h 19 m with our disk full at 32,018 of 175,187 modules; no error other than disk exhaustion; resumed as cycle 2 (prereg_cycle2.yaml); status stays in_cycle"
+        },
+        {
+          "cycle": "external-2026-11-21",
+          "hypothesis": "public record: who else has built it?",
+          "before_data": false,
+          "result": "joint statement of the Lean and Mathlib communities (21 Nov 13:55): dozens of people report correct compilation reproducing the same exported proof, which Lean's kernel, con-leche, con-ron and third-party checkers accept; Sutherland's page adds con-leche (1,468,418 declarations) and lean4lean (175,187 of 175,187). Not cycles under their names here; status stays in_cycle while Nervous Machine's cycle 2 is recorded"
+        },
+        {
+          "cycle": "2",
+          "hypothesis": "the development builds from the pinned archive on an independent machine with the standard axioms only",
+          "before_data": true,
+          "result": "all 175,187 modules compile, exit 0, no error line; zero hits for sorry, admit, native_decide, axiom, implemented_by, extern, unsafe, opaque; each of the five theorems depends on exactly propext, Classical.choice, Quot.sound; finding F1, standing accepted; status in_cycle -> resolved_learned"
+        }
       ],
-      "expositions": [
-       {
-        "who": "Manvir Jaswal, Toronto (ORCID 0009-0001-2880-9528)",
-        "url": "https://hexagonmath.org/abs/2611.00799",
-        "posted": "2026-11-21",
-        "title": "The Riemann hypothesis for Dirichlet L-functions [after Levent Alpöge]",
-        "what": "a 54-page reader's guide, CC BY 4.0, stating the five theorems of Main.lean in ordinary notation and following the chain of declarations behind them, with files and lines; sections 2.3 and 2.4 give the proof-term route from everyCharacter through zero_free_all_of_green_v_win to zeroFreeAll_of_topG that Nielsen's paper relies on. Gives no verdict of its own; reports Sutherland's kernel and independent-kernel results as his.",
-        "provenance": "the venue labels it \"Primarily AI-generated text; Human understanding: no parts\"; the author's statement says it was researched and written with Claude Opus 5.5 in Claude Code and GPT-6.2 Astra in Codex, and that he takes full responsibility for its contents",
-        "is_a_reading": false,
-        "note": "the first human-readable account of the argument on the public record, and by its own label not a human reading of it"
-       },
-       {
-        "who": "Alexis Plascencia, \"Riemann, line by line\", a field guide",
-        "url": "https://alexisdpc.github.io/riemann/sources.html",
-        "posted": "2026-11-21",
-        "what": "source-linked excerpts of 44 Lean files with hashes and a provenance manifest; states that no build, axiom audit or verification was performed there",
-        "is_a_reading": false
-       }
+      "closes_with": [
+        {
+          "what": "a pre-registered rerun: fetch at the pinned commit, build, confirm no sorry or admit, print the axioms",
+          "kind": "rerun",
+          "external": true,
+          "who_could_act": "anyone with a machine and a few hours"
+        }
       ],
-      "mirror_moved": "the community mirror this record names as Deicyde/riemann-hypothesis now lives at github.com/leanprover-community/riemann-hypothesis (same repository, 658 stars, 160 forks, 260 pull requests opened as of this reading); its verification notes at commit c592e91e (blob 418f3e37) report the archive hash matching this record's pin"
-     }
+      "spoken": "Built in full on an independent machine under a pre-registration (Nervous Machine, cycles 1 and 2): compiles, no escape hatches in the source, the three standard axioms only. On the public record, Andrew Sutherland and, per the Lean and Mathlib communities, dozens of others report the same. Closed as learned; standing accepted, not certified, because the second independent hash report the rule asks for is blocked by EG5.",
+      "ask": {
+        "spoken": "A rerun of the Lean build on an independent machine, written down first."
+      },
+      "expected_signal": "a rerun cycle reporting build exit status, the sorry/admit scan and the axiom list for the main theorem",
+      "resolution_by": "2026-11-22, cycle 2"
+    },
+    {
+      "schema_version": "nm-debrief-v1",
+      "created_by": "DEBRIEF/tools/new_mission.py",
+      "created_at": "2026-11-20T22:06:47Z",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "provenance": {
+        "source": "public record to 2026-11-20: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
+      },
+      "audience": "briefing",
+      "gap_id": "EG2",
+      "title": "Do the formal statements say what the problem asks?",
+      "status": "proposed",
+      "opened_cycle": 0,
+      "priority": 2,
+      "history": [
+        {
+          "cycle": "external-2026-11-21",
+          "hypothesis": "public record: has anyone compared the proved theorem with Mathlib's statement, or read it?",
+          "before_data": false,
+          "result": "machine half: the communities report that a challenge file importing only Mathlib was compared with the proved theorem by comparator and by con-leche --compare, both confirming it is exactly Mathlib's RiemannHypothesis; Sutherland's con-leche --compare run justifies all five theorems. Human half: the statement says Mathlib's definition 'has been carefully vetted by experts in Lean and number theory', naming no one; nobody has signed or refused trace/DEFINITIONAL-TRACE.md. Status stays proposed"
+        },
+        {
+          "cycle": "2",
+          "hypothesis": "R6: RiemannHypothesis in the built environment is Mathlib's definition, declared once, not redefined by the archive",
+          "before_data": true,
+          "result": "passed: declared once, in Mathlib.NumberTheory.LSeries.RiemannZeta, with Mathlib's text; the archive's five constants ending in that string are longer names in its own modules, none a redefinition; riemannHypothesis : RiemannHypothesis. The machine half is resolved. The human half (does Mathlib's definition say what Riemann asked) has no signature or refusal yet; status stays proposed"
+        },
+        {
+          "cycle": "trace-2026-11-23-structure",
+          "hypothesis": "which parts of the archive does the proof term of riemannHypothesis reach, and does the whole of it sit under the Dirichlet nonvanishing theorem",
+          "before_data": true,
+          "result": "the proof term reaches 146,437 of 175,187 modules (86.5% of the archive's lines) and all seven Development/ subject directories, including 83.5% of AbelianVarietyTheory's lines; 100.00% of the used lines sit under everyCharacter and 64 lines under the functional-equation step. Reaching a constant does not show its hypotheses carry content, so the Nielsen dispute's question is narrowed, not answered. Status stays proposed"
+        }
+      ],
+      "closes_with": [
+        {
+          "what": "a machine comparison of the claimant's main theorem with the third-party formal statement RiemannHypothesis in leanprover-community/mathlib4, then a human read of any difference",
+          "kind": "trace",
+          "external": true,
+          "who_could_act": "anyone who can read Lean; the two statements are public"
+        },
+        {
+          "what": "two independent mathematicians read the formal statement against the problem as posed and sign, or refuse",
+          "kind": "read",
+          "external": true,
+          "who_could_act": "a mathematician in the problem's area, about an hour with a reading guide"
+        }
+      ],
+      "spoken": "A Lean check establishes that the formal statement follows from its hypotheses. Whether that formal statement is the problem as posed is a separate question that a person has to answer. A third-party formalization of the problem statement exists, so part of this can be compared by machine.",
+      "ask": {
+        "spoken": "A reading of the formal statement against the problem as posed, by someone who did not write it."
+      },
+      "expected_signal": "a trace cycle and two signed read cycles, or a refusal naming the difference",
+      "resolution_by": "none registered"
+    },
+    {
+      "schema_version": "nm-debrief-v1",
+      "created_by": "DEBRIEF/tools/new_mission.py",
+      "created_at": "2026-11-20T22:06:47Z",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "provenance": {
+        "source": "public record to 2026-11-20: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
+      },
+      "audience": "briefing",
+      "gap_id": "EG3",
+      "title": "No independent mathematician has reported reading the proof, and there is no referee report",
+      "status": "proposed",
+      "opened_cycle": 0,
+      "priority": 3,
+      "history": [
+        {
+          "cycle": "external-2026-11-22-saha",
+          "hypothesis": "public record: has an independent mathematician in the field reported reading the argument?",
+          "before_data": false,
+          "result": "Abhishek Saha (automorphic forms) posted an informed reaction: the proof is a route through existing results in higher-rank automorphic forms rather than new theory, which he thinks neither a person alone nor a current model alone could have produced; a very good chance of being correct in his view. An opinion on the shape of the argument, not a reading; it names the field whose specialists could read it. Status stays proposed"
+        },
+        {
+          "cycle": "trace-2026-11-23-structure",
+          "hypothesis": "can the shape of the argument be measured so a reader knows where to start",
+          "before_data": true,
+          "result": "a dominator map of the 1,265,256 constants below the main theorem: one hinge (everyCharacter), then a spine through Development/AutomorphicArithmetic (theta correspondence, Galois representations) that falls from 77% to 4% of the lines over six steps with no second bottleneck; the twenty heaviest lemmas' statements printed verbatim in trace/STRUCTURE-TRACE.md. Jerby's public description of the top of the proof is exact; his 'inequality over primes' does not appear as a dominating lemma under that name. An aid to a reading, not one. Status stays proposed"
+        }
+      ],
+      "closes_with": [
+        {
+          "what": "a read cycle by a mathematician in the area who is not an author, signing or refusing each main step",
+          "kind": "read",
+          "external": true,
+          "who_could_act": "a mathematician in the problem's area"
+        },
+        {
+          "what": "a referee report or journal acceptance, recorded by date",
+          "kind": "measurement",
+          "external": true,
+          "who_could_act": "a journal; the record notes the date when it happens"
+        }
+      ],
+      "spoken": "The claim was announced by its author on the author's own site. No independent reading, referee report or journal submission is on the public record.",
+      "ask": {
+        "spoken": "Someone in the field reads it and says, under their name, what holds and what does not."
+      },
+      "expected_signal": "a signed or refused read cycle; a dated referee report",
+      "resolution_by": "none registered"
+    },
+    {
+      "schema_version": "nm-debrief-v1",
+      "created_by": "DEBRIEF/tools/new_mission.py",
+      "created_at": "2026-11-20T22:06:47Z",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "provenance": {
+        "source": "public record to 2026-11-20: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
+      },
+      "audience": "briefing",
+      "gap_id": "EG4",
+      "title": "The Generalized Riemann Hypothesis statements are the claimant's own definitions, with no third-party formal statement to compare against",
+      "status": "proposed",
+      "opened_cycle": 0,
+      "priority": 4,
+      "history": [
+        {
+          "cycle": "external-2026-11-21",
+          "hypothesis": "public record: has anyone outside the claimant read the four Dirichlet L-function statements?",
+          "before_data": false,
+          "result": "Sutherland's page writes the four statements out in words, exactly as in the challenge file, with a scope note: 'GRH' means Dirichlet L-functions, all moduli and all characters; Dedekind, Hecke and automorphic L-functions were not among the statements checked. The joint statement concerns the Riemann Hypothesis only and does not mention these four. A reading under his name on his own page, not a signed read cycle here; status stays proposed"
+        }
+      ],
+      "closes_with": [
+        {
+          "what": "two independent mathematicians read the four definitions in Statements.lean against the Generalized Riemann Hypothesis as usually stated and sign, or refuse",
+          "kind": "read",
+          "external": true,
+          "who_could_act": "an analytic number theorist, about an hour with the file"
+        }
+      ],
+      "spoken": "Four of the five results in Main.lean are stated with definitions the claimant wrote in Statements.lean, about zeros and non-vanishing of Dirichlet L-functions. Mathlib has no definition of the Generalized Riemann Hypothesis to compare them with, so whether these four definitions say what the Generalized Riemann Hypothesis says is entirely a human read.",
+      "ask": {
+        "spoken": "A reading of the four Dirichlet L-function definitions against the Generalized Riemann Hypothesis, by someone who did not write them."
+      },
+      "expected_signal": "two signed read cycles, or a refusal naming the difference",
+      "resolution_by": "none registered"
+    },
+    {
+      "schema_version": "nm-debrief-v1",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "audience": "briefing",
+      "created_by": "Nervous Machine, cycle 1 outcome",
+      "created_at": "2026-11-21T01:58:22Z",
+      "provenance": {
+        "source": "cycle 1 (cycles/cycle1-rerun.yaml) and its diagnosis files in cycle1/"
+      },
+      "gap_id": "EG5",
+      "title": "Compiled-output hashes agree byte for byte only between builds under the same absolute source path",
+      "status": "proposed",
+      "opened_cycle": "1",
+      "priority": 5,
+      "history": [
+        {
+          "cycle": "1",
+          "hypothesis": "two independent builds of the archive produce byte-identical compiled output (amendment A1's certification rule assumes it)",
+          "before_data": true,
+          "result": "17,023 of 32,018 compiled files equal Sutherland's published hashes; 14,992 of the 14,995 that differ contain our absolute source directory inside a linter message that Lean v4.33.1 stores in the module output; none of the equal files does; 3 differ for a reason not yet found (cycle 2, R8)"
+        },
+        {
+          "cycle": "1",
+          "hypothesis": "the 3 differing files without a path differ for some other reason",
+          "before_data": false,
+          "result": "their cycle 1 copies were truncated by the full disk (two empty, one partial); rebuilt, all three equal Sutherland's hashes and contain no path; all 14,995 differences accounted for (cycle1/exceptions.txt)"
+        },
+        {
+          "cycle": "external-2026-11-21",
+          "hypothesis": "public record: is Sutherland's build path known?",
+          "before_data": false,
+          "result": "answered on his page, updated 2026-11-21 12:55 UTC: /home/ubuntu/grh/src/lean on every build machine; by his own count 98,219 of his 175,187 compiled files contain that path and 76,968, including Main.olean, do not; his 240-module build at another path gave 168 equal and 72 different, all 72 with the path. He names the exported proof as the artifact to compare across builds. The external ask is closed; the decision on the rule remains the record keeper's"
+        },
+        {
+          "cycle": "2",
+          "hypothesis": "R7, R8: a module's output embeds our source path exactly when compiling it produced a linter warning, and that alone decides whether it equals Sutherland's",
+          "before_data": true,
+          "result": "all 175,187 files compared: 76,968 equal his, 98,219 differ; 98,219 contain our path and 76,968 do not; different-without-path 0, equal-with-path 0; Main.olean equals his (9146dfb4…); our manifest a9a97091… differs from his 375cbee2…; Sutherland reports the identical 98,219 / 76,968 split for his build. The mechanism is settled; the decision on what two builders compare is still open"
+        },
+        {
+          "cycle": "external-2026-11-22",
+          "hypothesis": "public record: does a second build at Sutherland's own path reproduce his manifest in full?",
+          "before_data": false,
+          "result": "his sandboxed lake rebuild on another machine at /home/ubuntu/grh/src/lean matched his first manifest on 175,186 of 175,187 files; the exception (LocModel.olean) compiles non-deterministically, 38 bytes in a bound-variable name the kernel ignores; the exported proof matched byte for byte (sha256 5ea74b91…). So a shared path cannot give a full .olean manifest match, and the export is the artifact that reproduces across machines. The decision on the rule is still the record keeper's"
+        }
+      ],
+      "closes_with": [
+        {
+          "what": "a decision by the record keeper on what two independent builders compare: the files that embed no path, the lean4export output (whose determinism is an open question on Sutherland's page and in Deicyde's notes), or a shared build path; then that comparison, run",
+          "kind": "decision",
+          "external": false,
+          "who_could_act": "Heidi Bennett, who set the rule, with the kernel"
+        },
+        {
+          "what": "a rebuild under /home/ubuntu/grh/src/lean, Sutherland's published path, or a comparison of the exported proof, whichever the decision names; either is a new pre-registered cycle",
+          "kind": "rerun",
+          "external": false,
+          "who_could_act": "Nervous Machine, once the rule is revised, about 15 hours of machine time"
+        }
+      ],
+      "spoken": "The record's certification rule asks two independent builders to publish matching hashes of the compiled output. Cycle 1 found that Lean writes each source file's absolute path into the output of any module that produced a warning, which is about half of this archive, so two builders in different directories can never match on those files. The rule needs a comparison that does not depend on where the build ran.",
+      "ask": {
+        "spoken": "A decision on what two independent builds compare, and Andrew Sutherland's build path."
+      },
+      "expected_signal": "a revised rule in this record, or a comparison on a path-independent artifact, or a rebuild under Sutherland's path that matches his manifest",
+      "resolution_by": "none registered"
     }
-   },
-   "spoken": "The first document to dispute the claim, with a name on it. J. L. Nielsen, a physicist and philosopher of science in Kansas, posted a seventeen-page paper to PhilPapers on 20 November and revised it through the 22nd. She accepts that the top-level theorem is Mathlib's statement of the Riemann Hypothesis and that the source has no axioms or holes, and she reports, from reading about seventy files along the proof's route, that the geometric layer the archive's names advertise is empty: a predicate defined as True, equalities that hold by definition because one side is a copy of the other, a height set to its own formula. From this she concludes the archive proves only that the Riemann Hypothesis equals itself. That conclusion does not follow. A term the kernel accepts, of a type that is Mathlib's statement about the zeros of zeta, proves that statement no matter what the intermediate names say; an assumption set to True is an assumption removed, not a flaw introduced. What her reading may show, if her citations hold, is that the proof does not do what its names say it does. That matters for anyone trying to read it, and it is the kind of thing the reading gap is for. It moves nothing in the machine check. Read beside it, the same day: a 54-page reader's guide by Manvir Jaswal that lays out the route in ordinary notation, labelled by its venue as primarily AI-written with no part understood by a person.\n",
-   "finding_ids": [],
-   "gap_ids": [
-    "EG2",
-    "EG3"
-   ]
-  }
- ],
- "findings": [
-  {
-   "schema_version": "nm-debrief-v1",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "audience": "briefing",
-   "created_by": "Nervous Machine, cycle 2 outcome",
-   "created_at": "2026-11-22T02:40:00Z",
-   "provenance": {
-    "source": "cycle 2 (cycles/cycle2-rerun.yaml), registered in prereg_cycle2.yaml before the build; evidence in cycle2/"
-   },
-   "finding_id": "F1",
-   "kind": "learned",
-   "spoken": "The Lean development released by Levent Alpöge on 20 November 2026 builds in full from the pinned archive against the pinned Mathlib on a machine the claimant never touched, with no sorry, admit or axiom in its source. Each of its five entry theorems rests on exactly Lean's three standard axioms. Its main theorem's statement is Mathlib's own definition of the Riemann Hypothesis, declared once, in Mathlib, and nowhere redefined.",
-   "evidence": {
-    "numbers": {
-     "modules_compiled": 175187,
-     "build_exit": 0,
-     "error_lines": 0,
-     "wall_time": "14:48:01 resumed, after 3:19 in cycle 1",
-     "peak_memory_kb": 61216752,
-     "axioms_each_of_five": [
-      "propext",
-      "Classical.choice",
-      "Quot.sound"
-     ],
-     "source_scan_hits": 0,
-     "RiemannHypothesis_declared_in": "Mathlib.NumberTheory.LSeries.RiemannZeta",
-     "RiemannHypothesis_declarations": 1,
-     "main_olean_sha256_equals_sutherland": true,
-     "files_equal_to_sutherland": 76968,
-     "files_different": 98219,
-     "files_different_without_our_path": 0
-    },
-    "cycles": [
-     1,
-     2
-    ],
-    "confirmed_by": [
-     "pre-registered build by Nervous Machine, cycles 1 and 2, Claude Fable 5.1 operating (conflict disclosed in the record)",
-     "on the public record, not as a cycle here: Andrew Sutherland's build (same Main.olean hash) and the Lean and Mathlib communities' joint statement"
-    ]
-   },
-   "standing": {
-    "status": "accepted",
-    "basis": "one pre-registered build by a party independent of the claimant, under amendment A1 of prereg_cycle1.yaml: one party's report gives accepted; certified needs a second independent party's matching hash of the compiled output, which the path dependence recorded in EG5 prevents until the rule is revised or a shared comparison is run",
-    "note": "The operating agent is a model made by the claimant's employer; the kernel, not the operator, is the trust anchor, and the operator is disclosed. This finding says the formal statements follow from Lean's axioms. It says nothing about what they mean (EG2, EG4) or whether anyone understands the argument (EG3)."
-   },
-   "certainty": {
-    "earned": true,
-    "note": "deterministic, reproducible check (audit regime, see SCHEMA.md): a Lean build and axiom audit under a pre-registration; reproduced byte for byte against Sutherland's output on every path-free file"
-   }
-  }
- ],
- "gaps": [
-  {
-   "schema_version": "nm-debrief-v1",
-   "created_by": "DEBRIEF/tools/new_mission.py",
-   "created_at": "2026-11-20T22:06:47Z",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "provenance": {
-    "source": "public record to 2026-11-20: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
-   },
-   "audience": "briefing",
-   "gap_id": "EG1",
-   "title": "The Lean development has not been built or kernel-checked by anyone outside the claimant",
-   "status": "resolved_learned",
-   "opened_cycle": 0,
-   "priority": 1,
-   "history": [
+  ],
+  "anomalies": [],
+  "background": [
     {
-     "cycle": "external-2026-11-20",
-     "hypothesis": "public record: has anyone outside the claimant built it?",
-     "before_data": false,
-     "result": "Andrew Sutherland (MIT) reports a full compile, standard axioms only, kernel replay of every module and an independent kernel accepting the export, checks run with Claude Code; not filed as a cycle under his name here; Nervous Machine's own pre-registered build is running; status proposed -> in_cycle"
+      "schema_version": "nm-debrief-v1",
+      "created_by": "DEBRIEF/tools/new_mission.py",
+      "created_at": "2026-11-20T22:06:47Z",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "provenance": {
+        "source": "public record to 2026-11-20: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
+      },
+      "audience": "briefing",
+      "term": "The Riemann Hypothesis",
+      "spoken": "Every zero of the Riemann zeta function that is not a negative even integer lies on the line where the real part equals one half. The Generalized Riemann Hypothesis says the same of the zeros of every Dirichlet L-function in the critical strip. Mathlib, the Lean mathematical library, states the Riemann Hypothesis as a definition named RiemannHypothesis: for every complex s with zeta of s equal to zero, s not of the form minus two times a positive integer, and s not equal to one, the real part of s is one half.",
+      "source": "https://www.claymath.org/millennium/riemann-hypothesis/"
     },
     {
-     "cycle": "1",
-     "hypothesis": "the development builds from the pinned archive on an independent machine",
-     "before_data": true,
-     "result": "build halted after 3 h 19 m with our disk full at 32,018 of 175,187 modules; no error other than disk exhaustion; resumed as cycle 2 (prereg_cycle2.yaml); status stays in_cycle"
-    },
-    {
-     "cycle": "external-2026-11-21",
-     "hypothesis": "public record: who else has built it?",
-     "before_data": false,
-     "result": "joint statement of the Lean and Mathlib communities (21 Nov 13:55): dozens of people report correct compilation reproducing the same exported proof, which Lean's kernel, con-leche, con-ron and third-party checkers accept; Sutherland's page adds con-leche (1,468,418 declarations) and lean4lean (175,187 of 175,187). Not cycles under their names here; status stays in_cycle while Nervous Machine's cycle 2 is recorded"
-    },
-    {
-     "cycle": "2",
-     "hypothesis": "the development builds from the pinned archive on an independent machine with the standard axioms only",
-     "before_data": true,
-     "result": "all 175,187 modules compile, exit 0, no error line; zero hits for sorry, admit, native_decide, axiom, implemented_by, extern, unsafe, opaque; each of the five theorems depends on exactly propext, Classical.choice, Quot.sound; finding F1, standing accepted; status in_cycle -> resolved_learned"
+      "schema_version": "nm-debrief-v1",
+      "created_by": "DEBRIEF/tools/new_mission.py",
+      "created_at": "2026-11-20T22:06:47Z",
+      "mission_id": "riemann-2026-11",
+      "pod": "DEBRIEF-math-riemann",
+      "provenance": {
+        "source": "public record to 2026-11-20: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
+      },
+      "audience": "briefing",
+      "term": "The claim by Levent Alpöge",
+      "spoken": "The note says the author believes he has found, with Claude, a proof of the Riemann Hypothesis, that the method extends to the Generalized Riemann Hypothesis, and that both have been formalized in Lean without assumptions. It describes the argument as a descendant of Stepanov's method over function fields, with chains of theta lifts between definite unitary groups standing in for multiplicity, and gives a twenty-step timeline from 6 October to 16 November 2026 that the author says Claude compiled. The note says the argument is very long, that the author has not mastered all of the mathematics it uses, that parts of his description paraphrase an AI-written summary and may be wrong, and that he chose to release only the Lean code rather than an informal write-up. The archive has no README, licence or build instructions. Its lakefile names eleven build targets and raises the default heartbeat and stack limits. The entry file Main.lean states five results: Mathlib's RiemannHypothesis, and four statements the claimant defines in Statements.lean about zeros and non-vanishing of Dirichlet L-functions.",
+      "source": "https://alpo.ge/remark.pdf"
     }
-   ],
-   "closes_with": [
-    {
-     "what": "a pre-registered rerun: fetch at the pinned commit, build, confirm no sorry or admit, print the axioms",
-     "kind": "rerun",
-     "external": true,
-     "who_could_act": "anyone with a machine and a few hours"
-    }
-   ],
-   "spoken": "Built in full on an independent machine under a pre-registration (Nervous Machine, cycles 1 and 2): compiles, no escape hatches in the source, the three standard axioms only. On the public record, Andrew Sutherland and, per the Lean and Mathlib communities, dozens of others report the same. Closed as learned; standing accepted, not certified, because the second independent hash report the rule asks for is blocked by EG5.",
-   "ask": {
-    "spoken": "A rerun of the Lean build on an independent machine, written down first."
-   },
-   "expected_signal": "a rerun cycle reporting build exit status, the sorry/admit scan and the axiom list for the main theorem",
-   "resolution_by": "2026-11-22, cycle 2"
-  },
-  {
-   "schema_version": "nm-debrief-v1",
-   "created_by": "DEBRIEF/tools/new_mission.py",
-   "created_at": "2026-11-20T22:06:47Z",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "provenance": {
-    "source": "public record to 2026-11-20: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
-   },
-   "audience": "briefing",
-   "gap_id": "EG2",
-   "title": "Do the formal statements say what the problem asks?",
-   "status": "proposed",
-   "opened_cycle": 0,
-   "priority": 2,
-   "history": [
-    {
-     "cycle": "external-2026-11-21",
-     "hypothesis": "public record: has anyone compared the proved theorem with Mathlib's statement, or read it?",
-     "before_data": false,
-     "result": "machine half: the communities report that a challenge file importing only Mathlib was compared with the proved theorem by comparator and by con-leche --compare, both confirming it is exactly Mathlib's RiemannHypothesis; Sutherland's con-leche --compare run justifies all five theorems. Human half: the statement says Mathlib's definition 'has been carefully vetted by experts in Lean and number theory', naming no one; nobody has signed or refused trace/DEFINITIONAL-TRACE.md. Status stays proposed"
-    },
-    {
-     "cycle": "2",
-     "hypothesis": "R6: RiemannHypothesis in the built environment is Mathlib's definition, declared once, not redefined by the archive",
-     "before_data": true,
-     "result": "passed: declared once, in Mathlib.NumberTheory.LSeries.RiemannZeta, with Mathlib's text; the archive's five constants ending in that string are longer names in its own modules, none a redefinition; riemannHypothesis : RiemannHypothesis. The machine half is resolved. The human half (does Mathlib's definition say what Riemann asked) has no signature or refusal yet; status stays proposed"
-    }
-   ],
-   "closes_with": [
-    {
-     "what": "a machine comparison of the claimant's main theorem with the third-party formal statement RiemannHypothesis in leanprover-community/mathlib4, then a human read of any difference",
-     "kind": "trace",
-     "external": true,
-     "who_could_act": "anyone who can read Lean; the two statements are public"
-    },
-    {
-     "what": "two independent mathematicians read the formal statement against the problem as posed and sign, or refuse",
-     "kind": "read",
-     "external": true,
-     "who_could_act": "a mathematician in the problem's area, about an hour with a reading guide"
-    }
-   ],
-   "spoken": "A Lean check establishes that the formal statement follows from its hypotheses. Whether that formal statement is the problem as posed is a separate question that a person has to answer. A third-party formalization of the problem statement exists, so part of this can be compared by machine.",
-   "ask": {
-    "spoken": "A reading of the formal statement against the problem as posed, by someone who did not write it."
-   },
-   "expected_signal": "a trace cycle and two signed read cycles, or a refusal naming the difference",
-   "resolution_by": "none registered"
-  },
-  {
-   "schema_version": "nm-debrief-v1",
-   "created_by": "DEBRIEF/tools/new_mission.py",
-   "created_at": "2026-11-20T22:06:47Z",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "provenance": {
-    "source": "public record to 2026-11-20: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
-   },
-   "audience": "briefing",
-   "gap_id": "EG3",
-   "title": "No independent mathematician has reported reading the proof, and there is no referee report",
-   "status": "proposed",
-   "opened_cycle": 0,
-   "priority": 3,
-   "history": [
-    {
-     "cycle": "external-2026-11-22-saha",
-     "hypothesis": "public record: has an independent mathematician in the field reported reading the argument?",
-     "before_data": false,
-     "result": "Abhishek Saha (automorphic forms) posted an informed reaction: the proof is a route through existing results in higher-rank automorphic forms rather than new theory, which he thinks neither a person alone nor a current model alone could have produced; a very good chance of being correct in his view. An opinion on the shape of the argument, not a reading; it names the field whose specialists could read it. Status stays proposed"
-    }
-   ],
-   "closes_with": [
-    {
-     "what": "a read cycle by a mathematician in the area who is not an author, signing or refusing each main step",
-     "kind": "read",
-     "external": true,
-     "who_could_act": "a mathematician in the problem's area"
-    },
-    {
-     "what": "a referee report or journal acceptance, recorded by date",
-     "kind": "measurement",
-     "external": true,
-     "who_could_act": "a journal; the record notes the date when it happens"
-    }
-   ],
-   "spoken": "The claim was announced by its author on the author's own site. No independent reading, referee report or journal submission is on the public record.",
-   "ask": {
-    "spoken": "Someone in the field reads it and says, under their name, what holds and what does not."
-   },
-   "expected_signal": "a signed or refused read cycle; a dated referee report",
-   "resolution_by": "none registered"
-  },
-  {
-   "schema_version": "nm-debrief-v1",
-   "created_by": "DEBRIEF/tools/new_mission.py",
-   "created_at": "2026-11-20T22:06:47Z",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "provenance": {
-    "source": "public record to 2026-11-20: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
-   },
-   "audience": "briefing",
-   "gap_id": "EG4",
-   "title": "The Generalized Riemann Hypothesis statements are the claimant's own definitions, with no third-party formal statement to compare against",
-   "status": "proposed",
-   "opened_cycle": 0,
-   "priority": 4,
-   "history": [
-    {
-     "cycle": "external-2026-11-21",
-     "hypothesis": "public record: has anyone outside the claimant read the four Dirichlet L-function statements?",
-     "before_data": false,
-     "result": "Sutherland's page writes the four statements out in words, exactly as in the challenge file, with a scope note: 'GRH' means Dirichlet L-functions, all moduli and all characters; Dedekind, Hecke and automorphic L-functions were not among the statements checked. The joint statement concerns the Riemann Hypothesis only and does not mention these four. A reading under his name on his own page, not a signed read cycle here; status stays proposed"
-    }
-   ],
-   "closes_with": [
-    {
-     "what": "two independent mathematicians read the four definitions in Statements.lean against the Generalized Riemann Hypothesis as usually stated and sign, or refuse",
-     "kind": "read",
-     "external": true,
-     "who_could_act": "an analytic number theorist, about an hour with the file"
-    }
-   ],
-   "spoken": "Four of the five results in Main.lean are stated with definitions the claimant wrote in Statements.lean, about zeros and non-vanishing of Dirichlet L-functions. Mathlib has no definition of the Generalized Riemann Hypothesis to compare them with, so whether these four definitions say what the Generalized Riemann Hypothesis says is entirely a human read.",
-   "ask": {
-    "spoken": "A reading of the four Dirichlet L-function definitions against the Generalized Riemann Hypothesis, by someone who did not write them."
-   },
-   "expected_signal": "two signed read cycles, or a refusal naming the difference",
-   "resolution_by": "none registered"
-  },
-  {
-   "schema_version": "nm-debrief-v1",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "audience": "briefing",
-   "created_by": "Nervous Machine, cycle 1 outcome",
-   "created_at": "2026-11-21T01:58:22Z",
-   "provenance": {
-    "source": "cycle 1 (cycles/cycle1-rerun.yaml) and its diagnosis files in cycle1/"
-   },
-   "gap_id": "EG5",
-   "title": "Compiled-output hashes agree byte for byte only between builds under the same absolute source path",
-   "status": "proposed",
-   "opened_cycle": "1",
-   "priority": 5,
-   "history": [
-    {
-     "cycle": "1",
-     "hypothesis": "two independent builds of the archive produce byte-identical compiled output (amendment A1's certification rule assumes it)",
-     "before_data": true,
-     "result": "17,023 of 32,018 compiled files equal Sutherland's published hashes; 14,992 of the 14,995 that differ contain our absolute source directory inside a linter message that Lean v4.33.1 stores in the module output; none of the equal files does; 3 differ for a reason not yet found (cycle 2, R8)"
-    },
-    {
-     "cycle": "1",
-     "hypothesis": "the 3 differing files without a path differ for some other reason",
-     "before_data": false,
-     "result": "their cycle 1 copies were truncated by the full disk (two empty, one partial); rebuilt, all three equal Sutherland's hashes and contain no path; all 14,995 differences accounted for (cycle1/exceptions.txt)"
-    },
-    {
-     "cycle": "external-2026-11-21",
-     "hypothesis": "public record: is Sutherland's build path known?",
-     "before_data": false,
-     "result": "answered on his page, updated 2026-11-21 12:55 UTC: /home/ubuntu/grh/src/lean on every build machine; by his own count 98,219 of his 175,187 compiled files contain that path and 76,968, including Main.olean, do not; his 240-module build at another path gave 168 equal and 72 different, all 72 with the path. He names the exported proof as the artifact to compare across builds. The external ask is closed; the decision on the rule remains the record keeper's"
-    },
-    {
-     "cycle": "2",
-     "hypothesis": "R7, R8: a module's output embeds our source path exactly when compiling it produced a linter warning, and that alone decides whether it equals Sutherland's",
-     "before_data": true,
-     "result": "all 175,187 files compared: 76,968 equal his, 98,219 differ; 98,219 contain our path and 76,968 do not; different-without-path 0, equal-with-path 0; Main.olean equals his (9146dfb4…); our manifest a9a97091… differs from his 375cbee2…; Sutherland reports the identical 98,219 / 76,968 split for his build. The mechanism is settled; the decision on what two builders compare is still open"
-    },
-    {
-     "cycle": "external-2026-11-22",
-     "hypothesis": "public record: does a second build at Sutherland's own path reproduce his manifest in full?",
-     "before_data": false,
-     "result": "his sandboxed lake rebuild on another machine at /home/ubuntu/grh/src/lean matched his first manifest on 175,186 of 175,187 files; the exception (LocModel.olean) compiles non-deterministically, 38 bytes in a bound-variable name the kernel ignores; the exported proof matched byte for byte (sha256 5ea74b91…). So a shared path cannot give a full .olean manifest match, and the export is the artifact that reproduces across machines. The decision on the rule is still the record keeper's"
-    }
-   ],
-   "closes_with": [
-    {
-     "what": "a decision by the record keeper on what two independent builders compare: the files that embed no path, the lean4export output (whose determinism is an open question on Sutherland's page and in Deicyde's notes), or a shared build path; then that comparison, run",
-     "kind": "decision",
-     "external": false,
-     "who_could_act": "Heidi Bennett, who set the rule, with the kernel"
-    },
-    {
-     "what": "a rebuild under /home/ubuntu/grh/src/lean, Sutherland's published path, or a comparison of the exported proof, whichever the decision names; either is a new pre-registered cycle",
-     "kind": "rerun",
-     "external": false,
-     "who_could_act": "Nervous Machine, once the rule is revised, about 15 hours of machine time"
-    }
-   ],
-   "spoken": "The record's certification rule asks two independent builders to publish matching hashes of the compiled output. Cycle 1 found that Lean writes each source file's absolute path into the output of any module that produced a warning, which is about half of this archive, so two builders in different directories can never match on those files. The rule needs a comparison that does not depend on where the build ran.",
-   "ask": {
-    "spoken": "A decision on what two independent builds compare, and Andrew Sutherland's build path."
-   },
-   "expected_signal": "a revised rule in this record, or a comparison on a path-independent artifact, or a rebuild under Sutherland's path that matches his manifest",
-   "resolution_by": "none registered"
-  }
- ],
- "anomalies": [],
- "background": [
-  {
-   "schema_version": "nm-debrief-v1",
-   "created_by": "DEBRIEF/tools/new_mission.py",
-   "created_at": "2026-11-20T22:06:47Z",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "provenance": {
-    "source": "public record to 2026-11-20: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
-   },
-   "audience": "briefing",
-   "term": "The Riemann Hypothesis",
-   "spoken": "Every zero of the Riemann zeta function that is not a negative even integer lies on the line where the real part equals one half. The Generalized Riemann Hypothesis says the same of the zeros of every Dirichlet L-function in the critical strip. Mathlib, the Lean mathematical library, states the Riemann Hypothesis as a definition named RiemannHypothesis: for every complex s with zeta of s equal to zero, s not of the form minus two times a positive integer, and s not equal to one, the real part of s is one half.",
-   "source": "https://www.claymath.org/millennium/riemann-hypothesis/"
-  },
-  {
-   "schema_version": "nm-debrief-v1",
-   "created_by": "DEBRIEF/tools/new_mission.py",
-   "created_at": "2026-11-20T22:06:47Z",
-   "mission_id": "riemann-2026-11",
-   "pod": "DEBRIEF-math-riemann",
-   "provenance": {
-    "source": "public record to 2026-11-20: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
-   },
-   "audience": "briefing",
-   "term": "The claim by Levent Alpöge",
-   "spoken": "The note says the author believes he has found, with Claude, a proof of the Riemann Hypothesis, that the method extends to the Generalized Riemann Hypothesis, and that both have been formalized in Lean without assumptions. It describes the argument as a descendant of Stepanov's method over function fields, with chains of theta lifts between definite unitary groups standing in for multiplicity, and gives a twenty-step timeline from 6 October to 16 November 2026 that the author says Claude compiled. The note says the argument is very long, that the author has not mastered all of the mathematics it uses, that parts of his description paraphrase an AI-written summary and may be wrong, and that he chose to release only the Lean code rather than an informal write-up. The archive has no README, licence or build instructions. Its lakefile names eleven build targets and raises the default heartbeat and stack limits. The entry file Main.lean states five results: Mathlib's RiemannHypothesis, and four statements the claimant defines in Statements.lean about zeros and non-vanishing of Dirichlet L-functions.",
-   "source": "https://alpo.ge/remark.pdf"
-  }
- ],
- "sessions": []
+  ],
+  "sessions": []
 }

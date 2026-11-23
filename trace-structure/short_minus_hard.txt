@@ -1,0 +1,4 @@
+Formalism.VW.rh_of_every
+Formalism.VW.rh_of_right
+Formalism.VW.rh_of_right._proof_1_1
+Formalism.VW.rh_of_right._proof_1_2

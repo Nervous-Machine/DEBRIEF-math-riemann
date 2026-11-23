@@ -1,0 +1,49 @@
+kind: trace
+cycle: "trace-2026-11-23-structure"
+dated: "2026-11-23"
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+provenance:
+  source: "the cycle 2 build of the pinned archive (sha256 9631b4f0…) in the VM, untouched since 2026-11-22; Lean v4.33.1, Mathlib 0df444a3"
+  occasion: "Yochay Jerby's public post of 2026-11-23 that the proof is correct but that almost all of it proves an inequality over primes after which a short analytic argument finishes; a claim about shape, measured here"
+preregistered:
+  question: "Of the archive's constants and lines that the kernel uses for riemannHypothesis, how much lies under the Dirichlet nonvanishing theorem everyCharacter and how much under the derivation rh_of_every; which directories the proof term reaches; which constants dominate the rest."
+  rule: "dependency walk over every constant named in the type or proof term of every archive constant reachable from Main.lean's five theorems; set sizes, declaration lines and dominator relations on that graph; statements of the spine and the ten largest dominators printed verbatim; no interpretation beyond what is labelled as the agent's reading; standing unchanged by construction"
+  predictions:
+    - "P1: cone(everyCharacter) holds at least 95% of the cone's declaration lines and cone(rh_of_every) minus it under 1%"
+    - "P2: the modules the proof touches hold 25% to 75% of the archive's lines, and some top-level directory is touched below 10%"
+    - "P3: at least one Development/ and at least three Formalism/ second-level directories contribute no constant"
+    - "P4: the deepest spine constant still dominating at least 50% of the root's lines is in Development/"
+    - "P5: the walk finishes under 3 hours and 90 GB; the cone holds 200,000 to 3,000,000 constants"
+    - "P6: 5,000 to 60,000 library constants are named directly by archive constants"
+  commit: "prereg_trace_structure.yaml"
+  registered: "sha256 f927adcd… in prereg_trace_structure.yaml.sha256, committed 7ff4d0b and 89c22bc before the walk started at 14:26 UTC"
+  before_data: true
+  results: ["trace/STRUCTURE-TRACE.md", "trace-structure/report.md"]
+outcome:
+  verdict: confirmed
+  numbers:
+    R1: "pass: exit 0 after 4 h 18 m 37 s, 83.7 GB peak; 1,265,279 archive constants reachable from the five entry theorems, 67,981 library boundary constants, 148,685,863 edges written (109,535,588 distinct), 0 missing; environment of 186,200 modules"
+    R2: "cone(riemannHypothesis): 1,265,256 archive constants (1,075,015 theorems, 178,298 definitions, 11,943 inductive types, constructors and recursors; 325,390 machine-named); 10,611,120 declaration lines of 17,374,215 (61.1%); 146,437 of 175,187 modules touched (83.6%), holding 15,027,754 lines (86.5%); per top-level directory the share of lines in touched files runs from 77.6% (PositivityTheory) to 95.5% (CompanionTheory), Development 86.4%; all seven Development/ second-level directories used (AbelianVarietyTheory 83.5% of 8,142,960 lines, 524,931 constants); 23 of 331 second-level directories unused, 8,101 lines in all (0.05%); Mathlib 64,874, Init 3,040, Batteries 66, Aesop 1 constants at the boundary"
+    R3: "cone(everyCharacter) 1,265,249 constants, 10,611,055 lines (100.00% of the cone's lines); cone(rh_of_every) 6 constants, 64 lines (0.00%): rh_of_every, rh_of_right and its two proof parts, plus the definition EveryCharacter and one shared part; outside both: allChi, rhOfAll, riemannHypothesis"
+    R4: "dominator iteration converged in 3 passes; root dominates 10,660,526 lines over 1,265,256 constants; spine: everyCharacter 100% → everyCharacter_of_row 77.4% → every_character_of_literature_of_vWin 66.8% → every_character_of_theta_integrals_local_matching 39.6% → nonempty_hyps_definite_side_of_closed_bound 33.3% → hypotheses_nonempty_of_unramified_exponents_alt 11.3% → allRows_of_open0_alt 4.2%, all in Development/AutomorphicArithmetic; 2,406,411 lines leave the spine at everyCharacter into 58,064 dominated children; largest dominators off the spine vwin_of_row 8.6%, topCovolSlim2_use_alt_alt 7.7%, galoisLocalGlobalStrong_recParameter 6.4%, galoisRepresentations_of_thetaLift 6.1%, geoOne_holds 5.3%, deep_slim_use 4.6%; no constant below the four top wrappers dominates more than 77.4%"
+    R5: "pass: 20 statements printed verbatim (trace-structure/R5_statements.txt), 55 s, 54.9 GB"
+    procedure_note: "the analysis was registered to run on the host; the edge table is 11.4 GB, so it ran in the VM with analyze2.py, an integer-indexed rewrite of the registered analyze.py with the same measures, both checked against the same Mathlib-only test graph (amendment A1 in the pre-registration); the walk's progress lines were buffered until exit"
+  misses:
+    - "P2: 86.5% of the archive's lines are in touched modules, not 25% to 75%; the only top-level directory under 10% is BuildAid, 20 lines"
+    - "P3: every Development/ second-level directory contributes constants; twelve Formalism/ ones contribute none"
+    - "P5: the walk took 4 h 18 m, not under 3 h (memory 83.7 GB and 1,265,256 constants were inside the predicted ranges)"
+    - "P6: 67,981 library constants at the boundary, above the predicted 60,000"
+spoken: >
+  On 23 November Nervous Machine walked the dependency graph of the proof from its main theorem down, to measure
+  what Yochay Jerby had described in words that morning. The top of the proof is exactly as he said: everything in
+  the archive, one million two hundred sixty-five thousand constants and ten and a half million lines, goes into one
+  theorem, that no Dirichlet L-function vanishes to the right of the critical line, and sixty-four lines of
+  functional-equation argument then put the zeros on the line. Below that theorem there is no second bottleneck:
+  the mass divides at every step, and the heaviest lemmas carry the names of the theta correspondence, Galois
+  representations, and Arakelov-style volume bounds, not of sums over primes. The proof term reaches eighty-six
+  percent of the archive's lines and all seven of its largest subject directories; twenty-three small directories,
+  eight thousand lines in all, are never used. The statements of the twenty heaviest lemmas are printed verbatim for
+  anyone who wants to read them. Four of six predictions registered before the walk missed, each because the proof
+  uses more of the archive, and more of Mathlib, than the operating agent expected. Nothing changed standing.
+finding_ids: []
+gap_ids: ["EG2", "EG3"]
