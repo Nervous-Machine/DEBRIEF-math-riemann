@@ -9,3 +9,7 @@ e46488825acc7e4fbf3c0c744edcfaa5219f773571a9267b06df26b11f18a1a3  math.mit.edu_~
 fb4214a4c01faaca81c858c73402210eca6d69b49c2596e3d95c3718b7524aaa  https://leanprover-community.github.io/blog/posts/riemann-hypothesis/  (Lean and Mathlib communities, joint statement; status: certify the statement and the proof of RH (not GRH))
 # public reaction read 2026-11-22T21:15:59Z
 f485e6519850a37ae4d381dfc7fafca7e6c332af22aafa22083cc3a651ab7cfb  x.com/ObhishekSaha/status/2123861825750290445  (text of the post, Abhishek Saha, posted 2026-11-20)
+# dispute and expositions read 2026-11-22 (cycle external-2026-11-22-nielsen)
+15ac01d0bc60a4e98f4d50c7ef1eaa675108c84738974bda0ab5225f6601b5a6  https://philarchive.org/archive/NIEIOT-2  (J. L. Nielsen, "The Invalidity of Alpöge's Proof of the Riemann Hypothesis", PDF saved from a browser 2026-11-22; title page dated 2026-11-20)
+ed3219310e356ef99dad8acb6a2a63ed92df18bd8a73f0dfef63ba5a4e8e57a7  https://hexagonmath.org/pdf/2611.00799v1  (Manvir Jaswal, reader's guide, version 1, 2026-11-21)
+356af9964cd6b989987fac73a23799e6ac0b5ae2b10e9715ea79a41f4b06a789  https://github.com/leanprover-community/riemann-hypothesis/blob/c592e91e/verification/NOTES.md  (community mirror verification notes, blob 418f3e37)
