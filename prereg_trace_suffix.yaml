@@ -1,0 +1,62 @@
+# Pre-registration, trace cycle "trace-2026-11-23-suffix": retry fossils in the names of the archive. Written
+# 2026-11-23 (UTC) BEFORE the name dump and the analysis ran. Changes after this point go in an amendment at the end
+# of this file, not in the body.
+#
+# Occasion. The closet trace found that the proof's hinges are short and its mass is in ten large directories, and
+# Heidi Bennett asked the question the archive cannot answer directly: directed brute force, or a route chosen with
+# understanding? A finished proof discards its search, but some of the search leaves fossils in the names. The
+# structure and closet traces show constants called hypotheses_nonempty_of_unramified_exponents_alt,
+# topCovolSlim2_use_alt_alt, ontoX_of_hypotheses_alt_alt, ontoX_and_lamLow_of_unitaryGroupHypotheses',
+# good_tower_volume_theorem_bis and main_theorem_from_published_results_alt_alt_alt_alt_alt, all carrying at least
+# 1% of the proof. A name with _alt stacked five times is a lemma written at least six times with every version kept.
+# How common that is, whether the earlier versions are still load-bearing, and how it compares with Mathlib's own
+# naming, is countable. It measures retry, not thought; a retry can be a correction of a typo or a change of route.
+
+mission: DEBRIEF-math-riemann
+cycle: "trace-2026-11-23-suffix"
+kind: trace
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+dated: "2026-11-23"
+question: >
+  How many of the archive's constants carry a retry suffix (_alt stacked any number of times, trailing primes, _bis/_ter,
+  a fixed list of fix-words), how deep do the stacks go, how often is more than one version of the same base name still
+  used by the proof, how does the rate compare with the Mathlib/Lean library in the same environment, and how many of
+  the proof's hinges carry such a suffix? Also, now that every constant in the environment is listed: what share of
+  the archive's constants does the proof use, by directory?
+
+observations_before_this_registration:   # facts from the two earlier traces of this day, not predictions
+  - "Of the thirty largest hinges in the closet trace, seven carry a retry suffix (_alt, _alt_alt, a prime, _bis). The leverage table contains main_theorem_from_published_results_alt_alt_alt_alt_alt (2 own lines, 1.30%). Three of the 27 spine constants end in _alt."
+  - "The walk tables list only the 1,333,260 constants reachable from the five entry theorems; the set of all archive constants, including those the proof never uses, is not yet known. Names.lean (trace-suffix/Names.lean, sha256 f23d7d5a4282573a3bf9e4e191ad6edb8875c1467052e77f8310a85c61aae109) dumps every constant in the environment with its kind and module; it was not run before this registration."
+  - "The analysis (trace-suffix/suffix.py, sha256 7e33abdf7978eb17dc86d75954882fbf628670be818205d6787bdf6ab93a5ac7) reuses closet.py's loading and dominator code and was run on the Mathlib-only test graph with that graph's own nodes as the environment: 803 two- or three-member families, all by trailing primes, which is Mathlib's house style (foo and foo'); 2 of 53 hinges with a suffix. The archive was not analysed."
+  - "Machine-generated names (_proof_n, match_n, _eq_n, _private, _abel_, instance names, …) are excluded from every count by the registered regex and reported as a separate total."
+
+environment:
+  vm: "Linux VM (Lima, instance primegaps; Ubuntu, aarch64, 20 cores, 98 GB RAM)"
+  source: "the cycle 2 build in ~/untrusted/alpoge-rh/src/lean, untouched since 2026-11-22; Lean v4.33.1, Mathlib 0df444a3"
+  inputs: "names_all.tsv from Names.lean (lake env lean, in the build directory); nodes.tsv and edges.tsv of the walk of 2026-11-23 (hash-checked)"
+  procedure: "lake env lean ~/nm-scripts/Names.lean under /usr/bin/time -v; then python3 -I ~/nm-scripts/suffix.py DATA NAMES OUT under /usr/bin/time -v; both in the VM"
+  suffix_rules: "applied to the last component of a name: alt = (_alt\\d*)+$; prime = '+$; bis_ter = _(bis|ter|quater)$; fixword = _(new|old|v\\d+|fix|fixed|final|redo|retry|again|rev|revised|corrected|patched)$; numbered = [a-z]\\d+$, reported but labelled noisy and excluded from 'any retry class'. A family is the set of named archive constants in one namespace whose last component strips to the same base under these rules."
+
+checks:
+  S0_reach: "every constant in the environment by archive/library; archive constants per top-level and second-level directory, written against used by the proof (in the cone), named and all; the fifteen second-level directories with the lowest usage among those with at least 1,000 named constants"
+  S1_classes: "for each suffix class, counts and rates per 1,000 named constants: archive (all), archive in the cone, library; and the union of the four retry classes; fix-words broken out"
+  S2_depth: "distribution of the number of stacked _alt in the archive and in the cone, deepest stack, three examples per depth"
+  S3_families: "families with at least two members: count, size distribution, how many members each has in the cone (none, one, several), whether the single used member is the latest variant, how often a base name is used alongside its variant, the 25 largest families; full table in families.tsv"
+  S4_location: "hinges (at least 1% of the root's lines) with a retry suffix, spine constants with one, lines dominated by the top-most suffixed constants, and the suffixed share of named cone constants per top-level directory"
+
+predictions:                       # mine, before the data; each is a miss if wrong and is recorded either way
+  P1_alt_rate: "At least 30 per 1,000 named constants in the cone carry _alt (3%); the deepest stack is at least 5."
+  P2_library_baseline: "The library has under 1 per 1,000 named constants with _alt; the archive's prime rate is within a factor of 3 of the library's (primes are house style, _alt is not)."
+  P3_earlier_versions_used: "In at least half of the families with two or more members, two or more members are in the cone: the earlier versions were not retired, they are still load-bearing."
+  P4_hinges: "Between 12 and 35 of the 81 hinges carry a retry suffix."
+  P5_reach: "The environment holds between 1.4 and 2.5 million archive constants; the proof uses between 50% and 90% of the named ones."
+  P6_run: "The name dump finishes in under 10 minutes and the analysis in under 10 minutes, each under 70 GB."
+
+standing_consequences:
+  all: "None. A trace changes no standing by construction. Verdict confirmed when S0 to S4 complete and every number is reported; misses listed. Gap touched: EG3 (a map for a reader). The counts measure how often a lemma was rewritten and kept, which is a fact about how the text was produced, not about whether the proof is correct (closed by cycle 2) or what it means."
+  fail: "If the dump or the analysis does not complete, the error is reported and nothing is computed from partial output; a corrected script is an amendment here."
+
+not_settled_by_this_cycle: >
+  Why any variant was written: a retry can be a corrected typo, a strengthened hypothesis, a changed route or a
+  tactic timeout. Whether the retries were the model's or a person's. Whether a shorter proof exists. The attempt
+  record, which would answer the first two, is not published.
