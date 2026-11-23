@@ -1,0 +1,89 @@
+# Pre-registration, trace cycle "trace-2026-11-23-structure": where the work sits in the Lean development released
+# by Levent Alpöge on 2026-11-20. Written 2026-11-23 (UTC) BEFORE the dependency walk ran on the archive. Changes
+# after this point go in an amendment at the end of this file, not in the body.
+#
+# Occasion. On 2026-11-23 Yochay Jerby (Holon Institute of Technology) wrote in public that the proof is correct but
+# that "almost all of it goes into proving an inequality about weighted sums over primes. Once the resulting bound is
+# in hand, a short analytic argument puts the zeros on the critical line." That is a claim about the shape of the
+# proof, and shape can be measured in the built environment without anyone's opinion: which constants the kernel
+# actually uses for the main theorem, where they live, and which lemmas everything else exists to serve. J. L.
+# Nielsen's dispute (cycle external-2026-11-22-nielsen) and Jaswal's reader's guide both say parts of the archive's
+# geometric layer carry no content; a per-directory map of what the proof term reaches speaks to the related but
+# different question of which parts of the archive are used at all. Nothing here is a reading of the mathematics.
+
+mission: DEBRIEF-math-riemann
+cycle: "trace-2026-11-23-structure"
+kind: trace
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+dated: "2026-11-23"
+question: >
+  Of the archive's constants and source lines that Lean's kernel uses for riemannHypothesis, how much lies under the
+  Dirichlet nonvanishing theorem (UpperTheory.FinalTheorems.everyCharacter) and how much under the derivation of RH
+  from it (Formalism.VW.rh_of_every)? Which directories of the archive does the proof term reach at all? Which
+  constants dominate the rest, in the sense that everything below them exists only to prove them?
+
+observations_before_this_registration:   # read in the source tree before anything ran; facts, not predictions
+  - "Main.lean proves its five theorems from Supplements/Kernels/MainTheorems.lean, 16 lines: allChi := UpperTheory.FinalTheorems.everyCharacter; rhOfAll := Formalism.VW.rh_of_every allChi; critAll := Formalism.VW.critLine allChi …; claimAll := ⟨allChi, Claim.strip allChi, Claim.zeta allChi⟩."
+  - "UpperTheory.EveryCharacter (Development/AutomorphicArithmetic/CharacterBoxes/EveryCharacter.lean) is: ∀ N [NeZero N] (χ : DirichletCharacter ℂ N) (s : ℂ), 1/2 < s.re → (χ ≠ 1 ∨ s ≠ 1) → LFunction χ s ≠ 0, the same proposition as the archive's DirichletLNonvanishingRightOfHalf: no zero of any Dirichlet L-function to the right of the critical line."
+  - "Formalism.VW.rh_of_every (Formalism/GammaFactorNonvanishing/CritLine.lean, 4 lines) specialises EveryCharacter to the trivial character mod 1 and applies Formalism.VW.rh_of_right (RhOfRight.lean, 62 lines, imports only Mathlib), which moves zeros from the left half of the strip to the right with the functional equation. critLine (17 lines) does the same for primitive characters."
+  - "So the fork Jerby describes exists at the top of the archive: everything is either under everyCharacter or under rh_of_every. Whether everyCharacter's proof is 'an inequality about weighted sums over primes' is a reading of its statement and its dominators, which this cycle prints verbatim and does not interpret."
+  - "The source tree has 175,187 .lean files and 17,374,215 lines: Development 141,928 files / 12,232,663 lines (AbelianVarietyTheory 99,187 files, AutomorphicArithmetic 18,431, AutomorphicSpectrum 15,147, WeilBound 7,051, EtaleCohomology 1,398, ResolutionOfSingularities 499, DiscreteGroups 215); Formalism 18,254 / 3,200,748; GroundTheory 8,507 / 1,119,138; ReciprocityTheory 3,845 / 563,016; CompanionTheory 2,027 / 194,218; PositivityTheory 449 / 55,130; Lemmata 167 / 9,232; BuildAid 5 / 20; Supplements 3 / 22; Statements.lean and Main.lean."
+  - "The walk script (trace-structure/DepCone.lean) was tested on a Mathlib-only root in the same VM before this registration: 45,973 constants, 1,654,798 edges, 13.85 s wall, 3.5 GB. Its output format and the host analysis (trace-structure/analyze.py: cones, per-directory map, dominator tree by the Cooper–Harvey–Kennedy iteration, three passes to converge on the test graph) were exercised on that output. The archive itself was not walked."
+
+environment:
+  host: "Heidi's Mac (Apple silicon). Nothing from the archive runs on the host; the host analysis reads only the TSV tables of names and numbers the walk writes."
+  vm: "Linux VM (Lima, instance primegaps; Ubuntu, aarch64, 20 cores, 98 GB RAM, 109 GB disk free)"
+  source: "the cycle 2 build in /home/heidibennett.guest/untrusted/alpoge-rh/src/lean, untouched since 2026-11-22 (archive sha256 9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc; .lake/build 98 GB)"
+  toolchain: "Lean v4.33.1, Mathlib 0df444a360eaa60ab8c11dca51a86af692955474, as built in cycle 2"
+  procedure: "lake env lean ~/nm-scripts/DepCone.lean in the build directory, under /usr/bin/time -v, output to ~/untrusted/alpoge-rh/trace-structure/; then analyze.py on the host; then a second short Lean run that prints the statements of the constants the analysis names"
+
+checks:
+  R1_walk: >
+    DepCone.lean imports Main and walks depth-first from the five entry theorems over every constant named in the type
+    or value of each archive constant (Lean's Expr.getUsedConstants on both; for inductives, constructors and recursors
+    their declared families). A constant is 'archive' when its module's first component is one of the lakefile's
+    libraries (BuildAid, CompanionTheory, Development, Formalism, GroundTheory, Lemmata, PositivityTheory,
+    ReciprocityTheory, Supplements, Statements, Main); every other constant (Mathlib, Lean, Init, Std, Batteries, …)
+    is recorded as a library boundary constant and not expanded. nodes.tsv: name, kind, module, archive flag,
+    declaration line range (Lean's findDeclarationRanges?, 0 when absent). edges.tsv: one line per (user, used) pair.
+    Pass: exit 0, no missing constants, both files written.
+  R2_cone: >
+    The archive cone of riemannHypothesis: constants by kind; auxiliary (generated) names counted separately by
+    regex; declaration lines as the union of declaration ranges per module (so a theorem and its _proof_n parts
+    count once); modules touched and their total line count (an upper bound on 'lines used'); per top-level and per
+    second-level directory the same, against the totals above; the library boundary by top-level module.
+  R3_fork: >
+    cone(UpperTheory.FinalTheorems.everyCharacter) and cone(Formalism.VW.rh_of_every) within the archive, their
+    intersection, each difference, and the constants of cone(riemannHypothesis) outside both (expected: the wrappers
+    in MainTheorems.lean), in constants and in declaration lines.
+  R4_dominators: >
+    Immediate dominators of every archive constant in cone(riemannHypothesis), root riemannHypothesis, edges
+    restricted to archive constants (Cooper–Harvey–Kennedy iteration to a fixed point; the constant graph is acyclic).
+    For each constant: dominated declaration lines (each distinct declaration range credited once, to the
+    shortest-named constant carrying it, then summed over the dominator subtree) and dominated constants. Reported:
+    the forty constants with the most dominated lines; the spine (from the root, always the child dominating the most
+    lines, until the next child holds under 2% of the root's lines); for each spine constant with more than one
+    dominated child, the eight largest children.
+  R5_statements: >
+    A second Lean run prints, with #check and pp.proofs false, the statement of every spine constant and of the ten
+    largest dominators outside the spine, verbatim, so a reader can see what the heaviest lemmas say without opening
+    the archive. No paraphrase is attached in the cycle record; the trace file may give the agent's one-line reading
+    of each, labelled as such.
+
+predictions:                       # mine, before the data; each is a miss if wrong and is recorded either way
+  P1_jerby_fork: "cone(everyCharacter) holds at least 95% of the declaration lines of cone(riemannHypothesis); cone(rh_of_every) minus cone(everyCharacter) holds under 1%. This is Jerby's description made a number, and I expect it to hold."
+  P2_reach: "The modules the proof term touches hold between 25% and 75% of the archive's 17.37 million lines, and at least one top-level directory is touched below 10% of its lines."
+  P3_unused: "At least one of the seven Development/ second-level directories and at least three Formalism/ second-level directories contribute zero constants to the cone."
+  P4_spine_location: "The deepest spine constant that still dominates at least 50% of the root's lines is in Development/, not Formalism/."
+  P5_run: "The walk finishes in under 3 hours and under 90 GB; the archive cone holds between 200,000 and 3,000,000 constants."
+  P6_boundary: "Between 5,000 and 60,000 distinct Mathlib/Lean constants are named directly by archive constants."
+
+standing_consequences:
+  all: "None. A trace changes no standing by construction. The cycle's verdict is confirmed when R1 to R5 complete and every number is reported; predictions that miss are listed under misses. Gaps touched: EG3 (the map is an aid to an independent reading, not one) and EG2 (which parts of the archive the proof reaches is one half of the question the Nielsen dispute raises; whether named hypotheses carry content is the other half and is not measured here)."
+  R1_fail: "Reported with the error; nothing else is computed from a partial walk. A corrected script is a new registration or an amendment here."
+
+not_settled_by_this_cycle: >
+  Whether the proof 'explains' anything, whether everyCharacter's proof is best described as an inequality over
+  primes, whether any named hypothesis is vacuous (a constant can be reached and still carry a True slot), and
+  everything about correctness beyond finding F1. Dominated-line counts measure where the text is, not where the
+  ideas are; a short lemma can carry the idea and a long one the bookkeeping.
