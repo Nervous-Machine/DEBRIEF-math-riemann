@@ -95,14 +95,19 @@ class G:
         for v in order: dom[v] = own[v] + sum(dom[c] for c in children[v])
         for v in rpo: children[v].sort(key=lambda c: (-dom[c], names[c]))
         # footprints: postorder over the expanded cone; unexpanded successors (library leaves) contribute their own bit
-        fp = {}
+        # the constant graph has small cycles (an inductive type and its constructors and recursor name each other),
+        # so a single post-order pass is not enough: iterate the OR-propagation to a fixed point
         bit = self.bit
-        for v in order:
-            m = bit[v]
-            for w in succ[v]:
-                if w in idx: m |= fp[w]
-                else: m |= bit[w]
-            fp[v] = m
+        fp = {v: bit[v] for v in rpo}
+        passes = 0; changed = True
+        while changed:
+            changed = False; passes += 1
+            for v in order:
+                m = fp[v]
+                for w in succ[v]:
+                    m |= fp[w] if w in idx else bit[w]
+                if m != fp[v]: fp[v] = m; changed = True
+        log(f"footprints converged in {passes} passes")
         return rpo, order, idom, children, dom, own, fp
 
 def bits(m): return [DIRS[i] for i in range(len(DIRS)) if m >> i & 1]

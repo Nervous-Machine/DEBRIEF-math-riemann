@@ -53,3 +53,13 @@ not_settled_by_this_cycle: >
   formalise a century of results that Mathlib does not contain; a pair of directories common in Mathlib can hide a
   specific connection no one had made, and a rare pair can be two routine lemmas. The test is at the resolution of
   the library's directory tree, and says so.
+amendments:
+  - id: A1
+    dated: "2026-11-24"
+    when: "after the first run failed on the archive graph (KeyError in the footprint pass, 1 m 27 s in) and before any output"
+    what: >
+      The footprint pass assumed the constant graph is acyclic and took one post-order sweep. It is not: an inductive
+      type, its constructors and its recursor name one another, which the walk records as edges in both directions.
+      The dominator computation already handled this by iteration; the footprint pass now does the same, repeating the
+      OR-propagation until nothing changes. trace-crossing/crossing.py is replaced (sha256 a648d7b8db5de99af0ffa65f021772fce09983b338de89fa16ae91bb2ba1e271); no measure,
+      threshold, wing rule or prediction changed. The synthetic test was extended with a two-node cycle and passes.
