@@ -11,8 +11,8 @@ A DEBRIEF mission record (protocol https://github.com/Nervous-Machine/DEBRIEF) f
 
 | | |
 |---|---|
-| checked by machine | Nervous Machine; reported elsewhere, not filed here: [Andrew Sutherland (MIT)](https://math.mit.edu/~drew/grh/) |
-| read by a person | nobody yet; published elsewhere, not signed here: [J. L. Nielsen](https://philpapers.org/rec/NIEIOT-2), [Yochay Jerby](https://lnkd.in/p/gEdivCB8) (1 disputes the claim); [reading guide](trace/DEFINITIONAL-TRACE.md); 1 reasoning note |
+| checked by machine | Nervous Machine; reported elsewhere: [Andrew Sutherland (MIT)](https://math.mit.edu/~drew/grh/) |
+| read by a person | no reading signed here; read elsewhere: [J. L. Nielsen](https://philpapers.org/rec/NIEIOT-2), [Yochay Jerby](https://lnkd.in/p/gEdivCB8) (1 disputes the claim); [reading guide](trace/DEFINITIONAL-TRACE.md); 1 reasoning note |
 | elsewhere | [Clay Mathematics Institute](https://www.claymath.org/millennium/riemann-hypothesis/): Unsolved · [Andrew Sutherland (MIT), verification page](https://math.mit.edu/~drew/grh/): last updated 2026-11-22 16:20 UTC · [Lean and Mathlib communities, joint statement](https://leanprover-community.github.io/blog/posts/riemann-hypothesis/): certify the statement and the proof of RH (not GRH) |
 | related | [Generalized Riemann Hypothesis (Masullo)](https://github.com/Nervous-Machine/DEBRIEF-math-grh-masullo): a special case of; same problem page · [Navier–Stokes blow-up, unforced (Alpöge and Buckmaster)](https://github.com/Nervous-Machine/DEBRIEF-math-navierstokes): same claimant (Alpöge), released the same morning |
 | tooling | Claude (version not stated) · tier: internal · six weeks, by the note's twenty-step timeline (inferred: the claimant is an Anthropic employee and names Claude as a co-worker without a version; the companion Navier–Stokes repository's commits of 20 November name Claude Fable 5.2, public from 9 November, after most of the note's timeline) |
