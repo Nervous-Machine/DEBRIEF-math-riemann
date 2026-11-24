@@ -1,0 +1,55 @@
+# Pre-registration, trace cycle "trace-2026-11-24-crossing": the second layer of the proof-shape prior. Written
+# 2026-11-24 (UTC) BEFORE the analysis ran. Changes after this point go in an amendment at the end of this file.
+#
+# Occasion. The prior trace placed the archive's shape in the Mathlib distribution and wrote a table of which Mathlib
+# directories are depended on together, but could not score the archive's joins against it without a mapping from
+# the archive's subjects to Mathlib's. This cycle gets the mapping without a reading: every wing of a joint reaches
+# some set of Mathlib directories through the library boundary (its footprint), and a joint brings together the
+# directories that only one of its wings reaches. Those pairs can be scored by how often Mathlib itself depends on
+# them together. That is Heidi Bennett's general-relativity test made countable: not whether the glue is short, but
+# whether the domains it joins had been joined before. The same is computed for the largest joint of each of the 100
+# large Mathlib proofs of the prior trace, so the archive's joints can be placed rather than described.
+
+mission: DEBRIEF-math-riemann
+cycle: "trace-2026-11-24-crossing"
+kind: trace
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+dated: "2026-11-24"
+question: >
+  Which Mathlib directories does each wing of the archive's largest joints reach, how different are the wings in
+  those terms, and how rare in Mathlib are the directory pairs a joint brings together? Where do the archive's joints
+  fall against the largest joints of the 100 large Mathlib proofs measured the same way?
+
+observations_before_this_registration:
+  - "From the prior trace: 27 Mathlib second-level directories, 206 pairs seen together over 253,598 theorems, with each pair's ratio to independence in trace-prior/crossings.tsv; the 100 large proofs and their roots in trace-prior/shapes.tsv. From the structure trace: 64,874 Mathlib constants at the archive's library boundary."
+  - "The script (trace-crossing/crossing.py, sha256 712df4824d0d2d9261487fb7582397155093f17131b0869321d2f76b7962ae74) reuses the dominator code of the earlier traces, computes footprints as bit masks over the 27 directories in one post-order pass, and was run on a synthetic eight-node archive and five-node Mathlib graph before this registration (one joint with two exclusive wings; rarest pair found and scored). Neither real graph was analysed."
+  - "Wings are a joint's up-to-six largest dominated children; exclusive directories and pair scores are defined in the script's header and the report's first paragraph; the archive's joints considered are the twenty largest by joined lines among constants at 0.5% or more with at least two children, as in the closet trace."
+
+environment:
+  vm: "Linux VM (Lima, instance primegaps; Ubuntu, aarch64, 20 cores, 98 GB RAM)"
+  inputs: "the archive walk tables (hash-checked), the Mathlib graph of the prior trace (hash-checked against trace-prior/prior.sha256), trace-prior/shapes.tsv and crossings.tsv"
+  procedure: "python3 -I ~/nm-scripts/crossing.py ARCHIVE MATHLIB PRIOR OUT under /usr/bin/time -v, in the VM"
+
+checks:
+  X1_archive: "the Mathlib directories the archive's cone reaches and does not; for each of the twenty largest joints: lines joined, wings, footprint size, Jaccard distance between the two largest wings' footprints, number of directories exclusive to one wing, the rarest pair of exclusive directories from different wings with its ratio to chance and count; the wings of the three largest joints listed with what only each reaches"
+  X2_mathlib: "for each of the 100 large Mathlib proofs: directories its cone reaches; its largest joint's measures as above; quartiles against the archive; the ten rarest crossings realised"
+  X3_export: "dominator trees at 0.1% for the eight largest Mathlib proofs (mathlib_trees.json), for a drawn comparison with the archive map; a drawing is a presentation of these numbers and is not a check"
+
+predictions:
+  P1_reach: "The archive's cone reaches at least 24 of the 27 Mathlib directories."
+  P2_wings_alike: "At the archive's largest joint, the Jaccard distance between the two largest wings' footprints is below 0.3: the wings draw on nearly the same library."
+  P3_no_rare_join: "No joint among the archive's twenty realises a crossing rarer than one fifth of chance (every rarest-pair ratio is 0.2 or more)."
+  P4_inside: "The archive's largest joint falls inside the Mathlib interquartile range on both the Jaccard distance and the count of exclusive directories."
+  P5_mathlib_alike: "Fewer than half of the 100 Mathlib largest joints realise any exclusive pair at all."
+  P6_run: "The analysis finishes in under 20 minutes and 60 GB."
+
+standing_consequences:
+  all: "None. A trace changes no standing by construction. Verdict confirmed when X1 to X3 complete and every number is reported; misses listed. Gap touched: EG3. A rare crossing at the directory level is a place to look, not a judgement that the join is new; a common one does not show the join was obvious."
+  fail: "If the analysis does not complete, the error is reported and nothing is computed from partial output; a corrected script is an amendment here."
+
+not_settled_by_this_cycle: >
+  Whether the mathematical ideas joined were ever joined before. Mathlib's directories are coarse (Analysis,
+  NumberTheory, Geometry, …), Mathlib covers a fraction of the literature, and the archive's own 17 million lines
+  formalise a century of results that Mathlib does not contain; a pair of directories common in Mathlib can hide a
+  specific connection no one had made, and a rare pair can be two routine lemmas. The test is at the resolution of
+  the library's directory tree, and says so.
