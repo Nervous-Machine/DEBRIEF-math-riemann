@@ -1,0 +1,31 @@
+kind: note
+cycle: "note-2026-11-24-timestamps"
+dated: "2026-11-24"
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+pinned:
+  sha256: "9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc"
+  what: "lean.tar.gz, the release archive as fetched on 2026-11-20"
+provenance:
+  source: "the pinned release tarball lean.tar.gz (sha256 9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc), headers read with tar -tv in the VM on 2026-11-24"
+  occasion: "Heidi Bennett's reading of the spine-decay chart as a process unfolding in time, and the question whether the files' modification times could colour the dependency tree by when each part was written"
+preregistered:
+  question: "Do the release's files carry modification times, ownership or entry order from which a chronology of the archive's writing could be recovered?"
+  rule: "read the tar headers of the pinned archive; no build, no analysis"
+  predictions: []
+  commit: null
+  before_data: false
+outcome:
+  verdict: admitted
+  numbers:
+    mtimes: "every one of the 175,190 entries carries the Unix epoch (1970-01-01T00:00:00Z) as its modification time"
+    ownership: "every entry is owned by uid 0, gid 0, mode 0644"
+    order: "the 175,187 .lean entries are in C-locale sorted order by path; no entry breaks the order"
+    consequence: "the release was normalised in the manner of a reproducible build (fixed timestamp, fixed owner, sorted entries); no chronology of when any file was written survives in it; the only remaining sources of order are the names (rewrite marks, stage names) already measured, and the author's unpublished attempt record"
+spoken: >
+  A short check, filed because its answer closes a door. The release tarball of the proof carries no dates: every
+  file is stamped with the Unix epoch, owned by nobody, and listed in alphabetical order. That is how a reproducible
+  build is packaged, and it is good practice, but it also means that nothing in the release says what was written
+  first and what last. The dependency tree can be measured; its history cannot. The one chronology that exists is
+  the record of attempts, which has not been published.
+finding_ids: []
+gap_ids: ["EG3"]
