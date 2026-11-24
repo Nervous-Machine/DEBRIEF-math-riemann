@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Riemann · Nervous Machine</title>
+<meta name="description" content="The public register for the Alpöge–Claude proof of the Riemann Hypothesis: what was checked, what was measured, who has read it.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+:root{--bg:#f7f6f3;--fg:#17170f;--fg2:#5a5950;--fg3:#8a897f;--line:#d9d7cf;--panel:#ffffff;--acc:#2a78d6;--display:"IBM Plex Serif",Georgia,serif;--body:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#1a1a19;--fg:#f0efec;--fg2:#c3c2b7;--fg3:#8c8b82;--line:#34332f;--panel:#232321;--acc:#3987e5;color-scheme:dark}}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5;margin:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:14px 48px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:22px}
+nav.site{font-size:13px;display:flex;gap:16px;color:var(--fg2)} nav.site a{color:inherit}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.1;margin:0;letter-spacing:-0.01em;text-wrap:balance}
+h2{font-family:var(--display);font-weight:500;font-size:20px;margin:6px 0 0}
+p{max-width:72ch;color:var(--fg2);margin:0}
+a{color:var(--fg)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px 16px;text-decoration:none;color:inherit;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card b{display:block;font-family:var(--display);font-size:19px;font-weight:600;margin-bottom:4px}
+.card span{color:var(--fg2);font-size:14px}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--fg3);font-weight:500;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+td.m{font-family:var(--mono);font-size:12.5px;white-space:nowrap}
+.standing{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px 22px;font-size:14px;color:var(--fg2)}
+.standing b{display:block;color:var(--fg);font-family:var(--display);font-size:24px;font-weight:600;line-height:1.15}
+.src{font-size:12.5px;color:var(--fg3);max-width:84ch}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="site"><a href="./">Riemann</a><span>·</span><a href="https://math-board.nervousmachine.com">board</a><span>·</span><a href="https://github.com/Nervous-Machine/DEBRIEF-math-riemann">repository</a></nav>
+<h1>The Riemann Hypothesis proof, on the record</h1>
+<p>Levent Alpöge released a Lean proof of the Riemann Hypothesis, written with Claude, on 20 November 2026: 175,187 files, 17.4 million lines. This page is the public register of what has been done with it by Nervous Machine: built from source twice, checked against Lean's kernel, and measured. Nothing here is a reading of the mathematics; the <a href="https://github.com/Nervous-Machine/DEBRIEF-math-riemann/blob/main/trace/DEFINITIONAL-TRACE.md">reading guide</a> is for the person who gives one.</p>
+<div class="standing">
+<div><b>Accepted</b>the main theorem has Mathlib's type <span style="font-family:var(--mono)">RiemannHypothesis</span> and rests on Lean's three standard axioms only (full build, 2026-11-22)</div>
+<div><b>0 signed</b>no named person has yet signed a reading of the five statements</div>
+<div><b>1 disputes</b>J. L. Nielsen, on the content of the geometric layer; the archive's correctness is not in question</div>
+<div><b>7 traces</b>measurements of the archive, each registered before it ran</div>
+</div>
+<h2>Two pictures</h2>
+<div class="cards">
+<a class="card" href="archive-map.html"><b>Archive map</b><span>The proof as a tree of what depends on what: one theorem at the top, the mass dividing below it, rewrite marks on the joins. 831 constants carrying at least 0.1% of the proof.</span></a>
+<a class="card" href="proof-shapes.html"><b>Proof shapes</b><span>The archive beside the eight largest of 3,000 Mathlib proofs drawn at random, to one rule. Mathlib proofs are fans; the archive is a chain.</span></a>
+</div>
+<h2>What was measured</h2>
+<table>
+<thead><tr><th>date</th><th>trace</th><th>result</th><th></th></tr></thead>
+<tbody>
+<tr><td>22 Nov</td><td>Full build and kernel check</td><td>175,187 files built; <span style="font-family:var(--mono)">riemannHypothesis : RiemannHypothesis</span>; axioms propext, Classical.choice, Quot.sound only.</td><td class="m"><a href="https://github.com/Nervous-Machine/DEBRIEF-math-riemann/blob/main/SCORECARD.md">scorecard</a></td></tr>
+<tr><td>22 Nov</td><td>Definitional trace</td><td>The five statements unfolded to Mathlib's definitions, for a reader to sign or refuse.</td><td class="m"><a href="https://github.com/Nervous-Machine/DEBRIEF-math-riemann/blob/main/trace/DEFINITIONAL-TRACE.md">guide</a></td></tr>
+<tr><td>23 Nov</td><td>Structure</td><td>Everything sits under one theorem, Dirichlet nonvanishing right of the line; 64 lines then give RH. Below it no second bottleneck. The proof reaches 86.5% of the archive's lines.</td><td class="m"><a href="https://github.com/Nervous-Machine/DEBRIEF-math-riemann/blob/main/trace/STRUCTURE-TRACE.md">page</a></td></tr>
+<tr><td>23 Nov</td><td>Closet</td><td>No small lemma in a small place that the proof hangs on. 81 hinges, all short (median 4 lines), all in the ten large directories. Abelian-variety theory, 47% of the archive, is substrate.</td><td class="m"><a href="https://github.com/Nervous-Machine/DEBRIEF-math-riemann/blob/main/trace/CLOSET-TRACE.md">page</a></td></tr>
+<tr><td>23 Nov</td><td>Suffix</td><td>Rewrite marks in names are rare in the body (1.5%) and dense at the hinges (33 of 81). A third of the archive's constants are never used.</td><td class="m"><a href="https://github.com/Nervous-Machine/DEBRIEF-math-riemann/blob/main/trace/SUFFIX-TRACE.md">page</a></td></tr>
+<tr><td>24 Nov</td><td>Prior</td><td>Against 3,000 Mathlib proofs: Mathlib proofs are fans, the archive is a chain; twice the hinges, half the length; substrate is normal in Mathlib too.</td><td class="m"><a href="https://github.com/Nervous-Machine/DEBRIEF-math-riemann/blob/main/trace/PRIOR-TRACE.md">page</a></td></tr>
+<tr><td>24 Nov</td><td>Crossing, two depths</td><td>Whether the wings of a joint come from parts of the library never joined before cannot be measured at any directory resolution; it needs the published theorems each wing rests on. The archive's wings are more alike than Mathlib's.</td><td class="m"><a href="https://github.com/Nervous-Machine/DEBRIEF-math-riemann/blob/main/trace/CROSSING-TRACE.md">depth 2</a> · <a href="https://github.com/Nervous-Machine/DEBRIEF-math-riemann/blob/main/trace/CROSSING3-TRACE.md">depth 3</a></td></tr>
+</tbody>
+</table>
+<h2>Who has said what in public</h2>
+<table>
+<thead><tr><th>date</th><th>who</th><th>position</th></tr></thead>
+<tbody>
+<tr><td>20 Nov</td><td><a href="https://x.com/ObhishekSaha/status/2123861825750290445">Abhishek Saha</a>, automorphic forms</td><td>A route through existing results in higher-rank automorphic forms rather than new theory; gives it a very good chance of being correct. An opinion on the shape, not a reading.</td></tr>
+<tr><td>20 Nov</td><td><a href="https://philpapers.org/rec/NIEIOT-2">J. L. Nielsen</a>, physics and philosophy of science</td><td>Disputes: reports the geometric layer's hypotheses are vacuous and concludes the archive proves nothing. The conclusion does not follow from the reports; a kernel-accepted term of this type is a proof whatever the intermediate names say.</td></tr>
+<tr><td>23 Nov</td><td><a href="https://lnkd.in/p/gEdivCB8">Yochay Jerby</a>, Holon Institute of Technology</td><td>Accepts the claim; disputes what it achieves: the zeros were located through the primes, not the primes explained through the zeros. His account of the proof's top matches the structure trace exactly.</td></tr>
+</tbody>
+</table>
+<h2>What to do here</h2>
+<p>Read the <a href="https://github.com/Nervous-Machine/DEBRIEF-math-riemann/blob/main/trace/DEFINITIONAL-TRACE.md">reading guide</a> and sign or refuse its checklist with the Semantic read issue form in the repository; either becomes a cycle under your name. Rerun any trace from its pre-registration file. Ask for the 250,000-page attempt record to be published: the archive shows where the choices were made and nothing about how.</p>
+<p class="src">Archive sha256 9631b4f0…; Lean v4.33.1, Mathlib 0df444a3. Every cycle, pre-registration and amendment is in the <a href="https://github.com/Nervous-Machine/DEBRIEF-math-riemann">repository</a>; the cross-mission board is at <a href="https://math-board.nervousmachine.com">math-board.nervousmachine.com</a>.</p>
+</div>
+</body>
+</html>
