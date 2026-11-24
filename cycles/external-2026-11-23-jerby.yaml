@@ -1,0 +1,48 @@
+kind: replay
+cycle: external-2026-11-23-jerby
+dated: '2026-11-23'
+by: null
+provenance:
+  source: 'linkedin.com post by Yochay Jerby, short link lnkd.in/p/gEdivCB8, resolving to www.linkedin.com/posts/yochay-jerby-53b742148_ill-risk-an-unpopular-opinion-about-levent-share-7530470506962149376-XyI6 (HTTP 200 on 2026-11-24T00:06Z; the page metadata gives the post time as 2026-11-23T03:21:18Z); the post text as shown to Heidi Bennett on 2026-11-23, 2080 characters from its first to its last sentence, hashes to sha256 1deb0f3e2f86074631b20807eb7f7bd9f4458ef6b71f414feb27526811e10f33'
+preregistered:
+  question: What does the first public reaction that accepts the proof and disputes its value say?
+  rule: status read from the public post, pinned by hash of its text; no new checking by Nervous Machine
+  predictions: []
+  commit: null
+  before_data: false
+outcome:
+  verdict: admitted
+  numbers:
+    external:
+      public_reactions:
+        - who: Yochay Jerby, Lecturer at Holon Institute of Technology
+          url: https://lnkd.in/p/gEdivCB8
+          posted: '2026-11-23'
+          what: >-
+            accepts the claim: "Did they prove that every nontrivial zero of zeta lies on the critical line? Yes."
+            Says the original scientific goal, understanding the primes through the zeros, has not been achieved,
+            because almost all of the work goes into proving an inequality about weighted sums over primes, after
+            which a short analytic argument puts the zeros on the line; the zeros were located through the primes,
+            not the primes explained through the zeros. Offers a Fourier-transform analogy for a tool that was not
+            needed to reach the answer. Notes Alpöge's remark that one written version ran to more than 250,000
+            pages, and closes that Erdős's Book contains a different proof.
+          is_a_reading: true
+          note: >-
+            A named person's reading of the proof's shape and value, the first on the public record that accepts
+            the claim and disputes what it achieves. Its description of the top of the proof was measured the same
+            day (trace-2026-11-23-structure): everything in the archive sits under one theorem, that no Dirichlet
+            L-function vanishes to the right of the critical line, and 64 lines of functional-equation argument
+            finish from there; below that theorem the heaviest lemmas carry automorphic, Galois-representation and
+            Arakelov-volume names, and whether the content is best described as an inequality over primes is a
+            reading the map equips and does not give. The dispute is about meaning, not correctness, and it carries
+            no standing here; it is the kind of statement the reading gap exists to record.
+spoken: >
+  The first public reaction to accept the proof and dispute its worth, posted on 23 November by Yochay Jerby, a
+  lecturer at the Holon Institute of Technology. He grants that the zeros are on the line. He objects that the
+  proof reached them by first proving a hard theorem about the primes, so the zeros explain nothing about the primes
+  that was not already in hand, which was Riemann's reason for bringing zeta in at all. His account of the proof's
+  top matches the dependency map Nervous Machine drew the same day; what the hard theorem is about, under its
+  automorphic names, is a question for someone in the field. It moves nothing in the machine check.
+finding_ids: []
+gap_ids:
+- EG3
