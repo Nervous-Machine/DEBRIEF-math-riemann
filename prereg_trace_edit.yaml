@@ -1,0 +1,97 @@
+# Pre-registration, trace cycle "trace-2026-11-25-edit": the same proof after editing. Written 2026-11-24T23:45Z
+# BEFORE the edited repository was cloned, any cache fetched or any measure computed. Changes after this point go in
+# an amendment at the end of this file, not in the body.
+#
+# Occasion. The prior trace (trace-2026-11-24-prior) found the archive's shape unlike any of a hundred large Mathlib
+# proofs: a chain where Mathlib has fans. Three differences ride together in that comparison: who reasoned (a
+# machine search under one person's direction, against many people), whether the artifact was edited (a raw record,
+# by its author's own 23 November statement, against the most edited mathematical text there is), and what it is
+# for (one argument toward one theorem, against library lemmas). Heidi Bennett asked for the control that holds the
+# first and third fixed: the same proof, edited. One exists in progress. Since 20 November the Lean community has
+# been cleaning the archive in github.com/leanprover-community/riemann-hypothesis, whose `original` branch mirrors
+# the submission and whose `main` is 2,641 commits ahead of it after four days, under a comparator that checks on
+# every merge that `Main` still proves the same five statements with the three standard axioms. This cycle measures
+# the edited archive at one pinned commit with the instrument of the prior trace, unchanged, and puts the result
+# beside the archive's own earlier row and the Mathlib distribution.
+#
+# Caveats stated before the data. (1) Four days of editing is partial; the repository's README says the goal is
+# readability and modularity "while preserving the logic of the proof", so a null result says only that this much
+# editing has not moved the shape. (2) The editing is done largely by AI agents under human maintainers: the
+# repository carries an AGENTS.md addressed to agents, and the merges are batched by maintainers. "Edited" here means
+# edited by the community's process, not by hand. (3) The compiled files are fetched from the community's cache, not
+# compiled here (a full compile took 14 h 48 m and 100 GB in cycle 2 and the VM has 96 GB free); the walk reads the
+# dependency graph from those files. Lake's `--no-build` check that they match the pinned source by trace hash, and a
+# recompile of twenty random modules compared constant by constant, are the checks on that. This is a trace with no
+# standing, and the comparator's own verification is the community's, not redone here. (4) Directory names changed in
+# the edit (the root's `Development/…` tree remains; `BuildAid` and `Supplements` are gone from `src/`), so the
+# directory measures are reported but not predicted.
+
+mission: DEBRIEF-math-riemann
+cycle: "trace-2026-11-25-edit"
+kind: trace
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+dated: "2026-11-25"
+question: >
+  Does the shape of the proof survive editing? At a pinned commit of the community's cleaned repository, what are
+  the spine, hinge, joint and retry measures of the proof below `riemannHypothesis`, against the archive's own row
+  from 23 November and against the hundred Mathlib proofs of the prior trace?
+
+input:
+  repository: "https://github.com/leanprover-community/riemann-hypothesis"
+  commit: "9282d3a102c4 (branch main, 2026-11-24T18:24:32Z, the newest commit on main at registration; full hash recorded in head.txt at the run)"
+  original_branch: "40e56bab0265 (2026-11-20T14:36:09Z, 'Mirror the submission exactly as published')"
+  edit_extent_at_registration: "main is 2,641 commits ahead of original (GitHub compare API, 2026-11-24T23:45Z); the last checks.yml run on main succeeded (2d0c622a, 2026-11-24T10:40Z)"
+  toolchain: "lean-toolchain on main: leanprover/lean4:v4.37.0-rc1 (the original: v4.33.1); Mathlib 31ce06eaadf4 (the original: 0df444a3)"
+  not_the_claim: "This repository is not the claim's pinned artifact (lean.tar.gz, sha256 9631b4f0…). Nothing measured here changes the standing of the claim."
+
+observations_before_this_registration:   # facts, not predictions
+  - "The archive's row (trace-prior/prior.py ARCH, from the three traces of 23 November): cone 1,265,256 constants, 10,660,526 dominated lines; spine 100% at steps 1 to 3, 66.8% at step 5, 11.3% at step 8, 27 steps; 81 hinges at 1%, median own lines 4, longest 88; 32 hinges with a retry mark; largest joint 27.2%, three largest 71.8%; largest directory Development/AbelianVarietyTheory with 43.9% of lines and a largest dominator of 1.7%; 15.4 retry marks per 1,000 named constants."
+  - "Mathlib's hundred (trace-prior/report.md): spine at step 3 Q1 4.9%, median 9.9%, Q3 19.2%; at step 5 3.2% / 6.7% / 13.1%; hinges 30 / 37 / 46; median own lines 8 / 10 / 13; largest joint 63.9% / 80.2% / 91.5%; retry-marked hinges 0 / 0 / 0."
+  - "The suffix trace: the proof below riemannHypothesis uses 66% of the archive's 1.9 million constants; 5,046 retry families."
+  - "Cycle 2 compiled the original in 14 h 48 m with 61.2 GB peak memory and 100.3 GB of .olean files. The VM has 96 GB free; the host mount is read-only."
+  - "The community repository's lakefile.toml declares nine library targets plus Main (roots Statements, Main) and a Challenge library for the comparator; src/ on main lists CompanionTheory, Development, Formalism, GroundTheory, Lemmata, PositivityTheory, ReciprocityTheory, Main.lean, Statements.lean, Challenge.lean; on original also BuildAid and Supplements."
+  - "scripts/ on main includes clump.py and collapse_wrappers.py, so modules are being merged and wrapper files removed; the constant graph does not depend on which file a constant sits in, and declaration ranges are read per constant."
+
+instrument:   # written and hashed before registration; the same measures as trace-prior/prior.py, whose shape() is copied unchanged
+  ArchiveGraph.lean: "sha256 fd387c7ee91230758e6331925f18fa3fc1832e7d6974ca7ad732cb442f055cd0; imports Main and walks every module in the environment from the module table, as MathlibGraph.lean did, marking a module archive=1 unless its root is a dependency package"
+  SpotCheck.lean: "sha256 2207d097a5a769b250cc631d98f1ec7496710ad769b6c5623da09ab8969faf1a; reads two .olean files of one module and prints the constant counts, the names only one has, and how many constants differ in their used-constant sets"
+  edit.py: "sha256 fabd9668aa363055aa6e18daf43026387c57c2001b4e410fbe03f55dcdb6d125; restricts the graph to archive constants, computes shape() for the five entry theorems, reports the main one beside the archive's earlier row and the Mathlib quartiles (trace-prior/shapes.tsv), the share of archive constants reached from the five, and the retry rate"
+  run_edit.sh: "sha256 966bdf3abea6a4d378f26fb598cb0285da00ac48b4c2cc49147d8066f3bbd8a4; clone at the pinned commit; original branch as a worktree; diff of original/src against the tarball's extracted src; Mathlib cache from cache.mathlib.org; the community's cache (killed if free disk falls under 10 GB); lake build --no-build; the walk; twenty random modules (seed 20261125) recompiled with lake env lean -o and compared with SpotCheck; edit.py; sha256 of outputs"
+  synthetic_test: "edit.py run on the synthetic archive graph of the crossing trace (scratchpad xtest/a, ROOTS=R): completes and writes shapes_edit.tsv, spine and hinge tables"
+
+environment:
+  vm: "Linux VM (Lima, instance primegaps; Ubuntu, aarch64, 20 cores, 98 GB RAM, 96 GB free disk at registration)"
+  where: "~/untrusted/alpoge-rh/edit/ (untrusted); scripts in ~/nm-scripts/; trace-prior/shapes.tsv copied there as mathlib_shapes.tsv"
+  procedure: "sh ~/nm-scripts/run_edit.sh 9282d3a102c4, under nohup; outputs and logs in ~/untrusted/alpoge-rh/edit/; graph tables stay in the VM, the rest comes into trace-edit/"
+
+checks:
+  P0_identity: "every .lean file under src/ on the original branch equals the tarball's file (diff -rq exit 0 on the .lean files; files that exist on only one side are listed)"
+  C1_cache: "exit codes and sizes of the Mathlib cache fetch and the community cache fetch; lake build --no-build exit code; bytes under .lake/build; free disk before and after"
+  C2_spot: "for twenty random source files, the recompiled module against the cached one: only_a, only_b and edge_diff counts"
+  C3_counts: "archive modules and constants; named constants; constants reached from the five entry theorems and their share; retry marks per 1,000 named"
+  C4_shape: "the prior trace's measures for riemannHypothesis and the other four entry theorems; spine and hinge tables written"
+  C5_run: "wall time of the cache fetch, the walk, the spot checks and the analysis; peak memory"
+
+predictions:                       # mine, before the data; each is a miss if wrong and is recorded either way
+  P0: "The original branch's .lean files are identical to the tarball's: no differing file, none on one side only."
+  P1_cache: "Both cache fetches succeed, lake build --no-build exits 0, and the community cache is under 60 GB on disk."
+  P2_spot: "All twenty recompiled modules match the cached ones: only_a = only_b = edge_diff = 0 in every row."
+  P3_size: "The cone of riemannHypothesis shrinks by less than 15% in constants from 1,265,256; the archive as a whole shrinks by more than 10% from about 1.9 million, because unused variants are being removed faster than the proof is being rewritten; the share of the archive reached from the five entry theorems rises above 66%."
+  P4_spine: "The chain survives: the spine share is at least 90% at step 3 and at least 50% at step 5. (Mathlib's Q3 is 19.2% and 13.1%.)"
+  P5_joint: "The largest joint stays below 40% of the proof. (Mathlib's Q1 is 63.9%.)"
+  P6_hinges: "Between 60 and 100 hinges at 1%; their median own lines at most 6. (Mathlib: 30 to 46 hinges, 8 to 13 lines.)"
+  P7_retry: "Renaming has begun but is not finished: between 1 and 31 of the hinges still carry a retry mark, and the retry rate per 1,000 named constants is below 15.4."
+  P8_run: "The walk finishes in under 30 minutes; the analysis in under 4 hours; the whole run in under 10 hours."
+
+standing_consequences:
+  all: "None. A trace changes no standing by construction, and this one measures an artifact that is not the claim's. Verdict confirmed when C1 to C5 are reported with every number; misses listed. Gap touched: EG3."
+  fail: "If the cache cannot be fetched or does not pass --no-build, the walk is not run on it and the cycle records the halt; a compile from source needs disk the VM does not have and would be a new registration. A corrected script is an amendment here."
+
+not_settled_by_this_cycle: >
+  Whether editing can change the shape at all: this is one partial state of an ongoing edit, by agents under
+  maintainers, and the registered predictions say the chain survives it. If they hold, the comparison of raw against
+  edited is still open until the community's work is further along, and the right next cycle is this one again at a
+  later commit under a new registration citing this one. If they miss, editing explains at least part of the
+  difference from Mathlib, and the shape charts are about editing before they are about machines. Nothing about the
+  third difference, one argument against library lemmas, which needs large single-purpose human Lean projects measured
+  the same way. Nothing about why any proof has the shape it has.
