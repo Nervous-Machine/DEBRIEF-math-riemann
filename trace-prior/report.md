@@ -1,0 +1,110 @@
+# Proof-shape prior from Mathlib
+
+Graph: 771,129 constants, 20,446,478 edges (Mathlib and the Lean libraries it imports). Sample: 3,000 named Mathlib theorems drawn uniformly (seed 20261124) from 253,598.
+
+## Q1. How big are Mathlib proofs? (constants in the cone of a random theorem)
+
+| decile | 10% | 20% | 30% | 40% | 50% | 60% | 70% | 80% | 90% | max |
+|---|---|---|---|---|---|---|---|---|---|---|
+| cone constants | 399 | 549 | 767 | 1,501 | 2,224 | 3,724 | 6,496 | 10,972 | 16,960 | 62,102 |
+
+Median 2,224; mean 6,180; cones of at least 2,000 constants: 1,583 of 3,000. The archive's cone is 1,265,256 archive constants plus 67,981 library constants at its boundary.
+
+## Q2. Shape of the 100 largest sampled Mathlib proofs against the archive
+
+Same measures as the three archive traces: spine share at steps 1, 2, 3, 5, 8 below the root; hinges = constants dominating at least 1% of the root's lines; joints = mass meeting at a constant; substrate = the second-level directory with the most lines in the cone and the largest share any constant in it dominates; retry marks exclude primes (Mathlib house style).
+
+| measure | Mathlib Q1 | median | Q3 | archive |
+|---|---|---|---|---|
+| cone constants | 30,253 | 36,032 | 46,352 | 1,265,256 |
+| dominated lines | 75,408 | 92,248 | 125,716 | 10,660,526 |
+| spine share, step 1 | 8.5% | 19.8% | 38.7% | 100.0% |
+| step 2 | 7.0% | 13.5% | 26.4% | 100.0% |
+| step 3 | 4.9% | 9.9% | 19.2% | 100.0% |
+| step 5 | 3.2% | 6.7% | 13.1% | 66.8% |
+| step 8 | 1.4% | 3.2% | 8.4% | 11.3% |
+| spine length (steps to a leaf) | 20 | 24 | 29 | 27 |
+| step at which the spine leaves the root's directory | 2 | 5 | 10 | 13 |
+| share when it does | 1.5% | 4.7% | 11.4% | 1.7% |
+| hinges at 1% | 30 | 37 | 46 | 81 |
+| median own lines of hinges | 8 | 10 | 13 | 4 |
+| longest hinge, lines | 90 | 93 | 106 | 88 |
+| hinges with a retry mark (no primes) | 0 | 0 | 0 | 32 |
+| hinges with a prime | 1 | 2 | 2 | 1 |
+| largest joint, share joined | 63.9% | 80.2% | 91.5% | 27.2% |
+| three largest joints, share joined | 93.7% | 96.5% | 98.4% | 71.8% |
+| largest directory's share of cone lines | 14.6% | 15.7% | 16.9% | 43.9% |
+| largest share any constant in it dominates | 0.5% | 0.9% | 8.9% | 1.7% |
+| retry marks per 1,000 named constants (no primes) | 0.4 | 0.4 | 0.4 | 15.4 |
+
+### The ten largest sampled proofs
+
+| root | cone | lines | spine at 3 | at 5 | hinges | median own | largest dir | its max dom |
+|---|---|---|---|---|---|---|---|---|
+| `NumberField.mixedEmbedding.fundamentalCone.setLIntegral_expMapBasis_image` | 62,102 | 177,666 | 9.9% | 4.7% | 50 | 16 | Mathlib/Algebra 15.3% | 0.2% |
+| `NumberField.mixedEmbedding.fundamentalCone.compactSet_ae` | 61,961 | 177,032 | 15.0% | 9.1% | 50 | 16 | Mathlib/Algebra 15.3% | 0.2% |
+| `ModularForm.sturm_bound_levelOne` | 61,753 | 178,531 | 16.5% | 16.5% | 36 | 15 | Mathlib/Analysis 18.1% | 5.2% |
+| `ArithmeticFunction.vonMangoldt.continuousOn_LFunctionResidueClassAux` | 58,569 | 170,324 | 4.7% | 4.4% | 32 | 15 | Mathlib/Analysis 16.7% | 5.0% |
+| `DirichletCharacter.LFunction_eq_LSeries` | 53,875 | 154,200 | 11.3% | 11.3% | 42 | 16 | Mathlib/MeasureTheory 16.2% | 2.9% |
+| `LSeries_one_eq_riemannZeta` | 53,421 | 152,836 | 18.8% | 11.6% | 46 | 14 | Mathlib/MeasureTheory 16.3% | 3.0% |
+| `DirichletCharacter.differentiableAt_completedLFunction` | 53,252 | 151,293 | 14.7% | 14.7% | 40 | 16 | Mathlib/MeasureTheory 16.0% | 3.0% |
+| `HurwitzZeta.hasSum_int_completedSinZeta` | 53,031 | 150,285 | 19.8% | 19.7% | 44 | 18 | Mathlib/MeasureTheory 16.0% | 3.0% |
+| `HurwitzZeta.completedHurwitzZetaEven_residue_zero` | 52,793 | 149,848 | 23.4% | 23.3% | 43 | 16 | Mathlib/MeasureTheory 16.2% | 3.0% |
+| `Polynomial.leadingCoeff_le_mahlerMeasure` | 52,167 | 145,425 | 7.7% | 3.6% | 35 | 15 | Mathlib/Analysis 18.7% | 100.0% |
+
+### Where the archive falls in the Mathlib distribution (share of the sampled large proofs below the archive's value)
+
+| measure | archive | share of Mathlib proofs below it |
+|---|---|---|
+| spine share at step 3 | 100.0% | 100.0% |
+| spine share at step 5 | 66.8% | 100.0% |
+| hinges at 1% | 81 | 100.0% |
+| median own lines of hinges | 4 | 0.0% |
+| largest joint | 27.2% | 0.0% |
+| largest directory's share | 43.9% | 100.0% |
+| largest directory's max dominator | 1.7% | 58.0% |
+| retry marks per 1,000 | 15.4 | 100.0% |
+| spine length | 27 | 67.0% |
+
+## Q3. Crossings: which second-level directories of Mathlib are depended on together
+
+For every named Mathlib theorem, the set of second-level directories (Mathlib/Analysis, Mathlib/NumberTheory, …) of its direct named dependencies, excluding its own directory and Lean's core libraries; pairs counted once per theorem.
+
+Theorems 253,598; directories depended on 27; directory pairs seen together 206.
+
+Most common pairs:
+
+| pair | theorems |
+|---|---|
+| Mathlib/Algebra + Mathlib/Data | 77,383 |
+| Mathlib/Data + Mathlib/Order | 58,893 |
+| Mathlib/Algebra + Mathlib/Order | 39,208 |
+| Mathlib/Data + Mathlib/Topology | 29,268 |
+| Mathlib/Data + Mathlib/Logic | 26,209 |
+| Mathlib/Algebra + Mathlib/Topology | 26,005 |
+| Mathlib/Order + Mathlib/Topology | 17,296 |
+| Mathlib/Algebra + Mathlib/Logic | 14,438 |
+| Mathlib/Analysis + Mathlib/Data | 12,613 |
+| Mathlib/CategoryTheory + Mathlib/Combinatorics | 11,902 |
+| Mathlib/Combinatorics + Mathlib/Data | 11,892 |
+| Mathlib/Logic + Mathlib/Order | 11,256 |
+
+Rarest pairs among directories that are each depended on by at least 2,000 theorems:
+
+| pair | theorems | one of them |
+|---|---|---|
+| Mathlib/Geometry + Mathlib/SetTheory | 1 | `ModularForm.norm_ne_zero` |
+| Mathlib/CategoryTheory + Mathlib/MeasureTheory | 11 | `SFinKer.tensorUnit_str` |
+| Mathlib/Geometry + Mathlib/MeasureTheory | 12 | `IsOpen.ae_eq_zero_of_integral_contMDiff_smul_eq_zero` |
+| Mathlib/MeasureTheory + Mathlib/SetTheory | 13 | `ProbabilityTheory.uniformOn_univ` |
+| Mathlib/Combinatorics + Mathlib/MeasureTheory | 13 | `MeasureTheory.Conservative.iterate` |
+| Mathlib/CategoryTheory + Mathlib/SetTheory | 23 | `ModuleCat.free_shortExact_rank_add` |
+| Mathlib/Analysis + Mathlib/Combinatorics | 41 | `MeasureTheory.integral_biUnion_eq_sum_powerset` |
+| Mathlib/Analysis + Mathlib/Geometry | 44 | `ModularForm.holo'` |
+| Mathlib/Analysis + Mathlib/SetTheory | 50 | `ZLattice.covolume.tendsto_card_le_div'` |
+| Mathlib/MeasureTheory + Mathlib/RingTheory | 58 | `integrable_cfcₙ` |
+| Mathlib/SetTheory + Mathlib/Topology | 59 | `MeasureTheory.Measure.count_apply` |
+| Mathlib/Geometry + Mathlib/LinearAlgebra | 61 | `AlgebraicGeometry.Scheme.zeroLocus_mul` |
+
+The full table, with each pair's count against what independence would give, is in `crossings.tsv`.
+

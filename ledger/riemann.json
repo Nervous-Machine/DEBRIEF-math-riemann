@@ -893,6 +893,61 @@
    "gap_ids": [
     "EG3"
    ]
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "mission_id": "riemann-2026-11",
+   "pod": "DEBRIEF-math-riemann",
+   "created_by": "contributed cycle (merge_cycles.py)",
+   "created_at": "2026-11-24T01:01:51Z",
+   "provenance": {
+    "source": "the dependency graph of Mathlib 0df444a3 and the Lean libraries it imports, written in the cycle 2 build environment (MathlibGraph.lean, 54 s); the archive's measures from the three traces of 2026-11-23",
+    "occasion": "Heidi Bennett's question whether a prior over proof shapes can be built from a population the way her atlases build a causal prior; Mathlib is the population in the same environment"
+   },
+   "audience": "briefing",
+   "kind": "trace",
+   "cycle": "trace-2026-11-24-prior",
+   "dated": "2026-11-24",
+   "by": "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)",
+   "preregistered": {
+    "question": "How big is the proof of a random Mathlib theorem; for the 100 largest of 3,000 sampled, how do spine, hinges, joints, substrate and rewrite marks look under the archive traces' measures; where does the archive fall; which Mathlib directories are depended on together?",
+    "rule": "uniform sample of 3,000 named Mathlib theorems, seed 20261124; dominator trees for the 100 largest cones of at least 2,000 constants; the archive's numbers copied from its three traces as one row; crossing table over all 253,598 named theorems; thresholds as in the earlier traces; primes excluded from rewrite marks on both sides; no interpretation beyond what is labelled; standing unchanged by construction",
+    "predictions": [
+     "P1: median cone 300 to 3,000 constants; at least 500 of 3,000 reach 2,000",
+     "P2: median spine share at step 3 below 50%; the archive's 100% above Mathlib's third quartile",
+     "P3: median hinges at 1% between 30 and 90; the archive's 81 inside the Mathlib interquartile range",
+     "P4: median own lines of hinges at least 8; the archive's 4 below Mathlib's first quartile",
+     "P5: in at least 60 of 100, the largest directory's top dominator holds at least 10%; the archive's 1.72% below Mathlib's first quartile",
+     "P6: walk under 90 minutes and 70 GB; analysis under 30 minutes",
+     "P7: the most common directory pair is Algebra with Order or Data"
+    ],
+    "commit": "prereg_trace_prior.yaml",
+    "registered": "sha256 8070acde… in prereg_trace_prior.yaml.sha256, committed d4ca9fb at 00:54 UTC before the walk started at 00:54:34 UTC",
+    "before_data": true,
+    "results": [
+     "trace/PRIOR-TRACE.md",
+     "trace-prior/report.md"
+    ]
+   },
+   "outcome": {
+    "verdict": "confirmed",
+    "numbers": {
+     "Q1": "3,000 named Mathlib theorems of 253,598: cone deciles 399, 549, 767, 1,501, 2,224, 3,724, 6,496, 10,972, 16,960, max 62,102; median 2,224, mean 6,180; 1,583 reach 2,000; the archive's cone (1,265,256 + 67,981 boundary) is 20 times the largest sampled",
+     "Q2": "100 largest (30,253 to 62,102 constants; Q1/median/Q3 against the archive): spine at step 1 8.5/19.8/38.7% vs 100%; step 3 4.9/9.9/19.2% vs 100%; step 5 3.2/6.7/13.1% vs 66.8%; step 8 1.4/3.2/8.4% vs 11.3%; spine length 20/24/29 vs 27; leaves root directory at step 2/5/10 vs 13; hinges 30/37/46 vs 81; median own lines of hinges 8/10/13 vs 4; longest hinge 90/93/106 vs 88; hinges with a rewrite mark 0/0/0 vs 32; largest joint 63.9/80.2/91.5% vs 27.2%; three largest joints 93.7/96.5/98.4% vs 71.8%; largest directory's share of lines 14.6/15.7/16.9% vs 43.9%; its top dominator 0.5/0.9/8.9% vs 1.7%; rewrite marks per 1,000 named 0.4/0.4/0.4 vs 15.4; archive percentiles: spine at 3 and 5 100th, hinges 100th, hinge own lines 0th, largest joint 0th, directory share 100th, directory top dominator 58th, rewrite marks 100th, spine length 67th; the ten largest sampled proofs are all on number fields, L-functions, Hurwitz zeta, modular forms and Mahler measure",
+     "Q3": "27 directories, 206 pairs; most common Algebra+Data 77,383, Data+Order 58,893, Algebra+Order 39,208; rarest among directories each depended on by 2,000 or more theorems: Geometry+SetTheory 1, CategoryTheory+MeasureTheory 11, Geometry+MeasureTheory 12, MeasureTheory+SetTheory 13, Combinatorics+MeasureTheory 13; full table with ratio to independence in crossings.tsv",
+     "run": "walk 54 s, 7.5 GB, 10,498 modules, 772,126 rows (771,129 distinct constants), 29,692,492 edges (20,446,478 distinct); analysis 2 m 25 s, 0.7 GB"
+    },
+    "misses": [
+     "P3: the median is 37 but the interquartile range is 30 to 46, and the archive's 81 is above every sampled Mathlib proof, not inside the range",
+     "P5: fewer than 25 of the 100 have a largest-directory top dominator of 10% or more (Q3 8.9%), and the archive's 1.72% sits at the 58th percentile, not below Q1; substrate is normal in Mathlib"
+    ],
+    "procedure_note": "the Mathlib graph was written in 54 s by walking the module table with each module's range table read once; the archive walk of 2026-11-23 took 4 h 18 m because it looked each constant's module and range up one at a time in the interpreter; that walk's output is correct and was not redone"
+   },
+   "spoken": "On 24 November Nervous Machine put the proof beside three thousand Mathlib proofs, measured the same way. A large Mathlib proof is a fan: its mass meets at the theorem itself, four fifths of it, and the spine is down to a tenth by the third step. The archive is a chain: it holds everything for three steps and two thirds at the fifth, and its largest joint gathers a quarter. It has twice the hinges and they are half the length, four lines against ten, shorter than in any of the hundred Mathlib proofs; thirty-two of them carry a rewrite mark where Mathlib's carry none, and its rate of rewrite marks is thirty-eight times Mathlib's. One subject directory holds forty-four percent of its lines against a Mathlib sixteen. What it shares with Mathlib is substrate: in both, the largest directory is reached from everywhere and dominated by nothing in itself, which the operating agent had taken for a peculiarity and registered as one; that prediction missed. Five of seven held. The ten largest Mathlib proofs in the sample are all about L-functions, number fields and modular forms, the ground the archive stands on. Nothing changed standing.\n",
+   "finding_ids": [],
+   "gap_ids": [
+    "EG3"
+   ]
   }
  ],
  "findings": [
