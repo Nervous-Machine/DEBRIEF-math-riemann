@@ -1,0 +1,59 @@
+# Pre-registration, trace cycle "trace-2026-11-24-prior": a proof-shape prior from Mathlib. Written 2026-11-24 (UTC)
+# BEFORE the Mathlib graph was written or any shape computed. Changes after this point go in an amendment at the end
+# of this file, not in the body.
+#
+# Occasion. Three traces on 2026-11-23 measured the shape of one proof: spine decay, hinge count and size, joints,
+# substrate, retry marks. One proof is one point. Heidi Bennett asked whether a prior over proof shapes could be
+# built the way her atlases build a causal prior over a system: from a population, so that a new object can be
+# placed in a distribution rather than described alone. Mathlib is the population to hand, in the same environment,
+# with the same name conventions and the same kernel. This cycle walks its dependency graph the way the archive's
+# was walked, draws a uniform sample of its theorems, computes the same measures for the largest of them, and puts
+# the archive beside the distribution. It also writes a first crossing table: which subject directories are depended
+# on together, as the base layer for asking later whether a join is one the corpus has seen before.
+
+mission: DEBRIEF-math-riemann
+cycle: "trace-2026-11-24-prior"
+kind: trace
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+dated: "2026-11-24"
+question: >
+  How big is the proof of a random Mathlib theorem, and for the largest of them, how do the spine, the hinges, the
+  joints, the substrate and the retry marks look? Where does the archive fall in that distribution? Which pairs of
+  Mathlib directories are depended on together, and which pairs of common directories almost never are?
+
+observations_before_this_registration:   # facts, not predictions
+  - "The archive's measures (trace-2026-11-23-structure, -closet, -suffix): spine 100% at steps 1 to 3, 66.8% at step 5, 11.3% at step 8, 27 steps, leaves its directory at step 13 (1.72%); 81 hinges at 1%, median own lines 4, longest 88, 32 with a non-prime retry mark and 1 with a prime; largest joint 27.2%, three largest 71.8%; largest directory (AbelianVarietyTheory) 43.9% of the cone's own lines with a largest dominator of 1.72%; retry marks 15.4 per 1,000 named constants (excluding primes). These numbers are copied into prior.py as the archive row."
+  - "The suffix trace's name dump counted 795,211 distinct library constants in the environment (Mathlib, Lean, Init, Std, Batteries, Aesop), 312,988 of them machine-named. Mathlib's prime rate was 23.1 per 1,000 named constants, so primes are excluded from the retry classes here for both sides."
+  - "The earlier archive walk (DepCone.lean) looked each constant's module and declaration range up one at a time and ran at about 90 constants a second; the suffix trace's dump ran at tens of thousands a second after switching to the module table. MathlibGraph.lean (trace-prior/MathlibGraph.lean, sha256 a7b956051461555d80a9e5dc10c70a3d491b2292e6ff818f2e298c9a90dceac4) uses the module table and each module's range table in one call; it imports Mathlib, not Main, so the environment is Mathlib and the Lean libraries it imports, without the archive."
+  - "prior.py (trace-prior/prior.py, sha256 17486f8ce558dffa01759e53bfa3d644ba9f7958021857478f6cd149edcc298d) was run before this registration on the 48,554-constant Mathlib-only walk from the structure trace's test (sample 200, top 15): median cone 849 constants, 16 directories, 92 directory pairs; the full graph was not analysed."
+
+environment:
+  vm: "Linux VM (Lima, instance primegaps; Ubuntu, aarch64, 20 cores, 98 GB RAM)"
+  source: "the cycle 2 build directory, Lean v4.33.1, Mathlib 0df444a3 (the Mathlib the archive was built against)"
+  procedure: "lake env lean ~/nm-scripts/MathlibGraph.lean under /usr/bin/time -v, output to ~/untrusted/alpoge-rh/trace-structure/prior/; then python3 -I ~/nm-scripts/prior.py on those tables, in the VM"
+  parameters: "SAMPLE 3000 named Mathlib theorems, uniform, SEED 20261124; TOPK 100 largest cones among them, MINCONE 2000 constants; hinge level 1%, joint floor 0.5%; retry regexes as in the suffix trace minus primes; all fixed before the run"
+
+checks:
+  Q1_size: "cone size (constants) of each sampled theorem: deciles, median, mean, how many reach 2,000 constants"
+  Q2_shape: "for the 100 largest sampled cones, the archive traces' measures (spine shares at steps 1, 2, 3, 5, 8; spine length; step and share at which the spine leaves the root's directory; hinges at 1%, their median and longest own lines, how many carry a retry mark or a prime; largest joint and three largest; largest directory's share of cone lines and the largest share any constant in it dominates; retry marks per 1,000 named constants); quartiles against the archive row; the ten largest listed; the archive's percentile on each measure"
+  Q3_crossings: "for every named Mathlib theorem, the set of second-level Mathlib directories of its direct named dependencies excluding its own; pair counts; the twelve most common pairs; the twelve rarest pairs among directories each depended on by at least 2,000 theorems, with one example theorem each; full table with the ratio to independence"
+
+predictions:                       # mine, before the data; each is a miss if wrong and is recorded either way
+  P1_size: "The median cone of a random Mathlib theorem is between 300 and 3,000 constants, and at least 500 of the 3,000 sampled reach 2,000."
+  P2_spine: "Among the 100 largest, the median spine share at step 3 is below 50%. The archive's 100% is above the Mathlib third quartile."
+  P3_hinges: "The median number of hinges at 1% is between 30 and 90, and the archive's 81 lies inside the Mathlib interquartile range."
+  P4_glue: "The median own lines of hinges, taken over the 100, has a median of at least 8; the archive's 4 is below the Mathlib first quartile."
+  P5_substrate: "In at least 60 of the 100, the largest directory's largest dominator holds at least 10% of the proof; the archive's 1.72% is below the Mathlib first quartile."
+  P6_run: "The Mathlib walk finishes in under 90 minutes and 70 GB; the analysis in under 30 minutes."
+  P7_crossings: "The most common directory pair is Mathlib/Algebra with Mathlib/Order or with Mathlib/Data."
+
+standing_consequences:
+  all: "None. A trace changes no standing by construction. Verdict confirmed when Q1 to Q3 complete and every number is reported; misses listed. Gap touched: EG3. A prior over shapes says how unusual a proof's shape is, not whether it is right (closed by cycle 2) or what it means."
+  fail: "If the walk or the analysis does not complete, the error is reported and nothing is computed from partial output; a corrected script is an amendment here."
+
+not_settled_by_this_cycle: >
+  Whether an unusual shape is a sign of anything: Mathlib's theorems are mostly short, written by people over a
+  decade, and curated; the archive is one proof written in months by a model under direction. The crossing table
+  describes Mathlib and scores nothing in the archive, whose directories are its own; placing the archive's joins
+  against it needs a mapping from its subjects to Mathlib's, which is a reading. Nothing about why any proof has the
+  shape it has.
