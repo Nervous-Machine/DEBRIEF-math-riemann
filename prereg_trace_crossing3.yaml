@@ -1,0 +1,53 @@
+# Pre-registration, trace cycle "trace-2026-11-24-crossing3": the crossing test at the third directory level.
+# Written 2026-11-24 (UTC) BEFORE the analysis ran. Changes after this point go in an amendment at the end.
+#
+# Occasion. The crossing trace at Mathlib's second directory level saturated: 26 bins, and every wing of every large
+# joint reached 21 to 25 of them, so no joint brought together anything its wings did not share, in the archive or
+# in Mathlib. Heidi Bennett asked for the same test one level down, where Mathlib has a few hundred directories
+# (Mathlib/Analysis/SpecialFunctions, Mathlib/NumberTheory/LSeries, …). The pair table is rebuilt at that depth from
+# the Mathlib graph already on disk; everything else is the previous cycle's design. Her reading so far: a big
+# directed search space, effective rather than novel or elegant. This cycle can sharpen or blunt that; it cannot
+# settle it, since a rare directory pair is a place to look, not a judgement.
+
+mission: DEBRIEF-math-riemann
+cycle: "trace-2026-11-24-crossing3"
+kind: trace
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+dated: "2026-11-24"
+question: >
+  At the third level of Mathlib's directory tree, which directories does each wing of the archive's largest joints
+  reach, how many directory pairs does a joint bring together that its wings do not share, how rare are those pairs
+  in Mathlib, and how does this compare with the largest joint of each of the 100 large Mathlib proofs?
+
+observations_before_this_registration:
+  - "The depth-2 crossing trace: archive cone reaches 25 of 26 directories; Jaccard distance of the two largest wings 0.08 at the top joint (Mathlib median 0.27); 0 of 20 archive joints and 4 of 100 Mathlib joints realised any crossing."
+  - "trace-crossing/crossing3.py (sha256 0b5e39dd6b1def74f0c0c9d6b956ab05e79cb6eb686eb0640f5e4cc7eacf088a) is the depth-2 script with the directory depth as a parameter, the pair table built from the Mathlib graph at that depth (every named Mathlib theorem; the directories of its direct named dependencies excluding its own; pairs counted once per theorem; ratio to independence), two added counts per joint (crossing pairs never seen together in Mathlib; pairs with ratio below 0.5), and the full pair list of the archive's three largest joints written out. Run on the synthetic graphs at depth 2 before this registration. Neither real graph was analysed at depth 3."
+  - "Directory of a module = its components without the file name; depth-3 bin = the first three (a file directly under Mathlib/Analysis falls in the bin Mathlib/Analysis)."
+
+environment:
+  vm: "Linux VM (Lima, instance primegaps; Ubuntu, aarch64, 20 cores, 98 GB RAM)"
+  inputs: "the archive walk tables and the Mathlib graph (both hash-checked before the run); trace-prior/shapes.tsv for the 100 roots"
+  procedure: "DEPTH=3 python3 -I ~/nm-scripts/crossing3.py ARCHIVE MATHLIB PRIOR OUT under /usr/bin/time -v, in the VM"
+
+checks:
+  Y1_table: "the depth-3 pair table: number of directories, how many are depended on across directories, number of pairs; written to crossings3.tsv"
+  Y2_archive: "directories the archive's cone reaches; for each of the twenty largest joints: footprint, Jaccard distance of the two largest wings, exclusive directories, crossing pairs, zero pairs, rare pairs, the rarest pair with ratio and count; the wings of the three largest joints with what only each reaches; every crossing pair of those three joints, rarest first (archive_top3_pairs3.tsv)"
+  Y3_mathlib: "the same for the largest joint of each of the 100 Mathlib proofs; quartiles against the archive; joints with any crossing; share of a joint's crossings never seen together; the ten rarest crossings"
+
+predictions:
+  P1_bins: "Mathlib has between 200 and 600 depth-3 directories, and the archive's cone reaches at least 60% of them."
+  P2_unsaturated: "At least 10 of the archive's 20 joints realise at least one crossing pair."
+  P3_rare_exists: "Among the archive's joints that realise a crossing, the rarest pair of at least one joint has a ratio below 0.5."
+  P4_not_unusual: "The median over the archive's joints of the rarest-pair ratio lies inside the Mathlib interquartile range of the same quantity: the archive's joins are not rarer than Mathlib's own."
+  P5_wings_alike: "The Jaccard distance of the two largest wings at the archive's largest joint stays below the Mathlib median."
+  P6_run: "Under 25 minutes and 60 GB."
+
+standing_consequences:
+  all: "None. A trace changes no standing by construction. Verdict confirmed when Y1 to Y3 complete and every number is reported; misses listed. Gap touched: EG3."
+  fail: "If the analysis does not complete, the error is reported and nothing is computed from partial output; a corrected script is an amendment here."
+
+not_settled_by_this_cycle: >
+  Whether a rare pair is a new idea or two routine lemmas; whether Mathlib's coverage makes its pair frequencies a
+  fair prior for a proof in higher-rank automorphic forms, which Mathlib barely contains; at a few hundred bins many
+  pairs are rare by sparsity alone, which is why the Mathlib joints are measured the same way and the comparison,
+  not the raw ratio, is the result.
