@@ -130,6 +130,15 @@ constants were written and are not used. That is the shape of a search that happ
 the closet trace said the choices are. The attempt record would say what was tried at each; the archive says only
 how many times.
 
+## The author's statement, read after this cycle
+
+On 23 November, after this trace ran, Levent Alpöge wrote in public that the 250,000-page figure was a joke, that he
+wrote no account he thought readable and "went off the Lean to lengthmaxx", that the Lean is "full of garbage
+obviously, but compiles", and that he expects most of it to be unnecessary (cycle external-2026-11-23-alpoge). The
+measures above were taken without that statement and are unchanged by it. Read with it, they describe an artifact its
+author did not clean, and nothing in them should be taken as a measure of effort or method. What the kernel uses is
+still what the kernel uses.
+
 ## Procedure notes
 
 The registered dump (`Names.lean`) wrote one line per constant after a per-constant module lookup and ran at about

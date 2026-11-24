@@ -1095,6 +1095,58 @@
    "gap_ids": [
     "EG3"
    ]
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "mission_id": "riemann-2026-11",
+   "pod": "DEBRIEF-math-riemann",
+   "created_by": "contributed cycle (merge_cycles.py)",
+   "created_at": "2026-11-24T03:48:26Z",
+   "provenance": {
+    "source": "x.com/__alpoge__/status/2124987173439209561, posted 2026-11-23T22:03:17Z, read 2026-11-24 through a public tweet-rendering endpoint; the post text, 2,018 bytes, hashes to sha256 d123e302f51b19f8231211ab13853776044c6b08c8548ddb6025d2cc0f78d448. Alongside it the reaction that brought it to this record: x.com/superalesha/status/2124999630018535446, posted 2026-11-23T22:52:47Z, text 1,146 bytes, sha256 83b733157544e190a41213717fa4ad1c74eb3f8264e20a798dc63032cfcb1327, with three screenshots not read here."
+   },
+   "audience": "briefing",
+   "kind": "replay",
+   "cycle": "external-2026-11-23-alpoge",
+   "dated": "2026-11-23",
+   "by": null,
+   "preregistered": {
+    "question": "What does the claimant say about the release three days after it, and what does it change on this record?",
+    "rule": "the post read in full, pinned by hash of its text; compared with what the record already holds; no new building or checking by Nervous Machine",
+    "predictions": [],
+    "commit": null,
+    "before_data": false
+   },
+   "outcome": {
+    "verdict": "admitted",
+    "numbers": {
+     "external": {
+      "public_reactions": [
+       {
+        "who": "Levent Alpöge, the claimant",
+        "url": "https://x.com/__alpoge__/status/2124987173439209561",
+        "posted": "2026-11-23",
+        "what": "Lists four \"stupid things I did\". The figure of 250,000+ pages was a joke; he finds big numbers funny and did not correct it in the days after the announcement. He did not want any \"slop writeup\" attached to the problem, judged he could not produce a readable account, and \"went off the Lean to lengthmaxx\". The Lean is \"full of garbage obviously, but compiles\"; criticism of it is reasonable; he should have cleaned it up and found that hard \"for various strange reasons\". He was \"yoloing a lot in there\", bets most of it is unnecessary, and expects it to simplify massively. His stated point: arguments like these are raw inputs for interpolating definitions; there is no H^1 object over number fields yet; Riemann should be easy, and any real difficulty indicates the current setup is wrong.",
+        "is_a_reading": false,
+        "note": "The claimant's own account of the artifact. It changes nothing about correctness: the main theorem's type and the kernel's acceptance (finding F1) are facts about the archive, not about its author's tidiness, and the Lean and Mathlib communities' statement of 21 November stands. It changes three things about how the rest of this record should be read. First, the 250,000-page document that several readings, this record's own notes and the public ask for an attempt record referred to does not exist as described; what record of attempts exists, and in what form, is unknown, and the ask is now for whatever that record is. Second, the archive's size carries no information about effort or method by the author's own statement, which agrees with what the traces measured without knowing it: a third of the archive's constants unused, rewrite marks on 33 of 81 hinges, the chain shape, the author's own expectation that \"most is unnecessary\". The shape traces measured a deliberately uncleaned artifact and should be read as such; the dominator tree is still the tree of what the kernel uses. Third, point 4 is the author's statement of what the proof means to him, a band-three statement that belongs beside Jerby's and Saha's and carries no standing."
+       },
+       {
+        "who": "Alexey Fateev",
+        "url": "https://x.com/superalesha/status/2124999630018535446",
+        "posted": "2026-11-23",
+        "what": "Quotes the claimant's post as an admission; calls the release an \"AI stunt\"; says Alessandro Masullo's 940-page proof \"had to be thrown online unfinished mid-meeting\" after the announcement, with screenshots of Masullo's PDF beside the claimant's words.",
+        "is_a_reading": false,
+        "note": "A reaction to the claimant's conduct, not to the mathematics; it names no error in the archive. Masullo's draft has its own mission on this board (DEBRIEF-math-grh-masullo), which records what the draft says and when it appeared; why it appeared when it did is Fateev's account, not this record's."
+       }
+      ]
+     }
+    }
+   },
+   "spoken": "Three days after the release the claimant posted a list of his own mistakes. The two hundred and fifty thousand pages were a joke that got away from him. He wrote no account he thought readable and put everything into Lean, which he calls full of garbage, though it compiles, and which he expects to shrink a great deal once someone does the work. He says criticism of it is fair. None of that touches the check: the theorem has the right type and the kernel accepts it, and that was never about tidiness. What it changes is how to read the size. The traces of the past two days found a third of the archive unused, rewriting concentrated at the joins, and a shape unlike any proof in Mathlib; the author now says, in effect, that this is what it is. And the document this record and others asked to see does not exist in the form everyone named. Whatever record of attempts does exist, in whatever size, is the ask now. A reaction the same evening called the release a stunt and tied it to the timing of Masullo's draft; that is one person's account of motives, and this record keeps to what the documents say.\n",
+   "finding_ids": [],
+   "gap_ids": [
+    "EG3"
+   ]
   }
  ],
  "findings": [

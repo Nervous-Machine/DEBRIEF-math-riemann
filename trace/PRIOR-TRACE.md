@@ -118,6 +118,15 @@ is what one would expect from a route assembled stage by stage toward a fixed ta
 expect from a code base no one has refactored. Those are the two stories from the suffix trace again, and this
 cycle does not separate them.
 
+## The author's statement, read after this cycle
+
+On 23 November, after this trace ran, Levent Alpöge wrote in public that the 250,000-page figure was a joke, that he
+wrote no account he thought readable and "went off the Lean to lengthmaxx", that the Lean is "full of garbage
+obviously, but compiles", and that he expects most of it to be unnecessary (cycle external-2026-11-23-alpoge). The
+measures above were taken without that statement and are unchanged by it. Read with it, they describe an artifact its
+author did not clean, and nothing in them should be taken as a measure of effort or method. What the kernel uses is
+still what the kernel uses.
+
 ## Procedure notes
 
 The Mathlib graph (772,126 module-constant rows, 771,129 distinct constants, 29.7 million edges, 20.4 million
