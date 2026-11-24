@@ -1002,6 +1002,58 @@
    "gap_ids": [
     "EG3"
    ]
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "mission_id": "riemann-2026-11",
+   "pod": "DEBRIEF-math-riemann",
+   "created_by": "contributed cycle (merge_cycles.py)",
+   "created_at": "2026-11-24T01:42:26Z",
+   "provenance": {
+    "source": "the archive walk tables and the Mathlib graph (hash-checked), the prior trace's 100 roots; the depth-3 pair table built in the run",
+    "occasion": "the depth-2 crossing test saturated; Heidi Bennett asked for the same test one directory level down"
+   },
+   "audience": "briefing",
+   "kind": "trace",
+   "cycle": "trace-2026-11-24-crossing3",
+   "dated": "2026-11-24",
+   "by": "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)",
+   "preregistered": {
+    "question": "At Mathlib's third directory level, which directories does each wing of the archive's largest joints reach, how many directory pairs does a joint bring together that its wings do not share, how rare are they in Mathlib, and how does this compare with the largest joint of each of 100 large Mathlib proofs?",
+    "rule": "as the depth-2 trace, with depth-3 bins and the pair table rebuilt at that depth from every named Mathlib theorem's direct dependencies; two added counts per joint (pairs never seen together; pairs with ratio below 0.5); every crossing pair of the three largest archive joints written out; standing unchanged by construction",
+    "predictions": [
+     "P1: 200 to 600 depth-3 directories; the archive's cone reaches at least 60%",
+     "P2: at least 10 of the archive's 20 joints realise a crossing",
+     "P3: some archive joint's rarest pair has ratio below 0.5",
+     "P4: the archive's median rarest ratio inside the Mathlib interquartile range",
+     "P5: Jaccard distance of the two largest wings at the archive's largest joint below the Mathlib median",
+     "P6: under 25 minutes and 60 GB"
+    ],
+    "commit": "prereg_trace_crossing3.yaml",
+    "registered": "sha256 c4089c10… in prereg_trace_crossing3.yaml.sha256, committed 08c685d at 01:36 UTC before the run started at 01:36:40 UTC",
+    "before_data": true,
+    "results": [
+     "trace/CROSSING3-TRACE.md",
+     "trace-crossing3/report.md"
+    ]
+   },
+   "outcome": {
+    "verdict": "confirmed",
+    "numbers": {
+     "Y1": "590 depth-3 directories, 448 depended on across directories, 28,301 pairs over 253,598 theorems (sparse: most of the possible pairs never co-occur)",
+     "Y2": "the archive's cone reaches 405 of 590; 16 of its 20 largest joints realise crossings (0 to 651 pairs each, median 31); every realised pair is one Mathlib has never seen together (ratio 0); Jaccard distance of the two largest wings 0.01 to 0.41, 0.09 at the largest joint and as the median; exclusive directories 3 to 70; the exclusive directories at the top joints are library corners (BoxIntegral, ODE, Control, FreeAlgebra, Dold–Kan, LiftingProperties, Zsqrtd, …), not subject junctions",
+     "Y3": "Mathlib's 100: cone reaches 148/166/179 directories (Q1/median/Q3); largest joint's Jaccard distance 0.18/0.35/0.57; exclusive directories 8/19/42; 23 of 100 realise any crossing; rarest ratio 0.00 at every quartile; share of a joint's crossings never seen together 58/72/83%; Mathlib's own rarest crossings are the same kind of library-corner pairs",
+     "conclusion": "no directory depth measures whether the ideas joined had been joined before: 26 bins saturate, 590 bins collapse to sparsity; the crossing question needs a semantic instrument (which published theorems each wing rests on); the structural result that survives both depths is that the archive's wings are more alike than Mathlib's, below the Mathlib first quartile, consistent with stages of one route",
+     "run": "4 m 30 s, 2.9 GB"
+    },
+    "misses": [],
+    "procedure_note": "all six predictions held, two of them hollow (P3 by sparsity, P4 with a degenerate range of 0.00 to 0.00) and marked so; the registration did not foresee that the rarity score would collapse to zero for every joint on both sides, which is the finding"
+   },
+   "spoken": "On 24 November Nervous Machine ran the crossing test again one directory level down, at five hundred and ninety bins. The test came unstuck and then failed the other way: sixteen of the proof's twenty joints now bring together directories their wings do not share, and so do a quarter of Mathlib's own large joints, but every such pair, on both sides, is one that no Mathlib theorem has ever depended on together, so the rarity score is zero for everyone and tells nothing apart. The pairs are library corners, free algebras and box integrals and Dold–Kan, pulled in by big cones from different directions, not junctions of ideas. No choice of directory depth measures whether the ideas joined had met before; that needs the published theorems each wing rests on, which is a reading with a bibliography. What both depths agree on is that the proof's wings draw on nearly the same library where Mathlib's do not, the mark of stages on one route rather than inputs to a fan. Six predictions held, two of them hollow and marked so. Nothing changed standing.\n",
+   "finding_ids": [],
+   "gap_ids": [
+    "EG3"
+   ]
   }
  ],
  "findings": [

@@ -1,0 +1,101 @@
+root	cone	footprint	joint	joined	children	joint_footprint	jd12	jd_mean	exclusive_dirs	pairs	zero_pairs	rare_pairs	rarest_ratio	rarest_count	rarest_a	rarest_b
+NumberField.mixedEmbedding.fundamentalCone.setLIntegral_expMapBasis_image	62102	220	NumberField.mixedEmbedding.fundamentalCone.setLIntegral_expMapBasis_image	0.89892	23045	220	0.1781	0.3208	38	0	0	0				
+NumberField.mixedEmbedding.fundamentalCone.compactSet_ae	61961	219	NumberField.mixedEmbedding.fundamentalCone.compactSet_ae	0.84793	22744	219	0.1781	0.3082	15	0	0	0				
+ModularForm.sturm_bound_levelOne	61753	207	ModularForm.sturm_bound_levelOne	0.76234	21916	207	0.1884	0.3033	19	0	0	0				
+ArithmeticFunction.vonMangoldt.continuousOn_LFunctionResidueClassAux	58569	201	ArithmeticFunction.vonMangoldt.continuousOn_LFunctionResidueClassAux	0.94975	22241	201	0.0870	0.1012	5	0	0	0				
+DirichletCharacter.LFunction_eq_LSeries	53875	188	DirichletCharacter.LFunction_eq_LSeries	0.81582	19848	188	0.3478	0.3604	2	0	0	0				
+LSeries_one_eq_riemannZeta	53421	186	LSeries_one_eq_riemannZeta	0.81158	19666	186	0.3514	0.3610	1	0	0	0				
+DirichletCharacter.differentiableAt_completedLFunction	53252	188	DirichletCharacter.differentiableAt_completedLFunction	0.77201	19120	188	0.3478	0.4522	2	0	0	0				
+HurwitzZeta.hasSum_int_completedSinZeta	53031	186	HurwitzZeta.hasSum_int_completedSinZeta	0.78967	19351	186	0.3514	0.4434	16	0	0	0				
+HurwitzZeta.completedHurwitzZetaEven_residue_zero	52793	186	HurwitzZeta.completedHurwitzZetaEven_residue_zero	0.74508	18737	186	0.3514	0.4452	16	15	11	11	0.0000	0	Mathlib/Analysis/BoxIntegral	Mathlib/LinearAlgebra/Dual
+Polynomial.leadingCoeff_le_mahlerMeasure	52167	188	Polynomial.leadingCoeff_le_mahlerMeasure	0.56114	16176	188	0.6011	0.4864	45	0	0	0				
+ProbabilityTheory.IsGaussian.charFunDual_eq'	51865	187	ProbabilityTheory.IsGaussian.charFunDual_eq'	0.93853	19676	187	0.0267	0.2787	5	0	0	0				
+TemperedDistribution.fourierTransformInv_toTemperedDistributionCLM_eq	51557	185	TemperedDistribution.fourierTransformInv_toTemperedDistributionCLM_eq	0.86795	19537	185	0.0270	0.3859	5	0	0	0				
+NumberField.mixedEmbedding.logMap_one	51247	199	NumberField.mixedEmbedding.logMap_one	0.52941	13978	199	0.4221	0.5098	80	975	704	828	0.0000	0	Mathlib/Algebra/FiniteSupport	Mathlib/Dynamics/FixedPoints
+NumberField.IsCMField.complexConj_apply_eq_self	51235	196	NumberField.IsCMField.complexConj_apply_eq_self	0.32360	10764	196	0.6378	0.7784	125	0	0	0				
+Real.nonempty_algEquiv_or	50387	192	Real.nonempty_algEquiv_or	0.45931	12548	192	0.4323	0.7789	83	852	560	703	0.0000	0	Mathlib/Algebra/FiniteSupport	Mathlib/Algebra/FreeMonoid
+ProbabilityTheory.IsGaussianProcess.hasGaussianLaw_fun_add	49319	183	ProbabilityTheory.IsGaussianProcess.hasGaussianLaw_fun_add	0.57749	15573	183	0.5902	0.4820	40	0	0	0				
+PeriodPair.iteratedDeriv_weierstrassPExcept_self	48816	183	PeriodPair.iteratedDeriv_weierstrassPExcept_self	0.90659	18434	183	0.0341	0.3582	4	0	0	0				
+PeriodPair.summable_weierstrassPExceptSummand	48535	183	PeriodPair.summable_weierstrassPExceptSummand	0.55026	14391	183	0.6011	0.6487	42	117	97	97	0.0000	0	Mathlib/Algebra/Torsor	Mathlib/Data/DFinsupp
+ProbabilityTheory.HasSubgaussianMGF.add_of_hasCondSubgaussianMGF	48127	179	ProbabilityTheory.HasSubgaussianMGF.add_of_hasCondSubgaussianMGF	0.60990	15411	179	0.4637	0.3359	49	0	0	0				
+ModularForm.discriminant_qExpansion_coeff_one	47824	182	ModularForm.discriminant_qExpansion_coeff_one	0.87094	17788	182	0.3333	0.2898	9	0	0	0				
+HarmonicAt.analyticAt_complex_partial	47504	179	HarmonicAt.analyticAt_complex_partial	0.68879	15745	179	0.1397	0.4570	25	66	53	54	0.0000	0	Mathlib/Analysis/BoxIntegral	Mathlib/Algebra/FreeMonoid
+TemperedDistribution.fourierMultiplierCLM_smul	46734	180	TemperedDistribution.fourierMultiplierCLM_smul	0.54735	14077	180	0.4667	0.4922	67	0	0	0				
+SchwartzMap.fourierMultiplierCLM.congr_simp	46657	180	SchwartzMap.fourierMultiplierCLM.congr_simp	0.51265	13488	180	0.4667	0.6877	76	0	0	0				
+SchwartzMap.integral_sesq_fourier_eq	46588	180	SchwartzMap.integral_sesq_fourier_eq	0.93853	18010	180	0.0444	0.3757	7	0	0	0				
+LSeries.iteratedDeriv_alternating	46374	177	LSeries.iteratedDeriv_alternating	0.35894	10669	177	1.0000	0.8385	89	0	0	0				
+IsSelfAdjoint.spectralRadius_eq_nnnorm	46289	178	IsSelfAdjoint.spectralRadius_eq_nnnorm	0.32389	9671	178	1.0000	0.8385	89	0	0	0				
+ProbabilityTheory.differentiableAt_mgf	46186	178	ProbabilityTheory.differentiableAt_mgf	0.51973	13860	178	0.6292	0.5745	68	0	0	0				
+Differentiable.apply_eq_apply_of_bounded	46088	176	Complex.norm_iteratedDeriv_le_of_forall_mem_sphere_norm_le	0.35816	5447	176	0.5739	0.4755	33	0	0	0				
+DiffContOnCl.circleIntegral_one_div_sub_center_pow_smul	46032	176	DiffContOnCl.circleIntegral_one_div_sub_center_pow_smul	0.65115	15322	176	0.5739	0.4755	33	0	0	0				
+DifferentiableOn.analyticAt	45926	176	DifferentiableOn.analyticAt	0.64746	15220	176	0.5739	0.4755	33	0	0	0				
+UniformContinuous.exists_contDiff_dist_le	45879	176	MeasureTheory.LocallyIntegrable.exists_contDiff_dist_le_of_forall_mem_ball_dist_le	0.32572	3622	176	0.0398	0.2857	6	0	0	0				
+SmoothBumpFunction.c_mem_support	45854	177	ExistsContDiffBumpBase.instHasContDiffBumpOfFiniteDimensionalReal	0.63604	8208	176	0.0398	0.2840	7	12	7	7	0.0000	0	Mathlib/Data/Matrix	Mathlib/Geometry/Convex
+SchwartzMap.integral_bilinear_lineDerivOp_right_eq_neg_left	45828	177	SchwartzMap.integral_bilinear_lineDerivOp_right_eq_neg_left	0.93380	17573	177	0.0739	0.3701	10	29	24	24	0.0000	0	Mathlib/Analysis/Distribution	Mathlib/Data/ZMod
+Complex.circleIntegral_sub_inv_smul_of_differentiable_on_off_countable_aux	45773	176	Complex.circleIntegral_sub_inv_smul_of_differentiable_on_off_countable_aux	0.88045	16745	176	0.0795	0.4153	14	48	40	42	0.0000	0	Mathlib/Analysis/Analytic	Mathlib/Analysis/BoxIntegral
+MeasureTheory.integral_fun_norm_addHaar	43776	176	MeasureTheory.integral_fun_norm_addHaar	0.83247	15992	176	0.0229	0.4186	4	0	0	0				
+Complex.tendsto_partialGamma	41479	169	Complex.tendsto_partialGamma	0.76112	14732	169	0.5562	0.4386	26	0	0	0				
+ContDiffBump.measure_closedBall_div_le_integral	41379	169	ContDiffBump.measure_closedBall_div_le_integral	0.84703	14722	169	0.0769	0.4756	13	42	30	32	0.0000	0	Mathlib/Analysis/Analytic	Mathlib/Dynamics/Ergodic
+Real.Wallis.W_le	40857	169	Real.Wallis.W_le	0.89299	15194	169	0.3136	0.3922	9	20	19	19	0.0000	0	Mathlib/Analysis/Analytic	Mathlib/Geometry/Convex
+integral_cos_mul_complex	40613	169	integral_cos_mul_complex	0.88548	14927	169	0.3136	0.3922	9	20	19	19	0.0000	0	Mathlib/Analysis/Analytic	Mathlib/Geometry/Convex
+Complex.integral_boundary_rect_eq_zero_of_differentiable_on_off_countable	40468	168	Complex.integral_boundary_rect_eq_zero_of_differentiable_on_off_countable	0.75812	14422	168	0.5536	0.4673	25	0	0	0				
+IsPrimitiveRoot.subOneIntegralPowerBasisOfPrimePow_gen_prime	40193	191	IsPrimitiveRoot.subOneIntegralPowerBasisOfPrimePow_gen_prime	0.95289	15176	191	0.3508	0.4308	3	0	0	0				
+IsCyclotomicExtension.Rat.isIntegralClosure_adjoin_singleton_of_prime_pow	38434	188	IsCyclotomicExtension.Rat.isIntegralClosure_adjoin_singleton_of_prime_pow	0.94761	14588	188	0.3369	0.5136	27	0	0	0				
+MeasureTheory.lintegral_image_eq_lintegral_deriv_mul_of_antitoneOn	38153	169	MeasureTheory.lintegral_image_eq_lintegral_deriv_mul_of_antitoneOn	0.82507	14017	169	0.5536	0.3959	20	0	0	0				
+ProbabilityTheory.setLIntegral_condKernel_eq_measure_prod	38118	163	ProbabilityTheory.setLIntegral_condKernel_eq_measure_prod	0.78360	14124	163	0.4172	0.3364	34	33	8	17	0.0000	0	Mathlib/Data/Vector	Mathlib/Topology/Sets
+fourierBasis_repr	37960	164	fourierBasis_repr	0.89500	14370	164	0.1646	0.3175	21	80	55	61	0.0000	0	Mathlib/Algebra/EuclideanDomain	Mathlib/Analysis/CStarAlgebra
+MeasureTheory.lintegral_abs_det_fderiv_eq_addHaar_image₀	37554	168	MeasureTheory.lintegral_abs_det_fderiv_eq_addHaar_image₀	0.87580	13601	168	0.0357	0.4041	4	0	0	0				
+ProbabilityTheory.condExp_ae_eq_integral_condDistrib_id	37060	161	ProbabilityTheory.condExp_ae_eq_integral_condDistrib_id	0.86929	14174	161	0.4037	0.2938	22	0	0	0				
+MeasureTheory.Measure.integral_comp_smul_of_nonneg	36815	164	MeasureTheory.Measure.integral_comp_smul_of_nonneg	0.65557	12227	164	0.5305	0.3196	57	0	0	0				
+MeasureTheory.tendsto_ae_condExp	36692	165	MeasureTheory.tendsto_ae_condExp	0.91490	14152	165	0.5455	0.4423	6	0	0	0				
+integral_comp_abs	36100	161	integral_comp_abs	0.92313	13692	161	0.5342	0.4294	18	0	0	0				
+IsKrasner.of_completeSpace	35965	170	IsKrasner.of_completeSpace	0.94002	13548	170	0.0059	0.3376	1	0	0	0				
+MeasureTheory.ae_mem_of_ae_add_linearMap_mem	35838	163	MeasureTheory.ae_mem_of_ae_add_linearMap_mem	0.43112	9020	163	0.7853	0.8308	122	0	0	0				
+MeasureTheory.TendstoInDistribution.prodMk_of_tendstoInMeasure_const	35797	159	MeasureTheory.TendstoInDistribution.prodMk_of_tendstoInMeasure_const	0.50458	10070	159	1.0000	0.8239	120	0	0	0				
+MeasureTheory.Measure.addHaar_sphere	34932	162	MeasureTheory.Measure.addHaar_sphere	0.70021	11504	162	0.5370	0.4414	37	0	0	0				
+ProbabilityTheory.condExp_set_generateFrom_singleton	34702	161	ProbabilityTheory.condExp_set_generateFrom_singleton	0.83033	13063	161	0.2857	0.3226	28	0	0	0				
+PadicComplex.coe_zero	34629	171	PadicComplex.coe_zero	0.50899	9247	171	0.6901	0.7690	94	0	0	0				
+Function.Periodic.tendsto_atBot_intervalIntegral_of_pos'	34462	159	Function.Periodic.tendsto_atBot_intervalIntegral_of_pos'	0.96160	13130	159	0.5283	0.4269	16	0	0	0				
+Matrix.IsHermitian.cfcAux_id	33906	168	Matrix.IsHermitian.cfcAux_id	0.92616	12308	168	0.5185	0.4429	32	299	169	187	0.0000	0	Mathlib/Algebra/DirectSum	Mathlib/Algebra/FreeMonoid
+Matrix.IsHermitian.eigenvalues_eq_zero_iff	33741	167	Matrix.IsHermitian.eigenvalues_eq_zero_iff	0.92581	12240	167	0.5185	0.4429	32	299	169	187	0.0000	0	Mathlib/Algebra/DirectSum	Mathlib/Algebra/FreeMonoid
+Real.dimH_univ_pi_fin	33644	157	Real.dimH_univ_pi_fin	0.55079	10061	157	0.4204	0.7928	54	0	0	0				
+TensorProduct.mapL_tmul	33626	168	TensorProduct.mapL_tmul	0.82436	12027	168	0.6190	0.4555	26	0	0	0				
+process_indepFun_of_bcf	33491	159	process_indepFun_of_bcf	0.73538	11901	159	0.5849	0.3256	41	0	0	0				
+BoxIntegral.unitPartition.prepartition_isHenstock	33173	158	BoxIntegral.unitPartition.admissibleIndex._proof_1	0.65909	6434	158	0.3452	0.4054	7	0	0	0				
+intervalIntegral.hasFDerivAt_integral_of_dominated_loc_of_lip	33100	161	intervalIntegral.hasFDerivAt_integral_of_dominated_loc_of_lip	0.76526	11856	161	0.5901	0.3090	47	0	0	0				
+MeasureTheory.setIntegral_prod_mul	32969	157	MeasureTheory.setIntegral_prod_mul	0.75663	11860	157	0.5796	0.3190	41	0	0	0				
+intervalIntegrable_bernoulliFun	32940	158	intervalIntegrable_bernoulliFun	0.94070	12349	158	0.5897	0.4029	13	0	0	0				
+Real.map_volume_mul_right	32571	156	Real.map_volume_mul_right	0.88061	11758	156	0.5192	0.4029	13	0	0	0				
+TensorialAt.mkHom₂_apply	31911	146	TensorialAt.mkHom₂_apply	0.86047	11547	146	0.3162	0.2306	8	0	0	0				
+ModularFormClass.exists_petersson_le	31559	168	ModularFormClass.exists_petersson_le	0.80496	11150	168	0.2560	0.6942	40	396	239	257	0.0000	0	Mathlib/Algebra/NoZeroSMulDivisors	Mathlib/Algebra/FreeMonoid
+IsLocalDiffeomorphAt.isBoundaryPoint_iff	31516	147	IsLocalDiffeomorphAt.isBoundaryPoint_iff	0.48069	8473	147	0.9252	0.7835	130	0	0	0				
+CircleIntegrable.sub	31158	155	CircleIntegrable.sub	0.67389	10010	155	0.4000	0.7675	62	177	57	81	0.0000	0	Mathlib/Algebra/MonoidAlgebra	Mathlib/MeasureTheory/Group
+MeasureTheory.Integrable.norm_integral_condDistrib	31145	130	MeasureTheory.Integrable.norm_integral_condDistrib	0.92633	12294	130	0.2769	0.2870	0	0	0	0				
+EuclideanGeometry.eq_zero_or_angle_eq_zero_or_pi_of_sign_oangle_eq_zero	30665	153	EuclideanGeometry.eq_zero_or_angle_eq_zero_or_pi_of_sign_oangle_eq_zero	0.91499	11425	153	0.5789	0.4369	15	0	0	0				
+ProbabilityTheory.measurable_condDistrib	30662	130	ProbabilityTheory.measurable_condDistrib	0.46799	8275	130	0.9000	0.8099	44	0	0	0				
+TestFunction.integrable_bilin	30286	133	TestFunction.integrable_bilin	0.79990	11252	133	0.3333	0.2770	19	34	27	27	0.0000	0	Mathlib/Algebra/CharP	Mathlib/MeasureTheory
+Orientation.kahler_ne_zero	30242	150	Orientation.kahler_ne_zero	0.92352	11262	150	0.5733	0.4343	13	0	0	0				
+MeasureTheory.condExp_mono	30173	136	MeasureTheory.condExp_mono	0.95954	12190	136	0.0294	0.3055	4	0	0	0				
+Orientation.rightAngleRotation_trans_rightAngleRotation	30156	150	Orientation.rightAngleRotation_trans_rightAngleRotation	0.93523	11269	150	0.5705	0.4330	12	0	0	0				
+IsStrongFEPair.hf₀	29413	156	IsStrongFEPair.hf₀	0.37556	6472	156	1.0000	0.7440	148	0	0	0				
+InnerProductSpace.laplacianWithin_smul	29182	150	InnerProductSpace.laplacianWithin_smul	0.77348	10441	150	0.3287	0.5337	4	4	4	4	0.0000	0	Mathlib/Analysis/Analytic	Mathlib/Algebra/FreeMonoid
+ProbabilityTheory.map_cast_binomial_zero	29123	124	ProbabilityTheory.map_cast_binomial_zero	0.72557	10104	124	0.0081	0.6846	1	0	0	0				
+PeriodPair.derivWeierstrassPExcept_sub	28962	145	PeriodPair.derivWeierstrassPExcept_sub	0.53721	8364	145	0.9793	0.8537	55	0	0	0				
+MeasureTheory.condExpIndL1Fin.congr_simp	28729	133	MeasureTheory.condExpIndL1Fin.congr_simp	0.79256	10695	133	0.3534	0.2848	19	0	0	0				
+MeasureTheory.integrableOn_condExpL2_of_measure_ne_top	28463	133	MeasureTheory.integrableOn_condExpL2_of_measure_ne_top	0.81388	10820	133	0.3534	0.2848	19	0	0	0				
+ContinuousLinearMap.eq_zero_of_forall_hasEigenvalue_eq_zero	28435	150	ContinuousLinearMap.eq_zero_of_forall_hasEigenvalue_eq_zero	0.72230	9522	150	0.3733	0.7611	45	266	182	190	0.0000	0	Mathlib/Algebra/EuclideanDomain	Mathlib/LinearAlgebra/Eigenspace
+MDifferentiableOn.mpullback_vectorField_preimage	28422	124	MDifferentiableOn.mpullback_vectorField_preimage	0.94116	10817	124	0.1613	0.2572	11	0	0	0				
+NNRealRMK.lintegral_rieszMeasure	28146	124	NNRealRMK.lintegral_rieszMeasure	0.96876	11466	124	0.2984	0.2755	5	0	0	0				
+Orientation.volumeForm_def	28115	148	Orientation.volumeForm_def	0.70446	9547	148	0.3514	0.8101	52	0	0	0				
+ContDiffWithinAt.abs	28004	126	ContDiffWithinAt.abs	0.81522	10371	126	0.1746	0.6359	22	0	0	0				
+AlgebraicGeometry.IsImmersion.instιScheme	27696	144	AlgebraicGeometry.IsImmersion.instιScheme	0.92245	9653	144	0.0972	0.3937	14	13	10	11	0.0000	0	Mathlib/Algebra/Colimit	Mathlib/AlgebraicGeometry/IdealSheaf
+ContMDiffWithinAt.mfderivWithin_const	27641	123	ContMDiffWithinAt.mfderivWithin_const	0.92794	10598	123	0.1150	0.1247	10	0	0	0				
+ae_eq_const_or_exists_average_ne_compl	27499	127	ae_eq_const_or_exists_average_ne_compl	0.94335	11020	127	0.3228	0.2748	10	0	0	0				
+Matrix.isPositive_toEuclideanLin_iff	27409	146	Matrix.isPositive_toEuclideanLin_iff	0.68058	9044	146	0.3425	0.8089	50	0	0	0				
+LinearMap.toMatrixOrthonormal_apply	27395	145	LinearMap.toMatrixOrthonormal_apply	0.94689	10276	145	0.3452	0.4210	3	0	0	0				
+NumberField.discr_eq_discr_of_algEquiv	27361	143	NumberField.discr_eq_discr_of_algEquiv	0.75643	9499	143	0.6522	0.4332	5	6	6	6	0.0000	0	Mathlib/Algebra/DirectSum	Mathlib/Data/NNRat
+fourierCoeff.sum	27246	122	fourierCoeff.sum	0.95251	11031	122	0.2041	0.2539	18	0	0	0				
+ProbabilityTheory.strong_law_aux5	27201	127	ProbabilityTheory.strong_law_aux5	0.61188	8753	127	0.3175	0.8077	40	0	0	0				
+FiniteField.algebraMap_norm_eq_pow	27120	138	FiniteField.algebraMap_norm_eq_pow	0.91330	10105	138	0.0362	0.5160	5	6	2	2	0.0000	0	Mathlib/Data/PNat	Mathlib/GroupTheory/SpecificGroups
+tangentBundleModelSpaceHomeomorph_coe	27052	122	tangentBundleModelSpaceHomeomorph_coe	0.92490	10304	122	0.1150	0.1765	8	0	0	0				
+ContMDiffAt.clm_bundle_apply	27031	121	ContMDiffAt.clm_bundle_apply	0.61837	8798	121	0.9091	0.8442	38	0	0	0				

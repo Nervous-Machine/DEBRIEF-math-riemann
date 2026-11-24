@@ -1,0 +1,202 @@
+[     11s] graph /home/heidibennett.guest/untrusted/alpoge-rh/trace-structure/prior: 771129 nodes, 20446478 edges
+[     21s] pair table at depth 3: 590 directories, 448 depended on, 28301 pairs, 253598 theorems
+[     23s] footprints converged in 3 passes
+[     23s] mathlib 0
+[     26s] footprints converged in 4 passes
+[     29s] footprints converged in 4 passes
+[     31s] footprints converged in 4 passes
+[     34s] footprints converged in 4 passes
+[     36s] footprints converged in 4 passes
+[     38s] footprints converged in 4 passes
+[     41s] footprints converged in 4 passes
+[     43s] footprints converged in 4 passes
+[     45s] footprints converged in 4 passes
+[     47s] footprints converged in 4 passes
+[     49s] footprints converged in 4 passes
+[     52s] footprints converged in 4 passes
+[     55s] footprints converged in 4 passes
+[     57s] footprints converged in 4 passes
+[     59s] footprints converged in 3 passes
+[     61s] footprints converged in 4 passes
+[     64s] footprints converged in 4 passes
+[     66s] footprints converged in 3 passes
+[     67s] footprints converged in 3 passes
+[     69s] footprints converged in 4 passes
+[     71s] footprints converged in 4 passes
+[     73s] footprints converged in 4 passes
+[     75s] footprints converged in 4 passes
+[     76s] footprints converged in 4 passes
+[     78s] footprints converged in 3 passes
+[     78s] mathlib 25
+[     80s] footprints converged in 3 passes
+[     82s] footprints converged in 4 passes
+[     84s] footprints converged in 4 passes
+[     86s] footprints converged in 4 passes
+[     88s] footprints converged in 3 passes
+[     89s] footprints converged in 3 passes
+[     91s] footprints converged in 4 passes
+[     92s] footprints converged in 4 passes
+[     94s] footprints converged in 3 passes
+[     95s] footprints converged in 4 passes
+[     97s] footprints converged in 3 passes
+[     98s] footprints converged in 3 passes
+[     99s] footprints converged in 4 passes
+[    101s] footprints converged in 4 passes
+[    102s] footprints converged in 4 passes
+[    103s] footprints converged in 4 passes
+[    105s] footprints converged in 3 passes
+[    106s] footprints converged in 3 passes
+[    107s] footprints converged in 4 passes
+[    108s] footprints converged in 3 passes
+[    110s] footprints converged in 4 passes
+[    111s] footprints converged in 4 passes
+[    112s] footprints converged in 3 passes
+[    113s] footprints converged in 3 passes
+[    114s] footprints converged in 4 passes
+[    114s] mathlib 50
+[    115s] footprints converged in 3 passes
+[    116s] footprints converged in 3 passes
+[    117s] footprints converged in 3 passes
+[    118s] footprints converged in 3 passes
+[    120s] footprints converged in 4 passes
+[    121s] footprints converged in 3 passes
+[    122s] footprints converged in 3 passes
+[    123s] footprints converged in 3 passes
+[    124s] footprints converged in 4 passes
+[    125s] footprints converged in 3 passes
+[    126s] footprints converged in 3 passes
+[    126s] footprints converged in 3 passes
+[    128s] footprints converged in 3 passes
+[    129s] footprints converged in 3 passes
+[    129s] footprints converged in 3 passes
+[    130s] footprints converged in 3 passes
+[    131s] footprints converged in 3 passes
+[    132s] footprints converged in 4 passes
+[    133s] footprints converged in 3 passes
+[    134s] footprints converged in 3 passes
+[    135s] footprints converged in 4 passes
+[    136s] footprints converged in 3 passes
+[    137s] footprints converged in 3 passes
+[    138s] footprints converged in 4 passes
+[    139s] footprints converged in 4 passes
+[    139s] mathlib 75
+[    140s] footprints converged in 4 passes
+[    140s] footprints converged in 3 passes
+[    141s] footprints converged in 4 passes
+[    142s] footprints converged in 3 passes
+[    143s] footprints converged in 3 passes
+[    144s] footprints converged in 4 passes
+[    145s] footprints converged in 4 passes
+[    145s] footprints converged in 3 passes
+[    146s] footprints converged in 3 passes
+[    147s] footprints converged in 3 passes
+[    148s] footprints converged in 4 passes
+[    149s] footprints converged in 3 passes
+[    149s] footprints converged in 3 passes
+[    150s] footprints converged in 4 passes
+[    151s] footprints converged in 3 passes
+[    152s] footprints converged in 4 passes
+[    152s] footprints converged in 3 passes
+[    153s] footprints converged in 3 passes
+[    154s] footprints converged in 3 passes
+[    155s] footprints converged in 4 passes
+[    155s] footprints converged in 3 passes
+[    156s] footprints converged in 3 passes
+[    157s] footprints converged in 3 passes
+[    158s] footprints converged in 3 passes
+[    158s] mathlib done
+[    209s] graph /home/heidibennett.guest/untrusted/alpoge-rh/trace-structure: 1333260 nodes, 109535588 edges
+[    268s] footprints converged in 5 passes
+[    268s] archive tree 1265256
+# Crossing trace at directory depth 3: what the wings reach, and how rare the joins are
+
+Footprint of a constant = the set of Mathlib directories at depth 3 (for example Mathlib/Analysis/SpecialFunctions) that its cone reaches through the library boundary. For a joint, the wings are its largest dominated children (up to six); a directory is exclusive to a wing when no other wing reaches it; the joint's crossings are the pairs of exclusive directories from different wings, each scored by how often Mathlib theorems depend on that pair together, as a ratio to what independence would give (1 = as often as chance, below 1 = rarer, 0 = never seen together). A rare pair is one with ratio below 0.5; a zero pair has never been seen together in Mathlib.
+
+## X1. The archive
+
+The cone of `riemannHypothesis` reaches 405 of 590 Mathlib directories at depth 3 (448 of them are depended on by some Mathlib theorem outside their own directory).
+
+### The 20 largest joints
+
+| joint | joins | footprint | Jaccard, two largest wings | exclusive dirs | crossing pairs | zero pairs | rare pairs | rarest pair | ratio | theorems |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `every_character_of_literature_of_vWin` | 27.2% | 394 | 0.09 | 23 | 122 | 122 | 122 | Algebra/FreeAlgebra + AlgebraicTopology/DoldKan | 0.00 | 0 |
+| `everyCharacter` | 22.6% | 405 | 0.09 | 37 | 232 | 228 | 228 | Algebra/FreeAlgebra + AlgebraicTopology/SimplicialSet | 0.00 | 0 |
+| `nonempty_hyps_definite_side_of_closed_bound` | 22.0% | 380 | 0.05 | 4 | 0 | 0 | 0 | (none) |  |  |
+| `everyCharacter_of_row` | 10.6% | 397 | 0.05 | 20 | 51 | 51 | 51 | Algebra/FreeAlgebra + Algebra/Azumaya | 0.00 | 0 |
+| `hypotheses_nonempty_of_unramified_exponents_alt` | 7.1% | 380 | 0.05 | 6 | 9 | 9 | 9 | Combinatorics/Derangements + Order/SuccPred | 0.00 | 0 |
+| `vwin_of_hypotheses_H_E_alt` | 6.3% | 347 | 0.06 | 16 | 84 | 80 | 80 | Algebra/Homology + Topology/Semicontinuity | 0.00 | 0 |
+| `every_character_of_theta_integrals_local_matching` | 6.3% | 380 | 0.21 | 70 | 0 | 0 | 0 | (none) |  |  |
+| `topCovolSlim2_use_alt_alt` | 3.1% | 361 | 0.06 | 21 | 38 | 38 | 38 | Dynamics + Algebra/FreeAlgebra | 0.00 | 0 |
+| `steps_holds` | 2.5% | 327 | 0.27 | 47 | 0 | 0 | 0 | (none) |  |  |
+| `allRows_of_open0_alt` | 2.4% | 361 | 0.12 | 53 | 453 | 451 | 451 | Analysis/BoxIntegral + Algebra/Homology | 0.00 | 0 |
+| `geometric_realization_of_weight_one` | 2.2% | 356 | 0.16 | 50 | 651 | 644 | 644 | Algebra/Colimit + AlgebraicGeometry/Birational | 0.00 | 0 |
+| `ontoX_of_hypotheses_alt_alt` | 1.7% | 358 | 0.01 | 9 | 8 | 8 | 8 | Combinatorics/Enumerative + MeasureTheory/Order | 0.00 | 0 |
+| `topCovolG_alt_alt` | 1.6% | 359 | 0.16 | 3 | 2 | 2 | 2 | Algebra/FreeAlgebra + GroupTheory/Submonoid | 0.00 | 0 |
+| `goodTower_and_volume` | 1.5% | 335 | 0.38 | 5 | 6 | 6 | 6 | Dynamics + RingTheory/HahnSeries | 0.00 | 0 |
+| `kodaira_spencer_of_weight_one` | 1.4% | 322 | 0.07 | 13 | 30 | 29 | 29 | Algebra/Azumaya + Dynamics | 0.00 | 0 |
+| `deepStR_of_use` | 1.2% | 341 | 0.06 | 13 | 12 | 12 | 12 | Algebra/Colimit + NumberTheory/LocalField | 0.00 | 0 |
+| `volumeTheoremX_of_inputs` | 1.1% | 330 | 0.41 | 10 | 32 | 32 | 32 | AlgebraicGeometry/Birational + Data/Sym | 0.00 | 0 |
+| `offDiag` | 1.0% | 265 | 0.09 | 21 | 90 | 83 | 83 | AlgebraicTopology/FundamentalGroupoid + Algebra/Lie | 0.00 | 0 |
+| `member_bundles_large_unramified_exponents_alt` | 0.9% | 373 | 0.28 | 16 | 0 | 0 | 0 | (none) |  |  |
+| `v_window_of_automorphy_csd_ss_mono_odd` | 0.8% | 348 | 0.10 | 35 | 34 | 34 | 34 | Algebra/Azumaya + Combinatorics/Additive | 0.00 | 0 |
+
+### The wings of the three largest joints, and what only each reaches
+
+`UpperTheory.LiteratureTheorems.every_character_of_literature_of_vWin`:
+
+- `every_character_of_theta_integrals_local_matching` 39.6%: reaches 380 directories; only this wing reaches Analysis/BoxIntegral, Analysis/ODE, Combinatorics/Additive, Control, Dynamics/FixedPoints, Geometry/Convex, LinearAlgebra/Transvection, NumberTheory/Real, NumberTheory/Zsqrtd, Order/Atoms, Order/Extension, Probability/Independence …
+- `topCovolSlim2_use_alt_alt` 7.7%: reaches 361 directories; only this wing reaches Algebra/FreeAlgebra, Dynamics
+- `theta_integrals_agree_and_local_matching_of_literature` 1.1%: reaches 270 directories; nothing only this wing reaches
+- `toroidalForFanKS` 0.8%: reaches 320 directories; nothing only this wing reaches
+- `published_results_arithmetic` 0.7%: reaches 357 directories; only this wing reaches AlgebraicTopology/DoldKan, CategoryTheory/LiftingProperties, CategoryTheory/Subobject, NumberTheory/ClassNumber, Topology/FiberBundle
+- `canonicalAlgorithmRules_isCorrect` 0.7%: reaches 153 directories; nothing only this wing reaches
+
+`UpperTheory.FinalTheorems.everyCharacter`:
+
+- `everyCharacter_of_row` 77.4%: reaches 397 directories; only this wing reaches Algebra/FreeAlgebra, AlgebraicGeometry/EllipticCurve, AlgebraicTopology/DoldKan, Analysis/BoxIntegral, CategoryTheory/LiftingProperties, CategoryTheory/Subobject, Combinatorics/Additive, Combinatorics/Derangements, Combinatorics/SimpleGraph, Combinatorics/Young, Control, Data/EReal …
+- `galoisLocalGlobalStrong_recParameter` 6.4%: reaches 376 directories; only this wing reaches AlgebraicTopology/SimplicialSet, CategoryTheory/Adhesive, CategoryTheory/Generator, CategoryTheory/Presentable, CategoryTheory/Subfunctor, CategoryTheory/Triangulated, CategoryTheory/WithTerminal, Condensed/Discrete
+- `zarhinGeometric_of_semistableReduction` 0.3%: reaches 257 directories; nothing only this wing reaches
+- `coreG` 0.2%: reaches 176 directories; nothing only this wing reaches
+- `deRham_potentiallySemistable` 0.2%: reaches 229 directories; nothing only this wing reaches
+- `gm_of_bcfl` 0.2%: reaches 224 directories; nothing only this wing reaches
+
+`UpperTheory.Lit.nonempty_hyps_definite_side_of_closed_bound`:
+
+- `hypotheses_nonempty_of_unramified_exponents_alt` 11.3%: reaches 380 directories; only this wing reaches Dynamics/FixedPoints, Geometry/Convex, LinearAlgebra/PerfectPairing, RingTheory/TwoSidedIdeal
+- `ontoX_and_lamLow_of_unitaryGroupHypotheses'` 2.8%: reaches 360 directories; nothing only this wing reaches
+- `open0_of_unitary_group_hypotheses` 1.6%: reaches 366 directories; nothing only this wing reaches
+- `thetaLift_row_properties_conj` 0.6%: reaches 279 directories; nothing only this wing reaches
+- `functionalsSeparate_of_howeUnram_of_siegelWeil` 0.6%: reaches 278 directories; nothing only this wing reaches
+- `fourier_coefficient_fit_of_join_alt` 0.6%: reaches 351 directories; nothing only this wing reaches
+
+[    268s] archive done
+## X2. The same measures for the largest joint of each of the 100 large Mathlib proofs
+
+Mathlib directories (depth 3) reached by the cone: Q1/median/Q3 148 / 166 / 179 of 590; the archive reaches 405.
+
+| measure | Mathlib Q1 | median | Q3 | archive, largest joint | archive, median of its top 20 |
+|---|---|---|---|---|---|
+| Jaccard distance of the two largest wings | 0.18 | 0.35 | 0.57 | 0.09 | 0.09 |
+| directories exclusive to one wing | 8 | 19 | 42 | 23 | 18 |
+| crossing pairs | 0 | 0 | 0 | 122 | 31 |
+| joints with at least one crossing | 23 of 100 | | | yes | 16 of 20 |
+| rarest crossing, ratio to chance | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| share of a joint's crossings never seen together in Mathlib | 58.3% | 72.2% | 82.9% | 100.0% | 100.0% |
+
+Rarest crossings realised by Mathlib's largest joints (ten lowest ratios):
+
+| root | joint | pair | ratio | theorems |
+|---|---|---|---|---|
+| `HurwitzZeta.completedHurwitzZetaEven_residue_zero` | `completedHurwitzZetaEven_residue_zero` | Analysis/BoxIntegral + LinearAlgebra/Dual | 0.00 | 0 |
+| `NumberField.mixedEmbedding.logMap_one` | `logMap_one` | Algebra/FiniteSupport + Dynamics/FixedPoints | 0.00 | 0 |
+| `Real.nonempty_algEquiv_or` | `nonempty_algEquiv_or` | Algebra/FiniteSupport + Algebra/FreeMonoid | 0.00 | 0 |
+| `PeriodPair.summable_weierstrassPExceptSummand` | `summable_weierstrassPExceptSummand` | Algebra/Torsor + Data/DFinsupp | 0.00 | 0 |
+| `HarmonicAt.analyticAt_complex_partial` | `analyticAt_complex_partial` | Analysis/BoxIntegral + Algebra/FreeMonoid | 0.00 | 0 |
+| `SmoothBumpFunction.c_mem_support` | `instHasContDiffBumpOfFiniteDimensionalReal` | Data/Matrix + Geometry/Convex | 0.00 | 0 |
+| `SchwartzMap.integral_bilinear_lineDerivOp_right_eq_neg_left` | `integral_bilinear_lineDerivOp_right_eq_neg_left` | Analysis/Distribution + Data/ZMod | 0.00 | 0 |
+| `Complex.circleIntegral_sub_inv_smul_of_differentiable_on_off_countable_aux` | `circleIntegral_sub_inv_smul_of_differentiable_on_off_countable_aux` | Analysis/Analytic + Analysis/BoxIntegral | 0.00 | 0 |
+| `ContDiffBump.measure_closedBall_div_le_integral` | `measure_closedBall_div_le_integral` | Analysis/Analytic + Dynamics/Ergodic | 0.00 | 0 |
+| `Real.Wallis.W_le` | `W_le` | Analysis/Analytic + Geometry/Convex | 0.00 | 0 |
+
+[    268s] written /home/heidibennett.guest/untrusted/alpoge-rh/trace-structure/crossing3

@@ -7,7 +7,7 @@ A DEBRIEF mission record (protocol https://github.com/Nervous-Machine/DEBRIEF) f
 
 | certified | accepted | refuted | open gaps | cycles filed | last cycle |
 |---|---|---|---|---|---|
-| 0 | 1 | 0 | 4 | 8 | 24 Nov 2026 |
+| 0 | 1 | 0 | 4 | 9 | 24 Nov 2026 |
 
 | | |
 |---|---|
