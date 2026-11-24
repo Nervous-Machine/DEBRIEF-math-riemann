@@ -1,0 +1,21 @@
+joint	share	joined	children	own_lines	footprint	jd12	jd_mean	exclusive_dirs	pairs	rarest_ratio	rarest_count	rarest_a	rarest_b	wing_a	wing_b
+UpperTheory.LiteratureTheorems.every_character_of_literature_of_vWin	0.66817	0.27234	50468	4	25	0.0800	0.1895	1	0						
+UpperTheory.FinalTheorems.everyCharacter	0.99999	0.22573	58064	2	25	0.0400	0.2524	1	0						
+UpperTheory.Lit.nonempty_hyps_definite_side_of_closed_bound	0.33298	0.21959	48115	25	25	0.0400	0.1061	0	0						
+UpperTheory.FinalTheorems.everyCharacter_of_row	0.77426	0.10609	7843	2	25	0.0800	0.2461	2	0						
+GlobalTheory.Fc.S0.StageU.hypotheses_nonempty_of_unramified_exponents_alt	0.11339	0.07105	5590	21	25	0.0400	0.0353	1	0						
+UpperTheory.V.HV.DescentVanishingReductions.vwin_of_hypotheses_H_E_alt	0.07636	0.06296	5839	5	23	0.0000	0.0999	0	0						
+UpperTheory.Lit.every_character_of_theta_integrals_local_matching	0.39583	0.06285	19001	5	25	0.1200	0.2158	3	0						
+SelfIntersectionVolumeEstimates.topCovolSlim2_use_alt_alt	0.07671	0.03121	3428	7	23	0.0435	0.0934	1	0						
+UpperTheory.Gal.Int.Geo.steps_holds	0.02857	0.02549	4733	1	22	0.1364	0.1010	1	0						
+GlobalTheory.Fc.AllAtMemberStage0.allRows_of_open0_alt	0.04234	0.02429	1118	37	25	0.1200	0.0745	1	0						
+UpperTheory.Gal.Int.Geo.geometric_realization_of_weight_one	0.05027	0.02170	927	1	22	0.0000	0.3571	0	0						
+GlobalTheory.BigOn.ontoX_of_hypotheses_alt_alt	0.02783	0.01737	2004	18	24	0.0000	0.0399	1	0						
+SelfIntersectionVolumeEstimates.topCovolG_alt_alt	0.01837	0.01571	2255	20	23	0.0435	0.0261	0	0						
+GlobalTheory.CompanionTheory.Ar.Top.goodTower_and_volume	0.02773	0.01456	1717	15	22	0.2273	0.1821	0	0						
+UpperTheory.Gal.Int.Geo.kodaira_spencer_of_weight_one	0.01772	0.01409	1396	2	22	0.0455	0.0582	0	0						
+GlobalTheory.CompanionTheory.Ar.Plug.deepStR_of_use	0.04501	0.01213	2636	12	22	0.0000	0.1665	0	0						
+GlobalTheory.CompanionTheory.Ar.Cusp.volumeTheoremX_of_inputs	0.01317	0.01087	596	50	22	0.2727	0.1684	0	0						
+GlobalTheory.CarrierGap.offDiag	0.01723	0.01000	924	11	21	0.0952	0.1890	2	0						
+GlobalTheory.Fc.StageOneU.member_bundles_large_unramified_exponents_alt	0.02647	0.00869	805	30	24	0.2083	0.1452	2	0						
+UpperTheory.V.HV.DescentVanishingReductions.v_window_of_automorphy_csd_ss_mono_odd	0.08468	0.00833	1186	2	23	0.0000	0.1682	0	0						

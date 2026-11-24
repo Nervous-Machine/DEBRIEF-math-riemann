@@ -7,7 +7,7 @@ A DEBRIEF mission record (protocol https://github.com/Nervous-Machine/DEBRIEF) f
 
 | certified | accepted | refuted | open gaps | cycles filed | last cycle |
 |---|---|---|---|---|---|
-| 0 | 1 | 0 | 4 | 7 | 24 Nov 2026 |
+| 0 | 1 | 0 | 4 | 8 | 24 Nov 2026 |
 
 | | |
 |---|---|
@@ -72,7 +72,7 @@ Rules and templates: https://github.com/Nervous-Machine/DEBRIEF/blob/main/CONTRI
 ledger/riemann.json   the ledger (protocol 0.1.0)
 claim.yaml            the pinned claim this record was opened from
 SCORECARD.md / ASKS.md  generated from the ledger
-trace/                the reading guide for the five statements, three maps of the archive below the main theorem, and the Mathlib shape prior (`trace` cycles)
+trace/                the reading guide for the five statements, three maps of the archive below the main theorem, and the Mathlib shape prior in two layers (`trace` cycles)
 prereg_cycle1.yaml    Nervous Machine's pre-registration for the first build, hashed before it ran (.sha256 sidecar)
 prereg_cycle2.yaml    the same for the resumed build, which finished
 cycle1/, cycle2/      logs, hashes and summaries of those builds

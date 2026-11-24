@@ -1,0 +1,44 @@
+kind: trace
+cycle: "trace-2026-11-24-crossing"
+dated: "2026-11-24"
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+provenance:
+  source: "the archive walk tables and the Mathlib graph of the prior trace (both hash-checked), with the prior trace's pair table and 100 roots"
+  occasion: "the second layer of the proof-shape prior: Heidi Bennett's point that the surprise in general relativity was the domain crossing, not the shortness of the glue; a countable form of it at the resolution of Mathlib's directory tree"
+preregistered:
+  question: "Which Mathlib directories does each wing of the archive's largest joints reach, how different are the wings, how rare in Mathlib are the directory pairs a joint brings together, and where do the archive's joints fall against the largest joints of 100 large Mathlib proofs?"
+  rule: "footprint = Mathlib second-level directories a constant's cone reaches through the library boundary; wings = a joint's six largest dominated children; exclusive directory = reached by one wing only; crossing = pair of exclusive directories from different wings, scored by the prior trace's ratio to independence; twenty archive joints as in the closet trace; the largest joint of each of the 100 Mathlib proofs; dominator trees at 0.1% exported for the eight largest Mathlib proofs for drawing; standing unchanged by construction"
+  predictions:
+    - "P1: the archive's cone reaches at least 24 of 27 Mathlib directories"
+    - "P2: Jaccard distance of the two largest wings at the archive's largest joint below 0.3"
+    - "P3: no archive joint realises a crossing rarer than one fifth of chance"
+    - "P4: the archive's largest joint inside the Mathlib interquartile range on Jaccard distance and on exclusive directories"
+    - "P5: fewer than half of Mathlib's 100 largest joints realise any exclusive pair"
+    - "P6: analysis under 20 minutes and 60 GB"
+  commit: "prereg_trace_crossing.yaml"
+  registered: "sha256 1d5dcecb… in prereg_trace_crossing.yaml.sha256, committed 50ac0a6 at 01:15 UTC; amendment A1 (footprint pass iterates to a fixed point) committed 50e4547 after the first run failed at 01:17 and before any output"
+  before_data: true
+  results: ["trace/CROSSING-TRACE.md", "trace-crossing/report.md"]
+outcome:
+  verdict: confirmed
+  numbers:
+    X1: "the archive's cone reaches 25 of the 26 Mathlib directories in the pair table (all but Computability); its twenty largest joints have footprints of 21 to 25, Jaccard distance between the two largest wings 0.00 to 0.27 (largest joint 0.08, median 0.04), 0 to 3 directories exclusive to one wing, and no crossing at all: where a directory is exclusive it belongs to the largest wing only (Mathlib/Control at the two top joints)"
+    X2: "100 large Mathlib proofs: cone reaches 13/14/16 directories (Q1/median/Q3); largest joint's Jaccard distance 0.14/0.27/0.39; exclusive directories 0/1/3; joints realising any exclusive pair 4 of 100 (Combinatorics with NumberTheory and with Dynamics, ratio 0; Combinatorics with Geometry twice, ratio 5.04)"
+    X3: "dominator trees at 0.1% for the eight largest Mathlib proofs written to mathlib_trees.json (archive-map format)"
+    saturation: "at 26 bins the test has no resolution for cones this size: every wing of every large archive joint reaches 21 to 25 directories; the archive's wings are more alike than Mathlib's (below the Mathlib first quartile), consistent with stages of one route rather than independent inputs; a finer instrument (third-level directories or rarity-weighted boundary constants) is a new registration"
+    run: "4 m 00 s, 2.7 GB; footprints converged in 3 passes; a first run failed after 1 m 27 s (amendment A1)"
+  misses:
+    - "P4: the archive's largest joint's Jaccard distance (0.08) is below the Mathlib first quartile (0.14), not inside the range; the exclusive-directory count (1) is inside"
+  procedure_note: "P3 held vacuously, since no archive joint realises any crossing; the pair table holds 26 directories because one of Mathlib's 27 never appears in a pair"
+spoken: >
+  On 24 November Nervous Machine tried the general-relativity test on the proof: do the wings that meet at a joint
+  come from different parts of the library, and had those parts been joined before? At the resolution of Mathlib's
+  directory tree the test has nothing to say. The proof reaches twenty-five of twenty-six directories and every wing
+  of every large joint reaches nearly all of them, so no joint brings together anything its wings did not already
+  share; Mathlib's own large proofs behave the same way, four in a hundred showing any crossing at all. Two things
+  survive: the archive's wings are more alike than Mathlib's, which fits a chain of stages rather than a fan of
+  inputs, and the archive uses almost all of Mathlib where no sampled Mathlib proof uses more than twenty of its
+  directories. The finer instrument is a new registration. Five of six predictions held, one of them hollow and
+  marked so. Nothing changed standing.
+finding_ids: []
+gap_ids: ["EG3"]

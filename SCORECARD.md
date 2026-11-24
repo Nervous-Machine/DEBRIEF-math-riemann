@@ -33,6 +33,7 @@ Record quality: full ledger. Opened at tier zero on 2026-11-20. Cycle 1's build 
 | trace-2026-11-23-suffix | 2026-11-23 | Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent) | trace | yes | confirmed |
 | external-2026-11-23-jerby | 2026-11-23 | None | replay | no | admitted |
 | trace-2026-11-24-prior | 2026-11-24 | Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent) | trace | yes | confirmed |
+| trace-2026-11-24-crossing | 2026-11-24 | Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent) | trace | yes | confirmed |
 
 ## Gaps, in the order that would settle things fastest
 
