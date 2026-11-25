@@ -1,0 +1,20 @@
+GroundTheory.HeightsAndTheta.Heights.HodgeLowerBound.StatementsHodgeFlagNeZero	compile_exit 0	constants_a 1 constants_b 1 only_a 0 only_b 0 edge_diff 0
+CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.InitialStatement	compile_exit 0	constants_a 4 constants_b 4 only_a 0 only_b 0 edge_diff 0
+Development.AbelianVarietyTheory.Proofs.JetHarmonics.ExistsHarishChandraParamOfTypeOfUnitaryW	compile_exit 0	constants_a 2 constants_b 2 only_a 0 only_b 0 edge_diff 0
+Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.TAIsoTwOf	compile_exit 0	constants_a 1 constants_b 1 only_a 0 only_b 0 edge_diff 0
+Development.AutomorphicSpectrum.Proofs.GeometryProofs.IsPullWedge	compile_exit 0	constants_a 8 constants_b 8 only_a 0 only_b 0 edge_diff 0
+Development.AbelianVarietyTheory.Proofs.GlobalInterpolation.WeylHeisenbergOperatorCalculusRational	compile_exit 0	constants_a 18 constants_b 18 only_a 0 only_b 0 edge_diff 0
+Development.AbelianVarietyTheory.Definitions.NonGaloisDescent.IsOrbitProd	compile_exit 0	constants_a 20 constants_b 20 only_a 0 only_b 0 edge_diff 0
+Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.SideWTiesStatement	compile_exit 0	constants_a 71 constants_b 71 only_a 0 only_b 0 edge_diff 0
+Development.AbelianVarietyTheory.Proofs.UniformizationProofs.TauBimultPsiEvenOverExtensionField	compile_exit 0	constants_a 8 constants_b 8 only_a 0 only_b 0 edge_diff 0
+Development.AbelianVarietyTheory.Proofs.DivisorProofs.RegularAtIffForallSpecializes	compile_exit 0	constants_a 2 constants_b 2 only_a 0 only_b 0 edge_diff 0
+Formalism.HermitianLattices.HermitianLatticesProofs.LocBasic	compile_exit 0	constants_a 29 constants_b 29 only_a 0 only_b 0 edge_diff 0
+Development.AutomorphicArithmetic.Foundations.Convolution.RealGroupAnalysis.IsotypicQuotients.IsotypQuot	compile_exit 0	constants_a 11 constants_b 11 only_a 0 only_b 0 edge_diff 0
+Formalism.SharpRestriction.GenusPolyhedralBounds.RelativeIndexClassSets.GlobalFamilyData	compile_exit 0	constants_a 43 constants_b 43 only_a 0 only_b 0 edge_diff 0
+Development.AbelianVarietyTheory.Proofs.DivisorProofs.ExistsGoodSchrodingerModelConjugateDoubledStatement	compile_exit 0	constants_a 4 constants_b 4 only_a 0 only_b 0 edge_diff 0
+Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.GoodParParBLast	compile_exit 0	constants_a 41 constants_b 41 only_a 4 only_b 4 edge_diff 0
+Development.WeilBound.RepresentationTheoryGL.RegularisedSiegelWeil.ThetaIdempotents.ThetaCoefficients.LPartFT	compile_exit 0	constants_a 42 constants_b 42 only_a 0 only_b 0 edge_diff 0
+Development.AutomorphicArithmetic.AutomorphicVarieties.ModularityArgument.ThresholdArguments.DenseThresholdCases.SVREGOrd	compile_exit 1	no olean from the recompile (cached one present: yes)
+GroundTheory.HeightsAndTheta.Heights.HilbertSamuel.TwoBlockCycle	compile_exit 0	constants_a 10 constants_b 10 only_a 0 only_b 0 edge_diff 0
+Formalism.PeriodIntegrals.UnitaryGroupMassFormula.UnipotentCorrectionU1.CADwlSmooth	compile_exit 0	constants_a 12 constants_b 12 only_a 0 only_b 0 edge_diff 0
+Development.AbelianVarietyTheory.Proofs.CubicalLineBundles.LocalLowerBoundCmPointFramePolynomialEveryPrime	compile_exit 0	constants_a 25 constants_b 25 only_a 3 only_b 3 edge_diff 1

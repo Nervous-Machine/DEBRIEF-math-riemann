@@ -1,0 +1,16 @@
+✔ [3/6] Built scripts.Cache (113ms)
+✔ [5/6] Built scripts.Cache:c.o (55ms)
+✔ [6/6] Built cache:exe (703ms)
+Fetching Mathlib cache...
+Note: curl 8.18 runs parallel downloads without retries.
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+No files to download
+Already decompressed 9133 file(s)
+Fetching successful CI cache dda69e8303156955dfaddbc0e7192c9ceff81855 for current build inputs: 59868 modules, 59868 not yet registered...
+fetch-artifacts: 59868 mapped, 59868 missing locally
+fetch-artifacts: pass 1: downloaded 59868/59868 (curl exit 0; 0 failed SHA-256 verification)
+Unpacking 59868 modules with stock leantar (24 workers)...
+Checking with lake build --no-build...
+disk guard: 9286549504 bytes free at 2026-11-24T23:52:30Z; fetch killed
+project cache exit 143

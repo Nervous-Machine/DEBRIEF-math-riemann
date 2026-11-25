@@ -1,0 +1,54 @@
+kind: trace
+cycle: "trace-2026-11-25-edit"
+dated: "2026-11-25"
+by: "Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent)"
+provenance:
+  source: "github.com/leanprover-community/riemann-hypothesis at 9282d3a102c4aff0e6026746db2a8990f5d9cddd (main, 2026-11-24T18:24:32Z; original branch 40e56bab026552e089d7afcfeff08d2defb9c005, byte-identical to the pinned tarball under src/); compiled files from the community's cache (59,868 modules, all passing its SHA-256 check; lake build --no-build exit 0); Lean v4.37.0-rc1, Mathlib 31ce06eaadf4; the graph written in the VM from the module table (ArchiveGraph.lean A1); the archive's own row from the traces of 2026-11-23 and the Mathlib quartiles from trace-2026-11-24-prior"
+  occasion: "Heidi Bennett's question what the shape charts measure: machine against human, or raw against edited; the same proof edited is the control that holds the author, the tools and the purpose fixed"
+preregistered:
+  question: "Does the shape of the proof survive editing? At a pinned commit of the community's cleaned repository, what are the spine, hinge, joint and retry measures below riemannHypothesis, against the archive's row of 23 November and against the hundred Mathlib proofs?"
+  rule: "clone at the pinned commit; original branch diffed against the tarball; Mathlib's cache and the community's cache (killed if free disk falls under 10 GB); lake build --no-build; the module-table walk; twenty random source files recompiled and compared constant by constant; the prior trace's shape() unchanged on the archive-only graph for the five entry theorems"
+  predictions:
+    - "P0: the original branch's .lean files are identical to the tarball's"
+    - "P1: both cache fetches succeed, --no-build exits 0, the community cache is under 60 GB on disk"
+    - "P2: all twenty recompiled modules match the cached ones: only_a = only_b = edge_diff = 0"
+    - "P3: the cone shrinks under 15% from 1,265,256; the archive shrinks over 10% from about 1.9 million; the share reached from the five entry theorems rises above 66%"
+    - "P4: spine share at least 90% at step 3 and 50% at step 5"
+    - "P5: largest joint under 40%"
+    - "P6: 60 to 100 hinges at 1%; median own lines at most 6"
+    - "P7: 1 to 31 hinges with a retry mark; retry rate under 15.4 per 1,000"
+    - "P8: walk under 30 min; analysis under 4 h; whole run under 10 h"
+  commit: "prereg_trace_edit.yaml"
+  registered: "sha256 e0c3a927… in prereg_trace_edit.yaml.sha256, committed 54c62e8 at 23:45 UTC on 2026-11-24; the clone began 23:47:03 UTC. Amendment A1 (integer-id graph tables after the first walk filled the disk; rerun of steps 4 to 6) committed 796a1bc at 00:02 UTC on 2026-11-25 before the second walk"
+  before_data: true
+  results: ["trace/EDIT-TRACE.md", "trace-edit/results/report.md"]
+outcome:
+  verdict: confirmed
+  numbers:
+    input: "main 2,641 commits ahead of original; 59,869 .lean files against 175,187 in the original; editing largely by AI agents under human maintainers (AGENTS.md)"
+    C1_cache: "Mathlib cache exit 0 (1 m 19 s); community cache 59,868 modules downloaded and unpacked, its own final check killed by the disk guard at 9.29 GB free; our lake build --no-build exit 0; .lake/build 71.1 GB (lib 69.3 GB); P0 diff exit 0"
+    C2_spot: "20 modules: 17 exact (only_a = only_b = edge_diff = 0); 2 differ only in the _private. prefix of match-splitter auxiliaries (_private.src.<module> from the recompile's file path against _private.<module> from Lake), same constant counts, 1 edge_diff consistent with the same prefix; 1 recompile failed under lake env lean without the project's leanOptions (rewrite failed at line 123) and matched exactly (1/1/0/0/0) when recompiled with --tstack=400000 -DmaxSynthPendingDepth=3 -DmaxHeartbeats=4000000 -DautoImplicit=false -DrelaxedAutoImplicit=false, a diagnostic after the run, not registered"
+    C3_counts: "71,018 modules, 59,828 archive; 2,268,083 constant rows, 2,239,543 distinct names, 1,416,150 archive constants (about 1.9 million before), 792,261 named; 188,283,699 edges, 15,289,382 inside the archive; reached from the five entry theorems 1,186,375 (83.8%; 66% before); retry marks 4.7 per 1,000 named (15.4 before)"
+    C4_shape: "riemannHypothesis: cone 1,186,369 (1,265,256 before), 10,056,951 lines; spine 100/100/76.9/40.5/4.3% at steps 1/2/3/5/8 (100/100/100/66.8/11.3 before), 26 steps; 75 hinges (81), median own 7 (4), longest 88 (88), 23 with a retry mark (32), 1 with a prime; largest joint 26.3% (27.2%), three largest 72.1% (71.8%); largest directory Development/AbelianVarietyTheory 41.6% of lines (43.9%), its largest dominator 2.4%; 297 directories in the cone; spine leaves the root's directory at step 2 (Main to Development). The other four entry theorems: cones 1,186,359 to 1,186,371, 74 to 76 hinges, largest joint 26.3% in all"
+    C5_run: "first run 23:47:03 to 23:58:31 UTC, halted by a full disk at about 34,000 modules; second run (A1) 00:02:34 to 00:13:36: walk 7 m 05 s with 73.5 GB peak resident memory, spot checks under a minute, analysis 3 m 06 s with 2.1 GB"
+    aligned_spine_diagnostic_not_registered: "the two wrapper theorems rhOfAll and allChi (Supplements/Kernels/MainTheorems, each dominating 100%) are gone and LFunction_ne_zero_of_half_lt_re sits directly above everyCharacter; by constant, before to after: everyCharacter 100.0 to 100.0, everyCharacter_of_row 77.4 to 76.9, every_character_of_literature_of_vWin 66.8 to 66.8, every_character_of_theta_integrals_local_matching 39.6 to 40.5, nonempty_hyps_definite_side_of_closed_bound 33.3 to 34.3, hypotheses_nonempty_of_unramified_exponents_alt 11.3 to 11.6, allRows_of_open0_alt 4.2 to 4.3, lg1_sLp_sO_hTF 1.8 to 1.9"
+    hinge_join_diagnostic_not_registered: "61 of the 81 hinges keep their names; on those, own lines unchanged for 45, longer for 12, shorter for 4, median 7 before and after; dominated share median absolute change 0.06 points, max 1.0; the 20 gone are wrappers and retry variants (9 of them retry-marked); 14 new hinges near 1%; all 23 retry-marked hinges after are old hinges under their old names"
+  misses:
+    - "P1 on size: the community cache is 71.1 GB on disk, not under 60"
+    - "P2 as worded: 17 of 20 rows exact; the three others are an instrument artifact (private-name prefix from the recompile path; lakefile options not applied by lake env lean), shown by the diagnostic recompile, not by the registered check"
+    - "P4: 76.9% at step 3 and 40.5% at step 5 against 90% and 50%; the prediction was written by step index and two 100% wrapper steps were removed from the top; aligned by constant the spine is unchanged to within a point"
+    - "P6 on length: median own lines 7, not at most 6; the hinges that left were the short ones (wrappers, retry variants), and the surviving hinges' lengths are unchanged in median"
+  procedure_note: "the first walk wrote edges with full constant names and filled the disk at 7.3 GB and 34,000 modules; A1 writes integer ids (2.7 GB for 188 million edges) and the analysis reads either format, checked identical on the synthetic graph. The next registration of this kind should predict shares at named constants rather than at step indices."
+spoken: >
+  On 25 November Nervous Machine measured the same proof after four days of the Lean community's cleanup, 2,641
+  commits by agents under maintainers, at a pinned commit whose compiled files the community supplied and Lake
+  checked against the source. A quarter of the archive is gone and two thirds of its files have been merged. The proof
+  below the theorem is six percent smaller, and its shape is the shape it had. Read by step the spine looks shorter,
+  because two wrapper theorems at the top were deleted; read by constant, every step carries the share it carried a
+  week earlier, the same joint gathers the same quarter, and sixty-one of the eighty-one hinges are the same hinges
+  with the same lengths. The ones that left were the short wrappers and the retry variants, which is the whole of the
+  movement toward Mathlib in the table. Five of nine registered predictions held; two of the misses were predictions
+  written against step indices that wrapper removal shifts, and the record says so. Editing, so far, explains none of
+  the chain. Nothing changed standing.
+finding_ids: []
+gap_ids: ["EG3"]
