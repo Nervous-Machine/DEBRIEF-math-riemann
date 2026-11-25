@@ -14,18 +14,26 @@ AUX = re.compile(r"(\._proof_\d+|\.proof_\d+|\._eq_\d+|\.eq_\d+|\.match_\d+|\._p
 RET = re.compile(r"((_alt\d*)+|_(bis|ter|quater)|_(new|old|v\d+|fix|fixed|final|redo|retry|again|rev|revised|corrected|patched))$")
 PRIME = re.compile(r"'+$")
 names = []; ids = {}; kind = []; module = []; arch = []; L1 = []; L2 = []
+byid = []   # amendment A1: nodes.tsv may carry an id column and edges.tsv integer ids; both formats are read
 with open(f"{data}/nodes.tsv") as f:
-    next(f)
+    hdr = next(f).rstrip("\n").split("\t"); intfmt = hdr[0] == "id"
     for line in f:
         p = line.rstrip("\n").split("\t")
+        if intfmt:
+            if len(p) < 7: continue
+            byid.append(ids.get(p[1], len(names))); p = p[1:]
         if len(p) < 6 or p[0] in ids: continue
         ids[p[0]] = len(names); names.append(p[0]); kind.append(p[1]); module.append(p[2]); arch.append(p[3] == "1"); L1.append(int(p[4])); L2.append(int(p[5]))
-N = len(names); NA = sum(arch); log(f"nodes {N} archive {NA}")
+N = len(names); NA = sum(arch); log(f"nodes {N} archive {NA} ({'integer' if intfmt else 'name'} edges)")
 succ = [[] for _ in range(N)]; ne = 0
 with open(f"{data}/edges.tsv") as f:
     for line in f:
         a, _, b = line.rstrip("\n").partition("\t")
-        ia = ids.get(a); ib = ids.get(b)
+        if intfmt:
+            try: ia = byid[int(a)]; ib = byid[int(b)]
+            except (ValueError, IndexError): continue
+        else:
+            ia = ids.get(a); ib = ids.get(b)
         if ia is None or ib is None or ia == ib: continue
         ne += 1
         if arch[ia] and arch[ib]: succ[ia].append(ib)   # the archive's own graph, as the structure trace measured it

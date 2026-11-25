@@ -95,3 +95,29 @@ not_settled_by_this_cycle: >
   difference from Mathlib, and the shape charts are about editing before they are about machines. Nothing about the
   third difference, one argument against library lemmas, which needs large single-purpose human Lean projects measured
   the same way. Nothing about why any proof has the shape it has.
+
+amendments:
+  - id: A1
+    written: "2026-11-25T00:25Z, after the first run halted and before any measure was computed"
+    what_happened: >
+      The first run (started 2026-11-24T23:47:03Z) completed steps 1 to 3 as registered: clone at 9282d3a102c4 (full
+      hash 9282d3a102c4aff0e6026746db2a8990f5d9cddd), original branch 40e56bab026552e089d7afcfeff08d2defb9c005,
+      P0 diff exit 0, Mathlib cache exit 0, community cache fetched (59,868 modules, all passing its SHA-256 check;
+      the fetch's own final --no-build check was killed by the registered disk guard at 9.29 GB free), our own
+      lake build --no-build exit 0, .lake/build 71.1 GB (P1's size clause is a miss: the registration guessed under
+      60 GB). The walk then wrote 7.3 GB of edges in name form and filled the disk at about 34,000 of 59,869
+      modules (1,437,392 constants, 91,991,682 edges at the last progress line); the spot recompiles and the analysis
+      failed on the full disk (2 of 20 spot rows completed before it, both 0/0/0).
+    change: >
+      ArchiveGraph.lean writes nodes with an id column and edges as integer id pairs (same content, about one fifth
+      the bytes); edit.py reads either format (checked on the synthetic graph: identical shapes from both); run_edit2.sh
+      repeats steps 4 to 6 only, on the clone and cache already in place, and labels a spot row whose recompile wrote no
+      olean as such (the first run's "missing olean" rows were that case, not a missing cached file). To make room,
+      the truncated graph tables, the original-branch worktree (P0 already recorded in P0_diff.txt) and Mathlib's
+      compiled-C directory (.lake/packages/mathlib/.lake/build/ir, 481 MB, not read by anything here) were removed;
+      8.9 GB free before the relaunch. The community cache's own compiled-C files and all .olean files are untouched.
+    hashes:
+      ArchiveGraph.lean: "84d3cb66d412ad35aa192df209cbac4e5cc26ff69ed4d3e3419c9d4480f727fc"
+      edit.py: "30d90a2c13037a72e17580242d3b4ae1b7742c740b723e56442869241a7ae439"
+      run_edit2.sh: "9c2d68625cd7748773084b62ba3fe13b535f3fecc3fe97f4ded453ac8a9a2af1"
+    predictions: "unchanged; P8's clock restarts for the walk, spot checks and analysis, and the first run's 11 minutes count toward the whole-run figure"
