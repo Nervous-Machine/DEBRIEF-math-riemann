@@ -13,3 +13,11 @@ pages:
     role: statement of the formal-methods community
     url: https://leanprover-community.github.io/blog/posts/riemann-hypothesis/
     status_fixed: certify the statement and the proof of RH (not GRH)
+  - name: Andrew Sutherland (MIT), shorter proof
+    role: independent checks of the 25 November rewriting, published elsewhere
+    url: https://math.mit.edu/~drew/shortgrh/
+    status: 'Page (last updated [0-9-]+ [0-9:]+ UTC)'
+  - name: Michael Rubinstein (Waterloo), check of the compact edition
+    role: independent checks, published elsewhere
+    url: https://mrubinst.github.io/grh-lean-compact-check/
+    status: '(Last updated [0-9-]+ [0-9:]+ UTC)'

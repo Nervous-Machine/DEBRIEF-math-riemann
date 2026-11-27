@@ -1,0 +1,45 @@
+kind: replay
+cycle: external-2026-11-27-checks
+dated: '2026-11-27'
+by: null
+provenance:
+  source: 'mrubinst.github.io/grh-lean-verification/ (all checks complete 2026-11-21), www.math.uwaterloo.ca/~mrubinst/alpoge_claude_grh/, github.com/Infatoshi/rh-verification-receipts (one commit), nasqret.github.io/riemann-rev/; read 2026-11-27 22:27 UTC, pinned in source/external.sha256'
+preregistered:
+  question: What independent checks of the original archive had been published that the record did not yet hold?
+  rule: status read from the public pages, pinned by hash; one comparison of their published hashes with ours; no new building
+  predictions: []
+  commit: null
+  before_data: false
+outcome:
+  verdict: admitted
+  numbers:
+    external:
+      rubinstein_waterloo_original:
+        checked: 'the archive as released (14 parts, assembled lean.tar.gz sha256 9631b4f0…, the record''s pin), Lean v4.33.1, Mathlib 0df444a3 from the official cache, on University of Waterloo servers, run with Claude Code'
+        compile: '175,187 of 175,187 modules, 0 errors, finished 2026-11-21 01:47:44 UTC'
+        axioms: 'each of the five entry theorems: propext, Classical.choice, Quot.sound only'
+        kernel_replay: '175,187 of 175,187 modules replayed through Lean''s kernel (leanchecker), 0 rejected, finished 2026-11-21 05:24:21 UTC'
+        second_kernel: 'nanoda: 1,484,729 declarations the five theorems depend on, no typechecker errors, finished 2026-11-21 10:06:58 UTC'
+        static_scan: 'no axiom, sorry, admit, native_decide, implemented_by, extern, unsafe, opaque or unchecked declaration-adding calls in 175,187 files'
+        statements: 'read by hand: RH is Mathlib''s RiemannHypothesis; the GRH statements are a 16-line file importing only Mathlib'
+        main_olean: '9146dfb4148e24d2… (equal to Sutherland''s and to the record''s cycle 2 build)'
+      arledge_receipts:
+        checked: 'archive sha256 9631b4f0… (matches), remark.pdf sha256 3fc97784…, stock Lean v4.33.1, Mathlib 0df444a3'
+        compile: '175,187 of 175,187 modules, 0 failures, finished 2026-11-20 19:05:21 UTC'
+        axioms: 'all five theorems: propext, Classical.choice, Quot.sound'
+        second_kernel: 'lean4export of the five theorems piped to nanoda_bin (commit 0da9f98f): 1,484,729 declarations, 0 errors'
+        main_olean: 'ce9a2006… (differs from ours, Sutherland''s and Rubinstein''s 9146dfb4…)'
+      naskrecki_dashboard:
+        what: 'a map of the argument, a guide in standard mathematical language and a record of who has checked what; states that it is not a proof, a referee report or an endorsement'
+    our_comparison: 'three independent builds (Sutherland, Rubinstein, this record''s cycle 2) give the same Main.olean, 9146dfb4…; Arledge''s differs. Main.lean is five short theorems; a Main.olean that differs while the export and the axioms agree is what EG5 predicts when a build''s path enters the compiled file, but Arledge''s build path is not published, so this is consistent with EG5 and does not test it'
+spoken: >
+  Two more independent checks of the original archive were already public and are now on the record. Michael
+  Rubinstein at Waterloo built all 175,187 modules, replayed every one through Lean's kernel, and had a second,
+  independently written kernel accept the 1.48 million declarations the five theorems rest on; his compiled root file
+  is byte for byte the one Andrew Sutherland and this record produced. Elliot Arledge rebuilt the archive and ran the
+  same second kernel, with the same result, though his compiled root file differs, which fits the build-path problem
+  this record has open. Bartosz Naskręcki keeps a map of the argument and a list of who has checked what. None of
+  this reads the mathematics; it adds independent builds, and nothing changes standing.
+finding_ids: []
+gap_ids:
+- EG5

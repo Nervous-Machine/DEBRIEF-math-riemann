@@ -1,0 +1,49 @@
+kind: replay
+cycle: external-2026-11-27-sernau
+dated: '2026-11-27'
+by: null
+provenance:
+  source: 'github.com/lsernau/grh-lean at commit 72fead10 (the only commit, 2026-11-25T20:38:07Z, Apache-2.0; tree read through the GitHub API, nothing cloned); math.mit.edu/~drew/shortgrh/ (last updated 2026-11-27 17:27 UTC); mrubinst.github.io/grh-lean-compact-check/ (last updated 2026-11-26 05:36 UTC); nasqret.github.io/riemann-rev/; read 2026-11-27, pinned in source/external.sha256'
+preregistered:
+  question: What is the shorter Lean development of 25 November, and what has been checked of it?
+  rule: status read from the public pages and the repository tree, pinned by hash and commit; no new building
+  predictions: []
+  commit: null
+  before_data: false
+outcome:
+  verdict: admitted
+  numbers:
+    external:
+      release:
+        authors: 'Luke Sernau with colleagues at Anthropic and Claude; Main.lean''s header line reads "The proof is Levent Alpöge''s, with Claude."'
+        what: 'a rewriting of the Alpöge–Claude development proving the same five theorems; two Lean projects in one repository'
+        compact_edition: 'grh-compact/: 794 files, 112,827 lines, 76,149 of them code (Sutherland''s count of non-blank, non-comment lines under src/); libraries Lib (573 modules), New (219), Main (Statements, Main)'
+        readable_edition: 'grh/: 803 files, 477,124 lines, 299,902 of them code'
+        original_for_comparison: '175,187 files, 17,374,215 lines, 15,531,759 code (Sutherland''s count)'
+        toolchain: 'Lean v4.35.0, Mathlib 56a00585 (the original: v4.33.1, Mathlib 0df444a3)'
+        argument_size: 'Naskręcki''s note: the argument itself takes 24,850 lines of code; the rest is background, separated and referenced'
+      sutherland_shortgrh:
+        build: 'sandboxed lake build, both editions, no errors (compact: 9,843 jobs, 33 min 32 s, finished 2026-11-25 23:06:56 UTC)'
+        axioms: 'both editions, all five theorems: propext, Classical.choice, Quot.sound'
+        kernel_replay: 'every module of both editions'
+        exports: 'byte-identical exports of the five theorems made independently on two machines; nanoda, con-leche and con-ron accept them for both editions; con-leche and con-ron --compare confirm all five against the challenge file'
+        comparator: 'lake comparator --paranoid (Lean v4.35.0): "Your solution is okay!" for both editions; for the compact edition independently on two machines; the readable edition on one machine only (lean4lean needs 332 GB for it)'
+        schoenfeld: 'Schoenfeld''s bound |ψ(x) − x| < √x log²x / (8π) for x ≥ 73.2, and its equivalence with RH, derived from the compact edition; comparator --paranoid passes for both'
+      rubinstein_compact:
+        build: '794 of 794 modules (compact edition, commit 72fead10)'
+        statements: 'src/Statements.lean imports only Mathlib and is identical, apart from blank lines, to the statements checked for the original'
+        static_scan: 'no axiom, sorry, native_decide, unsafe, implemented_by, @[extern], and no macro, syntax, notation or elab declarations'
+        axioms: 'all five: propext, Classical.choice, Quot.sound'
+        kernel_replay: '794 of 794 accepted'
+        comparator: 'lake comparator --paranoid with --inadvisably-no-sandbox (the cluster blocks the sandbox): all six kernels accept, "Your solution is okay!", 2026-11-26'
+      not_yet: 'no mathematician has reported reading either edition (Naskręcki''s note, 25 November)'
+spoken: >
+  On 25 November Luke Sernau, with colleagues at Anthropic and Claude, posted a second Lean development of the same
+  five theorems: a rewriting of the original in about 76,000 lines of code instead of 15.5 million, with a readable
+  version of about 300,000. Andrew Sutherland checked both versions inside a sandbox with every kernel Lean ships, on
+  two machines for the compact one, and Michael Rubinstein checked the compact one again at Waterloo. They agree: the
+  same statements, Lean's three standard axioms, every kernel accepting. It is a new artifact of the same claim, not
+  the archive this record pinned, and no mathematician has yet reported reading it.
+finding_ids: []
+gap_ids:
+- EG3
