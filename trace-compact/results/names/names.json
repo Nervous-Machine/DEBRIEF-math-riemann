@@ -1,0 +1,19 @@
+{
+ "compact_project_constants": 52272,
+ "compact_project_named": 13922,
+ "compact_cone_named": 12870,
+ "archive_named_all": 1104369,
+ "archive_cone_named": 796264,
+ "N1_compact_named_with_exact_archive_name": 56,
+ "N1_share": 0.004,
+ "N1b_compact_named_with_archive_last_component": 3883,
+ "N2_compact_cone_named_in_archive_cone": 13,
+ "N3_archive_cone_named_kept_by_exact_name": 21,
+ "N3_share": 3e-05,
+ "F_compact_mathlib_direct": 29310,
+ "F_archive_mathlib_direct": 64874,
+ "F_intersection": 23600,
+ "F_containment_compact_in_archive": 0.8052,
+ "F_jaccard": 0.3344,
+ "F_archive_names_absent_from_compact_mathlib": 293
+}

@@ -3,11 +3,11 @@
 A DEBRIEF mission record (protocol https://github.com/Nervous-Machine/DEBRIEF) for **The claimed proof of the Riemann Hypothesis announced by Levent Alpöge on 20 November 2026, built with Claude and released as Lean 4 code**.
 
 <!-- standing:begin -->
-**Standing, 25 Nov 2026.** Stage: Reading guide written. Needs next: Do the formal statements say what the problem asks? ([what would close it](ASKS.md)).
+**Standing, 27 Nov 2026.** Stage: Reading guide written. Needs next: Do the formal statements say what the problem asks? ([what would close it](ASKS.md)).
 
 | certified | accepted | refuted | open gaps | cycles filed | last cycle |
 |---|---|---|---|---|---|
-| 0 | 1 | 0 | 4 | 11 | 25 Nov 2026 |
+| 0 | 2 | 0 | 4 | 13 | 27 Nov 2026 |
 
 | | |
 |---|---|
@@ -17,7 +17,7 @@ A DEBRIEF mission record (protocol https://github.com/Nervous-Machine/DEBRIEF) f
 | related | [Generalized Riemann Hypothesis (Masullo)](https://github.com/Nervous-Machine/DEBRIEF-math-grh-masullo): a special case of; same problem page · [Navier–Stokes blow-up, unforced (Alpöge and Buckmaster)](https://github.com/Nervous-Machine/DEBRIEF-math-navierstokes): same claimant (Alpöge), released the same morning |
 | tooling | Claude (version not stated) · tier: internal · six weeks, by the note's twenty-step timeline (inferred: the claimant is an Anthropic employee and names Claude as a co-worker without a version; the companion Navier–Stokes repository's commits of 20 November name Claude Fable 5.2, public from 9 November, after most of the note's timeline) |
 
-Rendered from `ledger/` at regeneration; the full record is `SCORECARD.md`, what is owed is `ASKS.md`. Standing words: 1 accepted.
+Rendered from `ledger/` at regeneration; the full record is `SCORECARD.md`, what is owed is `ASKS.md`. Standing words: 2 accepted.
 <!-- standing:end -->
 
 This claim is on the public claims board, https://math-board.nervousmachine.com, which shows its stage, who has contributed, and what it needs next. The measurements of the archive, with two drawn maps, are at https://riemann.nervousmachine.com.
@@ -72,7 +72,7 @@ Rules and templates: https://github.com/Nervous-Machine/DEBRIEF/blob/main/CONTRI
 ledger/riemann.json   the ledger (protocol 0.1.0)
 claim.yaml            the pinned claim this record was opened from
 SCORECARD.md / ASKS.md  generated from the ledger
-trace/                the reading guide for the five statements, three maps of the archive below the main theorem, the Mathlib shape prior in two layers, and the same proof measured again after the community's editing (`trace` cycles)
+trace/                the reading guide for the five statements, three maps of the archive below the main theorem, the Mathlib shape prior in two layers, the same proof measured again after the community's editing, and the 76,000-line rewriting measured against the original (`trace` cycles)
 prereg_cycle1.yaml    Nervous Machine's pre-registration for the first build, hashed before it ran (.sha256 sidecar)
 prereg_cycle2.yaml    the same for the resumed build, which finished
 cycle1/, cycle2/      logs, hashes and summaries of those builds

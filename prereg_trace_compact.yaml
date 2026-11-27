@@ -56,3 +56,38 @@ instruments:
   names: {path: trace-compact/names.py, sha256: "25a33e9126eeb35383f50bc291d4c5ac6024dd87d6469f80e2fdeb528f9b5c54"}
   run: {path: trace-compact/run_compact.sh, sha256: "d2620045a24ec862a53f66c728fb0775f5453d76ac8cb9183c3f737003438f74"}
   mathlib_shapes: {path: trace-prior/shapes.tsv, sha256: "3fa4b3abe3aabaf2c56fc2a89871ab64430316580ffe93d7b8cb13bcec49d7e6", note: "the VM copy ~/nm-scripts/mathlib_shapes.tsv has the same hash"}
+
+# ---- Amendment A1 ---- appended after the run; the registered text above is unedited.
+amendments_appended:
+  - id: A1
+    written: "2026-11-27, after the walk, the shape step and the corrected names step"
+    instrument_change: >
+      The registered names.py rebuilt the set of the archive's 1.1 million last name components once for every one of
+      the compact edition's 13,922 named constants (measure N1b, a secondary count). The step ran 17 min 38 s at under
+      1 GB without finishing and was stopped at 23:41Z; nothing was read from it. trace-compact/names_A1.py (sha256
+      325002c9…) computes the set once; every measure is otherwise unchanged. It ran in 23 s.
+    results: >
+      Walk: 850,583 constants, 11,770 modules, 794 of them the edition's own, 35.9 million edges, 1 min 26 s, 10.4 GB.
+      Shape below riemannHypothesis: cone 37,561 constants and 82,826 dominated lines (Mathlib's hundred: Q1 30,253 /
+      75,408; median 36,032 / 92,248); spine 100%, 99.2%, 89.4% at steps 1–3, 19.5% at step 5, 1.9% at step 8, length
+      14, leaving the root's directory at step 1; 40 hinges at 1%, median own lines 44, longest 146; no hinge with a
+      retry mark or a prime; largest joint 69.8% (star_inequality, 29 lines), three largest 88.3%; largest directory
+      Lib/Shimura with 7.8% of cone lines; 1.4 retry marks per 1,000 named project constants. The spine:
+      riemannHypothesis ← New.grh (22 lines) ← eventually_primeError_le_rpow (21) ← star_inequality (29), then a fan
+      into Galois representations (Lib.GaloisRep), Selmer groups (New.Selmer) and lattice forms (New.Endgame).
+      Names: 56 of 13,922 named project constants (0.4%) carry an archive constant's full name; 3,883 (27.9%) share a
+      last name component with one; 21 of the archive cone's 796,264 named constants survive by full name. Direct
+      Mathlib footprint: 29,310 constants against the archive's 64,874 (45%); 23,600 of the 29,310 (80.5%) are also in
+      the archive's; Jaccard 0.33; 293 of the archive's are absent from this Mathlib (renamed or removed between
+      0df444a3 and 56a00585).
+    scorecard: >
+      Held: S1 (1.4), S2 (40), S3 (44), S4 (89.4%), S6 (0.4%), S7 (80.5% contained; 45% the size). Missed: S5 (largest
+      joint 69.8%, inside Mathlib's range, against a prediction of below 63.9%); S8 (the registered names step did not
+      finish in the hour; walk and shape did).
+    reading: >
+      The falsifier attached to S5 applies: the original's absence of any large join was a property of its search or its
+      size, not of the argument. The rewriting gathers about seven tenths of the proof into one inequality, star_inequality,
+      before the theorem, which is what a human-written proof usually does. The single route survives (S4): from the
+      theorem down three steps, one chain still carries nine tenths of the proof, a shape no Mathlib proof of the hundred
+      has. Hinges are now paragraphs, not lines, and the fossils are gone. The rewriting kept almost none of the original's
+      names and stands mostly on the same Mathlib, using less than half as much of it.

@@ -1,0 +1,73 @@
+kind: rerun
+cycle: 3
+dated: "2026-11-27"
+by: "Nervous Machine (Heidi Bennett; Claude Opus 5.5 as the operating agent)"
+preregistered:
+  commit: "prereg_cycle3.yaml (registered sha256 224039f4288521af471761e0561b971b36be061be25ec65000b3522c99ef2e47 at 2026-11-27T22:31:24Z, before anything of the rewriting was cloned)"
+  results:
+    - cycle3/rh_cycle3.sh
+    - cycle3/out/steps.txt
+    - cycle3/out/head.txt
+    - cycle3/out/C2_scan.txt
+    - cycle3/out/build_tail.log
+    - cycle3/out/build_time.txt
+    - cycle3/out/C4_axioms.txt
+    - cycle3/out/C4_types.txt
+    - cycle3/out/C5_hashes.txt
+    - cycle3/out/C6_replay.tsv
+    - cycle3/out/C7_export.txt
+    - cycle3/out/C7_conleche.txt
+    - cycle3/out/C7_conron.txt
+    - cycle3/out/C7_nanoda.txt
+    - cycle3/out/C7_nanoda_A1.txt
+    - cycle3/out/C7_lean4lean.txt
+  question: >
+    Does the compact edition of the 25 November rewriting build at its pinned commit against its pinned Mathlib on a
+    machine its authors have never touched; do its five theorems use only Lean's three standard axioms; are its
+    statements the original archive's, word for word; and do Lean's kernel and the external checkers shipped with Lean
+    accept it?
+  rule: "C1 to C7 as registered; a finding at accepted for the rewriting as a second artifact if C3 to C7 pass; amendment A1 (one corrected checker invocation, reported apart)"
+  predictions:
+    - "C1 head 72fead10, 1 commit, v4.35.0, Mathlib 56a00585, 794 files, code lines within 2% of 76,149"
+    - "C2 no hit"
+    - "C3 exit 0, 0 error lines, 30 minutes to 4 hours, under 60 GB"
+    - "C4 the three standard axioms for each of the five; RiemannHypothesis Mathlib's; the other four in Statements"
+    - "C5 no difference apart from blank lines"
+    - "C6 794 of 794"
+    - "C7 export exit 0; nanoda, con-leche, con-ron accept; lean4lean accepts within the limits"
+  before_data: true
+conflict: >
+  The rewriting was made by Luke Sernau with colleagues at Anthropic and with Claude; this rerun was operated by
+  Claude Opus 5.5, an Anthropic model. The checks are mechanical and their logs are published, so anyone can repeat
+  them; the conflict is stated so that a reader weighs who ran them.
+environment:
+  hardware: "Lima VM primegaps: Ubuntu, aarch64, 20 cores, 98 GB RAM; nothing of the rewriting ran on the host"
+  toolchain: "Lean v4.35.0 with its shipped checkers; Mathlib 56a005855ea17e0b0958f73ec801ae140b0a1679 from the community cache"
+  wall_time: "22:31:34 to 23:04:23 UTC: build 18 min 48 s, kernel replay 5 min 52 s, export and external checkers 7 min"
+outcome:
+  verdict: confirmed
+  numbers:
+    C1: "pass: 72fead102f663d5c7a407964a13dc0cf9d977207, 1 commit; v4.35.0; Mathlib 56a00585; 794 files, 112,827 lines, 76,149 code lines"
+    C2: "src/ and scripts/: no hit; Challenge.lean: two sorry placeholders (lines 17 and 20), by design"
+    C3: "pass: exit 0; 9,843 jobs; 0 error lines; 18 min 48 s; peak 9.3 GB"
+    C4: "pass: each of the five on propext, Classical.choice, Quot.sound only; RiemannHypothesis is Mathlib's (Mathlib.NumberTheory.LSeries.RiemannZeta), the other four declared in Statements"
+    C5: "pass: the rewriting's Statements.lean is byte-identical to the archive's (sha256 79ef7ca7…)"
+    C6: "pass: 794 of 794 modules replayed by leanchecker, exit 0"
+    C7: "export exit 0, 5,173,283,067 bytes, sha256 e4e38359…; con-leche --verified and con-ron --verified each accepted 204,579 declarations; nanoda did not start as configured (Nat literal extension off) and, rerun with the Nat and String extensions on (A1), checked 209,639 declarations with no typechecker errors; lean4lean did not start (the shipped binary cannot read this toolchain's .olean header)"
+    export_observation: "Sutherland's lake comparator export of the same edition is 5,172,274,528 bytes (sha256 ab7b4223…); ours, from lake env leanexport, differs; no byte comparison was registered"
+  misses:
+    - "C2: the registrar put Challenge.lean in the scan; its two sorry placeholders are by design and the proof's source is clean"
+    - "C3: 18 min 48 s against a predicted floor of 30 minutes"
+    - "C7: nanoda accepted only under a corrected configuration; lean4lean did not run"
+spoken: >
+  The shorter proof was rebuilt here from its pinned commit in nineteen minutes, against the seventeen million lines of
+  the original that took fifteen hours. Its five theorems rest on Lean's three standard axioms, its statements are the
+  original's statements byte for byte, and Lean's kernel replayed every one of its 794 modules. Two external checkers
+  that come with proofs of their own soundness accepted the exported proof, and a third accepted it once we switched on
+  the options it needs. One checker could not start on this machine. Nothing rejected anything. It was made by people
+  at Anthropic with Claude and checked here by Claude, so the logs are published for anyone to repeat.
+finding_ids:
+  - F2
+gap_ids:
+  - EG2
+  - EG4

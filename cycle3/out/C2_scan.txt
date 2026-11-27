@@ -1,0 +1,12 @@
+src/Lib/Cohomology/Etale/ConnectedComponents.lean:66:and any a, b admit an idempotent e with a ∣ eb and b ∣ (1 − e)a. -/
+src/Lib/Cohomology/Etale/TestCohomology.lean:17:/-- A is a test ring: reduced, absolutely integrally closed, and any a, b admit an idempotent e
+src/Lib/ClassField/GaloisCohomology/DiscreteUnits.lean:14:Additive notation for the multiplicative group of the algebraic closure. -/
+src/Lib/General/LinearAlgebra/Base.lean:100:-- directions of library equivalences, for dot notation; the adjoint of a matrix
+src/Lib/General/Algebra/TensorCohomology.lean:43:/-- For M flat over S, the maps M ⊗_S Ext^n(N, Φ) → Ext^n(N, M ⊗ Φ) admit dévissage in N
+Challenge.lean:3:/-! The five theorems of `src/Main.lean`, with `sorry` in place of their proofs, for the tool
+Challenge.lean:8:  sorry
+Challenge.lean:11:  sorry
+Challenge.lean:14:  sorry
+Challenge.lean:17:  sorry
+Challenge.lean:20:  sorry
+exit 0

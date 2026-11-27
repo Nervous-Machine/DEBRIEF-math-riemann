@@ -1,0 +1,49 @@
+kind: trace
+cycle: "trace-2026-11-27-compact"
+dated: "2026-11-27"
+by: "Nervous Machine (Heidi Bennett; Claude Opus 5.5 as the operating agent)"
+provenance:
+  source: "cycle 3's build of grh-compact at lsernau/grh-lean 72fead10 (Lean v4.35.0, Mathlib 56a00585); the graph written in the VM from the module table (CompactGraph.lean); the archive's cone and name tables from the traces of 2026-11-23; the Mathlib quartiles from trace-2026-11-24-prior"
+  occasion: "Heidi Bennett's question what the 76,000-line rewriting kept and what it dropped; Levent Alpöge's 'I bet most is unnecessary'"
+  conflict: "the rewriting was made at Anthropic with Claude; this trace was run by Claude Opus 5.5"
+preregistered:
+  question: "Below riemannHypothesis in the compact edition: is the original's shape still there, are the retry fossils gone, how many of the original's names survive, and how much of its direct Mathlib footprint does it keep?"
+  rule: "the module-table walk; the edit trace's shape measures unchanged; the names and footprint measures of names.py; amendment A1 (one loop computed once, after the registered step ran 17 minutes without finishing)"
+  predictions:
+    - "S1: at most 2.0 retry marks per 1,000 named project constants"
+    - "S2: at most 46 hinges at 1%"
+    - "S3: median own lines of hinges at least 8"
+    - "S4: spine share at step 3 above 19.2%"
+    - "S5: largest joint below 63.9%"
+    - "S6: at most 25% of named project constants carry an archive name"
+    - "S7: at least 70% of the direct Mathlib footprint shared with the archive's, at most half its size"
+    - "S8: each step under one hour and 70 GB"
+  commit: "prereg_trace_compact.yaml"
+  registered: "sha256 58ff949b9ce667225f4e02da40eb1f8c7bd8c30e5acf65b39534f81a4d9a9fdf, committed fd8de1e at 22:31 UTC on 2026-11-27, before anything of the rewriting was cloned"
+  before_data: true
+  results: ["trace-compact/results/shape/report.md", "trace-compact/results/names/names.json", "trace-compact/results/outputs.sha256"]
+outcome:
+  verdict: mixed
+  numbers:
+    cone: "37,561 constants, 82,826 dominated lines (the archive: 1,265,256 and 10,660,526; Mathlib's median 36,032 and 92,248)"
+    spine: "100%, 99.2%, 89.4% at steps 1 to 3; 19.5% at step 5; length 14: riemannHypothesis ← New.grh ← eventually_primeError_le_rpow ← star_inequality"
+    hinges: "40 at 1%; median 44 own lines (the archive 4; Mathlib 8 to 13); none with a retry mark"
+    largest_joint: "69.8% at star_inequality (the archive 27.2%; Mathlib 63.9% to 91.5%)"
+    retry_marks_per_1000: "1.4 (the archive 15.4, the edited archive 4.7, Mathlib 0.4)"
+    names: "56 of 13,922 named project constants carry an archive name (0.4%); 21 of the archive cone's 796,264 survive"
+    mathlib_footprint: "29,310 direct Mathlib constants against the archive's 64,874; 80.5% of them shared"
+    held: "S1, S2, S3, S4, S6, S7"
+    missed: "S5, S8"
+  misses:
+    - "S5: a large joint appears (69.8%), inside Mathlib's range"
+    - "S8: the registered names step did not finish within the hour (a loop rebuilt a 1.1-million-entry set for every name); fixed under A1"
+spoken: >
+  The rewriting is a different proof built on the same plan. Its part below the Riemann Hypothesis is the size of an
+  ordinary Mathlib theorem's, thirty-seven thousand constants against the original's one point three million, and it
+  keeps almost none of the original's names. But the route is the same: three steps down from the theorem, one chain
+  still carries nine tenths of the proof, which no human-written Mathlib proof of the hundred does. What changed is how
+  the pieces meet. The original had no large join; the rewriting gathers seven tenths of the proof into a single
+  inequality before the theorem, as human proofs do, and its steps are paragraphs, not lines. The search's fossils are
+  gone.
+finding_ids: []
+gap_ids: []

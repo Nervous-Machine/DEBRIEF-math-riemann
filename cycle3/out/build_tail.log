@@ -1,0 +1,40 @@
+✔ [9827/9843] Built New.Filling.RowDimension (3.4s)
+✔ [9828/9843] Built New.Selmer.DenominatorBound (11s)
+✔ [9829/9843] Built New.Seesaw.UnfoldingStages (19s)
+✔ [9830/9843] Built New.Selmer.RowsExist (10s)
+✔ [9831/9843] Built New.Filling.FillingTheorem (10s)
+⚠ [9832/9843] Built New.Exchange.CrudeRows (46s)
+warning: src/New/Exchange/CrudeRows.lean:104:89: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9833/9843] Built New.Selmer.FitTwistsExist (13s)
+warning: src/New/Selmer/FitTwistsExist.lean:48:49: `Finset.prod_le_prod'` has been deprecated: Use `Finset.prod_le_prod` instead
+
+Hint: Replace the deprecated name:
+  prod_le_prod'̵
+⚠ [9834/9843] Built New.Seesaw.SeesawTheorem (13s)
+warning: src/New/Seesaw/SeesawTheorem.lean:121:83: This simp argument is unused:
+  NeZero.one_le
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [m_eq_two_mul_varrho_add_two, Nat.cast_inv_le_one, NeZero.pos]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9835/9843] Built New.Rows.ComparisonForms (22s)
+warning: src/New/Rows/ComparisonForms.lean:158:91: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ℹ [9836/9843] Built New.Endgame.ShortAndEnough (9.8s)
+info: src/New/Endgame/ShortAndEnough.lean:153:38: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+✔ [9837/9843] Built New.Rows.HeckeValueHeight (49s)
+✔ [9838/9843] Built New.Rows.LiftVolumeHeight (10s)
+✔ [9839/9843] Built New.Endgame.LongForms (8.7s)
+✔ [9840/9843] Built New.Main (6.8s)
+✔ [9842/9843] Built Main (2.4s)
+Build completed successfully (9843 jobs).
+build exit 0

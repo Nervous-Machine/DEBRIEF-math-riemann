@@ -67,3 +67,40 @@ not_settled_by_this_cycle: >
 
 instruments:
   run_script: {path: cycle3/rh_cycle3.sh, sha256: "37c7746dc553f75b8dad32f6b1221b4d6203cc33bb51a5db3d86049167345ac8"}
+
+# ---- Amendment A1 ---- appended after the registered run (2026-11-27 22:31–23:04 UTC); the registered text above is unedited.
+amendments_appended:
+  - id: A1
+    written: "2026-11-27, after rh_cycle3.sh finished (DONE at 23:04:23Z) and before the trace ran"
+    results: >
+      C1: head 72fead102f663d5c7a407964a13dc0cf9d977207, 1 commit, toolchain v4.35.0, Mathlib 56a00585; 794 files,
+      112,827 lines, 76,149 code lines. C2: no hit in src/ or scripts/; two hits, both `sorry` at Challenge.lean lines 17
+      and 20, the challenge file's own placeholders. C3: cache exit 0; lake build exit 0, 9,843 jobs, 0 error lines, 18
+      min 48 s wall, 9.3 GB peak. C4: each of the five theorems on propext, Classical.choice, Quot.sound only; types as
+      in Statements; RiemannHypothesis declared in Mathlib.NumberTheory.LSeries.RiemannZeta, printed as
+      ∀ s, riemannZeta s = 0 → (¬∃ n, s = -2 * (↑n + 1)) → s ≠ 1 → s.re = 1/2; the four other statement constants
+      declared in Statements. C5: diff -B empty; the two Statements.lean files are byte-identical (sha256 79ef7ca7…).
+      C6: 794 of 794 modules, leanchecker exit 0. C7: export exit 0, 5,173,283,067 bytes, sha256 e4e38359…;
+      con-leche --verified accepted 204,579 declarations (2 min 36 s); con-ron --verified accepted 204,579 (1 min 12 s);
+      nanoda as registered did not start ("Nat lit extension disallowed by checker execution config"); lean4lean as
+      registered did not start ("failed to read file … Main.olean, incompatible header").
+    corrected_run: >
+      nanoda rerun with the registered configuration plus "nat_extension": true and "string_extension": true (the
+      option its help says most users enable): 209,639 declarations checked, no typechecker errors, one pretty-printer
+      error ("Unable to print axioms", in printing, not checking); 2 min 38 s, 14.6 GB. lean4lean was not rerun: the
+      binary shipped in this toolchain cannot read the toolchain's own .olean header, which is a packaging mismatch on
+      this machine to be fixed by building lean4lean, not a check of the proof.
+    observation: >
+      Sutherland publishes the compact solution export made by lake comparator: 5,172,274,528 bytes, sha256 ab7b4223….
+      Ours, made by lake env leanexport directly, is 5,173,283,067 bytes, sha256 e4e38359…: not byte-identical. The two
+      come from different exporter invocations; no byte comparison of exports was registered and none is claimed.
+    scorecard: >
+      Held: C1, C4, C5, C6. Missed: C2 as written (the registrar included Challenge.lean in the scan, whose sorry
+      placeholders are by design; the proof's source is clean); C3 on its time clause (18 min 48 s against at least 30
+      minutes; exit and errors held, memory held); C7 (con-leche and con-ron accepted as predicted; nanoda accepted only
+      under the corrected configuration; lean4lean did not start).
+    standing: >
+      The registered consequence for a pass of C3 to C7 is met by Lean's kernel on every module (C6) and two external
+      checkers with formal soundness guarantees under the registered invocation (con-leche, con-ron), with nanoda's
+      acceptance under a corrected invocation reported separately and lean4lean not completed. No checker rejected
+      anything. A finding for the rewriting as a second artifact is recorded at accepted, with that basis stated.

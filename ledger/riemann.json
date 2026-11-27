@@ -1325,6 +1325,146 @@
    "gap_ids": [
     "EG3"
    ]
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "mission_id": "riemann-2026-11",
+   "pod": "DEBRIEF-math-riemann",
+   "created_by": "contributed cycle (merge_cycles.py)",
+   "created_at": "2026-11-27T23:43:09Z",
+   "provenance": {
+    "source": "contributed cycle file cycle3-rerun.yaml"
+   },
+   "audience": "briefing",
+   "kind": "rerun",
+   "cycle": 3,
+   "dated": "2026-11-27",
+   "by": "Nervous Machine (Heidi Bennett; Claude Opus 5.5 as the operating agent)",
+   "preregistered": {
+    "commit": "prereg_cycle3.yaml (registered sha256 224039f4288521af471761e0561b971b36be061be25ec65000b3522c99ef2e47 at 2026-11-27T22:31:24Z, before anything of the rewriting was cloned)",
+    "results": [
+     "cycle3/rh_cycle3.sh",
+     "cycle3/out/steps.txt",
+     "cycle3/out/head.txt",
+     "cycle3/out/C2_scan.txt",
+     "cycle3/out/build_tail.log",
+     "cycle3/out/build_time.txt",
+     "cycle3/out/C4_axioms.txt",
+     "cycle3/out/C4_types.txt",
+     "cycle3/out/C5_hashes.txt",
+     "cycle3/out/C6_replay.tsv",
+     "cycle3/out/C7_export.txt",
+     "cycle3/out/C7_conleche.txt",
+     "cycle3/out/C7_conron.txt",
+     "cycle3/out/C7_nanoda.txt",
+     "cycle3/out/C7_nanoda_A1.txt",
+     "cycle3/out/C7_lean4lean.txt"
+    ],
+    "question": "Does the compact edition of the 25 November rewriting build at its pinned commit against its pinned Mathlib on a machine its authors have never touched; do its five theorems use only Lean's three standard axioms; are its statements the original archive's, word for word; and do Lean's kernel and the external checkers shipped with Lean accept it?\n",
+    "rule": "C1 to C7 as registered; a finding at accepted for the rewriting as a second artifact if C3 to C7 pass; amendment A1 (one corrected checker invocation, reported apart)",
+    "predictions": [
+     "C1 head 72fead10, 1 commit, v4.35.0, Mathlib 56a00585, 794 files, code lines within 2% of 76,149",
+     "C2 no hit",
+     "C3 exit 0, 0 error lines, 30 minutes to 4 hours, under 60 GB",
+     "C4 the three standard axioms for each of the five; RiemannHypothesis Mathlib's; the other four in Statements",
+     "C5 no difference apart from blank lines",
+     "C6 794 of 794",
+     "C7 export exit 0; nanoda, con-leche, con-ron accept; lean4lean accepts within the limits"
+    ],
+    "before_data": true
+   },
+   "conflict": "The rewriting was made by Luke Sernau with colleagues at Anthropic and with Claude; this rerun was operated by Claude Opus 5.5, an Anthropic model. The checks are mechanical and their logs are published, so anyone can repeat them; the conflict is stated so that a reader weighs who ran them.\n",
+   "environment": {
+    "hardware": "Lima VM primegaps: Ubuntu, aarch64, 20 cores, 98 GB RAM; nothing of the rewriting ran on the host",
+    "toolchain": "Lean v4.35.0 with its shipped checkers; Mathlib 56a005855ea17e0b0958f73ec801ae140b0a1679 from the community cache",
+    "wall_time": "22:31:34 to 23:04:23 UTC: build 18 min 48 s, kernel replay 5 min 52 s, export and external checkers 7 min"
+   },
+   "outcome": {
+    "verdict": "confirmed",
+    "numbers": {
+     "C1": "pass: 72fead102f663d5c7a407964a13dc0cf9d977207, 1 commit; v4.35.0; Mathlib 56a00585; 794 files, 112,827 lines, 76,149 code lines",
+     "C2": "src/ and scripts/: no hit; Challenge.lean: two sorry placeholders (lines 17 and 20), by design",
+     "C3": "pass: exit 0; 9,843 jobs; 0 error lines; 18 min 48 s; peak 9.3 GB",
+     "C4": "pass: each of the five on propext, Classical.choice, Quot.sound only; RiemannHypothesis is Mathlib's (Mathlib.NumberTheory.LSeries.RiemannZeta), the other four declared in Statements",
+     "C5": "pass: the rewriting's Statements.lean is byte-identical to the archive's (sha256 79ef7ca7…)",
+     "C6": "pass: 794 of 794 modules replayed by leanchecker, exit 0",
+     "C7": "export exit 0, 5,173,283,067 bytes, sha256 e4e38359…; con-leche --verified and con-ron --verified each accepted 204,579 declarations; nanoda did not start as configured (Nat literal extension off) and, rerun with the Nat and String extensions on (A1), checked 209,639 declarations with no typechecker errors; lean4lean did not start (the shipped binary cannot read this toolchain's .olean header)",
+     "export_observation": "Sutherland's lake comparator export of the same edition is 5,172,274,528 bytes (sha256 ab7b4223…); ours, from lake env leanexport, differs; no byte comparison was registered"
+    },
+    "misses": [
+     "C2: the registrar put Challenge.lean in the scan; its two sorry placeholders are by design and the proof's source is clean",
+     "C3: 18 min 48 s against a predicted floor of 30 minutes",
+     "C7: nanoda accepted only under a corrected configuration; lean4lean did not run"
+    ]
+   },
+   "spoken": "The shorter proof was rebuilt here from its pinned commit in nineteen minutes, against the seventeen million lines of the original that took fifteen hours. Its five theorems rest on Lean's three standard axioms, its statements are the original's statements byte for byte, and Lean's kernel replayed every one of its 794 modules. Two external checkers that come with proofs of their own soundness accepted the exported proof, and a third accepted it once we switched on the options it needs. One checker could not start on this machine. Nothing rejected anything. It was made by people at Anthropic with Claude and checked here by Claude, so the logs are published for anyone to repeat.\n",
+   "finding_ids": [
+    "F2"
+   ],
+   "gap_ids": [
+    "EG2",
+    "EG4"
+   ]
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "mission_id": "riemann-2026-11",
+   "pod": "DEBRIEF-math-riemann",
+   "created_by": "contributed cycle (merge_cycles.py)",
+   "created_at": "2026-11-27T23:43:09Z",
+   "provenance": {
+    "source": "cycle 3's build of grh-compact at lsernau/grh-lean 72fead10 (Lean v4.35.0, Mathlib 56a00585); the graph written in the VM from the module table (CompactGraph.lean); the archive's cone and name tables from the traces of 2026-11-23; the Mathlib quartiles from trace-2026-11-24-prior",
+    "occasion": "Heidi Bennett's question what the 76,000-line rewriting kept and what it dropped; Levent Alpöge's 'I bet most is unnecessary'",
+    "conflict": "the rewriting was made at Anthropic with Claude; this trace was run by Claude Opus 5.5"
+   },
+   "audience": "briefing",
+   "kind": "trace",
+   "cycle": "trace-2026-11-27-compact",
+   "dated": "2026-11-27",
+   "by": "Nervous Machine (Heidi Bennett; Claude Opus 5.5 as the operating agent)",
+   "preregistered": {
+    "question": "Below riemannHypothesis in the compact edition: is the original's shape still there, are the retry fossils gone, how many of the original's names survive, and how much of its direct Mathlib footprint does it keep?",
+    "rule": "the module-table walk; the edit trace's shape measures unchanged; the names and footprint measures of names.py; amendment A1 (one loop computed once, after the registered step ran 17 minutes without finishing)",
+    "predictions": [
+     "S1: at most 2.0 retry marks per 1,000 named project constants",
+     "S2: at most 46 hinges at 1%",
+     "S3: median own lines of hinges at least 8",
+     "S4: spine share at step 3 above 19.2%",
+     "S5: largest joint below 63.9%",
+     "S6: at most 25% of named project constants carry an archive name",
+     "S7: at least 70% of the direct Mathlib footprint shared with the archive's, at most half its size",
+     "S8: each step under one hour and 70 GB"
+    ],
+    "commit": "prereg_trace_compact.yaml",
+    "registered": "sha256 58ff949b9ce667225f4e02da40eb1f8c7bd8c30e5acf65b39534f81a4d9a9fdf, committed fd8de1e at 22:31 UTC on 2026-11-27, before anything of the rewriting was cloned",
+    "before_data": true,
+    "results": [
+     "trace-compact/results/shape/report.md",
+     "trace-compact/results/names/names.json",
+     "trace-compact/results/outputs.sha256"
+    ]
+   },
+   "outcome": {
+    "verdict": "mixed",
+    "numbers": {
+     "cone": "37,561 constants, 82,826 dominated lines (the archive: 1,265,256 and 10,660,526; Mathlib's median 36,032 and 92,248)",
+     "spine": "100%, 99.2%, 89.4% at steps 1 to 3; 19.5% at step 5; length 14: riemannHypothesis ← New.grh ← eventually_primeError_le_rpow ← star_inequality",
+     "hinges": "40 at 1%; median 44 own lines (the archive 4; Mathlib 8 to 13); none with a retry mark",
+     "largest_joint": "69.8% at star_inequality (the archive 27.2%; Mathlib 63.9% to 91.5%)",
+     "retry_marks_per_1000": "1.4 (the archive 15.4, the edited archive 4.7, Mathlib 0.4)",
+     "names": "56 of 13,922 named project constants carry an archive name (0.4%); 21 of the archive cone's 796,264 survive",
+     "mathlib_footprint": "29,310 direct Mathlib constants against the archive's 64,874; 80.5% of them shared",
+     "held": "S1, S2, S3, S4, S6, S7",
+     "missed": "S5, S8"
+    },
+    "misses": [
+     "S5: a large joint appears (69.8%), inside Mathlib's range",
+     "S8: the registered names step did not finish within the hour (a loop rebuilt a 1.1-million-entry set for every name); fixed under A1"
+    ]
+   },
+   "spoken": "The rewriting is a different proof built on the same plan. Its part below the Riemann Hypothesis is the size of an ordinary Mathlib theorem's, thirty-seven thousand constants against the original's one point three million, and it keeps almost none of the original's names. But the route is the same: three steps down from the theorem, one chain still carries nine tenths of the proof, which no human-written Mathlib proof of the hundred does. What changed is how the pieces meet. The original had no large join; the rewriting gathers seven tenths of the proof into a single inequality before the theorem, as human proofs do, and its steps are paragraphs, not lines. The search's fossils are gone.\n",
+   "finding_ids": [],
+   "gap_ids": []
   }
  ],
  "findings": [
@@ -1374,6 +1514,56 @@
     "status": "accepted",
     "basis": "one pre-registered build by a party independent of the claimant, under amendment A1 of prereg_cycle1.yaml: one party's report gives accepted; certified needs a second independent party's matching hash of the compiled output, which the path dependence recorded in EG5 prevents until the rule is revised or a shared comparison is run",
     "note": "The operating agent is a model made by the claimant's employer; the kernel, not the operator, is the trust anchor, and the operator is disclosed. This finding says the formal statements follow from Lean's axioms. It says nothing about what they mean (EG2, EG4) or whether anyone understands the argument (EG3)."
+   },
+   "certainty": {
+    "earned": true,
+    "note": "deterministic, reproducible check (audit regime, see SCHEMA.md): a Lean build and axiom audit under a pre-registration; reproduced byte for byte against Sutherland's output on every path-free file"
+   }
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "mission_id": "riemann-2026-11",
+   "pod": "DEBRIEF-math-riemann",
+   "audience": "briefing",
+   "created_by": "Nervous Machine, cycle 3 outcome",
+   "created_at": "2026-11-27T23:50:00Z",
+   "provenance": {
+    "source": "cycle 3 (cycles/cycle3-rerun.yaml), registered in prereg_cycle3.yaml before anything of the rewriting was cloned; evidence in cycle3/"
+   },
+   "finding_id": "F2",
+   "kind": "learned",
+   "spoken": "The shorter Lean development posted on 25 November by Luke Sernau with colleagues at Anthropic and Claude, the compact edition at commit 72fead10, builds in full from its pinned commit against its pinned Mathlib on a machine its authors never touched. Its five theorems rest on exactly Lean's three standard axioms, its statements are the original archive's statements byte for byte, Lean's kernel replays every one of its modules, and two external checkers with soundness proofs of their own accept the exported proof. It is a second artifact of the same claim, not the archive this record pinned.",
+   "evidence": {
+    "numbers": {
+     "modules_compiled": 794,
+     "build_exit": 0,
+     "error_lines": 0,
+     "wall_time": "18:48",
+     "peak_memory_kb": 9264560,
+     "axioms_each_of_five": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+     ],
+     "statements_identical_to_archive": "byte-identical, sha256 79ef7ca7…",
+     "kernel_replay": "794 of 794",
+     "con_leche_verified": "204,579 declarations accepted",
+     "con_ron_verified": "204,579 declarations accepted",
+     "nanoda": "209,639 declarations, no typechecker errors, under a corrected configuration (amendment A1)",
+     "lean4lean": "not run: the shipped binary cannot read this toolchain's .olean header"
+    },
+    "cycles": [
+     3
+    ],
+    "confirmed_by": [
+     "pre-registered rerun by Nervous Machine, cycle 3, Claude Opus 5.5 operating; the rewriting was made at Anthropic with Claude (conflict stated in the cycle)",
+     "on the public record, not as a cycle here: Andrew Sutherland's sandboxed checks of both editions and Michael Rubinstein's check of the compact edition (external-2026-11-27-sernau)"
+    ]
+   },
+   "standing": {
+    "status": "accepted",
+    "basis": "C1, C4, C5, C6 held; C3 held except its time clause; C7's two verified checkers accepted as registered; nothing rejected anything",
+    "note": "A build settles nothing about what the statements mean (EG2, EG4) or about a human reading (EG3). nanoda's acceptance is under a corrected invocation; lean4lean did not run here. The rewriting does not change F1, which concerns the original archive."
    },
    "certainty": {
     "earned": true,

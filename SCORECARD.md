@@ -6,13 +6,14 @@ _Rendered from the briefing record. Items marked internal in the ledger (how the
 
 Record quality: full ledger. Opened at tier zero on 2026-11-20. Cycle 1's build halted on our own disk, not on the archive; cycle 2 finished it on 2026-11-21. One finding, accepted, on 2026-11-22. Nothing certified: the certification rule waits on a path-independent comparison (EG5).
 
-**Standing.** Certified 0. Accepted 1. Refuted 0. Open gaps 4. An open gap is an input or question nobody has settled; it is not a finding and has no standing.
+**Standing.** Certified 0. Accepted 2. Refuted 0. Open gaps 4. An open gap is an input or question nobody has settled; it is not a finding and has no standing.
 
 ## Findings
 
 | id | kind | standing | basis | cycles |
 |---|---|---|---|---|
 | F1 | learned | **accepted** | one pre-registered build by a party independent of the claimant, under amendment A1 of prereg_cycle1.yaml: one party's report gives accepted; certified needs a second independent party's matching hash of the compiled output, which the path dependence recorded in EG5 prevents until the rule is revised or a shared comparison is run | 1, 2 |
+| F2 | learned | **accepted** | C1, C4, C5, C6 held; C3 held except its time clause; C7's two verified checkers accepted as registered; nothing rejected anything | 3 |
 
 ## Cycles, in order
 
@@ -38,6 +39,10 @@ Record quality: full ledger. Opened at tier zero on 2026-11-20. Cycle 1's build 
 | note-2026-11-24-timestamps | 2026-11-24 | Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent) | note | no | admitted |
 | external-2026-11-23-alpoge | 2026-11-23 | None | replay | no | admitted |
 | trace-2026-11-25-edit | 2026-11-25 | Nervous Machine (Heidi Bennett; Claude Fable 5.1 as the operating agent) | trace | yes | confirmed |
+| external-2026-11-27-checks | 2026-11-27 | None | replay | no | admitted |
+| external-2026-11-27-sernau | 2026-11-27 | None | replay | no | admitted |
+| 3 | 2026-11-27 | Nervous Machine (Heidi Bennett; Claude Opus 5.5 as the operating agent) | rerun | yes | confirmed |
+| trace-2026-11-27-compact | 2026-11-27 | Nervous Machine (Heidi Bennett; Claude Opus 5.5 as the operating agent) | trace | yes | mixed |
 
 ## Gaps, in the order that would settle things fastest
 

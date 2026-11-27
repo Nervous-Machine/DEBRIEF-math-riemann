@@ -1,0 +1,3 @@
+export exit 0
+-rw-rw-r-- 1 heidibennett heidibennett 5173283067 Nov 27 15:00 /home/heidibennett.guest/untrusted/sernau-grh/export.ndjson
+e4e38359ab72d85b9ac058c768ca98c20b0538c9c99e23998e8748fa64b8297a  /home/heidibennett.guest/untrusted/sernau-grh/export.ndjson
