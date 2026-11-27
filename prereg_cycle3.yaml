@@ -1,0 +1,69 @@
+# Pre-registration, cycle 3: rerun of the compact edition of the 25 November rewriting (lsernau/grh-lean, commit
+# 72fead10, folder grh-compact). Written 2026-11-27 (UTC) BEFORE anything of the rewriting was cloned or run on any
+# machine of this record. Changes after this point go in an amendment at the end of this file, not in the body.
+#
+# Why. The rewriting is a second Lean development of the same five theorems, 76,149 lines of code against the
+# original's 15.5 million (Sutherland's count). It has been checked by Andrew Sutherland and Michael Rubinstein
+# (cycle external-2026-11-27-sernau). This record has rebuilt the original (cycle 2) and nothing of the rewriting. A
+# rerun here is a third independent check of it, on a machine its authors have never touched, and gives the trace of
+# the compact edition (prereg_trace_compact.yaml) a built environment to walk.
+#
+# What was read before this registration: the repository tree, lakefile.toml, lean-toolchain, comparator.json,
+# src/Main.lean and scripts/PrintAxioms.lean, through the GitHub API, as text. Nothing was cloned or run.
+
+mission: DEBRIEF-math-riemann
+cycle: 3
+by: "Nervous Machine (Heidi Bennett; Claude Opus 5.5 as the operating agent)"
+dated: "2026-11-27"
+question: >
+  Does the compact edition of the rewriting build at its pinned commit against its pinned Mathlib on a machine its
+  authors have never touched; do its five theorems use only Lean's three standard axioms; are its statements the
+  original archive's statements, word for word; and do Lean's kernel and the external checkers shipped with Lean accept
+  it?
+
+not_the_claim: >
+  The rewriting is not the claim's pinned artifact (lean.tar.gz, sha256 9631b4f0…). Its results are recorded as a
+  second artifact of the same claim and change no standing by themselves.
+
+environment:
+  vm: "Lima instance primegaps (Ubuntu, aarch64, 20 cores, 98 GB RAM; 65 GB of disk free at registration). Nothing of the rewriting runs on the host."
+  workdir: "/home/heidibennett.guest/untrusted/sernau-grh"
+  source: "git clone of https://github.com/lsernau/grh-lean, checked out at 72fead102f663d5c7a407964a13dc0cf9d977207; folder grh-compact"
+  toolchain: "leanprover/lean4:v4.35.0 (already installed in the VM, with its shipped checkers nanoda_bin, con-leche, con-ron, lean4lean, leanchecker, leanexport); Mathlib 56a005855ea17e0b0958f73ec801ae140b0a1679 as the project pins it, compiled files from the community cache"
+  archive_statements: "/home/heidibennett.guest/untrusted/alpoge-rh/src/lean/src/Statements.lean, from the archive pinned by sha256 9631b4f0…"
+  procedure: "cycle3/rh_cycle3.sh, run once in the VM; outputs in the workdir's out/ copied to cycle3/ after the run"
+
+checks:
+  C1: "The checked-out commit is 72fead10…, the repository's only commit; the project's toolchain is v4.35.0 and its Mathlib pin 56a00585; file count and line counts under src/ (all lines; code lines = non-blank, outside block comments, not starting with --)."
+  C2: "Word scan of src/, scripts/ and Challenge.lean for sorry, admit, native_decide, axiom, implemented_by, extern, unsafe, opaque, macro, syntax, elab, notation, macro_rules, elab_rules, run_cmd, run_tac; every hit listed by file and line."
+  C3: "lake exe cache get, then lake build (default targets Lib, New, Main) under /usr/bin/time -v: exit code, error lines, wall time, peak memory."
+  C4: "The repository's scripts/PrintAxioms.lean on the five theorems; #check of each; #print RiemannHypothesis; the module each of the five statement constants is declared in."
+  C5: "diff -B of the archive's src/Statements.lean against the rewriting's src/Statements.lean; sha256 of both and of the rewriting's Challenge.lean."
+  C6: "lake env leanchecker on each of the project's modules, 16 at a time, with a one-hour limit each: exit code per module."
+  C7: "lake env leanexport Main for the five theorems; the export's size and sha256; nanoda_bin (permitted axioms propext, Classical.choice, Quot.sound, Lean.trustCompiler), con-leche --verified and con-ron --verified on the export; lean4lean on Main under an 88 GB address-space limit and a four-hour limit."
+
+predictions:
+  C1: "head 72fead10…, 1 commit; toolchain v4.35.0, Mathlib 56a00585; 794 files; code lines within 2% of 76,149 (our rule differs slightly from Sutherland's)"
+  C2: "no hit in any category"
+  C3: "exit 0 with 0 error lines; wall time between 30 minutes and 4 hours; peak memory under 60 GB"
+  C4: "each of the five uses exactly propext, Classical.choice and Quot.sound; RiemannHypothesis is declared in Mathlib.NumberTheory.LSeries.RiemannZeta; the four other statement constants are declared in Statements"
+  C5: "no difference apart from blank lines (exit 0)"
+  C6: "794 of 794 modules exit 0"
+  C7: "export exit 0; nanoda, con-leche and con-ron each accept (exit 0); lean4lean accepts within the limits"
+
+standing_consequences:
+  C3_to_C7_pass: >
+    A finding is recorded for the rewriting as a second artifact: it builds here from its pinned commit with Lean's three
+    standard axioms only, its statements are the archive's word for word, and four kernels accept it. Its standing is
+    accepted. F1 (the original) is unchanged; the rewriting does not move the original's standing, and nothing about
+    what the statements mean (EG2, EG4) or about a human reading (EG3) is settled by a build.
+  C3_fail: "Reported with the first error and its file; nothing moves."
+  C4_or_C5_fail: "Reported as found: an extra axiom is named; a statement difference is quoted in full and becomes a gap."
+  C6_or_C7_fail: "A rejection by any kernel is quoted in full and becomes a gap. A checker stopped by the memory or time limit is recorded as not completed, not as a rejection."
+
+not_settled_by_this_cycle: >
+  EG2, EG3 and EG4 as before. The readable edition is not rebuilt here. lake comparator itself is not installed; the
+  statement comparison is C5's textual one, and the multi-kernel check is C7's, without Comparator's sandbox.
+
+instruments:
+  run_script: {path: cycle3/rh_cycle3.sh, sha256: "37c7746dc553f75b8dad32f6b1221b4d6203cc33bb51a5db3d86049167345ac8"}

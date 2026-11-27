@@ -1,0 +1,58 @@
+# Pre-registration, trace cycle "trace-2026-11-27-compact": the shape of the compact edition of the 25 November
+# rewriting, against the original archive and Mathlib's hundred. Written 2026-11-27 (UTC) BEFORE anything of the
+# rewriting was cloned or run. Changes after this point go in an amendment at the end of this file, not in the body.
+#
+# Occasion. Heidi Bennett (2026-11-27), on the 76,000-line version: what did the rewriting keep and what did it drop?
+# Levent Alpöge (2026-11-23, filed external-2026-11-23-alpoge): "I bet most is unnecessary." The traces of 23–25
+# November measured the original's shape (a long single spine, many short hinges, small joints, retry fossils in the
+# names) and found it survived four days of community editing (trace-2026-11-25-edit). This trace asks the same of a
+# rewriting by other hands with other tools.
+
+mission: DEBRIEF-math-riemann
+cycle: "trace-2026-11-27-compact"
+kind: trace
+by: "Nervous Machine (Heidi Bennett; Claude Opus 5.5 as the operating agent)"
+dated: "2026-11-27"
+question: >
+  In the compact edition, below `riemannHypothesis`: is the original's shape (a spine that carries most of the cone
+  for several steps, hinges of a few lines, no large joint) still there, are the retry fossils gone, how many of the
+  original's names survive, and how much of the original's direct Mathlib footprint does it keep?
+
+input:
+  built_environment: "cycle 3's build of grh-compact at commit 72fead10 (prereg_cycle3.yaml); this trace runs after cycle 3's C3 and only if it passes"
+  archive_tables: "trace-structure's cone table (nodes.tsv, 1,265,279 archive constants reachable from the five entry theorems and the 67,981 library constants they use directly; walk of 2026-11-23) and trace-suffix's full name table (names_all.tsv), both in the VM, hash-checked against trace-structure.sha256 and the suffix trace's outputs before use"
+  not_the_claim: "The rewriting is not the claim's pinned artifact; nothing measured here changes a standing."
+
+observations_before_this_registration:   # facts, not predictions
+  - "The archive's row (trace-prior ARCH; trace-edit's table): cone 1,265,256 constants, 10,660,526 dominated lines; spine 100% at steps 1–3, 66.8% at step 5, 11.3% at step 8; 81 hinges at 1%, median own lines 4; 32 retry-marked hinges; largest joint 27.2%, three largest 71.8%; 15.4 retry marks per 1,000 named constants (4.7 in the edited archive)."
+  - "Mathlib's hundred (Q1 / median / Q3): spine at step 3 4.9% / 9.9% / 19.2%; hinges 30 / 37 / 46; median own lines 8 / 10 / 13; largest joint 63.9% / 80.2% / 91.5%; retry marks 0.4 per 1,000."
+  - "From the public record (external-2026-11-27-sernau): 794 files, 76,149 code lines; Main.lean derives the five theorems from New.grh, New.zeta_zeros_on_line and New.zeros_on_line; Naskręcki's note puts the argument itself at 24,850 lines with the background separated."
+
+procedure:
+  walk: "trace-compact/CompactGraph.lean (trace-edit/ArchiveGraph.lean with the output directory and one comment line changed): every constant of the environment reachable from Main, with kind, module, project flag and line range; integer-id edges"
+  shape: "trace-compact/compact.py (trace-edit/edit.py with labels changed only): the same shape measures, the archive's row and Mathlib's quartiles beside it"
+  names: "trace-compact/names.py: name survival and direct Mathlib footprint (definitions in its header)"
+  run: "trace-compact/run_compact.sh in the VM after cycle 3; outputs copied to trace-compact/results/"
+
+measures_and_predictions:
+  S1: {measure: "retry marks per 1,000 named project constants", predicts: "at most 2.0 (the archive 15.4, the edited archive 4.7)"}
+  S2: {measure: "hinges at 1% below riemannHypothesis", predicts: "at most 46 (Mathlib Q3)"}
+  S3: {measure: "median own lines of those hinges", predicts: "at least 8 (Mathlib Q1)"}
+  S4: {measure: "spine share at step 3", predicts: "above 19.2% (Mathlib Q3): the single route survives the rewriting"}
+  S5: {measure: "largest joint, share joined", predicts: "below 63.9% (Mathlib Q1): no large join appears"}
+  S6: {measure: "share of the compact edition's named project constants whose full name is an archive constant's", predicts: "at most 25%"}
+  S7: {measure: "share of the compact edition's direct Mathlib footprint that is also in the archive's", predicts: "at least 70%; and the compact footprint is at most half the archive's in size"}
+  S8: {measure: "run", predicts: "the walk, the shape and the names steps each finish in under one hour and under 70 GB"}
+
+falsifiers: >
+  S4 or S5 failing means the original's single-route, join-free shape was a property of its search or its size, not of
+  the argument, and a rewriting by other hands removed it. S1 failing means the rewriting kept the search's fossils. S6
+  above 25% means it is an edit more than a rewriting. A run that does not finish is reported with its error and
+  nothing is computed from partial output.
+
+instruments:
+  walk: {path: trace-compact/CompactGraph.lean, sha256: "b7ebe5d6f31b58c0527d753bfc650dbc7a7cf35e81c5befee1956bb9df96e0c4"}
+  shape: {path: trace-compact/compact.py, sha256: "48b009c0605f316fb26eeac1a96fe8e0b425e5a94bf73430c5bfa3f72e457dcd"}
+  names: {path: trace-compact/names.py, sha256: "25a33e9126eeb35383f50bc291d4c5ac6024dd87d6469f80e2fdeb528f9b5c54"}
+  run: {path: trace-compact/run_compact.sh, sha256: "d2620045a24ec862a53f66c728fb0775f5453d76ac8cb9183c3f737003438f74"}
+  mathlib_shapes: {path: trace-prior/shapes.tsv, sha256: "3fa4b3abe3aabaf2c56fc2a89871ab64430316580ffe93d7b8cb13bcec49d7e6", note: "the VM copy ~/nm-scripts/mathlib_shapes.tsv has the same hash"}
