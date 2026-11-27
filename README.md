@@ -11,7 +11,7 @@ A DEBRIEF mission record (protocol https://github.com/Nervous-Machine/DEBRIEF) f
 
 | | |
 |---|---|
-| checked by machine | Nervous Machine; reported elsewhere: [Andrew Sutherland (MIT)](https://math.mit.edu/~drew/grh/) |
+| checked by machine | Nervous Machine; reported elsewhere: [Andrew Sutherland (MIT)](https://math.mit.edu/~drew/grh/), [Michael Rubinstein (Waterloo)](https://mrubinst.github.io/grh-lean-verification/), [Elliot Arledge](https://github.com/Infatoshi/rh-verification-receipts), [Andrew Sutherland (MIT), the rewriting](https://math.mit.edu/~drew/shortgrh/), [Michael Rubinstein (Waterloo), the rewriting](https://mrubinst.github.io/grh-lean-compact-check/) |
 | read by a person | no reading signed here; read elsewhere: [J. L. Nielsen](https://philpapers.org/rec/NIEIOT-2), [Yochay Jerby](https://lnkd.in/p/gEdivCB8) (1 disputes the claim); [reading guide](trace/DEFINITIONAL-TRACE.md); 1 reasoning note |
 | elsewhere | [Clay Mathematics Institute](https://www.claymath.org/millennium/riemann-hypothesis/): Unsolved · [Andrew Sutherland (MIT), verification page](https://math.mit.edu/~drew/grh/): last updated 2026-11-22 16:20 UTC · [Lean and Mathlib communities, joint statement](https://leanprover-community.github.io/blog/posts/riemann-hypothesis/): certify the statement and the proof of RH (not GRH) |
 | related | [Generalized Riemann Hypothesis (Masullo)](https://github.com/Nervous-Machine/DEBRIEF-math-grh-masullo): a special case of; same problem page · [Navier–Stokes blow-up, unforced (Alpöge and Buckmaster)](https://github.com/Nervous-Machine/DEBRIEF-math-navierstokes): same claimant (Alpöge), released the same morning |

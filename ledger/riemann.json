@@ -1465,6 +1465,67 @@
    "spoken": "The rewriting is a different proof built on the same plan. Its part below the Riemann Hypothesis is the size of an ordinary Mathlib theorem's, thirty-seven thousand constants against the original's one point three million, and it keeps almost none of the original's names. But the route is the same: three steps down from the theorem, one chain still carries nine tenths of the proof, which no human-written Mathlib proof of the hundred does. What changed is how the pieces meet. The original had no large join; the rewriting gathers seven tenths of the proof into a single inequality before the theorem, as human proofs do, and its steps are paragraphs, not lines. The search's fossils are gone.\n",
    "finding_ids": [],
    "gap_ids": []
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "mission_id": "riemann-2026-11",
+   "pod": "DEBRIEF-math-riemann",
+   "created_by": "contributed cycle (merge_cycles.py)",
+   "created_at": "2026-11-27T23:53:22Z",
+   "provenance": {
+    "source": "the pages already read and pinned for cycles external-2026-11-27-checks and external-2026-11-27-sernau (source/external.sha256, read 2026-11-27 22:27 UTC); no new reading"
+   },
+   "audience": "briefing",
+   "kind": "replay",
+   "cycle": "external-2026-11-27-reports",
+   "dated": "2026-11-27",
+   "by": null,
+   "preregistered": {
+    "question": "Which published machine checks belong in the record's list of checks reported elsewhere?",
+    "rule": "one report entry per published check, in the form the board reads (who, url, dated, what); the detail stays in the two cycles named",
+    "predictions": [],
+    "commit": null,
+    "before_data": false
+   },
+   "outcome": {
+    "verdict": "admitted",
+    "numbers": {
+     "external": {
+      "reports": [
+       {
+        "who": "Michael Rubinstein (Waterloo)",
+        "url": "https://mrubinst.github.io/grh-lean-verification/",
+        "dated": "2026-11-21",
+        "operated_with": "Claude Code, as stated on the page",
+        "what": "the original archive: full compile of 175,187 modules, standard axioms only, kernel replay of every module, nanoda on the 1,484,729 declarations the five theorems use; Main.olean equal to this record's and Sutherland's (cycle external-2026-11-27-checks)"
+       },
+       {
+        "who": "Elliot Arledge",
+        "url": "https://github.com/Infatoshi/rh-verification-receipts",
+        "dated": "2026-11-20",
+        "what": "the original archive: full compile, standard axioms only, nanoda on the export, 0 errors (cycle external-2026-11-27-checks)"
+       },
+       {
+        "who": "Andrew Sutherland (MIT), the rewriting",
+        "url": "https://math.mit.edu/~drew/shortgrh/",
+        "dated": "2026-11-25",
+        "operated_with": "Claude Code, as stated on the page",
+        "what": "the 25 November rewriting (lsernau/grh-lean 72fead10), both editions: sandboxed build, standard axioms only, kernel replay, lake comparator --paranoid on two machines for the compact edition (cycle external-2026-11-27-sernau)"
+       },
+       {
+        "who": "Michael Rubinstein (Waterloo), the rewriting",
+        "url": "https://mrubinst.github.io/grh-lean-compact-check/",
+        "dated": "2026-11-26",
+        "operated_with": "Claude Code, as stated on the page",
+        "what": "the 25 November rewriting, compact edition: build, standard axioms only, kernel replay of 794 modules, lake comparator --paranoid without its sandbox, all six kernels accept (cycle external-2026-11-27-sernau)"
+       }
+      ]
+     }
+    }
+   },
+   "spoken": "The checks already recorded today, listed where the record keeps checks reported elsewhere: Michael Rubinstein's and Elliot Arledge's checks of the original archive, and Andrew Sutherland's and Michael Rubinstein's checks of the shorter rewriting. Nothing new was read; nothing changes standing.\n",
+   "finding_ids": [],
+   "gap_ids": []
   }
  ],
  "findings": [
